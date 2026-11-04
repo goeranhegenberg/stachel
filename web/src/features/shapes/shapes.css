@@ -1,0 +1,458 @@
+/* Modul „shapes“: Formen-Bibliothek, Füllung/Rand, Verbinder-Spitzen, Andockpunkte, Sticker und Icons. */
+
+/* ---- Objekte ---------------------------------------------------------------------------------------------------------- */
+.shapes-emoji {
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', sans-serif;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 400;
+}
+.shapes-sticker {
+  display: grid;
+  place-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.shapes-sticker .shapes-emoji {
+  display: block;
+  filter: drop-shadow(0 2px 3px rgba(10, 10, 10, 0.18));
+}
+.shapes-sticker--stamp svg {
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(10, 10, 10, 0.22));
+}
+.shapes-iconobj svg {
+  display: block;
+  overflow: visible;
+}
+
+/* Beschriftung eines ausgewählten Verbinders: greifen und entlang der Linie ziehen */
+.conn-label.shapes-label--drag {
+  cursor: grab;
+  box-shadow: 0 0 0 1.5px var(--blue);
+  touch-action: none;
+}
+.conn-label.shapes-label--drag:active {
+  cursor: grabbing;
+}
+
+/* ---- Ziehen von Verbindern: Vorschau, Geister-Form, Andockpunkte ------------------------------------------------------- */
+.shapes-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+.shapes-draft-line {
+  stroke: var(--blue);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.shapes-ghost {
+  fill: rgba(23, 99, 181, 0.06);
+  stroke: var(--blue);
+}
+.shapes-target {
+  fill: none;
+  stroke: var(--blue);
+  stroke-opacity: 0.55;
+}
+.shapes-dot {
+  fill: #fff;
+  stroke: var(--blue);
+}
+.shapes-dot.is-on {
+  fill: var(--blue);
+  stroke: #fff;
+}
+
+/* ---- Kontextleiste ------------------------------------------------------------------------------------------------------ */
+.shapes-fill-dot {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.shapes-fill-dot > span {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.shapes-fill-dot.is-translucent {
+  background: repeating-conic-gradient(#d9d9d3 0 25%, #fff 0 50%) 0 0 / 8px 8px;
+}
+.shapes-split {
+  display: inline-flex;
+  align-items: center;
+}
+.ctx-btn.shapes-caret {
+  width: 16px;
+  margin-left: -4px;
+  border-radius: 6px;
+  color: #a3a39c;
+}
+.ctx-btn.shapes-caret:hover,
+.ctx-btn.shapes-caret[aria-expanded='true'] {
+  color: #fff;
+}
+
+.ctx-pop.shapes-pop {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: none;
+  gap: 10px;
+  padding: 10px;
+}
+.ctx-pop.shapes-pop--kinds {
+  width: 274px;
+}
+.ctx-pop.shapes-pop--caps {
+  display: grid;
+  grid-template-columns: repeat(3, 36px);
+  gap: 2px;
+  padding: 6px;
+}
+.shapes-kind-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  gap: 2px;
+  max-height: 232px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.shapes-swatches {
+  display: grid;
+  grid-template-columns: repeat(8, 24px);
+  gap: 7px;
+}
+.shapes-swatches .swatch {
+  width: 24px;
+  height: 24px;
+}
+/* Werkzeug „Haftnotiz“: 12 Notizfarben in zwei Reihen zu sechs */
+.shapes-sticky-swatches {
+  display: grid;
+  grid-template-columns: repeat(6, 26px);
+  gap: 6px;
+}
+.shapes-pop-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.shapes-pop--border .ctx-pop-swatches {
+  grid-template-columns: repeat(8, 22px);
+}
+/* dunkle Farben auf dunklem Grund sichtbar halten */
+.shapes-pop .swatch:not(.is-active),
+.shapes-pop--border .swatch:not(.is-active) {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+/* eigene Farbe: Regenbogen-Feld über dem (unsichtbaren) Farbwähler des Systems */
+.shapes-custom {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: conic-gradient(from 210deg, #ec4e92, #ffd23f, #c9e14a, #0c8599, #1763b5, #7048e8, #ec4e92);
+  box-shadow: inset 0 0 0 2px rgba(10, 10, 10, 0.25);
+  margin-right: 4px;
+}
+.shapes-custom span {
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.shapes-custom:hover {
+  transform: scale(1.06);
+}
+.shapes-custom input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+
+/* Deckkraft-Regler im Stachel-Grün */
+.shapes-slider {
+  display: grid;
+  grid-template-columns: auto 1fr 46px;
+  align-items: center;
+  gap: 10px;
+}
+.shapes-slider__label {
+  font: 600 13px var(--font-cond);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a3a39c;
+}
+.shapes-slider__value {
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.shapes-slider input[type='range'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--green) var(--v, 100%), var(--ink-3) var(--v, 100%));
+  outline: none;
+  cursor: pointer;
+}
+.shapes-slider input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--ink), 0 0 0 4.5px var(--green);
+}
+.shapes-slider input[type='range']::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--ink), 0 0 0 4.5px var(--green);
+}
+.shapes-slider input[type='range']:focus-visible {
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+/* ---- Suchfelder ----------------------------------------------------------------------------------------------------------- */
+.shapes-search {
+  width: 100%;
+  height: 34px;
+  border: 0;
+  border-radius: 9px;
+  padding: 0 10px;
+  background: var(--ink-2);
+  color: #fff;
+  font: 500 14px var(--font);
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--ink-3);
+}
+.shapes-search::placeholder {
+  color: #8a8a85;
+}
+.shapes-search:focus {
+  box-shadow: inset 0 0 0 1.5px var(--green);
+}
+.shapes-search::-webkit-search-cancel-button {
+  filter: invert(1);
+}
+.shapes-search-wrap {
+  position: relative;
+  display: block;
+}
+.shapes-search-wrap svg {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8a8a85;
+  pointer-events: none;
+}
+.shapes-search-wrap .shapes-search {
+  padding-left: 34px;
+  height: 38px;
+}
+.shapes-empty {
+  margin: 8px 2px;
+  color: #a3a39c;
+  font-size: 14px;
+}
+
+/* ---- Werkzeug-Untermenüs -------------------------------------------------------------------------------------------------- */
+.shapes-fly-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 36px);
+  gap: 4px;
+}
+.shapes-fly-grid--stickers {
+  grid-template-columns: repeat(7, 36px);
+}
+.fly-btn.shapes-fly-more {
+  color: var(--green);
+  box-shadow: inset 0 0 0 1px rgba(201, 225, 74, 0.35);
+}
+.fly-btn.shapes-fly-more:hover {
+  background: var(--ink-3);
+  box-shadow: inset 0 0 0 1px var(--green);
+}
+.fly-btn.shapes-fly-stamp.is-active {
+  background: var(--ink-3);
+  box-shadow: inset 0 0 0 2px var(--green);
+}
+@media (max-width: 700px), (max-height: 560px) {
+  .shapes-fly-grid,
+  .shapes-fly-grid--stickers {
+    grid-template-columns: repeat(auto-fill, 36px);
+    width: min(calc(100vw - 44px), 280px);
+    justify-content: center;
+  }
+}
+
+/* ---- Bibliothek (Seitenleiste) -------------------------------------------------------------------------------------------- */
+.shapes-lib {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+}
+.shapes-seg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--ink-2);
+  box-shadow: inset 0 0 0 1px var(--ink-3);
+}
+.shapes-seg__btn {
+  height: 32px;
+  border-radius: 8px;
+  color: #c9c9c2;
+  font: 700 15px var(--font-cond);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.shapes-seg__btn:hover {
+  color: #fff;
+}
+.shapes-seg__btn.is-active {
+  background: var(--green);
+  color: var(--ink);
+}
+.shapes-lib__hint {
+  margin: -2px 2px 0;
+  font-size: 12.5px;
+  color: #8a8a85;
+}
+.shapes-lib__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.shapes-lib__h {
+  margin: 0 2px 8px;
+  font: 700 13px var(--font-cond);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-on-ink);
+}
+.shapes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 4px;
+}
+.shapes-grid--shapes {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.shapes-tile {
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #e9e9e4;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+  transition:
+    background 0.12s ease,
+    transform 0.12s ease;
+}
+.shapes-tile:hover {
+  background: var(--ink-3);
+}
+.shapes-tile:active {
+  cursor: grabbing;
+  transform: scale(0.96);
+}
+.shapes-tile:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: -2px;
+}
+.shapes-tile--item {
+  height: 44px;
+}
+.shapes-tile--shape {
+  gap: 4px;
+  padding: 10px 4px 8px;
+  background: var(--ink-2);
+  box-shadow: inset 0 0 0 1px var(--ink-3);
+}
+.shapes-tile--shape span {
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  color: #c9c9c2;
+  min-height: 2.4em;
+  display: grid;
+  align-items: start;
+}
+.shapes-tile--shape:hover span {
+  color: #fff;
+}
+.shapes-tile--shape.is-active {
+  box-shadow: inset 0 0 0 2px var(--green);
+  color: var(--green);
+}
+
+/* Geist beim Ziehen aus der Bibliothek */
+.shapes-drag-ghost {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  box-shadow:
+    0 0 0 1.5px var(--blue),
+    0 14px 30px -12px rgba(10, 10, 10, 0.45);
+}
+@media (max-width: 700px) {
+  .shapes-grid--shapes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Form am freien Linienende anhängen */
+.shapes-attach {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 24;
+  display: flex;
+  gap: 2px;
+  padding: 5px;
+  border-radius: 12px;
+  animation: pop-in 0.12s ease;
+}
+.shapes-attach__same {
+  box-shadow: inset 0 0 0 1px rgba(201, 225, 74, 0.45);
+}
+.shapes-attach__note {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background: #fff27a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}

@@ -1,0 +1,98 @@
+# Stachel – self-hosting with Docker Compose.
+#
+#   cp .env.example .env        # optional: adjust PUBLIC_URL, SMTP, registration …
+#   docker compose up -d        # Stachel on http://localhost:8080
+#
+# Optional extras (profiles):
+#   docker compose --profile mcp up -d     # + MCP server for AI assistants (Claude, ChatGPT, Cursor …)
+#   docker compose --profile https up -d   # + Caddy reverse proxy with automatic HTTPS (set STACHEL_DOMAIN)
+#
+# Without a published image the `build:` section builds it from this checkout. Data lives in the volume `stachel-data`.
+# Needs Docker Compose 2.24 or newer (optional env_file).
+# All variables: README.md → Configuration. INTSODE's own production setup lives in deploy/intsode/ (not this file).
+# Security notes for public instances: SECURITY.md → "Running your own instance".
+
+# bounded container logs (json-file, 3 × 10 MB per container)
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: 10m
+    max-file: "3"
+
+services:
+  stachel:
+    image: ghcr.io/goeranhegenberg/stachel:${STACHEL_VERSION:-latest}
+    build: .
+    restart: unless-stopped
+    ports:
+      # behind the Caddy profile you may bind to localhost only: "127.0.0.1:8080:8080"
+      - "${STACHEL_HTTP_PORT:-8080}:8080"
+    volumes:
+      - stachel-data:/data
+    # Settings from .env (copy of .env.example; optional). Without it the image defaults apply: own accounts,
+    # registration open, no SMTP (accounts active right away), PUBLIC_URL=http://localhost:8080.
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # fixed inside the container; change the host port with STACHEL_HTTP_PORT
+      PORT: 8080
+    # hardening: read-only root file system (data only in /data), no capabilities, no privilege escalation
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 1g
+    logging: *logging
+
+  # MCP server for AI assistants (docs/features/mcp.md). Reachable under ${PUBLIC_URL}/mcp through the Caddy profile,
+  # or directly on port 8096 (then set MCP_PUBLIC_URL=http://<host>:8096/mcp for the "AI access" dialog).
+  stachel-mcp:
+    profiles: [mcp]
+    image: ghcr.io/goeranhegenberg/stachel-mcp:${STACHEL_VERSION:-latest}
+    build:
+      context: .
+      dockerfile: mcp/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${STACHEL_MCP_PORT:-8096}:8096"
+    environment:
+      STACHEL_URL: http://stachel:8080
+    # Chromium runs with --no-sandbox: the container is the sandbox (own network, no capabilities, memory limit)
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 1g
+    shm_size: 256m
+    logging: *logging
+    depends_on:
+      - stachel
+
+  # HTTPS with automatic Let's Encrypt certificates: STACHEL_DOMAIN=board.example.org and PUBLIC_URL=https://board.example.org
+  # in .env, DNS pointing to this host, ports 80 and 443 free. Config: deploy/selfhost/Caddyfile.
+  # Also set TRUST_PROXY=uniquelocal in .env so rate limits see the real client IP (this compose network only contains
+  # Stachel, the MCP container and Caddy); without a proxy keep the default (loopback).
+  caddy:
+    profiles: [https]
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      STACHEL_DOMAIN: ${STACHEL_DOMAIN:-localhost}
+    volumes:
+      - ./deploy/selfhost/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    logging: *logging
+    depends_on:
+      - stachel
+
+volumes:
+  stachel-data:
+  caddy-data:
+  caddy-config:

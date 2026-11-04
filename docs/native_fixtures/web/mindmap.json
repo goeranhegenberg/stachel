@@ -1,0 +1,5954 @@
+{
+ "cases": [
+  {
+   "name": "Unterthema an der Wurzel (rechts)",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "child",
+     "id": "root",
+     "new": "n1"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 222,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 300,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 202,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 251,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "n1": {
+     "x": 555,
+     "y": 358,
+     "w": 136,
+     "h": 42,
+     "text": "",
+     "color": "#e8590c",
+     "mind": {
+      "parent": "root",
+      "order": 3,
+      "side": "r",
+      "level": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Unterthema an der Wurzel links",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "child",
+     "id": "root",
+     "new": "n1",
+     "side": "l"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 251,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 256,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "n1": {
+     "x": 110,
+     "y": 309,
+     "w": 136,
+     "h": 42,
+     "text": "",
+     "color": "#e8590c",
+     "mind": {
+      "parent": "root",
+      "order": 3,
+      "side": "l",
+      "level": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Unterthema an einem Hauptthema",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "child",
+     "id": "orga",
+     "new": "n1"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "n1": {
+     "x": 699,
+     "y": 334,
+     "w": 98,
+     "h": 33,
+     "text": "",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "orga",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    }
+   }
+  },
+  {
+   "name": "Unterthema an einem Unterthema (links)",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "child",
+     "id": "strom",
+     "new": "n1"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "n1": {
+     "x": -140,
+     "y": 285,
+     "w": 98,
+     "h": 33,
+     "text": "",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "strom",
+      "order": 0,
+      "level": 3,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "gleiche Ebene unter einem Unterthema",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "sibling",
+     "id": "bands",
+     "new": "n1"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 353,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 207,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 305,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "n1": {
+     "x": 741,
+     "y": 256,
+     "w": 98,
+     "h": 33,
+     "text": "",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0.5,
+      "level": 2,
+      "side": "r"
+     }
+    }
+   }
+  },
+  {
+   "name": "gleiche Ebene unter einem Hauptthema",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "sibling",
+     "id": "prog",
+     "new": "n1"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 222,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 358,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 202,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 251,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "n1": {
+     "x": 555,
+     "y": 300,
+     "w": 136,
+     "h": 42,
+     "text": "",
+     "color": "#e8590c",
+     "mind": {
+      "parent": "root",
+      "order": 0.5,
+      "side": "r",
+      "level": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "gleiche Ebene an der Wurzel: nichts",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "sibling",
+     "id": "root",
+     "new": "n1"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "langer Text am Unterthema (Umbruch)",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "text",
+     "id": "bands",
+     "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 350,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 210,
+     "w": 258,
+     "h": 75,
+     "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 301,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "langer Text an der Wurzel",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "text",
+     "id": "root",
+     "text": "Sommerfest im Stadtpark – alles Wichtige auf einen Blick"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 360,
+     "h": 93,
+     "text": "Sommerfest im Stadtpark – alles Wichtige auf einen Blick",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 734,
+     "y": 267,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 734,
+     "y": 345,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 920,
+     "y": 247,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 920,
+     "y": 296,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 296,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 301,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "leerer Text (Platzhalter bestimmt die Größe)",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "text",
+     "id": "orga",
+     "text": ""
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 136,
+     "h": 42,
+     "text": "",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "Zeilenumbruch im Text, Umlaute, Ligaturen",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "text",
+     "id": "work",
+     "text": "Effizienz-Workshops\nfür Öffentlichkeit & Café"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 339,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 221,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 270,
+     "w": 182,
+     "h": 54,
+     "text": "Effizienz-Workshops\nfür Öffentlichkeit & Café",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "Zweig einklappen",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "collapse",
+     "id": "prog",
+     "collapsed": true
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1,
+      "collapsed": true
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 309,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 555,
+     "y": 251,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     }
+    },
+    "work": {
+     "x": 555,
+     "y": 251,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "Wurzel einklappen",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "collapse",
+     "id": "root",
+     "collapsed": true
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0,
+      "collapsed": true
+     }
+    },
+    "prog": {
+     "x": 310,
+     "y": 270,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1,
+      "hidden": true
+     }
+    },
+    "orga": {
+     "x": 310,
+     "y": 270,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1,
+      "hidden": true
+     }
+    },
+    "bands": {
+     "x": 310,
+     "y": 270,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     }
+    },
+    "work": {
+     "x": 310,
+     "y": 270,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     }
+    },
+    "tech": {
+     "x": 310,
+     "y": 270,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "r",
+      "level": 1,
+      "hidden": true
+     }
+    },
+    "strom": {
+     "x": 310,
+     "y": 270,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     }
+    }
+   }
+  },
+  {
+   "name": "Zweig ausklappen",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1,
+      "collapsed": true
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 309,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "collapse",
+     "id": "prog",
+     "collapsed": false
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "Unterthema an eingeklapptem Zweig klappt auf",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1,
+      "collapsed": true
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 309,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r",
+      "hidden": true
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "child",
+     "id": "prog",
+     "new": "n1"
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 353,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 207,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 256,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "n1": {
+     "x": 741,
+     "y": 305,
+     "w": 98,
+     "h": 33,
+     "text": "",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 2,
+      "level": 2,
+      "side": "r"
+     }
+    }
+   }
+  },
+  {
+   "name": "Hauptthema samt Unterthemen löschen",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "remove",
+     "ids": [
+      "prog"
+     ]
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 280,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "Unterthema löschen",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "remove",
+     "ids": [
+      "bands"
+     ]
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 309,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 256,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "auf anderen Knoten ziehen hängt um (Farbe des Zweigs)",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "update",
+     "patches": {
+      "bands": {
+       "x": 565,
+       "y": 331
+      }
+     }
+    },
+    {
+     "op": "mind",
+     "do": "drop",
+     "ids": [
+      "bands"
+     ]
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 309,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 699,
+     "y": 314,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "orga",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 256,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "auf die Wurzel ziehen (Seite nach Lage)",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "update",
+     "patches": {
+      "strom": {
+       "x": 315,
+       "y": 275
+      }
+     }
+    },
+    {
+     "op": "mind",
+     "do": "drop",
+     "ids": [
+      "strom"
+     ]
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 251,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 159,
+     "y": 309,
+     "w": 87,
+     "h": 42,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 3,
+      "side": "l",
+      "level": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Hauptthema auf die andere Seite ziehen",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "update",
+     "patches": {
+      "prog": {
+       "x": 10,
+       "y": 70
+      }
+     }
+    },
+    {
+     "op": "mind",
+     "do": "drop",
+     "ids": [
+      "prog"
+     ]
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 124,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 280,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": -70,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "work": {
+     "x": -33,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 329,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 334,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "Unterthema nach oben einsortieren",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "update",
+     "patches": {
+      "work": {
+       "x": 741,
+       "y": 191
+      }
+     }
+    },
+    {
+     "op": "mind",
+     "do": "drop",
+     "ids": [
+      "work"
+     ]
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 741,
+     "y": 280,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 741,
+     "y": 231,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": -1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "Wurzel verschieben nimmt die Mindmap mit",
+   "start": [
+    {
+     "id": "root",
+     "type": "mindnode",
+     "x": 310,
+     "y": 270,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     },
+     "z": "a0izB"
+    },
+    {
+     "id": "prog",
+     "type": "mindnode",
+     "x": 555,
+     "y": 251,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a1xdE"
+    },
+    {
+     "id": "orga",
+     "type": "mindnode",
+     "x": 555,
+     "y": 329,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     },
+     "z": "a2xW1"
+    },
+    {
+     "id": "bands",
+     "type": "mindnode",
+     "x": 741,
+     "y": 231,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a3mbw"
+    },
+    {
+     "id": "work",
+     "type": "mindnode",
+     "x": 741,
+     "y": 280,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     },
+     "z": "a4BPt"
+    },
+    {
+     "id": "tech",
+     "type": "mindnode",
+     "x": 146,
+     "y": 280,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     },
+     "z": "a5e4h"
+    },
+    {
+     "id": "strom",
+     "type": "mindnode",
+     "x": 22,
+     "y": 285,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     },
+     "z": "a6u2f"
+    }
+   ],
+   "ops": [
+    {
+     "op": "update",
+     "patches": {
+      "root": {
+       "x": 447.4,
+       "y": 208.8
+      }
+     }
+    },
+    {
+     "op": "mind",
+     "do": "layout",
+     "ids": [
+      "root"
+     ]
+    }
+   ],
+   "result": {
+    "root": {
+     "x": 447.4,
+     "y": 208.8,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "prog": {
+     "x": 692,
+     "y": 189,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "root",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "orga": {
+     "x": 692,
+     "y": 267,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "root",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "bands": {
+     "x": 878,
+     "y": 169,
+     "w": 130,
+     "h": 33,
+     "text": "Bands und Musik",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "work": {
+     "x": 878,
+     "y": 218,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "prog",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "tech": {
+     "x": 283,
+     "y": 218,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "root",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "strom": {
+     "x": 159,
+     "y": 223,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "tech",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  },
+  {
+   "name": "neue Mindmap",
+   "start": [],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "root",
+     "new": "r1",
+     "x": 120.5,
+     "y": -40,
+     "text": ""
+    }
+   ],
+   "result": {
+    "r1": {
+     "x": 6,
+     "y": -70,
+     "w": 229,
+     "h": 61,
+     "text": "",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    }
+   }
+  },
+  {
+   "name": "Vorlage (tree) wie die Galerie-Vorlage „Mindmap“",
+   "start": [],
+   "ops": [
+    {
+     "op": "mind",
+     "do": "tree",
+     "new": "t",
+     "x": 0,
+     "y": 0,
+     "tree": {
+      "text": "Sommerfest",
+      "children": [
+       {
+        "text": "Programm",
+        "children": [
+         {
+          "text": "Bands"
+         },
+         {
+          "text": "Workshops"
+         },
+         {
+          "text": "Kinderprogramm"
+         }
+        ]
+       },
+       {
+        "text": "Orga",
+        "children": [
+         {
+          "text": "Helfer:innen"
+         },
+         {
+          "text": "Schichten"
+         },
+         {
+          "text": "Finanzen"
+         }
+        ]
+       },
+       {
+        "text": "Technik",
+        "side": "l",
+        "children": [
+         {
+          "text": "Strom"
+         },
+         {
+          "text": "Licht & Ton"
+         }
+        ]
+       },
+       {
+        "text": "Werbung",
+        "side": "l",
+        "children": [
+         {
+          "text": "Plakate"
+         },
+         {
+          "text": "Social Media"
+         },
+         {
+          "text": "Presse"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "result": {
+    "t": {
+     "x": -90,
+     "y": -30,
+     "w": 181,
+     "h": 61,
+     "text": "Sommerfest",
+     "color": "#0a0a0a",
+     "mind": {
+      "level": 0
+     }
+    },
+    "t-1": {
+     "x": 155,
+     "y": -94,
+     "w": 122,
+     "h": 42,
+     "text": "Programm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "t",
+      "order": 0,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "t-2": {
+     "x": 341,
+     "y": -138,
+     "w": 60,
+     "h": 33,
+     "text": "Bands",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "t-1",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "t-3": {
+     "x": 341,
+     "y": -89,
+     "w": 93,
+     "h": 33,
+     "text": "Workshops",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "t-1",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "t-4": {
+     "x": 341,
+     "y": -40,
+     "w": 133,
+     "h": 33,
+     "text": "Kinderprogramm",
+     "color": "#ec4e92",
+     "mind": {
+      "parent": "t-1",
+      "order": 2,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "t-5": {
+     "x": 155,
+     "y": 53,
+     "w": 80,
+     "h": 42,
+     "text": "Orga",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "t",
+      "order": 1,
+      "side": "r",
+      "level": 1
+     }
+    },
+    "t-6": {
+     "x": 299,
+     "y": 9,
+     "w": 101,
+     "h": 33,
+     "text": "Helfer:innen",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "t-5",
+      "order": 0,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "t-7": {
+     "x": 299,
+     "y": 58,
+     "w": 85,
+     "h": 33,
+     "text": "Schichten",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "t-5",
+      "order": 1,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "t-8": {
+     "x": 299,
+     "y": 107,
+     "w": 78,
+     "h": 33,
+     "text": "Finanzen",
+     "color": "#1763b5",
+     "mind": {
+      "parent": "t-5",
+      "order": 2,
+      "level": 2,
+      "side": "r"
+     }
+    },
+    "t-9": {
+     "x": -254,
+     "y": -94,
+     "w": 100,
+     "h": 42,
+     "text": "Technik",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "t",
+      "order": 2,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "t-10": {
+     "x": -378,
+     "y": -114,
+     "w": 60,
+     "h": 33,
+     "text": "Strom",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "t-9",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "t-11": {
+     "x": -411,
+     "y": -65,
+     "w": 93,
+     "h": 33,
+     "text": "Licht & Ton",
+     "color": "#7aa21b",
+     "mind": {
+      "parent": "t-9",
+      "order": 1,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "t-12": {
+     "x": -263,
+     "y": 29,
+     "w": 109,
+     "h": 42,
+     "text": "Werbung",
+     "color": "#e8590c",
+     "mind": {
+      "parent": "t",
+      "order": 3,
+      "side": "l",
+      "level": 1
+     }
+    },
+    "t-13": {
+     "x": -393,
+     "y": -15,
+     "w": 66,
+     "h": 33,
+     "text": "Plakate",
+     "color": "#e8590c",
+     "mind": {
+      "parent": "t-12",
+      "order": 0,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "t-14": {
+     "x": -429,
+     "y": 34,
+     "w": 102,
+     "h": 33,
+     "text": "Social Media",
+     "color": "#e8590c",
+     "mind": {
+      "parent": "t-12",
+      "order": 1,
+      "level": 2,
+      "side": "l"
+     }
+    },
+    "t-15": {
+     "x": -389,
+     "y": 83,
+     "w": 62,
+     "h": 33,
+     "text": "Presse",
+     "color": "#e8590c",
+     "mind": {
+      "parent": "t-12",
+      "order": 2,
+      "level": 2,
+      "side": "l"
+     }
+    }
+   }
+  }
+ ],
+ "sizes": [
+  {
+   "text": "",
+   "level": 0,
+   "w": 229,
+   "h": 61
+  },
+  {
+   "text": "",
+   "level": 1,
+   "w": 136,
+   "h": 42
+  },
+  {
+   "text": "",
+   "level": 2,
+   "w": 98,
+   "h": 33
+  },
+  {
+   "text": "",
+   "level": 3,
+   "w": 98,
+   "h": 33
+  },
+  {
+   "text": "A",
+   "level": 0,
+   "w": 140,
+   "h": 61
+  },
+  {
+   "text": "A",
+   "level": 1,
+   "w": 80,
+   "h": 42
+  },
+  {
+   "text": "A",
+   "level": 2,
+   "w": 60,
+   "h": 33
+  },
+  {
+   "text": "A",
+   "level": 3,
+   "w": 60,
+   "h": 33
+  },
+  {
+   "text": "Sommerfest",
+   "level": 0,
+   "w": 181,
+   "h": 61
+  },
+  {
+   "text": "Sommerfest",
+   "level": 1,
+   "w": 137,
+   "h": 42
+  },
+  {
+   "text": "Sommerfest",
+   "level": 2,
+   "w": 101,
+   "h": 33
+  },
+  {
+   "text": "Sommerfest",
+   "level": 3,
+   "w": 101,
+   "h": 33
+  },
+  {
+   "text": "Wählt Größe",
+   "level": 0,
+   "w": 180,
+   "h": 61
+  },
+  {
+   "text": "Wählt Größe",
+   "level": 1,
+   "w": 134,
+   "h": 42
+  },
+  {
+   "text": "Wählt Größe",
+   "level": 2,
+   "w": 99,
+   "h": 33
+  },
+  {
+   "text": "Wählt Größe",
+   "level": 3,
+   "w": 99,
+   "h": 33
+  },
+  {
+   "text": "office fiflo",
+   "level": 0,
+   "w": 163,
+   "h": 61
+  },
+  {
+   "text": "office fiflo",
+   "level": 1,
+   "w": 121,
+   "h": 42
+  },
+  {
+   "text": "office fiflo",
+   "level": 2,
+   "w": 87,
+   "h": 33
+  },
+  {
+   "text": "office fiflo",
+   "level": 3,
+   "w": 87,
+   "h": 33
+  },
+  {
+   "text": "AVATAR Tower",
+   "level": 0,
+   "w": 198,
+   "h": 61
+  },
+  {
+   "text": "AVATAR Tower",
+   "level": 1,
+   "w": 153,
+   "h": 42
+  },
+  {
+   "text": "AVATAR Tower",
+   "level": 2,
+   "w": 115,
+   "h": 33
+  },
+  {
+   "text": "AVATAR Tower",
+   "level": 3,
+   "w": 115,
+   "h": 33
+  },
+  {
+   "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+   "level": 0,
+   "w": 357,
+   "h": 125
+  },
+  {
+   "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+   "level": 1,
+   "w": 277,
+   "h": 89
+  },
+  {
+   "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+   "level": 2,
+   "w": 258,
+   "h": 75
+  },
+  {
+   "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+   "level": 3,
+   "w": 258,
+   "h": 75
+  },
+  {
+   "text": "Ein sehr langesWortohneLeerzeichenDasUmbrechenMussWeilEsZuBreitIst",
+   "level": 0,
+   "w": 360,
+   "h": 93
+  },
+  {
+   "text": "Ein sehr langesWortohneLeerzeichenDasUmbrechenMussWeilEsZuBreitIst",
+   "level": 1,
+   "w": 280,
+   "h": 65
+  },
+  {
+   "text": "Ein sehr langesWortohneLeerzeichenDasUmbrechenMussWeilEsZuBreitIst",
+   "level": 2,
+   "w": 260,
+   "h": 54
+  },
+  {
+   "text": "Ein sehr langesWortohneLeerzeichenDasUmbrechenMussWeilEsZuBreitIst",
+   "level": 3,
+   "w": 260,
+   "h": 54
+  },
+  {
+   "text": "Zeile 1\nZeile 2",
+   "level": 0,
+   "w": 140,
+   "h": 93
+  },
+  {
+   "text": "Zeile 1\nZeile 2",
+   "level": 1,
+   "w": 90,
+   "h": 65
+  },
+  {
+   "text": "Zeile 1\nZeile 2",
+   "level": 2,
+   "w": 60,
+   "h": 54
+  },
+  {
+   "text": "Zeile 1\nZeile 2",
+   "level": 3,
+   "w": 60,
+   "h": 54
+  },
+  {
+   "text": "🎉 Party",
+   "level": 0,
+   "w": 152,
+   "h": 61
+  },
+  {
+   "text": "🎉 Party",
+   "level": 1,
+   "w": 107,
+   "h": 42
+  },
+  {
+   "text": "🎉 Party",
+   "level": 2,
+   "w": 75,
+   "h": 33
+  },
+  {
+   "text": "🎉 Party",
+   "level": 3,
+   "w": 75,
+   "h": 33
+  },
+  {
+   "text": "Helfer:innen & Co.",
+   "level": 0,
+   "w": 244,
+   "h": 61
+  },
+  {
+   "text": "Helfer:innen & Co.",
+   "level": 1,
+   "w": 182,
+   "h": 42
+  },
+  {
+   "text": "Helfer:innen & Co.",
+   "level": 2,
+   "w": 141,
+   "h": 33
+  },
+  {
+   "text": "Helfer:innen & Co.",
+   "level": 3,
+   "w": 141,
+   "h": 33
+  },
+  {
+   "text": "  Leerzeichen  ",
+   "level": 0,
+   "w": 193,
+   "h": 61
+  },
+  {
+   "text": "  Leerzeichen  ",
+   "level": 1,
+   "w": 144,
+   "h": 42
+  },
+  {
+   "text": "  Leerzeichen  ",
+   "level": 2,
+   "w": 107,
+   "h": 33
+  },
+  {
+   "text": "  Leerzeichen  ",
+   "level": 3,
+   "w": 107,
+   "h": 33
+  }
+ ],
+ "measures": [
+  {
+   "text": "",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 0
+  },
+  {
+   "text": "",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 0
+  },
+  {
+   "text": "",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 0
+  },
+  {
+   "text": "A",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 13.495999999999999
+  },
+  {
+   "text": "A",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 11.664
+  },
+  {
+   "text": "A",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 10.08
+  },
+  {
+   "text": "Sommerfest",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 124.096
+  },
+  {
+   "text": "Sommerfest",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 98.388
+  },
+  {
+   "text": "Sommerfest",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 86.656
+  },
+  {
+   "text": "Wählt Größe",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 122.472
+  },
+  {
+   "text": "Wählt Größe",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 95.994
+  },
+  {
+   "text": "Wählt Größe",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 84.864
+  },
+  {
+   "text": "office fiflo",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 105.28
+  },
+  {
+   "text": "office fiflo",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 82.332
+  },
+  {
+   "text": "office fiflo",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 72.544
+  },
+  {
+   "text": "AVATAR Tower",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 139.72
+  },
+  {
+   "text": "AVATAR Tower",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 114.516
+  },
+  {
+   "text": "AVATAR Tower",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 100.352
+  },
+  {
+   "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 804.496
+  },
+  {
+   "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 622.152
+  },
+  {
+   "text": "Bands, Musik und alles, was auf der großen Bühne passiert – mit Zeilenumbruch",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 548.72
+  },
+  {
+   "text": "Ein sehr langesWortohneLeerzeichenDasUmbrechenMussWeilEsZuBreitIst",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 742.8679999999999
+  },
+  {
+   "text": "Ein sehr langesWortohneLeerzeichenDasUmbrechenMussWeilEsZuBreitIst",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 587.5740000000001
+  },
+  {
+   "text": "Ein sehr langesWortohneLeerzeichenDasUmbrechenMussWeilEsZuBreitIst",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 519.152
+  },
+  {
+   "text": "Zeile 1\nZeile 2",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 142.968
+  },
+  {
+   "text": "Zeile 1\nZeile 2",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 110.232
+  },
+  {
+   "text": "Zeile 1\nZeile 2",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 97.312
+  },
+  {
+   "text": "🎉 Party",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 95.172
+  },
+  {
+   "text": "🎉 Party",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 68.562
+  },
+  {
+   "text": "🎉 Party",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 60.528
+  },
+  {
+   "text": "Helfer:innen & Co.",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 184.184
+  },
+  {
+   "text": "Helfer:innen & Co.",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 143.352
+  },
+  {
+   "text": "Helfer:innen & Co.",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 126.512
+  },
+  {
+   "text": "  Leerzeichen  ",
+   "family": "Barlow Condensed",
+   "weight": 700,
+   "fs": 28,
+   "width": 145.99200000000002
+  },
+  {
+   "text": "  Leerzeichen  ",
+   "family": "Barlow",
+   "weight": 600,
+   "fs": 18,
+   "width": 112.356
+  },
+  {
+   "text": "  Leerzeichen  ",
+   "family": "Barlow",
+   "weight": 500,
+   "fs": 16,
+   "width": 99.184
+  }
+ ]
+}

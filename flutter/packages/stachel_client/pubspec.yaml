@@ -1,0 +1,41 @@
+name: stachel_client
+description: >-
+  App layer of native Stachel shared by the Stachel app and host apps: board list (home), board screen with its
+  hosts (admin, documents, comments, tools), boards API with the app session (`sts_…`, contract §8.1), caches, offline
+  boards, photos, share target (Dart side), sharing dialog. The app around it plugs in through `StachelClient`
+  (login, branding, extras). See docs/stachel_app_konzept.md.
+publish_to: 'none'
+version: 1.3.0
+
+environment:
+  sdk: ^3.11.0
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  stachel_board:
+    path: ../stachel_board
+  http: ^1.2.0
+  shared_preferences: ^2.3.0
+  crypto: ^3.0.3
+  share_plus: ^13.3.0
+  path_provider: ^2.1.6
+  file_picker: ^12.0.0
+  audioplayers: ^6.8.1
+  url_launcher: 6.3.3
+  image_picker: 1.2.4
+  image: 4.8.0
+  pdfrx: 2.11.0
+  pasteboard: 0.6.0
+  flutter_secure_storage: 11.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# PDFium license texts for the apps' license page (registerStachelLicenses, docs/legal/lizenzen.md §5.2)
+flutter:
+  assets:
+    - assets/licenses/pdfium/

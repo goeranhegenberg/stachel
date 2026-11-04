@@ -1,0 +1,25 @@
+{
+  // Prüft die Brücke zum mitbenutzten Web-Code (src/native/web-impl.ts) mit den Regeln der Web-App: Die Server-Regeln
+  // (noUncheckedIndexedAccess) gelten für web/src nicht. Gebündelt wird beides mit esbuild (build.mjs).
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"],
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "yjs": ["./node_modules/yjs"],
+      "nanoid": ["./node_modules/nanoid"],
+      "fractional-indexing": ["./node_modules/fractional-indexing"]
+    }
+  },
+  "include": ["src/native/web-impl.ts", "src/native/web-api.ts", "../shared/**/*.ts"]
+}

@@ -1,0 +1,545 @@
+/* ---- Rich-Text im Objekt (Anzeige und Editor teilen sich die Regeln) ---------------------------------------- */
+.rt {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-variant-ligatures: none;
+}
+.rt p,
+.rt h1,
+.rt h2,
+.rt h3,
+.rt ul,
+.rt ol,
+.rt blockquote,
+.rt pre {
+  margin: 0;
+}
+.rt h1 {
+  font-size: 1.6em;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.rt h2 {
+  font-size: 1.32em;
+  font-weight: 750;
+  line-height: 1.15;
+}
+.rt h3 {
+  font-size: 1.12em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.rt ul,
+.rt ol {
+  padding-left: 1.3em;
+  text-align: left;
+}
+.rt[data-align='center'] :is(ul, ol):not([data-type='taskList']),
+.rt[data-align='right'] :is(ul, ol):not([data-type='taskList']) {
+  /* Liste in zentriertem Text: Punkte wandern mit dem Text */
+  padding-left: 0;
+  list-style-position: inside;
+  text-align: inherit;
+}
+.rt[data-align='center'] :is(ul, ol) li > p,
+.rt[data-align='right'] :is(ul, ol) li > p {
+  display: inline;
+}
+.rt ul {
+  list-style: disc;
+}
+.rt ul ul {
+  list-style: circle;
+}
+.rt ol {
+  list-style: decimal;
+}
+.rt li::marker {
+  font-weight: 700;
+}
+.rt ul[data-type='taskList'] {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+.rt ul[data-type='taskList'] > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35em;
+}
+.rt ul[data-type='taskList'] > li > label {
+  flex: none;
+  display: inline-flex;
+  margin-top: 0.18em;
+  user-select: none;
+}
+.rt ul[data-type='taskList'] > li > label input {
+  appearance: none;
+  width: 0.9em;
+  height: 0.9em;
+  margin: 0;
+  border: 0.11em solid currentColor;
+  border-radius: 0.2em;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.rt ul[data-type='taskList'] > li > label input:checked {
+  background: currentColor;
+}
+.rt ul[data-type='taskList'] > li > label input:checked::after {
+  content: '';
+  width: 0.24em;
+  height: 0.45em;
+  margin-top: -0.08em;
+  border: solid #fff;
+  border-width: 0 0.11em 0.11em 0;
+  transform: rotate(45deg);
+}
+.rt ul[data-type='taskList'] > li > label span {
+  display: none;
+}
+.rt ul[data-type='taskList'] > li > div {
+  flex: 1;
+  min-width: 0;
+}
+.rt ul[data-type='taskList'] > li[data-checked='true'] > div {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+/* auf dem Board (nicht im Editor) hakt ein Klick das Kästchen ab, ohne zu bearbeiten */
+.rt:not(.editing) ul[data-type='taskList'] > li > label input {
+  cursor: pointer;
+}
+.rt[data-locked]:not(.editing) ul[data-type='taskList'] > li > label {
+  pointer-events: none;
+}
+.rt blockquote {
+  padding-left: 0.6em;
+  border-left: 0.18em solid currentColor;
+  opacity: 0.85;
+  text-align: left;
+}
+.rt pre {
+  padding: 0.35em 0.5em;
+  border-radius: 0.3em;
+  background: rgba(10, 10, 10, 0.08);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.85em;
+  text-align: left;
+  white-space: pre-wrap;
+}
+.rt code {
+  padding: 0.05em 0.25em;
+  border-radius: 0.2em;
+  background: rgba(10, 10, 10, 0.08);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.88em;
+}
+.rt pre code {
+  padding: 0;
+  background: none;
+  font-size: 1em;
+}
+.rt hr {
+  margin: 0.4em 0;
+  border: 0;
+  border-top: 0.1em solid currentColor;
+  opacity: 0.35;
+}
+.rt mark,
+.rt .rt-hl {
+  color: inherit;
+  padding: 0 0.08em;
+  border-radius: 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.rt u {
+  text-underline-offset: 0.12em;
+}
+.rt a.rt-link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.14em;
+  cursor: pointer;
+}
+/* dunkle Haftnotiz/Form: Link hell genug */
+.obj-shape .rt a.rt-link,
+.obj-sticky .rt a.rt-link {
+  color: color-mix(in srgb, var(--blue) 82%, currentColor);
+}
+.rt-trail {
+  user-select: none;
+}
+
+/* Tabs (aus Excel/TSV): höchstens eine Leerzeichenbreite, wie die Canvas-Messung der automatischen Schriftgröße */
+.rt,
+.sticky-text,
+.shape-text,
+.text-content,
+.conn-label-text {
+  tab-size: 1;
+}
+
+/* Text passt selbst in kleinster Schrift nicht in die Notiz: unten ausblenden, beim Bearbeiten scrollen */
+.sticky-text.rt-clip:not(.editing) {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 1.4em), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 1.4em), transparent);
+}
+.sticky-text.editing {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+/* ---- Editor (ProseMirror) ------------------------------------------------------------------------------------ */
+.rt.editing {
+  position: relative;
+  outline: none;
+  white-space: pre-wrap;
+  white-space: break-spaces;
+}
+.rt.editing.text-content[style*='white-space: pre'] {
+  white-space: pre;
+}
+.rt.editing p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: rgba(10, 10, 10, 0.35);
+  pointer-events: none;
+}
+.rt.editing ::selection {
+  background: rgba(23, 99, 181, 0.24);
+}
+.rt.editing img.ProseMirror-separator {
+  display: inline !important;
+  border: none !important;
+  margin: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.rt.editing .ProseMirror-gapcursor {
+  display: none;
+}
+.rt.editing a.rt-link {
+  cursor: text;
+}
+
+/* Schreibmarken anderer Personen */
+.rt-caret {
+  position: relative;
+  margin: 0 -1px;
+  border-left: 2px solid var(--rt-caret);
+  word-break: normal;
+  pointer-events: none;
+}
+.rt-caret::after {
+  content: attr(data-name);
+  position: absolute;
+  left: -2px;
+  bottom: 100%;
+  padding: 1px 5px;
+  border-radius: 4px 4px 4px 0;
+  background: var(--rt-caret);
+  color: #fff;
+  font: 600 11px/1.3 var(--font);
+  font-style: normal;
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+.rt-peer-sel {
+  border-radius: 2px;
+}
+
+/* Verbinder-Beschriftung bearbeiten */
+.richtext-label-edit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  min-width: 80px;
+  max-width: 320px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1.5px var(--blue),
+    0 2px 10px -4px rgba(10, 10, 10, 0.35);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  pointer-events: auto;
+}
+.richtext-label-edit .conn-label-text {
+  display: block;
+  min-height: 1.25em;
+}
+
+/* ---- Format-Leiste beim Schreiben ------------------------------------------------------------------------------ */
+/* Die Kern-Kontextleiste weicht, solange geschrieben wird */
+body:has(.richtext-bar) .ctxbar {
+  display: none;
+}
+.richtext-bar {
+  position: fixed;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 46px;
+  padding: 0 5px;
+  border-radius: 12px;
+  font-family: var(--font);
+  animation: fade-in 0.12s ease;
+  user-select: none;
+}
+.richtext-bar--docked {
+  left: calc(8px + var(--safe-l, 0px));
+  right: calc(8px + var(--safe-r, 0px));
+  bottom: calc(10px + max(var(--safe-b, 0px), var(--rt-kb, 0px)));
+  justify-content: space-evenly;
+  padding: 0 2px;
+}
+/* Am Handy passt alles ohne Wischen: wichtige Knöpfe direkt, der Rest unter „Mehr“ */
+.richtext-bar--docked .ctx-group {
+  padding: 0 2px;
+}
+.richtext-family-btn {
+  height: 34px;
+  max-width: 150px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 7px 0 9px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.richtext-family-btn span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.richtext-family-btn:hover,
+.richtext-family-btn[aria-expanded='true'] {
+  background: var(--ink-3);
+}
+.richtext-family-btn svg {
+  flex: none;
+  opacity: 0.7;
+}
+.richtext-fmt--u {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+.richtext-pop-wrap {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+}
+.richtext-bar--docked .richtext-pop-wrap {
+  position: fixed;
+  top: auto;
+  left: calc(8px + var(--safe-l, 0px));
+  bottom: calc(66px + max(var(--safe-b, 0px), var(--rt-kb, 0px)));
+  max-width: calc(100vw - 16px - var(--safe-l, 0px) - var(--safe-r, 0px));
+}
+/* nie über den sichtbaren Ausschnitt hinaus (Tastatur offen): dann scrollt das Popover selbst */
+.richtext-bar--docked .richtext-pop-wrap > .ctx-pop {
+  max-height: calc(var(--rt-vh, 100vh) - 66px - 12px);
+  overflow-y: auto;
+}
+.ctx-pop.richtext-pop--more {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+}
+.richtext-more-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.richtext-more-fonts {
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 2px;
+}
+.richtext-pop-wrap > .ctx-pop {
+  position: static;
+}
+.ctx-pop.richtext-pop--swatches {
+  grid-template-columns: repeat(4, 26px);
+}
+.richtext-chip-wide {
+  grid-column: 1 / -1;
+}
+.ctx-pop.richtext-pop--fonts {
+  flex-direction: column;
+  align-items: stretch;
+  width: 210px;
+  gap: 2px;
+}
+.richtext-font {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: #e9e9e4;
+  font-size: 17px;
+  text-align: left;
+  white-space: nowrap;
+}
+.ctx-num.richtext-block-btn {
+  min-width: 38px;
+  font-weight: 700;
+}
+.ctx-pop.richtext-pop--blocks {
+  width: 200px;
+}
+.richtext-block--h1 {
+  font-size: 22px;
+  font-weight: 800;
+}
+.richtext-block--h2 {
+  font-size: 19px;
+  font-weight: 750;
+}
+.richtext-block--h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+.richtext-block--quote {
+  font-style: italic;
+  box-shadow: inset 3px 0 0 currentColor;
+}
+.richtext-block--code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 15px;
+}
+.richtext-font:hover {
+  background: var(--ink-3);
+  color: #fff;
+}
+.richtext-font.is-active {
+  background: var(--green);
+  color: var(--ink);
+}
+.ctx-pop.richtext-pop--link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  width: 360px;
+  max-width: calc(100vw - 24px);
+  padding: 8px;
+}
+.richtext-link-input {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: 500 15px var(--font);
+  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.richtext-link-input:focus {
+  box-shadow: inset 0 0 0 2px var(--green);
+}
+.richtext-link-input.is-error {
+  box-shadow: inset 0 0 0 2px var(--pink);
+}
+.richtext-link-ok.btn {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 15px;
+}
+.richtext-link-error {
+  flex-basis: 100%;
+  padding: 0 4px;
+  color: #ff9cc6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---- Link öffnen? ------------------------------------------------------------------------------------------- */
+.richtext-confirm {
+  position: fixed;
+  z-index: 70;
+  width: max-content;
+  max-width: min(360px, calc(100vw - 16px));
+  padding: 12px 12px 10px 14px;
+  border-radius: 12px;
+  animation: pop-in 0.12s ease;
+}
+.richtext-confirm-title {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.richtext-confirm-url {
+  margin: 4px 0 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.richtext-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.richtext-confirm-actions .btn {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 15px;
+}
+.richtext-confirm-cancel.btn {
+  color: #e9e9e4;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.3);
+}
+.richtext-confirm-cancel.btn:hover {
+  color: #fff;
+  box-shadow: inset 0 0 0 1.5px #fff;
+}
+/* „Mara schreibt hier gerade“ über einem Objekt (Writing.tsx) */
+.richtext-writing {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font: 600 12px/18px var(--font);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: richtext-writing-pulse 1.6s ease-in-out infinite;
+}
+@keyframes richtext-writing-pulse {
+  50% {
+    opacity: 0.75;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .richtext-writing {
+    animation: none;
+  }
+}

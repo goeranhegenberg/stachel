@@ -1,0 +1,4459 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "serialNumber": "urn:uuid:6971fc93-6212-4a9d-98f6-ba52b6cde93a",
+  "metadata": {
+    "timestamp": "2026-11-02T16:17:58.123Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "npm",
+          "version": "11.21.1"
+        },
+        {
+          "type": "application",
+          "name": "cyclonedx-npm",
+          "group": "@cyclonedx",
+          "version": "4.2.1",
+          "author": "Jan Kowalleck",
+          "description": "Create CycloneDX Software Bill of Materials (SBOM) from NPM projects.",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=20.18.0"
+            },
+            {
+              "name": "cdx:npm:package:constraint:engine:npm",
+              "value": ">=9"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "cyclonedx-library",
+          "group": "@cyclonedx",
+          "version": "10.3.0",
+          "author": "Jan Kowalleck",
+          "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=20.18.0"
+            }
+          ]
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "stachel-web",
+      "version": "0.1.0",
+      "bom-ref": "stachel-web@0.1.0",
+      "purl": "pkg:npm/stachel-web@0.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": ""
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "stachel:erzeugt",
+        "value": "Kopie von package.json+package-lock.json; npm ci --ignore-scripts --omit=dev --os=linux --cpu=x64 --libc=glibc; npx @cyclonedx/cyclonedx-npm@4 --omit dev --spec-version 1.5. Komponenten mit bom-ref \"extra|...\" manuell ergaenzt (nicht-npm, mit ausgeliefert)."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "barlow-condensed",
+      "group": "@fontsource",
+      "version": "5.3.0",
+      "bom-ref": "stachel-web@0.1.0|@fontsource/barlow-condensed@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fontsource/barlow-condensed@5.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fontsource/barlow-condensed/-/barlow-condensed-5.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "440ecc988c74bf7790e8671fef8a8b54b3b02c1d06a4f3b3c7e794f621bf0260a748919c21661e53ccba084306676d74306c068390998732e492fc997534e4d6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fontsource/barlow-condensed"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-1.1: Lizenztext mitliefern"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "barlow",
+      "group": "@fontsource",
+      "version": "5.3.0",
+      "bom-ref": "stachel-web@0.1.0|@fontsource/barlow@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fontsource/barlow@5.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fontsource/barlow/-/barlow-5.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b46474cba40e6d1b4abfbd4c3ad878e36db6fa674d14cfd958558357554bccd6c6e282bd3cd465c89ce691c938bc7022f626c705782de12958e756a614fe7908"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fontsource/barlow"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-1.1: Lizenztext mitliefern; Server liefert woff2 fuer QR-Seite (server/src/qr-page.ts:6)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jetbrains-mono",
+      "group": "@fontsource",
+      "version": "5.3.0",
+      "bom-ref": "stachel-web@0.1.0|@fontsource/jetbrains-mono@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fontsource/jetbrains-mono@5.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fontsource/jetbrains-mono/-/jetbrains-mono-5.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7ea0df07923d7f5a754d5e3ce9a52007db7cccff383f43b516d411e4e97dbe3c0fcbe4be1081a55589b572f8f65b9b217193138369d915d54ca07e7016ef1ad4"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fontsource/jetbrains-mono"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-1.1: Lizenztext mitliefern"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "source-serif-4",
+      "group": "@fontsource",
+      "version": "5.3.1",
+      "bom-ref": "stachel-web@0.1.0|@fontsource/source-serif-4@5.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fontsource/source-serif-4@5.3.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fontsource/source-serif-4/-/source-serif-4-5.3.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7167130978d862b805f40ebb7d38558abd5549cd253c4626c10ea3038a4fb74d6cd8c4828bf99a20d51c6680b36aa9d4f1fc9445e0cef7b7867015241e039eba"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fontsource/source-serif-4"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-1.1, Reserved Font Name \"Source\" (Adobe); Lizenztext mitliefern"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "provider",
+      "group": "@hocuspocus",
+      "version": "4.7.1",
+      "bom-ref": "stachel-web@0.1.0|@hocuspocus/provider@4.7.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40hocuspocus/provider@4.7.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@hocuspocus/provider/-/provider-4.7.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "ce7ba5ab20b0c2e86af3a68599317a8b33a89b045695919178201ff926692e0a6f75fbc1409ce3a23f4776db975df2fdc2404cd9876df3a91a32cdab8da89c44"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@hocuspocus/provider"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "core",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/core@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/core@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/core/-/core-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1a1876874d86292ab3cad40670b5787aca58386e041f18e3d0cb2b501d959ebe3bc669596117faafb936274f47f89a4175a1ab5b0ad39320448b98b7737cb2d9"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/core"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-highlight",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-highlight@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-highlight@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-highlight/-/extension-highlight-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "eaaef94140b7893efe4e530b841489012969c8efdff98db6b41ebc85c75b8398455bc7e5f33bfc9e9fe8473c687809e2b3ee05670f43e567e139dc2ed42f8c5b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-highlight"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-list",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-list@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-list@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-list/-/extension-list-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "41dcd2e67173f5a80042106022e425ba86d689bdfd5b670c2b1d5707ab584ae7bb6c73097603c53f412719f15a8da7955f8d821ba457b505ab35fc9018a841be"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-list"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-text-style",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-text-style@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-text-style@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-text-style/-/extension-text-style-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f94f0592b340538e7e7c7828e0361f9dd4bf5ae861cadb59fb34f239b1755b8549f300e2018a97925ef59d0726309cb22b8ef278d518f427e35289886841e1a4"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-text-style"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extensions",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extensions@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extensions@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extensions/-/extensions-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a8efa774dbe53a3cd4d8c582b501e8460d6d228aed0972efa8f8c3c79f05d6951814d08e5597a05e2fa3a8b183383500df57abf93573ebaba6cd16db3756ced5"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extensions"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pm",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/pm@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/pm@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/pm/-/pm-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1fd78dfb11c56e82726c4eca3c656cbb6e12f1a065088818cf7f2f0874529cdbf5ee7c26aa6d3aa30abf210e6c7336b49f763b21f51fa603ceb66f5281e1e635"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/pm"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "starter-kit",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/starter-kit@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/starter-kit@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/starter-kit/-/starter-kit-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "68f63169ebdc8b83e032b4cbb20f9b6a2a88eccd4809de15f47fb34d376baacf0e51921b02f8ffa4d0ee1d4f2e599c8a32edc387bdadd83e9976a46effa6925b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/starter-kit"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fractional-indexing",
+      "version": "4.0.0",
+      "bom-ref": "stachel-web@0.1.0|fractional-indexing@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "CC0-1.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fractional-indexing@4.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fractional-indexing/-/fractional-indexing-4.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "36bd8fd58c9a8f6b32d5076dff023719c072c6b51d6d22a0e7e706bf0f1fd7c853d92910b7a57bda23a306993b20edd493306c765191b366b8cfa74bac9a6b83"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fractional-indexing"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "CC0-1.0 (Public-Domain-Widmung) - unkritisch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lucide",
+      "version": "1.61.0",
+      "bom-ref": "stachel-web@0.1.0|lucide@1.61.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lucide@1.61.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/lucide/-/lucide-1.61.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "44f34c0607a3e968cf2ae08d10e0e0f37085f259eb6827833ac6771d9ecabd461fd0ee617490737abfc0c7f99e047977c6fae9e4d98a5f42030399b2cb396f1b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lucide"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "ISC + MIT (Feather-Teilmenge) - beide Hinweise noetig; 268 Icons auch in der Flutter-App (web_constants.g.dart)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "nanoid",
+      "version": "6.0.2",
+      "bom-ref": "stachel-web@0.1.0|nanoid@6.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/nanoid@6.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/nanoid/-/nanoid-6.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "848bd539bf50af5a7ff4234d2ce7b43a55af831ff3893b15c0a37f1834acb80acdd8ad300e269f3f7b344969ac9bba3605d9f24bc67d67ae0d14151b9face206"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/nanoid"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfjs-dist",
+      "version": "6.4.299",
+      "bom-ref": "stachel-web@0.1.0|pdfjs-dist@6.4.299",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pdfjs-dist@6.4.299",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-6.4.299.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "015975dfccc02ed7da00fbc00ee944d0f65385b6330814bbf672f8a4e48bffa4a6ff8007e40db5043f551edf7b3a50aecc9b82a66799b40b648a78ac17855bd6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pdfjs-dist"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "Apache-2.0; bringt Liberation Sans 1.07.4 (GPL-2.0 mit Font-Exception), Foxit-Fonts, Adobe-CMaps, wasm-Decoder ins Web-Bundle (siehe Extra-Zeilen)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "qrcode",
+      "version": "1.5.4",
+      "bom-ref": "stachel-web@0.1.0|qrcode@1.5.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/qrcode@1.5.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/qrcode/-/qrcode-1.5.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d5c6bbd59822bba3918c7a85043a6748c4d1d91793a17e25d40bb55452f255e05315abf3427bf9271305af7ba41d52a94ab480d8c0a4d253494b292351fcfb66"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/qrcode"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.3.1",
+      "bom-ref": "stachel-web@0.1.0|react-dom@19.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/react-dom@19.3.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6346c0473e77961102d4d302012b34fe3f9f681ff3aaddd1f21a6f8357bcfbad59549e142f451d0b87016d77d931c22e86b7e07882d32def9978109abd03ed29"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/react-dom"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react",
+      "version": "19.3.1",
+      "bom-ref": "stachel-web@0.1.0|react@19.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/react@19.3.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/react/-/react-19.3.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "40d85676dee7ae05565901b9f10b86b004778efdc76dee266f8bf3ef0d9cb271dabdc89926075ad423cd6a5745e9e571bfdd2e7778d45e92a51cbebd80edfccb"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/react"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "y-prosemirror",
+      "version": "1.3.7",
+      "bom-ref": "stachel-web@0.1.0|y-prosemirror@1.3.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/y-prosemirror@1.3.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/y-prosemirror/-/y-prosemirror-1.3.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "36933df5649d0f8171e227f9c4e303a4fb54de80264d28e5ce1e54e37e770016d11e5d47b40154c7a1e579b2d97f21715cdf63cca3039156dc463a8e65591842"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/y-prosemirror"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "y-protocols",
+      "version": "1.0.7",
+      "bom-ref": "stachel-web@0.1.0|y-protocols@1.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/y-protocols@1.0.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/y-protocols/-/y-protocols-1.0.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "61256c2e85f13baec9e9e13f9d5e00b45b53dd0128b597f9b0ae411f11415eca3b543513dd3c74ec87c0ea1b2ee50e4e98174c910566159f50380edf8a45af9f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/y-protocols"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yjs",
+      "version": "13.6.33",
+      "bom-ref": "stachel-web@0.1.0|yjs@13.6.33",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/yjs@13.6.33",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/yjs/-/yjs-13.6.33.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "abf518bebd603a4e17208f82bb5096d9d20d8d8a8924589f4f3a2011a2004739ebbd7eee3a51ec75311772738132e22cac218410a74dc62ef893230b6652957f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/yjs"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "common",
+      "group": "@hocuspocus",
+      "version": "4.7.1",
+      "bom-ref": "stachel-web@0.1.0|@hocuspocus/common@4.7.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40hocuspocus/common@4.7.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@hocuspocus/common/-/common-4.7.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f8de2df007412160542bec87b2e06f09c066f7a795d84deab887b099af7e4d8a26a9531786ba2f01fddd03a5c56d81d133b820b579251edda616a4dca6231d01"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@hocuspocus/common"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "attempt",
+      "group": "@lifeomic",
+      "version": "3.1.0",
+      "bom-ref": "stachel-web@0.1.0|@lifeomic/attempt@3.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40lifeomic/attempt@3.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@lifeomic/attempt/-/attempt-3.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "419a9e9b842e027032cdfcfe1a3e7ff922f1ab0080c36aa6b7bef7d995e876be950d619e60b1bac358bfbd82dae7925033dc11b8128b9979a26763f42ed139af"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@lifeomic/attempt"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lib0",
+      "version": "0.2.119",
+      "bom-ref": "stachel-web@0.1.0|lib0@0.2.119",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lib0@0.2.119",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/lib0/-/lib0-0.2.119.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "be1f9389e8d5cbc5e6fa109d9d17e7f41b6118dbcd5197445e5b4d8d564bdd3cd120a3f7b35967421f2959dfd0d300a063414f0065558c51786621d45772c580"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lib0"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-changeset",
+      "version": "2.4.4",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-changeset@2.4.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-changeset@2.4.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-changeset/-/prosemirror-changeset-2.4.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1b2bb3f6361dac0780f48ec086897239eb3d2949affe5130b02e4ef6ce71179541dc48133ec5cc194c73e3e1f507ec0a54f7596ef45c8350a9df1f2a5fef287c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-changeset"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-commands",
+      "version": "1.7.2",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-commands@1.7.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-commands@1.7.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-commands/-/prosemirror-commands-1.7.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "aba43ab33c6a76ef5777a11c74ab2a5e086ee6741d653a41e10f72774e1645ceff8edefaddefeb4fad0ec21d0bd46618f93e3aa39ac3fbd944377e9d652e37b7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-commands"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-dropcursor",
+      "version": "1.8.4",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-dropcursor@1.8.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-dropcursor@1.8.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-dropcursor/-/prosemirror-dropcursor-1.8.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5662b185c03a6be879a0f49899f17564d790a8f6f261a231a99b0aa9e602c9394fb6b8d480d6872f73fcbd568ed7da2a015d33b9a33f6b1928c191eb0753f74e"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-dropcursor"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-gapcursor",
+      "version": "1.4.1",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-gapcursor@1.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-gapcursor@1.4.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-gapcursor/-/prosemirror-gapcursor-1.4.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a4c7586849e334c4b0975d728c41ad81398b911d3c9bf565f898f8e37d7aee9f5e0771d540a85809ce20987543b0b3ce0df65f8ebfcc9a2aec7726738976d02b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-gapcursor"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-history",
+      "version": "1.5.1",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-history@1.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-history@1.5.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-history/-/prosemirror-history-1.5.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a279709ea2af82d160eacad93a60ce021940cb51481d0a4e131391c9b5f44be0ef25ea44e6d3c02eb07d8867adff6b2aaaaade9529c1d743a888e26a02fbb60c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-history"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-inputrules",
+      "version": "1.5.1",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-inputrules@1.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-inputrules@1.5.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-inputrules/-/prosemirror-inputrules-1.5.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "ef08f8b8c8ca69758043508383137336d47d025b2ec331df7451f5ca01070362871760ce11a5e5d4225f34f00a0a0f6a344878aee9bdef940b6828903f263a17"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-inputrules"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-keymap",
+      "version": "1.2.3",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-keymap@1.2.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-keymap@1.2.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-keymap/-/prosemirror-keymap-1.2.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e07b9c465a622ddd483d041736a7a8f35046b6463c022e6c98784a5bd8e33ca45cdb0408c64b20ec7975b5323621f4f607f2e05fa6df62f5f1129265eda2982b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-keymap"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-model",
+      "version": "1.25.12",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-model@1.25.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-model@1.25.12",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-model/-/prosemirror-model-1.25.12.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "51eda04e65cc6bb121a4b3610bb27e878fb2903f216b5d8aeabad914528a247045a2b7c84adc39809e99adfd66aaa01af4d9a9984078c29f5b2a60387945635a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-model"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-schema-list",
+      "version": "1.5.1",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-schema-list@1.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-schema-list@1.5.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-schema-list/-/prosemirror-schema-list-1.5.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f76ee5171feec3241a1b02712d60994648d71b4a78f0aa4c8fab9ea188aee095f4e461ae19c833032eb675f895f1e1597ed832054bcbc7be91b0c7b6d1f265f9"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-schema-list"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-state",
+      "version": "1.4.4",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-state@1.4.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-state@1.4.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-state/-/prosemirror-state-1.4.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "ea38981c7d822066c27e7c5d1db5d9d7683248563f7f3fee959137df71ba6cfa8867817e4d7a3d89f891f3a9c01e95a77e836339bde8e444a2ec9f14cf58d71f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-state"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-tables",
+      "version": "1.8.5",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-tables@1.8.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-tables@1.8.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-tables/-/prosemirror-tables-1.8.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "57fd1c0c2b072877bfb5f5a47829ad84d51c129d4854ede9eafc0df17b7013d3d940b01926281bc37428ada01d7c93e2af834a26d36f381f2860629197eb740f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-tables"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-transform",
+      "version": "1.12.4",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-transform@1.12.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-transform@1.12.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-transform/-/prosemirror-transform-1.12.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "dbf5ae3ee9b7a67f8efd58b6bf3a62f36d7420251eda420f5dd2d88d0d3d3efe43b53e5b70a58c26100a3c1c2fa4f8e9a7988e614570544af480e335058d4c83"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-transform"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-view",
+      "version": "1.42.7",
+      "bom-ref": "stachel-web@0.1.0|prosemirror-view@1.42.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prosemirror-view@1.42.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/prosemirror-view/-/prosemirror-view-1.42.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "69320050de33743f954bb82cbfd3e8f52b72f3507aca5e83dc78200a8b2bcbd0cb613995a38a268dca8808320e3e73c99ac91152ca8b227c418da1fb23e050e1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prosemirror-view"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-blockquote",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-blockquote@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-blockquote@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-blockquote/-/extension-blockquote-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c26bad84476561502b36851ba853c7df9822bad040045bbb7ea101d254c3d64d145c952ce1d16f71b4721965a09c715980fdd34f8bbc7bec626b2630d1e43435"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-blockquote"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-bold",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-bold@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-bold@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-bold/-/extension-bold-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "49061ec27603a0804dfbca07e77203703f29f8fcfe267caade1af18f2fc5028e5cb5cfbde9ddd92dda9cf60ccb552a85168fd250836fd85546a2af4fbd4ef2ab"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-bold"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-bullet-list",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-bullet-list@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-bullet-list@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-bullet-list/-/extension-bullet-list-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6393ff974ea9542506e3abd7a41977cf47d6d9be89a52317e02bebfb9b1f421f330774f1c1288b41a68fc08dd1e4c143d4a7d193702388f462784c9775670d1f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-bullet-list"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-code-block",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-code-block@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-code-block@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-code-block/-/extension-code-block-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f4d656ff25cff63f572abfa1452e66e7cc62c9923eb50a353c9ede2c75e318d156685eb4d4d1bf87aef8d666ca879b82639d57b1bcaa1beeeab9ef916af9e03c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-code-block"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-code",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-code@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-code@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-code/-/extension-code-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "23e684565d1d4e691f9d4e87cc118479f6fd53b8dad8c92e730041c2b9a833053eb882a90b8c70f0d7070bd5fab2301ca26dcfc6cd875fef16128e15a75dd1fd"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-code"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-document",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-document@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-document@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-document/-/extension-document-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1ae81e284e809d90e5b915c950d06e5f8dd33dc689c72e70724eaf4f62786b4fc49ca4ad278decb926597f520f7dbd628fd10bf5b62f03083d0ce72bbdd1334d"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-document"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-dropcursor",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-dropcursor@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-dropcursor@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-dropcursor/-/extension-dropcursor-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b78520f2114bb77d1dc3062fae1eb705552de8dd588393d5237b4c96584298ddd0ebca03e3bbf8301fe2e6719fcc8b10a8cc9750e7adc07256719e0ca0b4f1e1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-dropcursor"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-gapcursor",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-gapcursor@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-gapcursor@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-gapcursor/-/extension-gapcursor-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1d4a4a29624bb6d867a506392c88c794924e9a1e7ad91bac98e3087bfe223ff1fbcbe59447d6458998c4b353419118e283d7f08fc17705fb2b54f6019cce272c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-gapcursor"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-hard-break",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-hard-break@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-hard-break@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-hard-break/-/extension-hard-break-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "20a518bcaf9b3b6846ac35a1853560d024a1f42d9b7a55a0f46c8bcefa72777499c90f4481d71c2dfa32b4d8ce04a6c013f4d0e0ea379123fe5c5e91b1420a3c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-hard-break"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-heading",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-heading@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-heading@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-heading/-/extension-heading-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5d1899c59ba17e3bdb8300afa011e3d3880eb0f00d117c71470ac509056e162e727931d82333048a873cd63ea2007f6957b6907890b02f1ba1e951cdcf775711"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-heading"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-horizontal-rule",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-horizontal-rule@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-horizontal-rule@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-horizontal-rule/-/extension-horizontal-rule-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "22bcbbca7b06e3181cc671f5726fae5c99c4b54ce8a29e2c180d7435437d23ed3c4ce8e18ff1ab0e244a3101ca022548fd1eedd8c55abf530997115fd857731b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-horizontal-rule"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-italic",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-italic@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-italic@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-italic/-/extension-italic-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "281fe2d71a078a56c119c43e528b435a18bad0aa5d09d7b7473448a65da76b4628978cf815ed8845683c96322b96cb2c0d1c1e97f7ec1c96c6edad7710ff2828"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-italic"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-link",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-link@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-link@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-link/-/extension-link-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "0d17504a058f4848eb0e0e440c1079cb1472807b5454b85c7951b302c4f3f11ce2885caf73002fcc11c23bd85df63bad8c25d0d832c8b9907c3fe6878455a7a6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-link"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-list-item",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-list-item@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-list-item@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-list-item/-/extension-list-item-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "15d2530807802e2c73cb21924849aba179a42047256e8ff8b763e5d37691111aa93ce48f25c0b77af0ed2212dacd3b8feaff858c2989fa95cdaa5ea8bfbaa2b4"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-list-item"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-list-keymap",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-list-keymap@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-list-keymap@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-list-keymap/-/extension-list-keymap-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "bd716b7b5f039369b937f823a38d3c0b4d864aba2567c6487f4c33ebf53c94d0b815c60e212819163dc1343eae69b567b4687618248fad516e36954f8459e7fc"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-list-keymap"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-ordered-list",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-ordered-list@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-ordered-list@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-ordered-list/-/extension-ordered-list-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "86d67986830b0641a20cfe8ce6619e9a33a86819a4ae3f75d70886a1398c30acceeea26af50c540642d8ec82cf68a95458bf14ddc70b7435764c1fe7caca7826"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-ordered-list"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-paragraph",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-paragraph@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-paragraph@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-paragraph/-/extension-paragraph-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "69f28b31cedf58c9246abf47e458a58b34ad49b845cd4a02cddc307597fa0c3b27dcb52df2d2651470022bbf1c032c7f4f3309068d0df3ff13d6ef5b2fe37aed"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-paragraph"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-strike",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-strike@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-strike@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-strike/-/extension-strike-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "27d570eb09a1ff057a4b14ac37d461babbc019c5d2639277a78110ad1383e4f011065d153a70c58bbfd4568cf546449da8e28f8008aa0d9a5a2d182d7413bd46"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-strike"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-text",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-text@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-text@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-text/-/extension-text-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b05d2320aebb207759327cefda6cf9bcf4f22bb474ba2ebf61980583efdb2e7142366c1e540a1870764b942ec84919f0bb49aa26bf9ea4db7325ea58d590c28e"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-text"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extension-underline",
+      "group": "@tiptap",
+      "version": "3.32.0",
+      "bom-ref": "stachel-web@0.1.0|@tiptap/extension-underline@3.32.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40tiptap/extension-underline@3.32.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@tiptap/extension-underline/-/extension-underline-3.32.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "acc2dd778be0eac79dfc99da5e76aea4b6c2b588968a44e743caa2afd22d28e5f07f5522f4fd58e06d1b614e3e81c9ccb05cda486b6b3a132a1b8fdceba02881"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@tiptap/extension-underline"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "canvas",
+      "group": "@napi-rs",
+      "version": "1.1.0",
+      "bom-ref": "stachel-web@0.1.0|@napi-rs/canvas@1.1.0",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40napi-rs/canvas@1.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@napi-rs/canvas/-/canvas-1.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "93ea61fc3f07f464bc659e3ca24bc7aca789ca792a000d64314651bb34563654140c75e782aee845a58c64176649f77d661572f5bc0d29e8bfef031ba08fee32"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@napi-rs/canvas"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "optionale Abh. von pdfjs-dist nur fuer Node; nicht im Browser-Bundle"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "dijkstrajs",
+      "version": "1.0.3",
+      "bom-ref": "stachel-web@0.1.0|dijkstrajs@1.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/dijkstrajs@1.0.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/dijkstrajs/-/dijkstrajs-1.0.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "aa24a5981abdf8109d080fcbe3a770f14cbdde6968c6c3d26f09e6e72aca9f6bcc3e2cbc2b202c91317acee57f8f904cb263866433ececa8d4fa68dbebbd247c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/dijkstrajs"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pngjs",
+      "version": "5.0.0",
+      "bom-ref": "stachel-web@0.1.0|pngjs@5.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pngjs@5.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e34416e586a504d7d0a39c916268b0ed8cfa4ca295af787af7bd01d9813eddf429b1672b6e3d4fcc9831789d7d0d142384c6ca3c8b8c63cac569773c9a8a2557"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pngjs"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yargs",
+      "version": "15.4.1",
+      "bom-ref": "stachel-web@0.1.0|yargs@15.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/yargs@15.4.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "69e3dbc4399c616fbe3daa81b09f8761417009dbf82d5bdd9e1072efc139ecf228afcfce56f84cac00c51440e1f031c3151bff3bd8b794f86c10d8ceed05f4f8"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/yargs"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.28.0",
+      "bom-ref": "stachel-web@0.1.0|scheduler@0.28.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/scheduler@0.28.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "8eea2b7c2988908c3cb53fa9e415d29ba3c98d017fc9c11898acb3511088b7f45a64884bf8fba56d0f58bb6cf51dd3890dda834e5c40d7ec4a0661d726c73303"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/scheduler"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "isomorphic.js",
+      "version": "0.2.5",
+      "bom-ref": "stachel-web@0.1.0|isomorphic.js@0.2.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/isomorphic.js@0.2.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/isomorphic.js/-/isomorphic.js-0.2.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3c878c6c7a8cb780e750fdcc03f1657341c49588cc5c0aecc35ab0259726f6ca91f26ab797c3588b314cb72d295b013fb732061f710a2b9fa37ace6602bf39cb"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/isomorphic.js"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rope-sequence",
+      "version": "1.3.4",
+      "bom-ref": "stachel-web@0.1.0|rope-sequence@1.3.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/rope-sequence@1.3.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/rope-sequence/-/rope-sequence-1.3.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "513e440ded9cbb613fe8ee22814af93d216cdb79efbee9227161f1e869ce3e51c08a261bccdb824500ae89474725072a29a94b2a5ad82678d8d32486b173505d"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/rope-sequence"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "w3c-keyname",
+      "version": "2.2.8",
+      "bom-ref": "stachel-web@0.1.0|w3c-keyname@2.2.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/w3c-keyname@2.2.8",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/w3c-keyname/-/w3c-keyname-2.2.8.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "769a2306136c08d37b4fcd939bb936e80e86f4c2f7364843b27c3d9ff7a8c52465541078084b4843f29308b2361707f76ad6925d1858164422dd29671703ef3d"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/w3c-keyname"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "orderedmap",
+      "version": "2.1.1",
+      "bom-ref": "stachel-web@0.1.0|orderedmap@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/orderedmap@2.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/orderedmap/-/orderedmap-2.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4ef016c62d270ded63febb4c7167088fde3e15f7ba9fbce1a30df7878d122b19ac9a8cece9dcff7be11a8f299fa0570777bb31367f321ccf3cdfdba2c4c395ea"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/orderedmap"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "linkifyjs",
+      "version": "4.4.0",
+      "bom-ref": "stachel-web@0.1.0|linkifyjs@4.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/linkifyjs@4.4.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/linkifyjs/-/linkifyjs-4.4.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "2274dec6fb5b6a2fb673e74454671ce8ee8fd83315222c03f5afe2e3316ba1acce2182ce4ba152566009ee415eba69c2331ebf810a8d0246d4be032e6d5e3e30"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/linkifyjs"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (im docker-image stachel unter /app/web/dist)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "canvas-linux-x64-gnu",
+      "group": "@napi-rs",
+      "version": "1.1.0",
+      "bom-ref": "stachel-web@0.1.0|@napi-rs/canvas-linux-x64-gnu@1.1.0",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40napi-rs/canvas-linux-x64-gnu@1.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@napi-rs/canvas-linux-x64-gnu/-/canvas-linux-x64-gnu-1.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b90f49b89951850747cadb5c3163a2c0b91f22a92a681d1815455ef37e4b51ed764c7b766f9d475e44c8b6ad1fc564f58dd8543d7db2956675c1a9642720fa19"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@napi-rs/canvas-linux-x64-gnu"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "Skia-Binary (BSD-3); nur im Web-Build-Container, nicht ausgeliefert"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cliui",
+      "version": "6.0.0",
+      "bom-ref": "stachel-web@0.1.0|cliui@6.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/cliui@6.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/cliui/-/cliui-6.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b7ac1b82da025ef033b2ded0817c4962a3edd2eb047db81075fb443db2cbfdcbefe873c4e5582fa82b80203474360539d9db3aac5c2aae06a434bac712309bad"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/cliui"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "decamelize",
+      "version": "1.2.0",
+      "bom-ref": "stachel-web@0.1.0|decamelize@1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/decamelize@1.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "cf64be5bd5fbde10145248be37ef596b694196e9fcf738a03b21abb1ac7e29443ac0a5b86685a91180641a1423c008e30c2916c6163454a12193cc3363b17970"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/decamelize"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "find-up",
+      "version": "4.1.0",
+      "bom-ref": "stachel-web@0.1.0|find-up@4.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/find-up@4.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/find-up/-/find-up-4.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3e93b001d43f6255d0daf8fc6b787c222a43b98462df071e550406616c4d20d71cab8d009f0ec196c11708c6edd59b7e38b03a16af6cb88a48583d0eb2721297"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/find-up"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-caller-file",
+      "version": "2.0.5",
+      "bom-ref": "stachel-web@0.1.0|get-caller-file@2.0.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/get-caller-file@2.0.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "0f214fdc133fdd81d340e0942ffc343991d1d25a4a786af1a2d70759ca8d11d9e5b6a1705d57e110143de1e228df801f429a34ac6922e1cc8889fb58d3a87616"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/get-caller-file"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-directory",
+      "version": "2.1.1",
+      "bom-ref": "stachel-web@0.1.0|require-directory@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/require-directory@2.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/require-directory/-/require-directory-2.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7c6c4423bfb0b06f71aef763b2b9662f6d8e3134e21d1c0032ba2211e320abc833a0b0bf3d0afb46c4434932d483f6d9019b45f9354890773aff84482abba2f9"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/require-directory"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-main-filename",
+      "version": "2.0.0",
+      "bom-ref": "stachel-web@0.1.0|require-main-filename@2.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/require-main-filename@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/require-main-filename/-/require-main-filename-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "34a37990c0f294aba577160b4947eb6e8e53bb387885dfb613c34f3d7d36999b67d55b911104e861efd9765272f89dee0a97da886174e5eec1f16d225db4079a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/require-main-filename"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "set-blocking",
+      "version": "2.0.0",
+      "bom-ref": "stachel-web@0.1.0|set-blocking@2.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/set-blocking@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/set-blocking/-/set-blocking-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "2a22814bc0275861322f3a1f15f9af2b0a5d3f3aa2cb5e8bbd07cadf2bff7d51fb063d77ff097725247527eadf81113dabbc5424ae2abe04bcada48e78b51e87"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/set-blocking"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string-width",
+      "version": "4.2.3",
+      "bom-ref": "stachel-web@0.1.0|string-width@4.2.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/string-width@4.2.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c0ac90450a63274b08a7ad84ad265d1ac8cc256b1aa79a1136284786ee86ec954effd8c807a5327af2feb57b8eaab9e0f23fdcc4a4d6c96530bd24eb8a2673fe"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/string-width"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "which-module",
+      "version": "2.0.1",
+      "bom-ref": "stachel-web@0.1.0|which-module@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/which-module@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/which-module/-/which-module-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "881759e7b443be7391f4018184c2f6bc565fee1f2f9818e1a1a66a3832411561d5b4a90398ab876a2ddcc793e054cad7e580cda76ec0a1f61b03072d492faf85"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/which-module"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "y18n",
+      "version": "4.0.3",
+      "bom-ref": "stachel-web@0.1.0|y18n@4.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/y18n@4.0.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/y18n/-/y18n-4.0.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "24a86a4cec12aea340d4d639952ced2751ab06252874b326219b8b88368c449fa2b4577e001544f170633af2162fead2a8d0c2ef82c24859a56ff538519e2125"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/y18n"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yargs-parser",
+      "version": "18.1.3",
+      "bom-ref": "stachel-web@0.1.0|yargs-parser@18.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/yargs-parser@18.1.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-18.1.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a39d23d09793a32ff82ba39971a4265ba9725d72a1abb72c4445dc0f0936a2614f244c1434e56d24abe60ebf442357c025953265c445ee4c460569915ee76b09"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/yargs-parser"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "strip-ansi",
+      "version": "6.0.1",
+      "bom-ref": "stachel-web@0.1.0|strip-ansi@6.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "637f153d21dcaa416b0a916743dbee4979aabaebf9a1738aa46793e9a1abaf7a3719cf409556ba2417d448e0a76f1186645fbfd28a08ecaacfb944b3b54754e4"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/strip-ansi"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wrap-ansi",
+      "version": "6.2.0",
+      "bom-ref": "stachel-web@0.1.0|wrap-ansi@6.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/wrap-ansi@6.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "afa94f7011b1657948732984bbb227c43321756d0a0f1a4b82814b720b9ab3109a27f48e219c0835ab4af4a63fb5ff99ae5cb038a5345038f70135d405fc495c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/wrap-ansi"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "locate-path",
+      "version": "5.0.0",
+      "bom-ref": "stachel-web@0.1.0|locate-path@5.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/locate-path@5.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/locate-path/-/locate-path-5.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b7b870f6923e5afbb03495f0939cd51e9ca122ace0daa4e592524e7f4995c4649b7b7169d9589e65c76e3588da2c3a32ea9f6e1a94041961bced6a4c2a536af2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/locate-path"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path-exists",
+      "version": "4.0.0",
+      "bom-ref": "stachel-web@0.1.0|path-exists@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/path-exists@4.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/path-exists/-/path-exists-4.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6a4f50cb943b8d86f65b071ecb9169be0d8aa0073f64884b48b392066466ca03ec1b091556dd1f65ad2aaed333fa6ead2530077d943c167981e0c1b82d6cbbff"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/path-exists"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "emoji-regex",
+      "version": "8.0.0",
+      "bom-ref": "stachel-web@0.1.0|emoji-regex@8.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/emoji-regex@8.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3128d8cdc58d380d1ec001e9cf4331a5816fc20eb28f2d4d1b7c6d7a8ab3eb8e150a8fd13e09ebd7f186b7e89cde2253cd0f04bb74dd335e126b09d5526184e8"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/emoji-regex"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-fullwidth-code-point",
+      "version": "3.0.0",
+      "bom-ref": "stachel-web@0.1.0|is-fullwidth-code-point@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-fullwidth-code-point@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "cf29a6e7ebbeb02b125b20fda8d69e8d5dc316f84229c94a762cd868952e1c0f3744b8dbee74ae1a775d0871afd2193e298ec130096c59e2b851e83a115e9742"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-fullwidth-code-point"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "camelcase",
+      "version": "5.3.1",
+      "bom-ref": "stachel-web@0.1.0|camelcase@5.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/camelcase@5.3.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/camelcase/-/camelcase-5.3.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "2f6f124c1d7bd27c164badd48ed944384ddd95d400a5a257664388d6e3057f37f7ad1b8f7a01da1deb3279ef98c50f96e92bd10d057a52b74e751891d79df026"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/camelcase"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-regex",
+      "version": "5.0.1",
+      "bom-ref": "stachel-web@0.1.0|ansi-regex@5.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ansi-regex@5.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "aae2505e54d25062f62c7f52517a3c570b18e2ca1a9e1828e8b3529bce04d4b05c13cb373b4c29762473c91f73fd9649325316bf7eea38e6fda5d26531410a15"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ansi-regex"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-styles",
+      "version": "4.3.0",
+      "bom-ref": "stachel-web@0.1.0|ansi-styles@4.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ansi-styles@4.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "cdb07dac22404f5adb8e25436f686a2851cd60bc60b64f0d511c59dc86700f717a36dc5b5d94029e74a2d4b931f880e885d3e5169db6db05402c885e64941212"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ansi-styles"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "p-locate",
+      "version": "4.1.0",
+      "bom-ref": "stachel-web@0.1.0|p-locate@4.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/p-locate@4.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/p-locate/-/p-locate-4.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "47bf5967fd30031286bb7a18325cfc8f2fe46e1b0dad2ed2299ecfc441c1809e7e1769ad156d9f2b670eb4187570762442c6f3155ec8f84a1129ee98b74a0aec"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/p-locate"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "color-convert",
+      "version": "2.0.1",
+      "bom-ref": "stachel-web@0.1.0|color-convert@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/color-convert@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4511023ec8fb8aeff16f9a0a61cb051d2a6914d9ec8ffe763954d129be333f9a275f0545df3566993a0d70e7c60be0910e97cafd4e7ce1f320dfc64709a12529"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/color-convert"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "p-limit",
+      "version": "2.3.0",
+      "bom-ref": "stachel-web@0.1.0|p-limit@2.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/p-limit@2.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/p-limit/-/p-limit-2.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "ffff3c985592271f25c42cf07400014c92f6332581d76f9e218ecc0cbd92a8b98091e294f6ac51bd6b92c938e6dc5526a4110cb857dc90022a11a546503c5beb"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/p-limit"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "color-name",
+      "version": "1.1.4",
+      "bom-ref": "stachel-web@0.1.0|color-name@1.1.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/color-name@1.1.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "74ecbedc0b96ddadb035b64722e319a537208c6b8b53fb812ffb9b71917d3976c3a3c7dfe0ef32569e417f479f4bcb84a18a39ab8171edd63d3a04065e002c40"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/color-name"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "p-try",
+      "version": "2.2.0",
+      "bom-ref": "stachel-web@0.1.0|p-try@2.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/p-try@2.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4789cf0154c053407d0f7e7f1a4dee25fffb5d86d0732a2148a76f03121148d821165e1eef5855a069c1350cfd716697c4ed88d742930bede331dbefa0ac3a75"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/p-try"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node)"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "pdfjs-dist/standard_fonts/LiberationSans (4 TTF)",
+      "version": "1.07.4",
+      "bom-ref": "extra|pdfjs-dist/standard_fonts/LiberationSans (4 TTF)@1.07.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-only WITH Font-exception-2.0 (Liberation Fonts License, Red Hat)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (web/dist/assets/LiberationSans-*.ttf)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "web/src/features/documents/pdfAssets.ts:5"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "GPL-2 mit Font-Ausnahme: Lizenztext mitliefern; Fonts unveraendert = eigene Quelle"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "pdfjs-dist/standard_fonts/Foxit*.pfb (10 Dateien)",
+      "version": "6.4.299",
+      "bom-ref": "extra|pdfjs-dist/standard_fonts/Foxit*.pfb (10 Dateien)@6.4.299",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause (PDFium Authors)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "web/src/features/documents/pdfAssets.ts:5"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfjs-dist/cmaps (Adobe CMap *.bcmap)",
+      "version": "6.4.299",
+      "bom-ref": "extra|pdfjs-dist/cmaps (Adobe CMap *.bcmap)@6.4.299",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause (Adobe)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "web/src/features/documents/pdfAssets.ts:6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfjs-dist/wasm/openjpeg.wasm",
+      "version": "6.4.299",
+      "bom-ref": "extra|pdfjs-dist/wasm/openjpeg.wasm@6.4.299",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "web/src/features/documents/pdfAssets.ts:7"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfjs-dist/wasm/jbig2.wasm",
+      "version": "6.4.299",
+      "bom-ref": "extra|pdfjs-dist/wasm/jbig2.wasm@6.4.299",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause AND Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "web/src/features/documents/pdfAssets.ts:7"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfjs-dist/wasm/qcms_bg.wasm",
+      "version": "6.4.299",
+      "bom-ref": "extra|pdfjs-dist/wasm/qcms_bg.wasm@6.4.299",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "web/src/features/documents/pdfAssets.ts:7"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lucide icons (Feather-abgeleitete Teilmenge)",
+      "version": "1.61.0",
+      "bom-ref": "extra|lucide icons (Feather-abgeleitete Teilmenge)@1.61.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle + android-app (Pfaddaten)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "node_modules/lucide/LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rolldown/vite runtime helpers",
+      "version": "vite 8.3.5",
+      "bom-ref": "extra|rolldown/vite runtime helpers@vite 8.3.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "web-bundle (rolldown-runtime-*.js)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "web/dist/assets/rolldown-runtime-*.js"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "stachel-web@0.1.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@fontsource/barlow-condensed@5.3.0",
+        "stachel-web@0.1.0|@fontsource/barlow@5.3.0",
+        "stachel-web@0.1.0|@fontsource/jetbrains-mono@5.3.0",
+        "stachel-web@0.1.0|@fontsource/source-serif-4@5.3.1",
+        "stachel-web@0.1.0|@hocuspocus/provider@4.7.1",
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-highlight@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-list@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-text-style@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extensions@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0",
+        "stachel-web@0.1.0|@tiptap/starter-kit@3.32.0",
+        "stachel-web@0.1.0|fractional-indexing@4.0.0",
+        "stachel-web@0.1.0|lucide@1.61.0",
+        "stachel-web@0.1.0|nanoid@6.0.2",
+        "stachel-web@0.1.0|pdfjs-dist@6.4.299",
+        "stachel-web@0.1.0|qrcode@1.5.4",
+        "stachel-web@0.1.0|react-dom@19.3.1",
+        "stachel-web@0.1.0|react@19.3.1",
+        "stachel-web@0.1.0|y-prosemirror@1.3.7",
+        "stachel-web@0.1.0|y-protocols@1.0.7",
+        "stachel-web@0.1.0|yjs@13.6.33"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@fontsource/barlow-condensed@5.3.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|@fontsource/barlow@5.3.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|@fontsource/jetbrains-mono@5.3.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|@fontsource/source-serif-4@5.3.1"
+    },
+    {
+      "ref": "stachel-web@0.1.0|@hocuspocus/provider@4.7.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|@hocuspocus/common@4.7.1",
+        "stachel-web@0.1.0|@lifeomic/attempt@3.1.0",
+        "stachel-web@0.1.0|lib0@0.2.119",
+        "stachel-web@0.1.0|y-protocols@1.0.7",
+        "stachel-web@0.1.0|yjs@13.6.33"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/core@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-highlight@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-list@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-text-style@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extensions@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/pm@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-changeset@2.4.4",
+        "stachel-web@0.1.0|prosemirror-commands@1.7.2",
+        "stachel-web@0.1.0|prosemirror-dropcursor@1.8.4",
+        "stachel-web@0.1.0|prosemirror-gapcursor@1.4.1",
+        "stachel-web@0.1.0|prosemirror-history@1.5.1",
+        "stachel-web@0.1.0|prosemirror-inputrules@1.5.1",
+        "stachel-web@0.1.0|prosemirror-keymap@1.2.3",
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-schema-list@1.5.1",
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-tables@1.8.5",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4",
+        "stachel-web@0.1.0|prosemirror-view@1.42.7"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/starter-kit@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-blockquote@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-bold@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-bullet-list@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-code-block@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-code@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-document@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-dropcursor@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-gapcursor@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-hard-break@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-heading@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-horizontal-rule@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-italic@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-link@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-list-item@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-list-keymap@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-list@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-ordered-list@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-paragraph@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-strike@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-text@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extension-underline@3.32.0",
+        "stachel-web@0.1.0|@tiptap/extensions@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|fractional-indexing@4.0.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|lucide@1.61.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|nanoid@6.0.2"
+    },
+    {
+      "ref": "stachel-web@0.1.0|pdfjs-dist@6.4.299",
+      "dependsOn": [
+        "stachel-web@0.1.0|@napi-rs/canvas@1.1.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|qrcode@1.5.4",
+      "dependsOn": [
+        "stachel-web@0.1.0|dijkstrajs@1.0.3",
+        "stachel-web@0.1.0|pngjs@5.0.0",
+        "stachel-web@0.1.0|yargs@15.4.1"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|react-dom@19.3.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|react@19.3.1",
+        "stachel-web@0.1.0|scheduler@0.28.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|react@19.3.1"
+    },
+    {
+      "ref": "stachel-web@0.1.0|y-prosemirror@1.3.7",
+      "dependsOn": [
+        "stachel-web@0.1.0|lib0@0.2.119",
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-view@1.42.7",
+        "stachel-web@0.1.0|y-protocols@1.0.7",
+        "stachel-web@0.1.0|yjs@13.6.33"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|y-protocols@1.0.7",
+      "dependsOn": [
+        "stachel-web@0.1.0|lib0@0.2.119",
+        "stachel-web@0.1.0|yjs@13.6.33"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|yjs@13.6.33",
+      "dependsOn": [
+        "stachel-web@0.1.0|lib0@0.2.119"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@hocuspocus/common@4.7.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|lib0@0.2.119"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@lifeomic/attempt@3.1.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|lib0@0.2.119",
+      "dependsOn": [
+        "stachel-web@0.1.0|isomorphic.js@0.2.5"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-changeset@2.4.4",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-commands@1.7.2",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-dropcursor@1.8.4",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4",
+        "stachel-web@0.1.0|prosemirror-view@1.42.7"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-gapcursor@1.4.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-keymap@1.2.3",
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-view@1.42.7"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-history@1.5.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4",
+        "stachel-web@0.1.0|prosemirror-view@1.42.7",
+        "stachel-web@0.1.0|rope-sequence@1.3.4"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-inputrules@1.5.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-keymap@1.2.3",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|w3c-keyname@2.2.8"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-model@1.25.12",
+      "dependsOn": [
+        "stachel-web@0.1.0|orderedmap@2.1.1"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-schema-list@1.5.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-state@1.4.4",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4",
+        "stachel-web@0.1.0|prosemirror-view@1.42.7"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-tables@1.8.5",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-keymap@1.2.3",
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4",
+        "stachel-web@0.1.0|prosemirror-view@1.42.7"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-transform@1.12.4",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-model@1.25.12"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|prosemirror-view@1.42.7",
+      "dependsOn": [
+        "stachel-web@0.1.0|prosemirror-model@1.25.12",
+        "stachel-web@0.1.0|prosemirror-state@1.4.4",
+        "stachel-web@0.1.0|prosemirror-transform@1.12.4"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-blockquote@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-bold@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-bullet-list@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/extension-list@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-code-block@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-code@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-document@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-dropcursor@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/extensions@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-gapcursor@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/extensions@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-hard-break@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-heading@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-horizontal-rule@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-italic@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-link@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0",
+        "stachel-web@0.1.0|@tiptap/pm@3.32.0",
+        "stachel-web@0.1.0|linkifyjs@4.4.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-list-item@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/extension-list@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-list-keymap@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/extension-list@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-ordered-list@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/extension-list@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-paragraph@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-strike@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-text@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@tiptap/extension-underline@3.32.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@tiptap/core@3.32.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|@napi-rs/canvas@1.1.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|@napi-rs/canvas-linux-x64-gnu@1.1.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|dijkstrajs@1.0.3"
+    },
+    {
+      "ref": "stachel-web@0.1.0|pngjs@5.0.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|yargs@15.4.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|cliui@6.0.0",
+        "stachel-web@0.1.0|decamelize@1.2.0",
+        "stachel-web@0.1.0|find-up@4.1.0",
+        "stachel-web@0.1.0|get-caller-file@2.0.5",
+        "stachel-web@0.1.0|require-directory@2.1.1",
+        "stachel-web@0.1.0|require-main-filename@2.0.0",
+        "stachel-web@0.1.0|set-blocking@2.0.0",
+        "stachel-web@0.1.0|string-width@4.2.3",
+        "stachel-web@0.1.0|which-module@2.0.1",
+        "stachel-web@0.1.0|y18n@4.0.3",
+        "stachel-web@0.1.0|yargs-parser@18.1.3"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|scheduler@0.28.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|isomorphic.js@0.2.5"
+    },
+    {
+      "ref": "stachel-web@0.1.0|rope-sequence@1.3.4"
+    },
+    {
+      "ref": "stachel-web@0.1.0|w3c-keyname@2.2.8"
+    },
+    {
+      "ref": "stachel-web@0.1.0|orderedmap@2.1.1"
+    },
+    {
+      "ref": "stachel-web@0.1.0|linkifyjs@4.4.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|@napi-rs/canvas-linux-x64-gnu@1.1.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|cliui@6.0.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|string-width@4.2.3",
+        "stachel-web@0.1.0|strip-ansi@6.0.1",
+        "stachel-web@0.1.0|wrap-ansi@6.2.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|decamelize@1.2.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|find-up@4.1.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|locate-path@5.0.0",
+        "stachel-web@0.1.0|path-exists@4.0.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|get-caller-file@2.0.5"
+    },
+    {
+      "ref": "stachel-web@0.1.0|require-directory@2.1.1"
+    },
+    {
+      "ref": "stachel-web@0.1.0|require-main-filename@2.0.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|set-blocking@2.0.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|string-width@4.2.3",
+      "dependsOn": [
+        "stachel-web@0.1.0|emoji-regex@8.0.0",
+        "stachel-web@0.1.0|is-fullwidth-code-point@3.0.0",
+        "stachel-web@0.1.0|strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|which-module@2.0.1"
+    },
+    {
+      "ref": "stachel-web@0.1.0|y18n@4.0.3"
+    },
+    {
+      "ref": "stachel-web@0.1.0|yargs-parser@18.1.3",
+      "dependsOn": [
+        "stachel-web@0.1.0|camelcase@5.3.1",
+        "stachel-web@0.1.0|decamelize@1.2.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|strip-ansi@6.0.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|ansi-regex@5.0.1"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|wrap-ansi@6.2.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|ansi-styles@4.3.0",
+        "stachel-web@0.1.0|string-width@4.2.3",
+        "stachel-web@0.1.0|strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|locate-path@5.0.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|p-locate@4.1.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|path-exists@4.0.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|emoji-regex@8.0.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|is-fullwidth-code-point@3.0.0"
+    },
+    {
+      "ref": "stachel-web@0.1.0|camelcase@5.3.1"
+    },
+    {
+      "ref": "stachel-web@0.1.0|ansi-regex@5.0.1"
+    },
+    {
+      "ref": "stachel-web@0.1.0|ansi-styles@4.3.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|color-convert@2.0.1"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|p-locate@4.1.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|p-limit@2.3.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|color-convert@2.0.1",
+      "dependsOn": [
+        "stachel-web@0.1.0|color-name@1.1.4"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|p-limit@2.3.0",
+      "dependsOn": [
+        "stachel-web@0.1.0|p-try@2.2.0"
+      ]
+    },
+    {
+      "ref": "stachel-web@0.1.0|color-name@1.1.4"
+    },
+    {
+      "ref": "stachel-web@0.1.0|p-try@2.2.0"
+    }
+  ]
+}

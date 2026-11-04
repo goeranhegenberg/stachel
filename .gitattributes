@@ -1,0 +1,2 @@
+# Shell-Skripte immer mit LF (auch bei core.autocrlf=true unter Windows), sonst bricht `#!/usr/bin/env bash`
+*.sh text eol=lf

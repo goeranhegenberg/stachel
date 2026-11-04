@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }
+  - package-ecosystem: docker
+    directories: [/, /mcp]
+    schedule: { interval: monthly }
+  - package-ecosystem: npm
+    directories: [/server, /web, /mcp, /e2e]
+    schedule: { interval: monthly }
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]

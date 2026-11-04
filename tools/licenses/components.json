@@ -1,0 +1,137 @@
+{
+  "$comment": "Bestandteile ohne npm/Pub-Paket für tools/licenses/third-party-notices.mjs. files = Lizenzdateien im Repo (wörtlich übernommen); {node}, {debian}, {chromium}, {chromiumRevision}, {chromiumLicense} kommen aus tools/licenses/.collected/facts.json. libvips: je Eintrag in versions.json von @img/sharp-libvips-linux-* ein Name, Text in tools/licenses/texts/libvips/<schlüssel>.txt (tools/licenses/fetch-texts.sh).",
+  "components": [
+    {
+      "name": "Font Barlow / Barlow Condensed (TTF in flutter/app/assets/fonts)",
+      "version": "1.408",
+      "license": "OFL-1.1",
+      "source": "https://github.com/jpt/barlow",
+      "parts": ["flutter_app", "repo"],
+      "files": ["flutter/app/assets/fonts/OFL-Barlow.txt"]
+    },
+    {
+      "name": "Font Source Serif 4 (TTF in flutter/packages/stachel_board/assets/fonts)",
+      "version": "4.004",
+      "license": "OFL-1.1",
+      "source": "https://github.com/adobe-fonts/source-serif",
+      "parts": ["flutter_app", "repo"],
+      "files": ["flutter/packages/stachel_board/assets/fonts/OFL-SourceSerif4.txt"]
+    },
+    {
+      "name": "Font JetBrains Mono (TTF in flutter/packages/stachel_board/assets/fonts)",
+      "version": "2.211",
+      "license": "OFL-1.1",
+      "source": "https://github.com/JetBrains/JetBrainsMono",
+      "parts": ["flutter_app", "repo"],
+      "files": ["flutter/packages/stachel_board/assets/fonts/OFL-JetBrainsMono.txt"]
+    },
+    {
+      "name": "lucide icon paths (web/src/features/shapes/iconSet.ts, stachel_board web_constants.g.dart)",
+      "version": "1.61.0",
+      "license": "ISC AND MIT",
+      "source": "https://github.com/lucide-icons/lucide",
+      "parts": ["flutter_app", "repo"],
+      "files": ["flutter/packages/stachel_board/assets/licenses/lucide.txt"],
+      "note": "Icons derived from Feather: MIT, Copyright (c) 2013-present Cole Bemis (included in the text)."
+    },
+    {
+      "name": "PDFium (bblanchon/pdfium-binaries, native library loaded by pdfrx/pdfium_dart)",
+      "version": "chromium/8125",
+      "license": "BSD-3-Clause AND Apache-2.0 (+ bundled)",
+      "source": "https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium%2F8125",
+      "parts": ["flutter_app"],
+      "files": [
+        "flutter/packages/stachel_client/assets/licenses/pdfium/LICENSE.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/pdfium.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/abseil.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/agg23.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/catapult.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/cpu_features.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/dragonbox-Apache2-LLVM.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/dragonbox-Boost.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/fast_float.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/freetype.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/harfbuzz.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/highway.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/icu.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/lcms.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/libjpeg_turbo.md",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/libjpeg_turbo.ijg",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/libopenjpeg.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/libpng.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/libunwind.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/llvm-libc.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/simdutf.txt",
+        "flutter/packages/stachel_client/assets/licenses/pdfium/zlib.txt"
+      ]
+    },
+    {
+      "name": "Flutter framework and engine (Skia/Impeller, Dart VM, ICU, HarfBuzz, FreeType, BoringSSL, ...)",
+      "license": "BSD-3-Clause (+ bundled)",
+      "source": "https://github.com/flutter/flutter",
+      "parts": ["flutter_app"],
+      "note": "The app ships Flutter's generated NOTICES (all engine and Pub licenses) and shows them on its license page; full text: <Flutter SDK>/bin/cache/pkg/sky_engine/LICENSE."
+    },
+    {
+      "name": "Android libraries of the Flutter plugins (AndroidX, Kotlin standard library, Media3 ...)",
+      "license": "Apache-2.0",
+      "source": "https://developer.android.com/jetpack/androidx",
+      "parts": ["flutter_app"],
+      "note": "Gradle dependencies of the plugins above, not enumerated individually; predominantly Apache-2.0 (text in section 5)."
+    },
+    {
+      "name": "Node.js runtime (node:22-bookworm-slim)",
+      "version": "{node}",
+      "license": "MIT (+ bundled)",
+      "source": "https://github.com/nodejs/node/tree/{node}",
+      "parts": ["image"],
+      "note": "Full license text with all bundled components inside the images: /usr/local/LICENSE (section 2)."
+    },
+    {
+      "name": "Debian base system (bookworm)",
+      "version": "{debian}",
+      "license": "various (GPL, LGPL, MIT, BSD, ...)",
+      "source": "https://snapshot.debian.org/",
+      "parts": ["image"],
+      "note": "Per package: /usr/share/doc/<package>/copyright in the image; list: /usr/share/doc/stachel/debian-packages.tsv (section 2)."
+    },
+    {
+      "name": "Chromium Headless Shell (Chrome for Testing, installed by playwright-core)",
+      "version": "{chromium}",
+      "license": "BSD-3-Clause (+ bundled, incl. LGPL-2.1+)",
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/{chromium}",
+      "parts": ["mcp"],
+      "note": "Playwright revision {chromiumRevision}. Complete license list in the image: {chromiumLicense} (section 2)."
+    }
+  ],
+  "libvips": {
+    "aom": { "name": "aom", "license": "BSD-2-Clause + AOMedia Patent License 1.0", "source": "https://aomedia.googlesource.com/aom" },
+    "archive": { "name": "libarchive", "license": "BSD-2-Clause", "source": "https://github.com/libarchive/libarchive" },
+    "cairo": { "name": "cairo", "license": "LGPL-2.1-only OR MPL-1.1", "source": "https://gitlab.freedesktop.org/cairo/cairo", "note": "Used under MPL-1.1 (sharp-libvips THIRD-PARTY-NOTICES.md)." },
+    "cgif": { "name": "cgif", "license": "MIT", "source": "https://github.com/dloebl/cgif" },
+    "exif": { "name": "libexif", "license": "LGPL-2.1-or-later", "source": "https://github.com/libexif/libexif", "note": "Used under LGPL-3.0-or-later (section 1)." },
+    "expat": { "name": "expat", "license": "MIT", "source": "https://github.com/libexpat/libexpat" },
+    "ffi": { "name": "libffi", "license": "MIT", "source": "https://github.com/libffi/libffi" },
+    "fontconfig": { "name": "fontconfig", "license": "HPND-sell-variant (fontconfig, BSD-like)", "source": "https://gitlab.freedesktop.org/fontconfig/fontconfig" },
+    "freetype": { "name": "FreeType", "license": "FTL OR GPL-2.0-or-later", "source": "https://github.com/freetype/freetype", "note": "Used under the FreeType License (FTL)." },
+    "fribidi": { "name": "GNU FriBidi", "license": "LGPL-2.1-or-later", "source": "https://github.com/fribidi/fribidi", "note": "Used under LGPL-3.0-or-later (section 1)." },
+    "glib": { "name": "GLib", "license": "LGPL-2.1-or-later", "source": "https://gitlab.gnome.org/GNOME/glib", "note": "Used under LGPL-3.0-or-later (section 1). Further licenses of single files: LICENSES/ in the source." },
+    "harfbuzz": { "name": "HarfBuzz", "license": "MIT-Modern-Variant", "source": "https://github.com/harfbuzz/harfbuzz" },
+    "heif": { "name": "libheif", "license": "LGPL-3.0-or-later", "source": "https://github.com/strukturag/libheif" },
+    "highway": { "name": "Highway", "license": "Apache-2.0 OR BSD-3-Clause", "source": "https://github.com/google/highway" },
+    "imagequant": { "name": "libimagequant (lovell fork, 2.x)", "license": "BSD-2-Clause", "source": "https://github.com/lovell/libimagequant" },
+    "lcms": { "name": "Little CMS", "license": "MIT", "source": "https://github.com/mm2/Little-CMS" },
+    "mozjpeg": { "name": "mozjpeg", "license": "IJG AND BSD-3-Clause AND Zlib", "source": "https://github.com/mozilla/mozjpeg" },
+    "pango": { "name": "Pango", "license": "LGPL-2.1-or-later", "source": "https://gitlab.gnome.org/GNOME/pango", "note": "Used under LGPL-3.0-or-later (section 1)." },
+    "pixman": { "name": "pixman", "license": "MIT", "source": "https://gitlab.freedesktop.org/pixman/pixman" },
+    "png": { "name": "libpng", "license": "libpng-2.0", "source": "https://github.com/pnggroup/libpng" },
+    "rsvg": { "name": "librsvg", "license": "LGPL-2.1-or-later", "source": "https://gitlab.gnome.org/GNOME/librsvg", "note": "Used under LGPL-3.0-or-later (section 1). librsvg statically contains the Rust crates pinned in its Cargo.lock (mostly MIT/Apache-2.0; list: cargo metadata in the librsvg source)." },
+    "tiff": { "name": "libtiff", "license": "libtiff", "source": "https://gitlab.com/libtiff/libtiff" },
+    "uhdr": { "name": "libultrahdr", "license": "Apache-2.0 AND MIT", "source": "https://github.com/google/libultrahdr" },
+    "vips": { "name": "libvips", "license": "LGPL-2.1-or-later", "source": "https://github.com/libvips/libvips", "note": "Used under LGPL-3.0-or-later (section 1)." },
+    "webp": { "name": "libwebp", "license": "BSD-3-Clause (+ patent grant)", "source": "https://chromium.googlesource.com/webm/libwebp" },
+    "xml2": { "name": "libxml2", "license": "MIT", "source": "https://gitlab.gnome.org/GNOME/libxml2" },
+    "zlib-ng": { "name": "zlib-ng", "license": "Zlib", "source": "https://github.com/zlib-ng/zlib-ng" }
+  },
+  "libvipsNotShipped": ["proxy-libintl"]
+}

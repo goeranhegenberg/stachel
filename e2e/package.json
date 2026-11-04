@@ -1,0 +1,18 @@
+{
+  "name": "stachel-e2e",
+  "private": true,
+  "license": "Apache-2.0",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Ende-zu-Ende-Tests gegen den echten Stachel-Server (web/dist vom Server ausgeliefert, Fake-Identitätsdienst (Modus org))",
+  "scripts": {
+    "build": "npm --prefix ../web run build && npm --prefix ../server run build",
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.20.5",
+    "typescript": "7.0.2"
+  }
+}

@@ -1,0 +1,22 @@
+# Build-Kontext der Images (Dockerfile, mcp/Dockerfile): nur shared/, web/, server/ und mcp/ werden gebraucht.
+**/node_modules
+**/dist
+**/.vite
+**/test-results
+**/playwright-report
+**/coverage
+**/*.tsbuildinfo
+data
+.git
+.github
+.env
+.env.*
+!.env.example
+# native Apps (Flutter) gehören nicht ins Server-Image
+flutter
+# Doku, Tests und Betrieb – nicht im Image
+docs
+e2e
+deploy
+tools
+web/e2e

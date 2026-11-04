@@ -1,0 +1,36 @@
+/* Board-Übersicht: Favoriten-Stern auf der Karte (oben links über dem Vorschaubild). Layout der Karten: boards.css */
+.board-fav {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  box-shadow: 0 0 0 1.5px var(--ink);
+  opacity: 0;
+  transition:
+    opacity 0.12s ease,
+    background 0.12s ease;
+}
+.board-card:hover .board-fav,
+.board-card:focus-within .board-fav,
+.board-fav.is-on,
+.board-fav:focus-visible {
+  opacity: 1;
+}
+/* Touch: ohne Hover immer sichtbar */
+@media (hover: none) {
+  .board-fav {
+    opacity: 1;
+  }
+}
+.board-fav:hover {
+  background: #fff;
+}
+.board-fav.is-on {
+  background: var(--green);
+}

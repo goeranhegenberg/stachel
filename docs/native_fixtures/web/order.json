@@ -1,0 +1,84 @@
+{
+ "objects": [
+  {
+   "id": "b",
+   "type": "sticky",
+   "z": "a1"
+  },
+  {
+   "id": "a",
+   "type": "sticky",
+   "z": "a1"
+  },
+  {
+   "id": "f1",
+   "type": "frame",
+   "z": "zz"
+  },
+  {
+   "id": "c",
+   "type": "shape",
+   "z": ""
+  },
+  {
+   "id": "d",
+   "type": "text",
+   "z": "Z"
+  },
+  {
+   "id": "e",
+   "type": "sticky",
+   "z": "a"
+  },
+  {
+   "id": "f0",
+   "type": "frame",
+   "z": "a0"
+  },
+  {
+   "id": "g",
+   "type": "sticky",
+   "z": "a0V"
+  },
+  {
+   "id": "h",
+   "type": "sticky",
+   "z": "~"
+  },
+  {
+   "id": "i",
+   "type": "sticky",
+   "z": "a0"
+  },
+  {
+   "id": "B",
+   "type": "sticky",
+   "z": "a1"
+  },
+  {
+   "id": "_",
+   "type": "sticky",
+   "z": "a1"
+  },
+  {
+   "id": "-",
+   "type": "sticky",
+   "z": "a1"
+  }
+ ],
+ "expected": [
+  "f0",
+  "f1",
+  "c",
+  "d",
+  "e",
+  "i",
+  "g",
+  "-",
+  "B",
+  "_",
+  "a",
+  "b",
+  "h"
+ ]
+}

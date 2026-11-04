@@ -1,0 +1,25 @@
+node_modules/
+dist/
+data/
+*.log
+.env
+test-results/
+playwright-report/
+docs/.bau-berichte.json
+docs/.welle1-berichte.json
+*.tsbuildinfo
+# große Native-Fixtures (tools/native-fixtures.mts --big N)
+docs/native_fixtures/big_*.json
+# lokale Umgebung und Daten nie einchecken
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+# Signier-Schlüssel der Apps
+*.jks
+*.keystore
+key.properties
+.DS_Store
+# Abzug aus den Images für THIRD_PARTY_NOTICES (tools/licenses/collect-images.sh)
+tools/licenses/.collected/

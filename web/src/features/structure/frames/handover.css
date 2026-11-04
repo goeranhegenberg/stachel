@@ -1,0 +1,109 @@
+/* Präsentation: Sprechernotizen, Übergabe (features/structure/frames/handover.tsx) */
+
+.present-notes {
+  /* per Portal am <body> (die Präsentationsleiste schneidet ab) */
+  position: fixed;
+  bottom: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(640px, calc(100vw - 24px));
+  box-sizing: border-box;
+  z-index: 40;
+  max-height: 34vh;
+  overflow: auto;
+  background: #111;
+  color: #fff;
+  border: 2px solid var(--green);
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: left;
+}
+.present-notes__head {
+  display: block;
+  font: 700 12px/1 var(--font);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+.present-notes__text {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.present-handover {
+  position: fixed;
+  bottom: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 41;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 220px;
+  padding: 10px;
+}
+.present-handover__head {
+  font-weight: 700;
+}
+.present-handover__person {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.present-handover__person:hover {
+  background: var(--green);
+  color: #111;
+}
+.present-handover__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.present-offer {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  z-index: 6;
+  max-width: calc(100% - 24px);
+  flex-wrap: wrap;
+}
+
+.frames-panel__notes {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #a3a39c;
+}
+.frames-panel__notes.has-notes,
+.frames-panel__notes:hover {
+  color: var(--green);
+}
+.frames-panel__notes-edit {
+  width: 100%;
+  min-height: 72px;
+  resize: vertical;
+  font: inherit;
+  font-size: 14px;
+  margin: 2px 0 8px;
+  box-sizing: border-box;
+}

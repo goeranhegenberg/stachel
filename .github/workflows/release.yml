@@ -1,0 +1,40 @@
+name: Release
+
+# Tags v*: GitHub release with generated notes plus the source code of the LGPL libraries in the image "stachel"
+# (libvips and the libraries bundled by sharp-libvips; written offer in THIRD_PARTY_NOTICES, section 1).
+# The images themselves are built and pushed by docker.yml.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to (re-)attach the source archives to, e.g. v1.0.0"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  lgpl-sources:
+    name: Release + libvips sources
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check that every source URL resolves
+        run: tools/release/fetch-libvips-source.sh --check
+      - name: Download the source archives
+        run: tools/release/fetch-libvips-source.sh dist
+      - name: Create the release (if needed) and attach the archives
+        run: |
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --verify-tag --generate-notes --title "Stachel ${TAG#v}"
+          gh release upload "$TAG" dist/libvips-sources-*.tar dist/libvips-sources-*.sha256 --clobber

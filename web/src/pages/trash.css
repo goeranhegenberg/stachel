@@ -1,0 +1,234 @@
+/* Papierkorb in der Board-Übersicht, Rückgängig-Hinweis und Hinweis im Editor (pages/trash.tsx). */
+.trash {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1.5px dashed rgba(10, 10, 10, 0.35);
+}
+.trash__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.trash__title {
+  margin: 0;
+}
+.trash__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 16px 0 14px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.trash__toggle:hover {
+  background: var(--ink);
+  color: #fff;
+}
+.trash__toggle:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 1.5px var(--ink),
+    0 0 0 4px rgba(201, 225, 74, 0.9);
+}
+.trash__count {
+  min-width: 26px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--ink);
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+.trash__toggle:hover .trash__count {
+  background: var(--green);
+  color: var(--ink);
+}
+.trash__chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.15s ease;
+}
+.trash.is-open .trash__chevron {
+  transform: none;
+}
+.trash__empty-btn {
+  color: var(--danger);
+  box-shadow: inset 0 0 0 1.5px var(--danger);
+}
+.trash__empty-btn:hover:not([disabled]) {
+  background: var(--danger);
+  color: #fff;
+}
+.trash__hint {
+  margin: 14px 0 18px;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.trash__none {
+  margin: 0;
+  padding: 18px 22px;
+  max-width: 620px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 0 1.5px var(--line);
+  color: var(--muted);
+}
+
+/* Karten im Papierkorb: wie die Board-Karten, aber keine Links, kein Anheben; Vorschaubild verblasst wie „weggelegt“ */
+.trash__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+.trash-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  padding-bottom: 16px;
+  border-radius: var(--radius);
+  background: #fbfbf8;
+  box-shadow: 0 0 0 1.5px rgba(10, 10, 10, 0.55);
+  animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.trash-card__thumb {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+.trash-card__title {
+  padding: 14px 18px 0;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  color: #3a3a36;
+}
+.trash-card__meta {
+  padding: 6px 18px 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.trash-card__purge {
+  justify-self: start;
+  margin: 10px 18px 0;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(236, 78, 146, 0.12);
+  color: #a3245b;
+  font-size: 13px;
+  font-weight: 600;
+}
+.trash-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 18px 0;
+}
+.trash-card__actions .btn {
+  flex: 1 1 auto;
+}
+.trash-card__purge-btn {
+  color: var(--danger);
+  box-shadow: inset 0 0 0 1.5px var(--danger);
+}
+.trash-card__purge-btn:hover:not([disabled]) {
+  background: var(--danger);
+  color: #fff;
+}
+.trash-card__reason {
+  padding: 8px 18px 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* „Board gelöscht · Rückgängig“ */
+.trash-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: calc(100vw - 32px);
+  padding: 6px 6px 6px 20px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: var(--shadow-float);
+  animation: trash-toast-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes trash-toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}
+.trash-toast__text {
+  font-weight: 600;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+.trash-toast__undo {
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--ink);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.trash-toast__undo:hover:not([disabled]) {
+  background: #d6ec5c;
+}
+.trash-toast__undo[disabled] {
+  opacity: 0.6;
+}
+.trash-toast__close {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  color: #fff;
+}
+.trash-toast__close:hover {
+  background: var(--ink-3);
+}
+
+/* Hinweis im Editor */
+.trash-notice__more {
+  color: var(--muted);
+}
+.trash-notice__wait {
+  color: var(--muted);
+}
+
+@media (max-width: 620px) {
+  .trash {
+    margin-top: 40px;
+  }
+  .trash__grid {
+    grid-template-columns: 1fr;
+  }
+}

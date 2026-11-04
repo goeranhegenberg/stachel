@@ -1,0 +1,55 @@
+name: stachel_board
+description: >-
+  Native Stachel board (team whiteboard) for the Stachel app and host apps that embed it: board model (snapshot + patches of the native API),
+  protocol types, geometry (shapes, connectors, text fit), renderer (one CustomPainter, culling, detail levels),
+  camera with pan/zoom/inertia and hit-testing. Knows neither ApiService nor app screens.
+publish_to: 'none'
+version: 1.3.0
+
+environment:
+  sdk: ^3.11.0
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # pasting HTML while writing (F16): the web's paste cleaning on a DOM
+  html: ^0.15.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# Serif and mono like the web (@fontsource latin, SIL OFL – licenses next to the files); the app uses them as
+# packages/stachel_board/SourceSerif4 / .../JetBrainsMono (BoardFonts).
+flutter:
+  # license texts for the apps' license page (registerStachelBoardLicenses, docs/legal/lizenzen.md §5.2)
+  assets:
+    - assets/fonts/OFL-SourceSerif4.txt
+    - assets/fonts/OFL-JetBrainsMono.txt
+    - assets/licenses/lucide.txt
+  fonts:
+    - family: SourceSerif4
+      fonts:
+        - asset: assets/fonts/SourceSerif4-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/SourceSerif4-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/SourceSerif4-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/SourceSerif4-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/SourceSerif4-BoldItalic.ttf
+          weight: 700
+          style: italic
+    - family: JetBrainsMono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/JetBrainsMono-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/JetBrainsMono-Bold.ttf
+          weight: 700

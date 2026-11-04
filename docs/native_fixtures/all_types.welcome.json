@@ -1,0 +1,1785 @@
+{
+  "t": "welcome",
+  "proto": 1,
+  "epoch": "epoch_fixture",
+  "rev": 0,
+  "board": {
+    "id": "board_all_types",
+    "title": "Alle Typen"
+  },
+  "user": {
+    "key": "a:mara",
+    "name": "mara",
+    "isOrga": true
+  },
+  "role": "edit",
+  "color": "#1763b5",
+  "clientId": 1,
+  "features": [
+    "objects",
+    "ext",
+    "presence",
+    "ops",
+    "undo",
+    "text",
+    "comments",
+    "reactions",
+    "uploads",
+    "inbox",
+    "mind",
+    "act",
+    "extra",
+    "private"
+  ],
+  "below": [
+    "frame"
+  ],
+  "actions": {
+    "card.desc": 1,
+    "card.title": 1,
+    "collab.commentMove": 1,
+    "collab.timer.add": 1,
+    "collab.timer.pause": 1,
+    "collab.timer.resume": 1,
+    "collab.timer.start": 1,
+    "collab.timer.stop": 1,
+    "collab.vote.cast": 1,
+    "collab.vote.close": 1,
+    "collab.vote.end": 1,
+    "collab.vote.start": 1,
+    "core.align": 1,
+    "core.distribute": 1,
+    "core.group": 1,
+    "core.ungroup": 1,
+    "dev.note": 1,
+    "documents.addPage": 1,
+    "documents.expand": 1,
+    "documents.page": 1,
+    "documents.repair": 1,
+    "frames.reorder": 1,
+    "richtext.toggleTask": 1,
+    "richtext.whole": 1,
+    "shapes.stackCycle": 1,
+    "shapes.stackDrop": 1,
+    "shapes.stackSpread": 1,
+    "shapes.stackTake": 1,
+    "structure.insert": 1,
+    "structure.paste": 1,
+    "structure.people": 1,
+    "structure.template": 1,
+    "structure.toCard": 1,
+    "table.addCol": 1,
+    "table.addRow": 1,
+    "table.removeCol": 1,
+    "table.removeRow": 1,
+    "table.resizeCol": 1,
+    "table.setCell": 1,
+    "table.setHead": 1,
+    "timeline.addItem": 1,
+    "timeline.addLane": 1,
+    "timeline.adopt": 1,
+    "timeline.moveLane": 1,
+    "timeline.patchItem": 1,
+    "timeline.removeItem": 1,
+    "timeline.removeLane": 1,
+    "timeline.setDay": 1,
+    "timeline.setLaneName": 1,
+    "timeline.setRange": 1,
+    "timeline.setTitle": 1,
+    "timeline.setUnit": 1,
+    "tools.cluster": 1,
+    "tools.convert": 1,
+    "tools.copyStyle": 1,
+    "tools.layerStep": 1,
+    "tools.pasteStyle": 1,
+    "tools.replace": 1,
+    "tools.settings": 2
+  },
+  "snapshot": {
+    "objects": [
+      {
+        "id": "frame1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "frame",
+        "x": -100,
+        "y": -200,
+        "w": 2600,
+        "h": 1900,
+        "z": "a0001",
+        "title": "Sommerfest",
+        "color": "#ffffff",
+        "frameGrid": 50,
+        "frameGridLabels": true,
+        "slide": "a0"
+      },
+      {
+        "id": "sticky_rich",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "sticky",
+        "x": 0,
+        "y": 0,
+        "w": 260,
+        "h": 260,
+        "z": "a0002",
+        "color": "#fff27a",
+        "text": "Ablauf Samstag\nBühne\nTechnik\nfett kursiv durch unter code Link markiert pink\nZeile 1\nZeile 2\nPunkt A\nPunkt B\nErstens\nZweitens\nZelte bestellt\nStrom klären\nZitat\nnpm run build\n",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 1
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Ablauf Samstag"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Bühne"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 3
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Technik"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "fett",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " "
+                },
+                {
+                  "type": "text",
+                  "text": "kursiv",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " "
+                },
+                {
+                  "type": "text",
+                  "text": "durch",
+                  "marks": [
+                    {
+                      "type": "strike"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " "
+                },
+                {
+                  "type": "text",
+                  "text": "unter",
+                  "marks": [
+                    {
+                      "type": "underline"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " "
+                },
+                {
+                  "type": "text",
+                  "text": "code",
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " "
+                },
+                {
+                  "type": "text",
+                  "text": "Link",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "https://example.org"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " "
+                },
+                {
+                  "type": "text",
+                  "text": "markiert",
+                  "marks": [
+                    {
+                      "type": "highlight",
+                      "attrs": {
+                        "color": "#c9e14a"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " "
+                },
+                {
+                  "type": "text",
+                  "text": "pink",
+                  "marks": [
+                    {
+                      "type": "textStyle",
+                      "attrs": {
+                        "color": "#ec4e92"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Zeile 1"
+                },
+                {
+                  "type": "hardBreak"
+                },
+                {
+                  "type": "text",
+                  "text": "Zeile 2"
+                }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Punkt A"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Punkt B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "orderedList",
+              "attrs": {
+                "start": 1
+              },
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Erstens"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Zweitens"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "taskList",
+              "content": [
+                {
+                  "type": "taskItem",
+                  "attrs": {
+                    "checked": true
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Zelte bestellt"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "taskItem",
+                  "attrs": {
+                    "checked": false
+                  },
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Strom klären"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "blockquote",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Zitat"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "codeBlock",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "npm run build"
+                }
+              ]
+            },
+            {
+              "type": "horizontalRule"
+            },
+            {
+              "type": "paragraph"
+            }
+          ]
+        },
+        "align": "left",
+        "valign": "top",
+        "tags": [
+          {
+            "label": "Wichtig",
+            "color": "#ec4e92"
+          },
+          {
+            "label": "Technik",
+            "color": "#1763b5"
+          }
+        ]
+      },
+      {
+        "id": "sticky_rect",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "sticky",
+        "x": 300,
+        "y": 0,
+        "w": 350,
+        "h": 200,
+        "z": "a0003",
+        "color": "#c9e14a",
+        "text": "Rechteckige Notiz",
+        "fontSize": 28,
+        "bold": true,
+        "rotation": 4,
+        "fontFamily": "serif"
+      },
+      {
+        "id": "sticky_old",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "sticky",
+        "x": 680,
+        "y": 0,
+        "w": 200,
+        "h": 200,
+        "z": "a0004",
+        "color": "#9fd3ff",
+        "text": "Nur Klartext (alter Client)"
+      },
+      {
+        "id": "text_auto",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "text",
+        "x": 0,
+        "y": -120,
+        "w": 420,
+        "h": 60,
+        "z": "a0005",
+        "color": "#0a0a0a",
+        "fontSize": 48,
+        "autoWidth": true,
+        "text": "Überschrift",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 1
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Überschrift"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_fixed",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "text",
+        "x": 460,
+        "y": -120,
+        "w": 300,
+        "h": 80,
+        "z": "a0006",
+        "color": "#1763b5",
+        "fontSize": 20,
+        "italic": true,
+        "strike": true,
+        "align": "right",
+        "text": "Fester Text mit Umbruch über mehrere Zeilen"
+      },
+      {
+        "id": "shape_rect",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "rect",
+        "x": 0,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a0007",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "rect",
+        "dash": "dashed",
+        "fillOpacity": 0.5
+      },
+      {
+        "id": "shape_roundrect",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "roundrect",
+        "x": 200,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a0008",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "roundrect",
+        "valign": "bottom",
+        "rotation": 15
+      },
+      {
+        "id": "shape_ellipse",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "ellipse",
+        "x": 400,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a0009",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "ellipse"
+      },
+      {
+        "id": "shape_diamond",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "diamond",
+        "x": 600,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a000a",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "diamond"
+      },
+      {
+        "id": "shape_triangle",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "triangle",
+        "x": 800,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a000b",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "triangle"
+      },
+      {
+        "id": "shape_pentagon",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "pentagon",
+        "x": 1000,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a000c",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "pentagon",
+        "dash": "dashed"
+      },
+      {
+        "id": "shape_hexagon",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "hexagon",
+        "x": 1200,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a000d",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "hexagon"
+      },
+      {
+        "id": "shape_octagon",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "octagon",
+        "x": 1400,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a000e",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "octagon",
+        "fillOpacity": 0.5
+      },
+      {
+        "id": "shape_star",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "star",
+        "x": 1600,
+        "y": 300,
+        "w": 160,
+        "h": 110,
+        "z": "a000f",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "star"
+      },
+      {
+        "id": "shape_parallelogram",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "parallelogram",
+        "x": 0,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000g",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "parallelogram"
+      },
+      {
+        "id": "shape_trapezoid",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "trapezoid",
+        "x": 200,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000h",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "trapezoid",
+        "dash": "dashed"
+      },
+      {
+        "id": "shape_cylinder",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "cylinder",
+        "x": 400,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000i",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "cylinder"
+      },
+      {
+        "id": "shape_cloud",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "cloud",
+        "x": 600,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000j",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "cloud"
+      },
+      {
+        "id": "shape_callout",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "callout",
+        "x": 800,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000k",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "callout"
+      },
+      {
+        "id": "shape_arrowRight",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "arrowRight",
+        "x": 1000,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000l",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "arrowRight",
+        "fillOpacity": 0.5
+      },
+      {
+        "id": "shape_arrowLeft",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "arrowLeft",
+        "x": 1200,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000m",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "arrowLeft",
+        "dash": "dashed"
+      },
+      {
+        "id": "shape_arrowDouble",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "arrowDouble",
+        "x": 1400,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000n",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "arrowDouble"
+      },
+      {
+        "id": "shape_arrowUp",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "arrowUp",
+        "x": 1600,
+        "y": 450,
+        "w": 160,
+        "h": 110,
+        "z": "a000o",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "arrowUp"
+      },
+      {
+        "id": "shape_arrowDown",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "arrowDown",
+        "x": 0,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000p",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "arrowDown"
+      },
+      {
+        "id": "shape_chevron",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "chevron",
+        "x": 200,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000q",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "chevron"
+      },
+      {
+        "id": "shape_cross",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "cross",
+        "x": 400,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000r",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "cross",
+        "dash": "dashed"
+      },
+      {
+        "id": "shape_braceLeft",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "braceLeft",
+        "x": 600,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000s",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "braceLeft",
+        "fillOpacity": 0.5
+      },
+      {
+        "id": "shape_braceRight",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "braceRight",
+        "x": 800,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000t",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "braceRight"
+      },
+      {
+        "id": "shape_terminator",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "terminator",
+        "x": 1000,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000u",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "terminator"
+      },
+      {
+        "id": "shape_document",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "document",
+        "x": 1200,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000v",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "document"
+      },
+      {
+        "id": "shape_predefined",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "predefined",
+        "x": 1400,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000w",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "predefined",
+        "dash": "dashed"
+      },
+      {
+        "id": "shape_manualInput",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "manualInput",
+        "x": 1600,
+        "y": 600,
+        "w": 160,
+        "h": 110,
+        "z": "a000x",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "manualInput"
+      },
+      {
+        "id": "shape_delay",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "delay",
+        "x": 0,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a000y",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "delay"
+      },
+      {
+        "id": "shape_pentagonArrow",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "pentagonArrow",
+        "x": 200,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a000z",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "pentagonArrow",
+        "fillOpacity": 0.5
+      },
+      {
+        "id": "shape_heart",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "heart",
+        "x": 400,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a0010",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "heart"
+      },
+      {
+        "id": "shape_manualOperation",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "manualOperation",
+        "x": 600,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a0011",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "manualOperation",
+        "dash": "dashed"
+      },
+      {
+        "id": "shape_offPage",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "offPage",
+        "x": 800,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a0012",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "offPage"
+      },
+      {
+        "id": "shape_merge",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "merge",
+        "x": 1000,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a0013",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "merge"
+      },
+      {
+        "id": "shape_card",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "card",
+        "x": 1200,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a0014",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "card"
+      },
+      {
+        "id": "shape_sort",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "sort",
+        "x": 1400,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a0015",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "sort"
+      },
+      {
+        "id": "shape_multiDocument",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "multiDocument",
+        "x": 1600,
+        "y": 750,
+        "w": 160,
+        "h": 110,
+        "z": "a0016",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "multiDocument",
+        "dash": "dashed",
+        "fillOpacity": 0.5
+      },
+      {
+        "id": "shape_display",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "display",
+        "x": 0,
+        "y": 900,
+        "w": 160,
+        "h": 110,
+        "z": "a0017",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "display"
+      },
+      {
+        "id": "shape_storedData",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "storedData",
+        "x": 200,
+        "y": 900,
+        "w": 160,
+        "h": 110,
+        "z": "a0018",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "storedData"
+      },
+      {
+        "id": "shape_internalStorage",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "internalStorage",
+        "x": 400,
+        "y": 900,
+        "w": 160,
+        "h": 110,
+        "z": "a0019",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "internalStorage"
+      },
+      {
+        "id": "shape_summing",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "summing",
+        "x": 600,
+        "y": 900,
+        "w": 160,
+        "h": 110,
+        "z": "a001a",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "fontSize": 18,
+        "text": "summing"
+      },
+      {
+        "id": "shape_or",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "or",
+        "x": 800,
+        "y": 900,
+        "w": 160,
+        "h": 110,
+        "z": "a001b",
+        "color": "#ffd08a",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 0,
+        "fontSize": 18,
+        "text": "or",
+        "dash": "dashed"
+      },
+      {
+        "id": "conn_straight",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "connector",
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1,
+        "z": "a001c",
+        "color": "#0a0a0a",
+        "strokeWidth": 2,
+        "arrowEnd": true,
+        "from": {
+          "objectId": "sticky_rich"
+        },
+        "to": {
+          "objectId": "sticky_rect"
+        }
+      },
+      {
+        "id": "conn_elbow",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "connector",
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1,
+        "z": "a001d",
+        "color": "#0a0a0a",
+        "strokeWidth": 2,
+        "arrowEnd": true,
+        "from": {
+          "objectId": "sticky_rect",
+          "side": "e"
+        },
+        "to": {
+          "objectId": "sticky_old",
+          "side": "w"
+        },
+        "lineStyle": "elbow",
+        "dash": "dashed",
+        "capEnd": "arrow"
+      },
+      {
+        "id": "conn_curved",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "connector",
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1,
+        "z": "a001e",
+        "color": "#ec4e92",
+        "strokeWidth": 4,
+        "arrowEnd": true,
+        "from": {
+          "objectId": "shape_rect",
+          "side": "s"
+        },
+        "to": {
+          "objectId": "shape_ellipse"
+        },
+        "lineStyle": "curved",
+        "arrowStart": true,
+        "capStart": "circle",
+        "text": "Weg zur Bühne",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Weg zur Bühne"
+                }
+              ]
+            }
+          ]
+        },
+        "labelPos": 0.3
+      },
+      {
+        "id": "conn_free",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "connector",
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1,
+        "z": "a001f",
+        "color": "#0a0a0a",
+        "strokeWidth": 2,
+        "arrowEnd": false,
+        "from": {
+          "x": 1900,
+          "y": 0
+        },
+        "to": {
+          "x": 2200,
+          "y": 150
+        },
+        "dash": "dotted"
+      },
+      {
+        "id": "pen1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "pen",
+        "x": 1900,
+        "y": 300,
+        "w": 200,
+        "h": 80,
+        "z": "a001g",
+        "color": "#1763b5",
+        "strokeWidth": 4,
+        "points": [
+          0,
+          0,
+          50,
+          40,
+          100,
+          10,
+          150,
+          70,
+          200,
+          30
+        ]
+      },
+      {
+        "id": "marker1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "pen",
+        "x": 1900,
+        "y": 420,
+        "w": 200,
+        "h": 20,
+        "z": "a001h",
+        "color": "#c9e14a",
+        "strokeWidth": 16,
+        "marker": true,
+        "points": [
+          0,
+          10,
+          200,
+          10
+        ]
+      },
+      {
+        "id": "image1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "image",
+        "x": 1900,
+        "y": 500,
+        "w": 320,
+        "h": 240,
+        "z": "a001i",
+        "imageId": "img_photo",
+        "color": "#7a9a3c",
+        "rotation": -3
+      },
+      {
+        "id": "sticker_emoji",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "sticker",
+        "x": 2250,
+        "y": 300,
+        "w": 64,
+        "h": 64,
+        "z": "a001j",
+        "emoji": "🌵"
+      },
+      {
+        "id": "sticker_stamp",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "sticker",
+        "x": 2330,
+        "y": 300,
+        "w": 96,
+        "h": 96,
+        "z": "a001k",
+        "stamp": "like"
+      },
+      {
+        "id": "icon1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "icon",
+        "x": 2250,
+        "y": 420,
+        "w": 48,
+        "h": 48,
+        "z": "a001l",
+        "color": "#0a0a0a",
+        "icon": "tent",
+        "iconNode": [
+          [
+            "path",
+            {
+              "d": "M3.5 21 14 3"
+            }
+          ],
+          [
+            "path",
+            {
+              "d": "M20.5 21 10 3"
+            }
+          ],
+          [
+            "path",
+            {
+              "d": "M15.5 21 12 15l-3.5 6"
+            }
+          ],
+          [
+            "path",
+            {
+              "d": "M2 21h20"
+            }
+          ]
+        ]
+      },
+      {
+        "id": "card1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "card",
+        "x": 0,
+        "y": 1300,
+        "w": 300,
+        "h": 160,
+        "z": "a001m",
+        "text": "Bühne aufbauen",
+        "color": "#1763b5",
+        "status": "doing",
+        "due": "2027-06-12",
+        "tags": [
+          {
+            "label": "Aufbau",
+            "color": "#2b8a3e"
+          }
+        ],
+        "assignee": {
+          "key": "m:7",
+          "name": "Jonas"
+        },
+        "desc": "Freitag ab 14 Uhr, mit Lena und Mara"
+      },
+      {
+        "id": "table1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "table",
+        "x": 350,
+        "y": 1300,
+        "w": 480,
+        "h": 150,
+        "z": "a001n",
+        "color": "#0a0a0a",
+        "tableHead": "both",
+        "table": {
+          "rows": [
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "cols": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "cells": {
+            "r1:c1": "Was",
+            "r1:c2": "Wer",
+            "r1:c3": "Wann",
+            "r2:c1": "Zelte",
+            "r2:c2": "Mara",
+            "r2:c3": "Fr",
+            "r3:c1": "Strom"
+          },
+          "widths": {
+            "c1": 2
+          }
+        }
+      },
+      {
+        "id": "mind_root",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "mindnode",
+        "x": 900,
+        "y": 1300,
+        "w": 160,
+        "h": 60,
+        "z": "a001o",
+        "text": "Festival",
+        "color": "#1763b5",
+        "mind": {
+          "level": 0
+        }
+      },
+      {
+        "id": "mind_a",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "mindnode",
+        "x": 1120,
+        "y": 1250,
+        "w": 140,
+        "h": 44,
+        "z": "a001p",
+        "text": "Musik",
+        "color": "#1763b5",
+        "mind": {
+          "parent": "mind_root",
+          "order": 0,
+          "side": "r",
+          "level": 1
+        }
+      },
+      {
+        "id": "mind_b",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "mindnode",
+        "x": 700,
+        "y": 1350,
+        "w": 140,
+        "h": 44,
+        "z": "a001q",
+        "text": "Essen",
+        "color": "#ec4e92",
+        "mind": {
+          "parent": "mind_root",
+          "order": 1,
+          "side": "l",
+          "level": 1,
+          "collapsed": true
+        }
+      },
+      {
+        "id": "conn_mind",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "connector",
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1,
+        "z": "a001r",
+        "color": "#0a0a0a",
+        "strokeWidth": 2,
+        "arrowEnd": false,
+        "from": {
+          "objectId": "mind_root"
+        },
+        "to": {
+          "objectId": "mind_a"
+        },
+        "lineStyle": "curved"
+      },
+      {
+        "id": "timeline1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "timeline",
+        "x": 0,
+        "y": 1550,
+        "w": 1200,
+        "h": 220,
+        "z": "a001s",
+        "tlStart": "2027-06-01",
+        "tlEnd": "2027-06-30",
+        "tlUnit": "week",
+        "timeline": {
+          "lanes": [
+            "l1",
+            "l2"
+          ],
+          "names": {
+            "l1": "Aufbau",
+            "l2": "Programm"
+          },
+          "items": {
+            "i1": {
+              "lane": "l1",
+              "start": "2027-06-08",
+              "end": "2027-06-11",
+              "title": "Zelte",
+              "color": "#2b8a3e"
+            },
+            "i2": {
+              "lane": "l2",
+              "start": "2027-06-12",
+              "end": "2027-06-12",
+              "title": "Eröffnung",
+              "ms": true
+            }
+          }
+        }
+      },
+      {
+        "id": "doc1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "document",
+        "x": 1300,
+        "y": 1300,
+        "w": 300,
+        "h": 424,
+        "z": "a001t",
+        "docFile": "pdf_file",
+        "docName": "Lageplan 2027.pdf",
+        "docCount": 2,
+        "docPage": 0,
+        "imageId": "img_page0",
+        "docRatios": [
+          0.707,
+          1.414
+        ],
+        "docPages": {
+          "0": "img_page0",
+          "1": "img_page1"
+        }
+      },
+      {
+        "id": "group_a",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "sticky",
+        "x": 1700,
+        "y": 1300,
+        "w": 120,
+        "h": 120,
+        "z": "a001u",
+        "color": "#ffb3d1",
+        "text": "A",
+        "groupId": "g1",
+        "locked": true
+      },
+      {
+        "id": "group_b",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "sticky",
+        "x": 1830,
+        "y": 1300,
+        "w": 120,
+        "h": 120,
+        "z": "a001v",
+        "color": "#ffb3d1",
+        "text": "B",
+        "groupId": "g1",
+        "linkTo": "frame1"
+      },
+      {
+        "id": "hidden1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "shape",
+        "shape": "rect",
+        "x": 1700,
+        "y": 1450,
+        "w": 100,
+        "h": 60,
+        "z": "a001w",
+        "color": "#ffffff",
+        "stroke": "#0a0a0a",
+        "strokeWidth": 2,
+        "text": "",
+        "hidden": true
+      },
+      {
+        "id": "future1",
+        "createdBy": "a:seed",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "type": "future.widget",
+        "x": 2000,
+        "y": 1300,
+        "w": 240,
+        "h": 160,
+        "z": "a001x",
+        "future.payload": {
+          "level": 3,
+          "items": [
+            "a",
+            "b"
+          ]
+        },
+        "color": "#e2d5ff"
+      }
+    ],
+    "ext": {
+      "collab.comments": {
+        "t1": {
+          "id": "t1",
+          "x": 260,
+          "y": 0,
+          "objectId": "sticky_rich",
+          "dx": 260,
+          "dy": 0,
+          "resolved": false,
+          "createdBy": "m:7",
+          "createdAt": "2026-11-01T12:00:00.000Z",
+          "messages": [
+            {
+              "id": "m1",
+              "by": "m:7",
+              "name": "Jonas",
+              "text": "@Mara passt das so?",
+              "at": "2026-11-01T12:00:00.000Z",
+              "mentions": [
+                "m:12"
+              ]
+            }
+          ]
+        }
+      },
+      "collab.reactions": {
+        "sticky_rich|👍|m:7": {
+          "o": "sticky_rich",
+          "e": "👍",
+          "u": "m:7",
+          "n": "Jonas",
+          "at": "2026-11-01T12:01:00.000Z"
+        }
+      },
+      "private.mode": {}
+    }
+  },
+  "peers": [],
+  "history": {
+    "canUndo": false,
+    "canRedo": false
+  }
+}

@@ -1,0 +1,302 @@
+{
+ "version": 1,
+ "now": "2026-01-05",
+ "cards": [
+  {
+   "card": {
+    "id": "x",
+    "type": "card",
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 96,
+    "z": "",
+    "createdBy": "",
+    "updatedAt": "",
+    "text": ""
+   },
+   "h": 50
+  },
+  {
+   "card": {
+    "id": "x",
+    "type": "card",
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 96,
+    "z": "",
+    "createdBy": "",
+    "updatedAt": "",
+    "text": "Bühne aufbauen und Strom für alle Stände verlegen"
+   },
+   "h": 72
+  },
+  {
+   "card": {
+    "id": "x",
+    "type": "card",
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 96,
+    "z": "",
+    "createdBy": "",
+    "updatedAt": "",
+    "text": "Kurz",
+    "desc": "Reihenfolge der Bands mit der Technik abstimmen. Reihenfolge der Bands mit der Technik abstimmen. Reihenfolge der Bands mit der Technik abstimmen. Reihenfolge der Bands mit der Technik abstimmen. Reihenfolge der Bands mit der Technik abstimmen. Reihenfolge der Bands mit der Technik abstimmen. "
+   },
+   "h": 137
+  },
+  {
+   "card": {
+    "id": "x",
+    "type": "card",
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 96,
+    "z": "",
+    "createdBy": "",
+    "updatedAt": "",
+    "text": "Shuttle",
+    "desc": "Zwei Kleinbusse anfragen.",
+    "status": "doing",
+    "due": "2026-01-12",
+    "assignee": {
+     "key": "m:7",
+     "name": "Jonas Beispiel"
+    }
+   },
+   "h": 114
+  },
+  {
+   "card": {
+    "id": "x",
+    "type": "card",
+    "x": 0,
+    "y": 0,
+    "w": 300,
+    "h": 96,
+    "z": "",
+    "createdBy": "",
+    "updatedAt": "",
+    "text": "Viele Tags",
+    "tags": [
+     {
+      "label": "Programm",
+      "color": "#ec4e92"
+     },
+     {
+      "label": "Bar",
+      "color": "#ffd08a"
+     },
+     {
+      "label": "Social Media",
+      "color": "#9fd3ff"
+     },
+     {
+      "label": "Orga",
+      "color": "#c9e14a"
+     },
+     {
+      "label": "Technik",
+      "color": "#e2d5ff"
+     }
+    ],
+    "due": "2027-03-01",
+    "status": "blocked"
+   },
+   "h": 146
+  },
+  {
+   "card": {
+    "id": "x",
+    "type": "card",
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 96,
+    "z": "",
+    "createdBy": "",
+    "updatedAt": "",
+    "text": "Schmal mit einem sehr langen Wortungetüm Festivalgeländeabsperrung 🎸",
+    "status": "done"
+   },
+   "h": 197
+  }
+ ],
+ "tables": [
+  {
+   "table": {
+    "rows": [
+     "r1",
+     "r2",
+     "r3"
+    ],
+    "cols": [
+     "c1",
+     "c2",
+     "c3"
+    ],
+    "cells": {},
+    "widths": {}
+   },
+   "w": 480,
+   "head": true,
+   "widths": [
+    160,
+    160,
+    160
+   ],
+   "rows": [
+    42,
+    42,
+    42
+   ],
+   "h": 126
+  },
+  {
+   "table": {
+    "rows": [
+     "r1",
+     "r2",
+     "r3"
+    ],
+    "cols": [
+     "c1",
+     "c2",
+     "c3"
+    ],
+    "cells": {
+     "r1:c1": "Bereich",
+     "r1:c2": "Fr 14–18",
+     "r1:c3": "Sa",
+     "r2:c1": "Bar",
+     "r2:c2": "Lena, Tom und Mira übernehmen die Bar am Abend",
+     "r3:c1": "Einlass",
+     "r3:c2": "Jonas",
+     "r3:c3": "Mara\nund Kim"
+    },
+    "widths": {}
+   },
+   "w": 480,
+   "head": true,
+   "widths": [
+    160,
+    160,
+    160
+   ],
+   "rows": [
+    42,
+    81,
+    61
+   ],
+   "h": 184
+  },
+  {
+   "table": {
+    "rows": [
+     "r1",
+     "r2"
+    ],
+    "cols": [
+     "c1",
+     "c2"
+    ],
+    "cells": {
+     "r1:c1": "Sehr lange Kopfzeile mit vielen Wörtern",
+     "r1:c2": "B",
+     "r2:c1": "x",
+     "r2:c2": "y"
+    },
+    "widths": {
+     "c1": 1.4
+    }
+   },
+   "w": 300,
+   "head": false,
+   "widths": [
+    175,
+    125
+   ],
+   "rows": [
+    61,
+    42
+   ],
+   "h": 103
+  }
+ ],
+ "pastes": [
+  {
+   "text": "A\tB\n1\t2\n",
+   "choice": {
+    "table": [
+     [
+      "A",
+      "B"
+     ],
+     [
+      "1",
+      "2"
+     ]
+    ],
+    "lines": [
+     "A\tB",
+     "1\t2"
+    ]
+   }
+  },
+  {
+   "text": "eins\nzwei\n\ndrei\r\n",
+   "choice": {
+    "table": null,
+    "lines": [
+     "eins",
+     "zwei",
+     "drei"
+    ]
+   }
+  },
+  {
+   "text": "nur eine Zeile",
+   "choice": null
+  },
+  {
+   "text": "a\t\"b\nc\"\td\r\ne\tf",
+   "choice": {
+    "table": [
+     [
+      "a",
+      "b\nc",
+      "d"
+     ],
+     [
+      "e",
+      "f",
+      ""
+     ]
+    ],
+    "lines": [
+     "a\t\"b",
+     "c\"\td",
+     "e\tf"
+    ]
+   }
+  },
+  {
+   "text": "x\ty",
+   "choice": {
+    "table": [
+     [
+      "x",
+      "y"
+     ]
+    ],
+    "lines": [
+     "x\ty"
+    ]
+   }
+  }
+ ]
+}

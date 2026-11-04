@@ -1,0 +1,41 @@
+name: Flutter
+
+on:
+  push:
+    branches: [main]
+    paths: ["flutter/**", "docs/native_fixtures/**", ".github/workflows/flutter.yml"]
+  pull_request:
+    paths: ["flutter/**", "docs/native_fixtures/**", ".github/workflows/flutter.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: flutter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  flutter:
+    name: ${{ matrix.package }}
+    # Golden images are rendered on Windows (font rasterisation differs between platforms)
+    runs-on: windows-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [packages/stachel_board, packages/stachel_client, app]
+    defaults:
+      run:
+        working-directory: flutter/${{ matrix.package }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.2
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze
+      # live tests need a running sandbox server (tools/sandbox.mts) and skip themselves otherwise
+      - run: flutter test

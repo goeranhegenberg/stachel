@@ -1,0 +1,4840 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "serialNumber": "urn:uuid:0d551fd6-be1d-4551-bc0d-895f5a3400cf",
+  "metadata": {
+    "timestamp": "2026-11-02T16:17:03.985Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "npm",
+          "version": "11.21.1"
+        },
+        {
+          "type": "application",
+          "name": "cyclonedx-npm",
+          "group": "@cyclonedx",
+          "version": "4.2.1",
+          "author": "Jan Kowalleck",
+          "description": "Create CycloneDX Software Bill of Materials (SBOM) from NPM projects.",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=20.18.0"
+            },
+            {
+              "name": "cdx:npm:package:constraint:engine:npm",
+              "value": ">=9"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "cyclonedx-library",
+          "group": "@cyclonedx",
+          "version": "10.3.0",
+          "author": "Jan Kowalleck",
+          "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=20.18.0"
+            }
+          ]
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "stachel-server",
+      "version": "0.1.0",
+      "bom-ref": "stachel-server@0.1.0",
+      "purl": "pkg:npm/stachel-server@0.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": ""
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "stachel:erzeugt",
+        "value": "Kopie von package.json+package-lock.json; npm ci --ignore-scripts --omit=dev --os=linux --cpu=x64 --libc=glibc; npx @cyclonedx/cyclonedx-npm@4 --omit dev --spec-version 1.5. Komponenten mit bom-ref \"extra|...\" manuell ergaenzt (nicht-npm, mit ausgeliefert)."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "cookie",
+      "group": "@fastify",
+      "version": "11.1.3",
+      "bom-ref": "stachel-server@0.1.0|@fastify/cookie@11.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/cookie@11.1.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/cookie/-/cookie-11.1.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "44186530db26486e82e4a1a24e48525c117be7122b50c4b2b430c17299d57b0849f175589c94eef9257a1582970a5211b01b918ce7ca6c14942ef9cf0f75ff9a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/cookie"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "helmet",
+      "group": "@fastify",
+      "version": "13.2.0",
+      "bom-ref": "stachel-server@0.1.0|@fastify/helmet@13.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/helmet@13.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/helmet/-/helmet-13.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "daee35539851f68d6edc75072d3dcd8e9eef5ae5b0f975f0f2a081c15635ee945000dd7bf5860a894f5feffa849f521369b80d4e4abf624ea09ab60f4ab69a80"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/helmet"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "multipart",
+      "group": "@fastify",
+      "version": "10.1.6",
+      "bom-ref": "stachel-server@0.1.0|@fastify/multipart@10.1.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/multipart@10.1.6",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/multipart/-/multipart-10.1.6.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e7290fed29026cbd3a7a4fa3edf6b8a3517c5c0485e3e2a3a952dbb8036a5ee9f15ea8d6742424d29c3ffa4587ddef21a3b330db5121b99a76e04aad474e322a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/multipart"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "static",
+      "group": "@fastify",
+      "version": "10.1.7",
+      "bom-ref": "stachel-server@0.1.0|@fastify/static@10.1.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/static@10.1.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/static/-/static-10.1.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "efe95488f46b6843428942e08e172a6725925baaa7c084fcec8b34bb7736677886104106078e70261631ceb49dceed76807338a9cbe211870f12209ee09e8c09"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/static"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "barlow-condensed",
+      "group": "@fontsource",
+      "version": "5.3.0",
+      "bom-ref": "stachel-server@0.1.0|@fontsource/barlow-condensed@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fontsource/barlow-condensed@5.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fontsource/barlow-condensed/-/barlow-condensed-5.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "440ecc988c74bf7790e8671fef8a8b54b3b02c1d06a4f3b3c7e794f621bf0260a748919c21661e53ccba084306676d74306c068390998732e492fc997534e4d6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fontsource/barlow-condensed"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-1.1: Lizenztext mitliefern"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "barlow",
+      "group": "@fontsource",
+      "version": "5.3.0",
+      "bom-ref": "stachel-server@0.1.0|@fontsource/barlow@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fontsource/barlow@5.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fontsource/barlow/-/barlow-5.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b46474cba40e6d1b4abfbd4c3ad878e36db6fa674d14cfd958558357554bccd6c6e282bd3cd465c89ce691c938bc7022f626c705782de12958e756a614fe7908"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fontsource/barlow"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-1.1: Lizenztext mitliefern; Server liefert woff2 fuer QR-Seite (server/src/qr-page.ts:6)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "server",
+      "group": "@hocuspocus",
+      "version": "4.7.1",
+      "bom-ref": "stachel-server@0.1.0|@hocuspocus/server@4.7.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40hocuspocus/server@4.7.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@hocuspocus/server/-/server-4.7.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7f64d6362e6b1678eed6db4e7acc6447590f22e90598c0a51d8e29031d1194804cce30285159448229444c801096bc26c3550cc6ccb7d5fb1ed2d981cd8129c1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@hocuspocus/server"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastify",
+      "version": "5.12.7",
+      "bom-ref": "stachel-server@0.1.0|fastify@5.12.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fastify@5.12.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fastify/-/fastify-5.12.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "bf8a443ec4d13eeaa50c862240507e0478d537849d1d7f6ed00064d190d429b6dd635bec36bc947758f867e8d01196a3bd8215934e3b2a29af6bdfc027bf4663"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fastify"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fractional-indexing",
+      "version": "4.0.0",
+      "bom-ref": "stachel-server@0.1.0|fractional-indexing@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "CC0-1.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fractional-indexing@4.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fractional-indexing/-/fractional-indexing-4.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "36bd8fd58c9a8f6b32d5076dff023719c072c6b51d6d22a0e7e706bf0f1fd7c853d92910b7a57bda23a306993b20edd493306c765191b366b8cfa74bac9a6b83"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fractional-indexing"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "CC0-1.0 (Public-Domain-Widmung) - unkritisch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "nanoid",
+      "version": "6.0.2",
+      "bom-ref": "stachel-server@0.1.0|nanoid@6.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/nanoid@6.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/nanoid/-/nanoid-6.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "848bd539bf50af5a7ff4234d2ce7b43a55af831ff3893b15c0a37f1834acb80acdd8ad300e269f3f7b344969ac9bba3605d9f24bc67d67ae0d14151b9face206"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/nanoid"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sharp",
+      "version": "0.35.5",
+      "bom-ref": "stachel-server@0.1.0|sharp@0.35.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/sharp@0.35.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/sharp/-/sharp-0.35.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6309f83a7cc6ba4a7b08332ba74f11439d182a6bb01b8edbad980854f4ef05a6807d095197282b46a4abc5d0a22fd33e2e5ccb06227af0847542abf31f28c2ee"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/sharp"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ws",
+      "version": "8.22.0",
+      "bom-ref": "stachel-server@0.1.0|ws@8.22.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ws@8.22.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ws/-/ws-8.22.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "61d82073df3bf913b40275ad67fed6abd16d36f72b2f56ff44ed2e77d9968d43e00ebb00030412179d6c9b6866d57a1f6d4ff88e4a4612c2c5b1967153ed433a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ws"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "y-protocols",
+      "version": "1.0.7",
+      "bom-ref": "stachel-server@0.1.0|y-protocols@1.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/y-protocols@1.0.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/y-protocols/-/y-protocols-1.0.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "61256c2e85f13baec9e9e13f9d5e00b45b53dd0128b597f9b0ae411f11415eca3b543513dd3c74ec87c0ea1b2ee50e4e98174c910566159f50380edf8a45af9f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/y-protocols"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yjs",
+      "version": "13.6.33",
+      "bom-ref": "stachel-server@0.1.0|yjs@13.6.33",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/yjs@13.6.33",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/yjs/-/yjs-13.6.33.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "abf518bebd603a4e17208f82bb5096d9d20d8d8a8924589f4f3a2011a2004739ebbd7eee3a51ec75311772738132e22cac218410a74dc62ef893230b6652957f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/yjs"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cookie",
+      "version": "2.0.1",
+      "bom-ref": "stachel-server@0.1.0|cookie@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/cookie@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/cookie/-/cookie-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "cae4e8a95bd1ae3ea97c35d113240002ff12900124ffc192de34114e250c9bae9356d0589aa41ea048cbd8b9aaf11a68eb6ef5bc7efa2274c28538ad1009bae7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/cookie"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastify-plugin",
+      "version": "6.0.1",
+      "bom-ref": "stachel-server@0.1.0|fastify-plugin@6.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fastify-plugin@6.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fastify-plugin/-/fastify-plugin-6.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e305b84714a6bcf5cbae1e66810122bb8dea5376f0e38376b2ce054e44e44086e9ad4844fbfb38dd05f48ffb6d733b5d58aecf1241ea56d85d73919d1060ef8c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fastify-plugin"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "helmet",
+      "version": "8.3.0",
+      "bom-ref": "stachel-server@0.1.0|helmet@8.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/helmet@8.3.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/helmet/-/helmet-8.3.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "420a626b0b374a6df402ff046a1eac8cc0996708e506ef84ebcae1a42581b2163595bd3d1ed2f08f91af897d0ec90227fae9544b4897d00c4de67ded2d9cf3d7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/helmet"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "busboy",
+      "group": "@fastify",
+      "version": "3.2.4",
+      "bom-ref": "stachel-server@0.1.0|@fastify/busboy@3.2.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/busboy@3.2.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/busboy/-/busboy-3.2.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "9504bcc5c5d3e78add25bfb0946fd0ed231276d9191292cf1e8a120d4672c999bd2c90fb5f590e34f855a0f687abe76c3ed5941862c8cfd801361b3da8a6f297"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/busboy"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "deepmerge",
+      "group": "@fastify",
+      "version": "3.2.4",
+      "bom-ref": "stachel-server@0.1.0|@fastify/deepmerge@3.2.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/deepmerge@3.2.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/deepmerge/-/deepmerge-3.2.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "91cf0642ae605fd451870d2ba2fdc332b37cc12f32465c4945d0f3b18c3074157fc1acee56073fd4aec228bf74b65beedd19476a7e98d11d1a1379c9b41cf679"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/deepmerge"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "error",
+      "group": "@fastify",
+      "version": "4.2.1",
+      "bom-ref": "stachel-server@0.1.0|@fastify/error@4.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/error@4.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/error/-/error-4.2.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "31806e9ae2303fee4c2295d2c8a9bafe8d448a07288a3d7cea5594b2c5f72c7e54f0a5aa53492d661cc2e0212b217f4425e41e44623ecc965059a9019456d472"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/error"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "secure-json-parse",
+      "version": "4.1.1",
+      "bom-ref": "stachel-server@0.1.0|secure-json-parse@4.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/secure-json-parse@4.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/secure-json-parse/-/secure-json-parse-4.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "96777cd4c40464a8e15bf19dd9342a75de173fa41835d0d6fc43fe23b9d3ac51cff72d8b99a18f20793dc6c9f370e884af5737f5cfdef38c45806be240a05347"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/secure-json-parse"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "accept-negotiator",
+      "group": "@fastify",
+      "version": "2.1.2",
+      "bom-ref": "stachel-server@0.1.0|@fastify/accept-negotiator@2.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/accept-negotiator@2.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/accept-negotiator/-/accept-negotiator-2.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "2d5ecc66a4f05d312ddc6c414fa054f000b3b569effbe85290c12c3f7bac207888d2d03817910ee131e10c23abe49fe08a733d0c29cb0a667abb724b03dc7c23"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/accept-negotiator"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "send",
+      "group": "@fastify",
+      "version": "4.2.0",
+      "bom-ref": "stachel-server@0.1.0|@fastify/send@4.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/send@4.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/send/-/send-4.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "0791ebf8816c3dba89250bba147136305a671df6cf9423954143d3766e8fc427229581ab110b2e95b3b4cfd6e581b8e7748c8b2706b63561482235e93e16f052"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/send"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "content-disposition",
+      "version": "3.0.0",
+      "bom-ref": "stachel-server@0.1.0|content-disposition@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/content-disposition@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/content-disposition/-/content-disposition-3.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "647ff45ecf6b30815608e9867664bd78705317adaaa9060dcf89d58d08647483bf6b47c23f8508337991cffc22a8bd0bd78620033ff5c62a3839a498e3e38dfc"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/content-disposition"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fastq",
+      "version": "1.20.3",
+      "bom-ref": "stachel-server@0.1.0|fastq@1.20.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fastq@1.20.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fastq/-/fastq-1.20.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5cabf99e72ecea72c5ef536088a24b21914b90fc8812e3ac7a52c6eee8d99c6ad17d02bc1e9bd8f96a8a84025401d2e89b054712b552e0b7f11653ead3f15303"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fastq"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "glob",
+      "version": "13.0.6",
+      "bom-ref": "stachel-server@0.1.0|glob@13.0.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/glob@13.0.6",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/glob/-/glob-13.0.6.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5a3972ae89669bcb83a66fe8806c976576f567e09ad81f0d6c9c2a0558346b12bd19b05ea12ef2195eaf8d79d87469ba5f9de27a112ec716f288aa7c42637857"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/glob"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "common",
+      "group": "@hocuspocus",
+      "version": "4.7.1",
+      "bom-ref": "stachel-server@0.1.0|@hocuspocus/common@4.7.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40hocuspocus/common@4.7.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@hocuspocus/common/-/common-4.7.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f8de2df007412160542bec87b2e06f09c066f7a795d84deab887b099af7e4d8a26a9531786ba2f01fddd03a5c56d81d133b820b579251edda616a4dca6231d01"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@hocuspocus/common"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "async-mutex",
+      "version": "0.5.0",
+      "bom-ref": "stachel-server@0.1.0|async-mutex@0.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/async-mutex@0.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/async-mutex/-/async-mutex-0.5.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d40f78075f23909dc362adbce2884fc685db7d30391ec43bfcc7f80c485cc8bc77073dbb461e7d89271b07a10f88ff81fa3a2e7ba602c5c31749b142d6d64ac0"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/async-mutex"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "crossws",
+      "version": "0.4.16",
+      "bom-ref": "stachel-server@0.1.0|crossws@0.4.16",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/crossws@0.4.16",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/crossws/-/crossws-0.4.16.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "80a736bb7e3a73ab596b3226cfcff82a4451296e9c107a2ddd9dfe83328d4a47c74d6918ad77a289d30a60dd099c7a9eb3322ce7efa20da5733ffa5697f79fa7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/crossws"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "kleur",
+      "version": "4.1.5",
+      "bom-ref": "stachel-server@0.1.0|kleur@4.1.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/kleur@4.1.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/kleur/-/kleur-4.1.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a3e34efbc5ab462404138ffb9f044984dd475a9566266e75d690475313cbb69d015084b3941a653916129937250a726f42adad2aefec825df156991ced95ae41"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/kleur"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lib0",
+      "version": "0.2.119",
+      "bom-ref": "stachel-server@0.1.0|lib0@0.2.119",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lib0@0.2.119",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/lib0/-/lib0-0.2.119.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "be1f9389e8d5cbc5e6fa109d9d17e7f41b6118dbcd5197445e5b4d8d564bdd3cd120a3f7b35967421f2959dfd0d300a063414f0065558c51786621d45772c580"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lib0"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv-compiler",
+      "group": "@fastify",
+      "version": "4.0.7",
+      "bom-ref": "stachel-server@0.1.0|@fastify/ajv-compiler@4.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/ajv-compiler@4.0.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/ajv-compiler/-/ajv-compiler-4.0.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "54fd3221fc25735a218fbdf791e603ab21e6d5559e3fd550c58a26ba786bf748e40b868d3626db92b46268d80f82a8f5391c547a720b478ab303fa69601340b5"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/ajv-compiler"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-json-stringify-compiler",
+      "group": "@fastify",
+      "version": "5.1.1",
+      "bom-ref": "stachel-server@0.1.0|@fastify/fast-json-stringify-compiler@5.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/fast-json-stringify-compiler@5.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/fast-json-stringify-compiler/-/fast-json-stringify-compiler-5.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a72c512a4ed4a549e7af3b4ff69178f99631bac110e0b89f4f2cd17625e6caa97541eccd1f13b4d83db9315536a3890c7803185808c6e912919688e091b88303"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/fast-json-stringify-compiler"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "proxy-addr",
+      "group": "@fastify",
+      "version": "5.1.2",
+      "bom-ref": "stachel-server@0.1.0|@fastify/proxy-addr@5.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/proxy-addr@5.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/proxy-addr/-/proxy-addr-5.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "baa07842c815a2ba345c30be0c87ed20c1971dd04f9fe94ae84937c57008c4f30225fab19dbb721283029b628f5153ae228b1dec2cb0f476b012a30533f500fa"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/proxy-addr"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "abstract-logging",
+      "version": "2.0.1",
+      "bom-ref": "stachel-server@0.1.0|abstract-logging@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/abstract-logging@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/abstract-logging/-/abstract-logging-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d818d14d9c533ef85e3af19b06c94549839492bf928cfb4e9eb2cfdf77fe54858bcdecd0a5972a560ee36b72f87415e6cf38304fe6b4dbd8d1c793c28b726e88"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/abstract-logging"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "avvio",
+      "version": "9.3.1",
+      "bom-ref": "stachel-server@0.1.0|avvio@9.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/avvio@9.3.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/avvio/-/avvio-9.3.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4324ca5bad7faa56daf9c510066fec4fd5fc96b8b851da26a920f00a7ae78f522f2d50d14625d1933e0280145607efdc99f0bb48ae5641cf13d6f49d1af69471"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/avvio"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-json-stringify",
+      "version": "7.1.3",
+      "bom-ref": "stachel-server@0.1.0|fast-json-stringify@7.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-json-stringify@7.1.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-json-stringify/-/fast-json-stringify-7.1.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e530ccd72385fc10c539c94acf61baaecd51b089791d7302ae0fe7a6674d20f35009ecec851e642078e1c0136e318ebb8e19135009bd0e0b8bf3190bff1d16b7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-json-stringify"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "find-my-way",
+      "version": "9.10.0",
+      "bom-ref": "stachel-server@0.1.0|find-my-way@9.10.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/find-my-way@9.10.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/find-my-way/-/find-my-way-9.10.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7abbbeb823d0da0fa72c191ff383073ff2b234d31aaf4043cb48fe8bc15bef6185f7f607059e7cabb14e0d4b5f555ed753d9df4541d74a668cf0d9997086d9e1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/find-my-way"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "light-my-request",
+      "version": "6.8.0",
+      "bom-ref": "stachel-server@0.1.0|light-my-request@6.8.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/light-my-request@6.8.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/light-my-request/-/light-my-request-6.8.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e50f0f8e848476d18807c7e2919b137a6e6f811a38176991eaf50a4c35bf1f583a32d02df1edddb906e0fd0c4be72ce0e81661a2bd8a3949b786158c58b4d9c2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/light-my-request"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino",
+      "version": "10.4.0",
+      "bom-ref": "stachel-server@0.1.0|pino@10.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pino@10.4.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino/-/pino-10.4.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6e4d59313c06fd5ca6c7eccfa1adbc321373b9c16f5c95a9ddcb2b4aec6e1cf48c7947adb5a0a843926f834ee6b42e0918da5c7d3c33e35a150a736004af7ebc"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "process-warning",
+      "version": "5.1.1",
+      "bom-ref": "stachel-server@0.1.0|process-warning@5.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/process-warning@5.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/process-warning/-/process-warning-5.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a0290d563e0e2a728472871505c0df888ba0375fdc13aae07d3de70adcdea993c0f3eac8c4c690d315f322418ff068f6a9468fd5447bba1275543f25502a730a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/process-warning"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rfdc",
+      "version": "1.4.1",
+      "bom-ref": "stachel-server@0.1.0|rfdc@1.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/rfdc@1.4.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/rfdc/-/rfdc-1.4.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "ab56f737942445459497b8b2ca569a8f790ea484f43768bd32a2044173fbdc656c37d730ddf771f17eb77049968491a2d8f3c2176dc88e9ee4b66777f6b6b020"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/rfdc"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "7.8.5",
+      "bom-ref": "stachel-server@0.1.0|semver@7.8.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/semver@7.8.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "63bfca0ec6fc2e3a28669c1aa86cae94ee8342592c8029dc7211c693eb19218e1206f52870c044147e54af57c8e1d57e26f974c3a723bee71a222e34a6e462a0"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/semver"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "toad-cache",
+      "version": "3.7.4",
+      "bom-ref": "stachel-server@0.1.0|toad-cache@3.7.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/toad-cache@3.7.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/toad-cache/-/toad-cache-3.7.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "9b54dd47faef4fb920189661b2936d5ddb1d624d1f75d1692491651b9b3e5243c5a3a9642e867760b39aa2f3d88ead51ef934fe497de4e548768eb04d3da5e0a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/toad-cache"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "colour",
+      "group": "@img",
+      "version": "1.1.0",
+      "bom-ref": "stachel-server@0.1.0|@img/colour@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40img/colour@1.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4ddefaabb8f9ee8fed2d57604bbe3a7180117d2cb193c8847d1c5ec0bf61e0e3336216d6e1301ca69974993e1ecaa5dd761e8bfe3c2833be66a3b8b16bfa4279"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@img/colour"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sharp-libvips-linux-x64",
+      "group": "@img",
+      "version": "1.3.4",
+      "bom-ref": "stachel-server@0.1.0|@img/sharp-libvips-linux-x64@1.3.4",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40img/sharp-libvips-linux-x64@1.3.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.3.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "189fff4925db9f04837acd36ba60779c324b15c433c3c6b5f15f1fca1aabead579d79b4e10c7489a38f18f502869f311cf9e85dcf1e07ed9e3d5010a494d7393"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@img/sharp-libvips-linux-x64"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL-3.0-or-later (libvips, glib, pango, librsvg, libheif, libexif, fribidi, proxy-libintl als vorkompilierte .so); cairo MPL-1.1; aom mit AOM-Patentlizenz. Dynamisch geladen -> LGPL erfuellbar: Lizenztexte + Quellangebot bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sharp-linux-x64",
+      "group": "@img",
+      "version": "0.35.5",
+      "bom-ref": "stachel-server@0.1.0|@img/sharp-linux-x64@0.35.5",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40img/sharp-linux-x64@0.35.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.35.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4b116d2d378922784003d43cdfa92ec76bd935e381404c7ae7caaf6dba1949caf4c08011ca6dc8706996ecaa550f9b1b560d0e8f2fae74541d6b2608672a0da2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@img/sharp-linux-x64"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "bom-ref": "stachel-server@0.1.0|detect-libc@2.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/detect-libc@2.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "06d8f604e38ef37a375b21f9f5ef0c817b3111055c6ab9143a9118aee6c1d2eaf09cdd74c90dfae2bb22072535d67665a966199b4e62fe87fb8a8e26ce2841b5"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/detect-libc"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ms",
+      "group": "@lukeed",
+      "version": "2.0.2",
+      "bom-ref": "stachel-server@0.1.0|@lukeed/ms@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40lukeed/ms@2.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@lukeed/ms/-/ms-2.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f48d999faf8d24b7da1a8cfd8cdde5a700e0018bdf19e35875b0088c93aacece13a5cf9553726aab82287d250129a8e20d2f24f5f648835f3fcf5de6a64d5bb0"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@lukeed/ms"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "escape-html",
+      "version": "1.0.3",
+      "bom-ref": "stachel-server@0.1.0|escape-html@1.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/escape-html@1.0.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3624aea59e0e7ae1b0afaf251887b29bf92c219309a1d506392099fc54a74f172b7a46efaab81d53194938ca628da299563009ad6ac6b3fe89cbc38cbb28fda3"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/escape-html"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-decode-uri-component",
+      "version": "1.0.1",
+      "bom-ref": "stachel-server@0.1.0|fast-decode-uri-component@1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-decode-uri-component@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-decode-uri-component/-/fast-decode-uri-component-1.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "58a80a5a0e5e531bd1646c16f05bdf6da1fb0174a1d9c2fede3e5f306cd4302c56049ddd5776bb5b3f32d9ffee4347b707a5a6a1d0f7a12e788d343d1d54c822"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-decode-uri-component"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "http-errors",
+      "version": "2.0.1",
+      "bom-ref": "stachel-server@0.1.0|http-errors@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/http-errors@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/http-errors/-/http-errors-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e056d17405fe6d2766a3801416e4b458d88fcfc36016dfabf138603569a5ae3423b7543b651f7ecd395c7b6f39f71e0a497af022c69e4ea0e82909ad3fca4b99"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/http-errors"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mime",
+      "version": "3.0.0",
+      "bom-ref": "stachel-server@0.1.0|mime@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/mime@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/mime/-/mime-3.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "8d2094eff541d65a0858165ed7868460753ffb550c107a1a3bbab108e5493b0f46807ef65405a9a7135c8d4fb1f5ada4dc648805734ac57405a91bef67bbebdc"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/mime"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "reusify",
+      "version": "1.1.0",
+      "bom-ref": "stachel-server@0.1.0|reusify@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/reusify@1.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "83a4147dfd38a19a47b34786e69f37ac52e11de574d2e83f61ff6764ce9f2de52b3e0b814e44d039da40596b29321e794d97d54033da37735025f6d5440c5d23"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/reusify"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minimatch",
+      "version": "10.2.6",
+      "bom-ref": "stachel-server@0.1.0|minimatch@10.2.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/minimatch@10.2.6",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "be92d012cf952c2af59d4d015d2d3b99a628170943007d209e042ebadb71230bad0c510c1ead9b957fbcbe98310dd2b72753f08c22627a9efb3a2b536782e5d4"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/minimatch"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minipass",
+      "version": "7.1.3",
+      "bom-ref": "stachel-server@0.1.0|minipass@7.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/minipass@7.1.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b44047a839c8a0cff5ad7304d738246bd83a43695ca029311cbb9cece0c9e41c5b3f977873667970682d5c092ee7ddb4d02c7b762b874ce61f4810fc9fa9a6f0"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/minipass"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path-scurry",
+      "version": "2.0.2",
+      "bom-ref": "stachel-server@0.1.0|path-scurry@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/path-scurry@2.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/path-scurry/-/path-scurry-2.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "dcefe2555b0900fb0e9e9c1621e0fe77acffecf9aa029c9078f52d0a77636ad8fff48e4bca51efb79aa5b856814f7239877af57a37d1d39e9cf850aff8d9cd5e"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/path-scurry"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tslib",
+      "version": "2.8.1",
+      "bom-ref": "stachel-server@0.1.0|tslib@2.8.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "0BSD"
+          }
+        }
+      ],
+      "purl": "pkg:npm/tslib@2.8.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a0916ef781d06fe29576e49440bef09e99aa9df98bb0e03f9c087a6fa107d30084a0ad3f98f79753a737c0a0d5f373243ae1cf447b525ca294f7d2016b34bfdb"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/tslib"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "isomorphic.js",
+      "version": "0.2.5",
+      "bom-ref": "stachel-server@0.1.0|isomorphic.js@0.2.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/isomorphic.js@0.2.5",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/isomorphic.js/-/isomorphic.js-0.2.5.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3c878c6c7a8cb780e750fdcc03f1657341c49588cc5c0aecc35ab0259726f6ca91f26ab797c3588b314cb72d295b013fb732061f710a2b9fa37ace6602bf39cb"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/isomorphic.js"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "bom-ref": "stachel-server@0.1.0|ajv-formats@3.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ajv-formats@3.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ajv-formats/-/ajv-formats-3.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f2252a979d04511fae51c7514371c3a9ae84572a3776870bf20e5627714d7169aeeb621b90652e7bfa44c8b056f1518a2ae7133e0a9e92ce1f214d43038ca8c1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ajv-formats"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ajv",
+      "version": "8.20.0",
+      "bom-ref": "stachel-server@0.1.0|ajv@8.20.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ajv@8.20.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ajv/-/ajv-8.20.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4e16e58be3a53a3fa230f60505505f2773a60809da4b2367e0cd6fcfd4fa1a46b926df5b6bf1c8479ea3a32eb9b58ea4c7f142179557341f35f58eff194ac118"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ajv"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "fast-uri",
+          "version": "3.1.9",
+          "bom-ref": "stachel-server@0.1.0|ajv@8.20.0|fast-uri@3.1.9",
+          "licenses": [
+            {
+              "license": {
+                "id": "BSD-3-Clause"
+              }
+            }
+          ],
+          "purl": "pkg:npm/fast-uri@3.1.9",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.9.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "852ff45addd86b4e37a0a5ecd2c231acca4a4084d784c2c8ad500a2978b8828cc60bdbfb6115959d7219ce334f4ced3633d05dc4b096a8ad7245780dce257225"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/ajv/node_modules/fast-uri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-uri",
+      "version": "4.2.3",
+      "bom-ref": "stachel-server@0.1.0|fast-uri@4.2.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-uri@4.2.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-uri/-/fast-uri-4.2.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "2353d7c0fe5e02194d95c7698edf42801e7da29d99bd97f1c3e064a861552143a03690954dc4eaa771e14d7edbaf18f9bec8a9fa7498e274ef7dff9e200efa86"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-uri"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "forwarded",
+      "group": "@fastify",
+      "version": "3.1.2",
+      "bom-ref": "stachel-server@0.1.0|@fastify/forwarded@3.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/forwarded@3.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/forwarded/-/forwarded-3.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f3d5a2446fa15b755049f0b08381dbf1be373dec845f5e4ae7e9447ec678114b61fc5c8e8d2fe5bfc1ec56eb3050d5d68929f1306368b84fdfabfd30dd5ba61d"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/forwarded"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ipaddr.js",
+      "version": "2.5.0",
+      "bom-ref": "stachel-server@0.1.0|ipaddr.js@2.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ipaddr.js@2.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-2.5.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6aafade4d01cf9c4baad94105560b6c7df023ea1ad28a4cc0dde066a876fd304a19c8b5d2a0ff9d5d8e4189d61a87f8ecb48af0dfb426d22c24286fcceca34d7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ipaddr.js"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "merge-json-schemas",
+      "group": "@fastify",
+      "version": "0.2.2",
+      "bom-ref": "stachel-server@0.1.0|@fastify/merge-json-schemas@0.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40fastify/merge-json-schemas@0.2.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@fastify/merge-json-schemas/-/merge-json-schemas-0.2.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "77f831f6c45b5025601911b399ae3ac0b730898f27a13a8ed8d9a383fbdb4c04711d11396dd8793c82fcb3decbb755fb49c456456e76795631c08a0fc0875550"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@fastify/merge-json-schemas"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "json-schema-ref-resolver",
+      "version": "3.0.1",
+      "bom-ref": "stachel-server@0.1.0|json-schema-ref-resolver@3.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/json-schema-ref-resolver@3.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/json-schema-ref-resolver/-/json-schema-ref-resolver-3.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c3e1f08258d7a55c19dc889da14475a8f67148e43e351416b957ba6b9a5ef176c7b0d644e1403054f52fcd96a09fbc8129b26db7a5099d11586cd4d13d9238e5"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/json-schema-ref-resolver"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "bom-ref": "stachel-server@0.1.0|fast-deep-equal@3.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7f7a90f68432f63d808417bf1fd542f75c0b98a042094fe00ce9ca340606e61b303bb04b2a3d3d1dce4760dcfd70623efb19690c22200da8ad56cd3701347ce1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-deep-equal"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-querystring",
+      "version": "1.1.2",
+      "bom-ref": "stachel-server@0.1.0|fast-querystring@1.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/fast-querystring@1.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/fast-querystring/-/fast-querystring-1.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "83a2ae2969855dcd1f203f16587d238ade20d00181a0984290931bd5199bb1211436f43e642f03e82519f86b45f2733348f5e786278fcb2aaa8a9ccd3449c78e"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/fast-querystring"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-regex2",
+      "version": "5.1.2",
+      "bom-ref": "stachel-server@0.1.0|safe-regex2@5.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/safe-regex2@5.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/safe-regex2/-/safe-regex2-5.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b40b421853cf3f4d95ae80d5ce9e1d6868ba6c2ee3586fb8d43e3b18a7f5f05787fee6ef2901d3f559a1024bed8cd3a6270aad029cd6794a44864c846142ef9b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/safe-regex2"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "set-cookie-parser",
+      "version": "3.2.1",
+      "bom-ref": "stachel-server@0.1.0|set-cookie-parser@3.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/set-cookie-parser@3.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-3.2.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3697753edfb8cdbdc1ad26433dddaa1704694ba6f511411ab11acef314b4ccc262d1f0295d72b962eccfd268a7c899f1c27147a15a09c00e79ab403472eeb781"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/set-cookie-parser"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "redact",
+      "group": "@pinojs",
+      "version": "0.4.0",
+      "bom-ref": "stachel-server@0.1.0|@pinojs/redact@0.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40pinojs/redact@0.4.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@pinojs/redact/-/redact-0.4.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "93610d9e606e804febcd07c471d58770263efc533754bcc7f5c604b1b76ca2aaefcc029185465e44d84066f07c3a2b502754c179ddf2a96b5d8f34bac09281c2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@pinojs/redact"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "atomic-sleep",
+      "version": "1.0.0",
+      "bom-ref": "stachel-server@0.1.0|atomic-sleep@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/atomic-sleep@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/atomic-sleep/-/atomic-sleep-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "90d3a30ea021ee9c745d6348fb841bce8891fe74e41c058db9ddaebe726ab83d7fc796bb11064c253d00733a8ad109faee863f4d34352db50a6a3669a7723db5"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/atomic-sleep"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "on-exit-leak-free",
+      "version": "2.1.2",
+      "bom-ref": "stachel-server@0.1.0|on-exit-leak-free@2.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/on-exit-leak-free@2.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/on-exit-leak-free/-/on-exit-leak-free-2.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d1e24963a8572c67f5b9d1f07cd7ed06a1fe83bdc4538079d389d978aa73d6c61129a7c0821c31109ba70763bbac36642f83c67ec3159d35d9d848e26dba9cb0"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/on-exit-leak-free"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino-abstract-transport",
+      "version": "3.0.0",
+      "bom-ref": "stachel-server@0.1.0|pino-abstract-transport@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pino-abstract-transport@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino-abstract-transport/-/pino-abstract-transport-3.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c257d473353e9fb1f2fc76b98fd6bf819372ed67b9f9c5e9f182fe5fe3c6f12d0a5f1c3b9ff257037738e98d334339c827cdd44498b0cbb2e1e7a58ba2436ec6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino-abstract-transport"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pino-std-serializers",
+      "version": "7.1.0",
+      "bom-ref": "stachel-server@0.1.0|pino-std-serializers@7.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/pino-std-serializers@7.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/pino-std-serializers/-/pino-std-serializers-7.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "06774f1faeff271184c518225f5757d30d45bd9724e566b869a97dd7df12ad18598c7dc6c4a4142880676094dd8f61c3377510012d3a1e57dc49b423d8e1e66b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/pino-std-serializers"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "quick-format-unescaped",
+      "version": "4.0.4",
+      "bom-ref": "stachel-server@0.1.0|quick-format-unescaped@4.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/quick-format-unescaped@4.0.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b580b5435860c91b87825a15fd85ecdb0d79ba73d587ca9fbbfa824df85361a99ac3b7f286e98a6b6c86a5d4a8f3bbd8df6ac87258fee1f59841750cb3d107be"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/quick-format-unescaped"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "real-require",
+      "version": "1.0.0",
+      "bom-ref": "stachel-server@0.1.0|real-require@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/real-require@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/real-require/-/real-require-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3f89db41841f78f271452998faffca20dc55b9c9b8345de9decee926f78c4eda26e76151e181a5b5440b07c89d0d7c030d65be798ad60c56eecd49e3a161c5ee"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/real-require"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-stable-stringify",
+      "version": "2.5.0",
+      "bom-ref": "stachel-server@0.1.0|safe-stable-stringify@2.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/safe-stable-stringify@2.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/safe-stable-stringify/-/safe-stable-stringify-2.5.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6f7ae9a532a6f53f8fb1508110e511e3a19623b7dd3acd3454a675fbd7351160da0ccbe341cead530b85c88a6b806813716a151d22ab53c1f7d591c0d9ed111c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/safe-stable-stringify"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sonic-boom",
+      "version": "4.2.1",
+      "bom-ref": "stachel-server@0.1.0|sonic-boom@4.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/sonic-boom@4.2.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/sonic-boom/-/sonic-boom-4.2.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c3a031b6e6d76b6c135c052c64c316111aec21101dacad1273e154cad5af60084124bcae238965acc202d43b65352748f7d108f3a299ba6d8c32adc4019945f5"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/sonic-boom"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "thread-stream",
+      "version": "4.2.0",
+      "bom-ref": "stachel-server@0.1.0|thread-stream@4.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/thread-stream@4.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/thread-stream/-/thread-stream-4.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "7b6cd9f7ac120a16b306c6c435ffcf726ff8b301edd9c10a43ddab8548e42fd1822a24c324869305e9e313f9bd0d78b44019933039050dd3a8994cb6d00d6d0d"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/thread-stream"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "depd",
+      "version": "2.0.0",
+      "bom-ref": "stachel-server@0.1.0|depd@2.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/depd@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "83b9c7e8fe9dc838a8268800006a6b1a90ad5489898693e4feba02cdd6f77c887ad7fb3f9cfb1f47aa27c8cc2408047f3a50b7c810b49444af52840402cb08af"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/depd"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "inherits",
+      "version": "2.0.4",
+      "bom-ref": "stachel-server@0.1.0|inherits@2.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/inherits@2.0.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "93fbc6697e3f6256b75b3c8c0af4d039761e207bea38ab67a8176ecd31e9ce9419cc0b2428c859d8af849c189233dcc64a820578ca572b16b8758799210a9ec1"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/inherits"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "setprototypeof",
+      "version": "1.2.0",
+      "bom-ref": "stachel-server@0.1.0|setprototypeof@1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/setprototypeof@1.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1392c35fb5aba7ce4a8a5e5b859bf8ea3f2339e6e82aae4932660cde05467461fcc45a4f59750cb0dae53830ab928c4c11e362fd7648c2e46f6385cdc18309a7"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/setprototypeof"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "statuses",
+      "version": "2.0.2",
+      "bom-ref": "stachel-server@0.1.0|statuses@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/statuses@2.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "0ef132e795770c1eee927468fb888e193e5f3f5b2547cc10a2155d9278a064f32932cb5a289416870898040089137525da94e70138a18416274616501c606247"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/statuses"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "toidentifier",
+      "version": "1.0.1",
+      "bom-ref": "stachel-server@0.1.0|toidentifier@1.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/toidentifier@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a39b123ca12483f0c840d987e37574fee7ab2eba7355e764521f2d18dbda797a5fa6ec2329e9e54a8c7fd8efc14e5654b447be246eece58844cfad3c3e500744"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/toidentifier"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "5.0.12",
+      "bom-ref": "stachel-server@0.1.0|brace-expansion@5.0.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/brace-expansion@5.0.12",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.12.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "628bd0debce168b308ac38cd0cc90d4b4d6d79af77aa11211b9c72f1febe47497e770dca8bee6c0a822823de368ae2d94c75a881692d830543854d3d88d12299"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/brace-expansion"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lru-cache",
+      "version": "11.5.3",
+      "bom-ref": "stachel-server@0.1.0|lru-cache@11.5.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lru-cache@11.5.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "53837c160ce65b173c935547f0aafa950835f14ec58ef6f2eb05c75515ff659ec8c166d1320ad16cfd16adbe6ae4d5629ebca9e1241a9a91ca76fb5e708b7152"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lru-cache"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "bom-ref": "stachel-server@0.1.0|json-schema-traverse@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/json-schema-traverse@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "34cf3f3fd9f75e35e12199f594b86415a0024ce5114178d6855e0103f4673aff31be0aadaa9017f483b89914314b1d51968e2dab37aa6f4b0e96bb9a3b2dddba"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/json-schema-traverse"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "bom-ref": "stachel-server@0.1.0|require-from-string@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/require-from-string@2.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5dfd2759ee91b1ece214cbbe029f5b8a251b9a996ae92f7fa7eef0ed85cffc904786b5030d48706bebc0372b9bbaa7d9593bde53ffc36151ac0c6ed128bfef13"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/require-from-string"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "dequal",
+      "version": "2.0.3",
+      "bom-ref": "stachel-server@0.1.0|dequal@2.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/dequal@2.0.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d237bea8f28710ca21bdf453084a370ab3c6e9c033018826ccacb1462612483912e9e1897725499bb59a600e4409a003f702c1d93e0411eca603968555c61708"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/dequal"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ret",
+      "version": "0.5.1",
+      "bom-ref": "stachel-server@0.1.0|ret@0.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ret@0.5.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ret/-/ret-0.5.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "67f9f2bc00707119d10f698c3fb2b3e86d5d15966a5f598d12b3a7c45e3638240a134edbf64f612bd490c472f72c511951dcd068b33874877513f13a566e1684"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ret"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "split2",
+      "version": "4.2.0",
+      "bom-ref": "stachel-server@0.1.0|split2@4.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/split2@4.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "51c8dc24e5a49eb36417a3cb5fcdea70733a28781528d915eb663c6b9b980d5bfdc9d19057000730aa877498ded554d6a658c6d1662908386b09d00e607e135a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/split2"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "balanced-match",
+      "version": "4.0.4",
+      "bom-ref": "stachel-server@0.1.0|balanced-match@4.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/balanced-match@4.0.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "04bae011c453c17da8ea01b118e08dc8cbc64a9df96287ee633c3d87520c4d198aaadb40659554ebb6dd6fd3ebdaf50703cfa3de2dad25f8cee82ebee26c864c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/balanced-match"
+        },
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/aom",
+      "version": "3.15.1",
+      "bom-ref": "extra|libvips-bundle/aom@3.15.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause (+ AOMedia Patent License 1.0)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/archive",
+      "version": "3.8.9",
+      "bom-ref": "extra|libvips-bundle/archive@3.8.9",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/cairo",
+      "version": "1.18.6",
+      "bom-ref": "extra|libvips-bundle/cairo@1.18.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "MPL-1.1 (cairo: LGPL-2.1 OR MPL-1.1)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/cgif",
+      "version": "0.5.4",
+      "bom-ref": "extra|libvips-bundle/cgif@0.5.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/exif",
+      "version": "0.6.26",
+      "bom-ref": "extra|libvips-bundle/exif@0.6.26",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/expat",
+      "version": "2.8.5",
+      "bom-ref": "extra|libvips-bundle/expat@2.8.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/ffi",
+      "version": "3.8.0",
+      "bom-ref": "extra|libvips-bundle/ffi@3.8.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "libvips-bundle/fontconfig",
+      "version": "2.18.3",
+      "bom-ref": "extra|libvips-bundle/fontconfig@2.18.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "fontconfig License (BSD-artig)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/freetype",
+      "version": "2.14.3",
+      "bom-ref": "extra|libvips-bundle/freetype@2.14.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "FTL"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/fribidi",
+      "version": "1.0.17",
+      "bom-ref": "extra|libvips-bundle/fribidi@1.0.17",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/glib",
+      "version": "2.90.0",
+      "bom-ref": "extra|libvips-bundle/glib@2.90.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/harfbuzz",
+      "version": "14.5.0",
+      "bom-ref": "extra|libvips-bundle/harfbuzz@14.5.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/heif",
+      "version": "1.23.5",
+      "bom-ref": "extra|libvips-bundle/heif@1.23.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/highway",
+      "version": "1.4.0",
+      "bom-ref": "extra|libvips-bundle/highway@1.4.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/imagequant",
+      "version": "2.4.1",
+      "bom-ref": "extra|libvips-bundle/imagequant@2.4.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/lcms",
+      "version": "2.19.1",
+      "bom-ref": "extra|libvips-bundle/lcms@2.19.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/mozjpeg",
+      "version": "0826579",
+      "bom-ref": "extra|libvips-bundle/mozjpeg@0826579",
+      "licenses": [
+        {
+          "license": {
+            "name": "IJG AND BSD-3-Clause AND Zlib"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/pango",
+      "version": "1.58.2",
+      "bom-ref": "extra|libvips-bundle/pango@1.58.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/pixman",
+      "version": "0.46.4",
+      "bom-ref": "extra|libvips-bundle/pixman@0.46.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/png",
+      "version": "1.6.58",
+      "bom-ref": "extra|libvips-bundle/png@1.6.58",
+      "licenses": [
+        {
+          "license": {
+            "name": "libpng-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/proxy-libintl",
+      "version": "0.5",
+      "bom-ref": "extra|libvips-bundle/proxy-libintl@0.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/rsvg",
+      "version": "2.63.2",
+      "bom-ref": "extra|libvips-bundle/rsvg@2.63.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/tiff",
+      "version": "4.7.2",
+      "bom-ref": "extra|libvips-bundle/tiff@4.7.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "libtiff"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/uhdr",
+      "version": "2.0.2",
+      "bom-ref": "extra|libvips-bundle/uhdr@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT (laut sharp-libvips README; upstream libultrahdr: Apache-2.0 - unklar)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/vips",
+      "version": "8.18.7",
+      "bom-ref": "extra|libvips-bundle/vips@8.18.7",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/webp",
+      "version": "1.6.0",
+      "bom-ref": "extra|libvips-bundle/webp@1.6.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/xml2",
+      "version": "2.15.4",
+      "bom-ref": "extra|libvips-bundle/xml2@2.15.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libvips-bundle/zlib-ng",
+      "version": "2.3.3",
+      "bom-ref": "extra|libvips-bundle/zlib-ng@2.3.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Zlib"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node (Docker-Basis node:22-bookworm-slim)",
+      "version": "22.x",
+      "bom-ref": "extra|node (Docker-Basis node:22-bookworm-slim)@22.x",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT (+ gebuendelte Drittlizenzen: OpenSSL Apache-2.0, ICU, libuv, V8 BSD-3 u.a.; npm Artistic-2.0)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "docker-image (stachel + stachel-mcp)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "Dockerfile FROM node:22-bookworm-slim"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "Basis-Image enthaelt Debian 12 (GPL/LGPL-Pakete) - bei Weitergabe des Images Debian-Quellangebot noetig"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "stachel-server@0.1.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/cookie@11.1.3",
+        "stachel-server@0.1.0|@fastify/helmet@13.2.0",
+        "stachel-server@0.1.0|@fastify/multipart@10.1.6",
+        "stachel-server@0.1.0|@fastify/static@10.1.7",
+        "stachel-server@0.1.0|@fontsource/barlow-condensed@5.3.0",
+        "stachel-server@0.1.0|@fontsource/barlow@5.3.0",
+        "stachel-server@0.1.0|@hocuspocus/server@4.7.1",
+        "stachel-server@0.1.0|fastify@5.12.7",
+        "stachel-server@0.1.0|fractional-indexing@4.0.0",
+        "stachel-server@0.1.0|nanoid@6.0.2",
+        "stachel-server@0.1.0|sharp@0.35.5",
+        "stachel-server@0.1.0|ws@8.22.0",
+        "stachel-server@0.1.0|y-protocols@1.0.7",
+        "stachel-server@0.1.0|yjs@13.6.33"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/cookie@11.1.3",
+      "dependsOn": [
+        "stachel-server@0.1.0|cookie@2.0.1",
+        "stachel-server@0.1.0|fastify-plugin@6.0.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/helmet@13.2.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|fastify-plugin@6.0.1",
+        "stachel-server@0.1.0|helmet@8.3.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/multipart@10.1.6",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/busboy@3.2.4",
+        "stachel-server@0.1.0|@fastify/deepmerge@3.2.4",
+        "stachel-server@0.1.0|@fastify/error@4.2.1",
+        "stachel-server@0.1.0|fastify-plugin@6.0.1",
+        "stachel-server@0.1.0|secure-json-parse@4.1.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/static@10.1.7",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/accept-negotiator@2.1.2",
+        "stachel-server@0.1.0|@fastify/error@4.2.1",
+        "stachel-server@0.1.0|@fastify/send@4.2.0",
+        "stachel-server@0.1.0|content-disposition@3.0.0",
+        "stachel-server@0.1.0|fastify-plugin@6.0.1",
+        "stachel-server@0.1.0|fastq@1.20.3",
+        "stachel-server@0.1.0|glob@13.0.6"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fontsource/barlow-condensed@5.3.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fontsource/barlow@5.3.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@hocuspocus/server@4.7.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|@hocuspocus/common@4.7.1",
+        "stachel-server@0.1.0|async-mutex@0.5.0",
+        "stachel-server@0.1.0|crossws@0.4.16",
+        "stachel-server@0.1.0|kleur@4.1.5",
+        "stachel-server@0.1.0|lib0@0.2.119",
+        "stachel-server@0.1.0|y-protocols@1.0.7",
+        "stachel-server@0.1.0|yjs@13.6.33"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|fastify@5.12.7",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/ajv-compiler@4.0.7",
+        "stachel-server@0.1.0|@fastify/error@4.2.1",
+        "stachel-server@0.1.0|@fastify/fast-json-stringify-compiler@5.1.1",
+        "stachel-server@0.1.0|@fastify/proxy-addr@5.1.2",
+        "stachel-server@0.1.0|abstract-logging@2.0.1",
+        "stachel-server@0.1.0|avvio@9.3.1",
+        "stachel-server@0.1.0|fast-json-stringify@7.1.3",
+        "stachel-server@0.1.0|find-my-way@9.10.0",
+        "stachel-server@0.1.0|light-my-request@6.8.0",
+        "stachel-server@0.1.0|pino@10.4.0",
+        "stachel-server@0.1.0|process-warning@5.1.1",
+        "stachel-server@0.1.0|rfdc@1.4.1",
+        "stachel-server@0.1.0|secure-json-parse@4.1.1",
+        "stachel-server@0.1.0|semver@7.8.5",
+        "stachel-server@0.1.0|toad-cache@3.7.4"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|fractional-indexing@4.0.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|nanoid@6.0.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|sharp@0.35.5",
+      "dependsOn": [
+        "stachel-server@0.1.0|@img/colour@1.1.0",
+        "stachel-server@0.1.0|@img/sharp-libvips-linux-x64@1.3.4",
+        "stachel-server@0.1.0|@img/sharp-linux-x64@0.35.5",
+        "stachel-server@0.1.0|detect-libc@2.1.2",
+        "stachel-server@0.1.0|semver@7.8.5"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|ws@8.22.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|y-protocols@1.0.7",
+      "dependsOn": [
+        "stachel-server@0.1.0|lib0@0.2.119",
+        "stachel-server@0.1.0|yjs@13.6.33"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|yjs@13.6.33",
+      "dependsOn": [
+        "stachel-server@0.1.0|lib0@0.2.119"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|cookie@2.0.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|fastify-plugin@6.0.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|helmet@8.3.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/busboy@3.2.4"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/deepmerge@3.2.4"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/error@4.2.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|secure-json-parse@4.1.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/accept-negotiator@2.1.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/send@4.2.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|@lukeed/ms@2.0.2",
+        "stachel-server@0.1.0|escape-html@1.0.3",
+        "stachel-server@0.1.0|fast-decode-uri-component@1.0.1",
+        "stachel-server@0.1.0|http-errors@2.0.1",
+        "stachel-server@0.1.0|mime@3.0.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|content-disposition@3.0.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|fastq@1.20.3",
+      "dependsOn": [
+        "stachel-server@0.1.0|reusify@1.1.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|glob@13.0.6",
+      "dependsOn": [
+        "stachel-server@0.1.0|minimatch@10.2.6",
+        "stachel-server@0.1.0|minipass@7.1.3",
+        "stachel-server@0.1.0|path-scurry@2.0.2"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@hocuspocus/common@4.7.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|lib0@0.2.119"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|async-mutex@0.5.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|tslib@2.8.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|crossws@0.4.16"
+    },
+    {
+      "ref": "stachel-server@0.1.0|kleur@4.1.5"
+    },
+    {
+      "ref": "stachel-server@0.1.0|lib0@0.2.119",
+      "dependsOn": [
+        "stachel-server@0.1.0|isomorphic.js@0.2.5"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/ajv-compiler@4.0.7",
+      "dependsOn": [
+        "stachel-server@0.1.0|ajv-formats@3.0.1",
+        "stachel-server@0.1.0|ajv@8.20.0",
+        "stachel-server@0.1.0|fast-uri@4.2.3"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/fast-json-stringify-compiler@5.1.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|fast-json-stringify@7.1.3"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/proxy-addr@5.1.2",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/forwarded@3.1.2",
+        "stachel-server@0.1.0|ipaddr.js@2.5.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|abstract-logging@2.0.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|avvio@9.3.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/error@4.2.1",
+        "stachel-server@0.1.0|fastq@1.20.3"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|fast-json-stringify@7.1.3",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/merge-json-schemas@0.2.2",
+        "stachel-server@0.1.0|ajv-formats@3.0.1",
+        "stachel-server@0.1.0|ajv@8.20.0",
+        "stachel-server@0.1.0|fast-uri@4.2.3",
+        "stachel-server@0.1.0|json-schema-ref-resolver@3.0.1",
+        "stachel-server@0.1.0|rfdc@1.4.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|find-my-way@9.10.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|fast-deep-equal@3.1.3",
+        "stachel-server@0.1.0|fast-querystring@1.1.2",
+        "stachel-server@0.1.0|safe-regex2@5.1.2"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|light-my-request@6.8.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|@fastify/deepmerge@3.2.4",
+        "stachel-server@0.1.0|cookie@2.0.1",
+        "stachel-server@0.1.0|process-warning@5.1.1",
+        "stachel-server@0.1.0|set-cookie-parser@3.2.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|pino@10.4.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|@pinojs/redact@0.4.0",
+        "stachel-server@0.1.0|atomic-sleep@1.0.0",
+        "stachel-server@0.1.0|on-exit-leak-free@2.1.2",
+        "stachel-server@0.1.0|pino-abstract-transport@3.0.0",
+        "stachel-server@0.1.0|pino-std-serializers@7.1.0",
+        "stachel-server@0.1.0|process-warning@5.1.1",
+        "stachel-server@0.1.0|quick-format-unescaped@4.0.4",
+        "stachel-server@0.1.0|real-require@1.0.0",
+        "stachel-server@0.1.0|safe-stable-stringify@2.5.0",
+        "stachel-server@0.1.0|sonic-boom@4.2.1",
+        "stachel-server@0.1.0|thread-stream@4.2.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|process-warning@5.1.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|rfdc@1.4.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|semver@7.8.5"
+    },
+    {
+      "ref": "stachel-server@0.1.0|toad-cache@3.7.4"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@img/colour@1.1.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@img/sharp-libvips-linux-x64@1.3.4"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@img/sharp-linux-x64@0.35.5",
+      "dependsOn": [
+        "stachel-server@0.1.0|@img/sharp-libvips-linux-x64@1.3.4"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|detect-libc@2.1.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@lukeed/ms@2.0.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|escape-html@1.0.3"
+    },
+    {
+      "ref": "stachel-server@0.1.0|fast-decode-uri-component@1.0.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|http-errors@2.0.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|depd@2.0.0",
+        "stachel-server@0.1.0|inherits@2.0.4",
+        "stachel-server@0.1.0|setprototypeof@1.2.0",
+        "stachel-server@0.1.0|statuses@2.0.2",
+        "stachel-server@0.1.0|toidentifier@1.0.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|mime@3.0.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|reusify@1.1.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|minimatch@10.2.6",
+      "dependsOn": [
+        "stachel-server@0.1.0|brace-expansion@5.0.12"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|minipass@7.1.3"
+    },
+    {
+      "ref": "stachel-server@0.1.0|path-scurry@2.0.2",
+      "dependsOn": [
+        "stachel-server@0.1.0|lru-cache@11.5.3",
+        "stachel-server@0.1.0|minipass@7.1.3"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|tslib@2.8.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|isomorphic.js@0.2.5"
+    },
+    {
+      "ref": "stachel-server@0.1.0|ajv-formats@3.0.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|ajv@8.20.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|ajv@8.20.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|fast-deep-equal@3.1.3",
+        "stachel-server@0.1.0|ajv@8.20.0|fast-uri@3.1.9",
+        "stachel-server@0.1.0|json-schema-traverse@1.0.0",
+        "stachel-server@0.1.0|require-from-string@2.0.2"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|ajv@8.20.0|fast-uri@3.1.9"
+    },
+    {
+      "ref": "stachel-server@0.1.0|fast-uri@4.2.3"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/forwarded@3.1.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|ipaddr.js@2.5.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@fastify/merge-json-schemas@0.2.2",
+      "dependsOn": [
+        "stachel-server@0.1.0|dequal@2.0.3"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|json-schema-ref-resolver@3.0.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|dequal@2.0.3"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|fast-deep-equal@3.1.3"
+    },
+    {
+      "ref": "stachel-server@0.1.0|fast-querystring@1.1.2",
+      "dependsOn": [
+        "stachel-server@0.1.0|fast-decode-uri-component@1.0.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|safe-regex2@5.1.2",
+      "dependsOn": [
+        "stachel-server@0.1.0|ret@0.5.1"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|set-cookie-parser@3.2.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|@pinojs/redact@0.4.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|atomic-sleep@1.0.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|on-exit-leak-free@2.1.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|pino-abstract-transport@3.0.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|split2@4.2.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|pino-std-serializers@7.1.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|quick-format-unescaped@4.0.4"
+    },
+    {
+      "ref": "stachel-server@0.1.0|real-require@1.0.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|safe-stable-stringify@2.5.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|sonic-boom@4.2.1",
+      "dependsOn": [
+        "stachel-server@0.1.0|atomic-sleep@1.0.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|thread-stream@4.2.0",
+      "dependsOn": [
+        "stachel-server@0.1.0|real-require@1.0.0"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|depd@2.0.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|inherits@2.0.4"
+    },
+    {
+      "ref": "stachel-server@0.1.0|setprototypeof@1.2.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|statuses@2.0.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|toidentifier@1.0.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|brace-expansion@5.0.12",
+      "dependsOn": [
+        "stachel-server@0.1.0|balanced-match@4.0.4"
+      ]
+    },
+    {
+      "ref": "stachel-server@0.1.0|lru-cache@11.5.3"
+    },
+    {
+      "ref": "stachel-server@0.1.0|json-schema-traverse@1.0.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|require-from-string@2.0.2"
+    },
+    {
+      "ref": "stachel-server@0.1.0|dequal@2.0.3"
+    },
+    {
+      "ref": "stachel-server@0.1.0|ret@0.5.1"
+    },
+    {
+      "ref": "stachel-server@0.1.0|split2@4.2.0"
+    },
+    {
+      "ref": "stachel-server@0.1.0|balanced-match@4.0.4"
+    }
+  ]
+}

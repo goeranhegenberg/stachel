@@ -1,0 +1,79 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:label="Stachel"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:fullBackupContent="false">
+        <!-- No Android backup (cloud or adb): the app's data includes the login; the session token itself lives in the
+             Keystore-backed secure storage (stachel_client StachelSession), see docs/store/data_safety.md L4. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <!-- App Links (verified via https://stachel.intsode.com/.well-known/assetlinks.json, package
+                 com.intsode.stachel): /b/<board> opens the board, /verify/<token> confirms the e-mail address,
+                 /reset/<token> sets a new password - each also under the web app's path /app/ (STACHEL_BASE_PATH,
+                 server site.ts; links in new mails use it). Links of instances in mode org stay with their organisation's app. -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https" android:host="stachel.intsode.com" android:pathPrefix="/b/"/>
+                <data android:scheme="https" android:host="stachel.intsode.com" android:pathPrefix="/verify/"/>
+                <data android:scheme="https" android:host="stachel.intsode.com" android:pathPrefix="/reset/"/>
+                <data android:scheme="https" android:host="stachel.intsode.com" android:pathPrefix="/app/b/"/>
+                <data android:scheme="https" android:host="stachel.intsode.com" android:pathPrefix="/app/verify/"/>
+                <data android:scheme="https" android:host="stachel.intsode.com" android:pathPrefix="/app/reset/"/>
+            </intent-filter>
+            <!-- Share target "Teilen → Stachel": images, text/links and PDFs land on a board (MainActivity copies
+                 the streams, stachel_client stachel_share_target.dart). -->
+            <intent-filter android:label="Stachel-Board">
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="application/pdf"/>
+            </intent-filter>
+            <intent-filter android:label="Stachel-Board">
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="application/pdf"/>
+            </intent-filter>
+            <!-- Links go to the app_links plugin, not to Flutter's router. -->
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="false"/>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- url_launcher: browser for „Im Browser öffnen“, the organisation's app for „Mit der App deiner Organisation bestätigen“,
+             mail app for the confirmation mail -->
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+    </queries>
+</manifest>

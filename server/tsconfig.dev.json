@@ -1,0 +1,12 @@
+{
+  // Nur fÃ¼r `npm run dev` (tsx): BrÃ¼cke zum Web-Code direkt aus den Quellen, eine Yjs-Instanz (wie vitest.config.ts).
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "#stachel-web": ["./src/native/web-impl.ts"],
+      "yjs": ["./node_modules/yjs/dist/yjs.mjs"],
+      "nanoid": ["./node_modules/nanoid/index.js"],
+      "fractional-indexing": ["./node_modules/fractional-indexing/src/index.js"]
+    }
+  }
+}

@@ -1,0 +1,2220 @@
+/* ---- Grundgerüst ----------------------------------------------------------- */
+.editor {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--canvas);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.board {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  background-color: var(--canvas);
+  outline: none;
+}
+.world.is-moving {
+  will-change: transform;
+}
+.world {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+}
+
+/* ---- Objekte ------------------------------------------------------------- */
+.obj {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+}
+.obj-sticky {
+  border-radius: 2px;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.08),
+    0 8px 16px -8px rgba(0, 0, 0, 0.28),
+    inset 0 -18px 18px -18px rgba(0, 0, 0, 0.1);
+}
+.sticky-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.sticky-text {
+  width: 100%;
+  max-height: 100%;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.22;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  outline: none;
+  cursor: inherit;
+}
+.obj-text .text-content {
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  outline: none;
+  min-height: 1.25em;
+}
+.obj-shape .shape-svg {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+.shape-text-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.shape-text {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  outline: none;
+}
+.editing {
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
+  caret-color: var(--blue);
+  min-height: 1.2em;
+}
+.editing:empty::before {
+  content: attr(data-placeholder);
+  color: rgba(10, 10, 10, 0.35);
+}
+
+.obj-frame {
+  pointer-events: none;
+}
+.frame-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  /* Rand + leichter Schatten, damit weiße Rahmen auf dem Board sichtbar bleiben */
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px -4px rgba(0, 0, 0, 0.14);
+  pointer-events: auto;
+}
+.ov-frame-title {
+  padding: 0 2px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #3a3a36;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: auto;
+  cursor: move;
+  border-radius: 4px;
+}
+.ov-frame-title:hover,
+.ov-frame-title.is-selected {
+  color: var(--blue);
+}
+.ov-frame-title--edit {
+  border: 0;
+  background: #fff;
+  outline: 2px solid var(--blue);
+  padding: 0 6px;
+  min-width: 180px;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  cursor: text;
+  user-select: text;
+}
+.board:not(.tool-select) .ov-frame-title {
+  pointer-events: none;
+}
+
+.obj-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.obj-image {
+  background: #e9e9e4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.image-missing {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  background: repeating-linear-gradient(-45deg, #ecece7 0 10px, #e4e4de 10px 20px);
+}
+.obj-pen,
+.obj-connector {
+  pointer-events: none;
+}
+.obj-pen svg,
+.obj-connector svg {
+  overflow: visible;
+  display: block;
+}
+.obj-pen .hit,
+.obj-connector .hit {
+  fill: none;
+  stroke: transparent;
+  pointer-events: stroke;
+  stroke-linecap: round;
+}
+.tool-select .obj-pen .hit,
+.tool-select .obj-connector .hit {
+  cursor: pointer;
+}
+.board:not(.tool-select) .obj,
+.board:not(.tool-select) .frame-body,
+.board:not(.tool-select) .hit {
+  cursor: inherit;
+}
+
+/* ---- Overlay ------------------------------------------------------------ */
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.overlay > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.ov-svg {
+  overflow: visible;
+}
+.ov-sel {
+  box-shadow: 0 0 0 1.5px var(--blue);
+  border-radius: 1px;
+}
+.ov-sel--locked {
+  box-shadow: 0 0 0 1.5px var(--ink);
+  outline: 1.5px dashed #fff;
+  outline-offset: -1.5px;
+}
+.ov-sub {
+  box-shadow: 0 0 0 1px rgba(23, 99, 181, 0.55);
+}
+.ov-handle {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+  background: #fff;
+  border: 1.5px solid var(--blue);
+  border-radius: 3px;
+  pointer-events: auto;
+  touch-action: none;
+}
+.ov-handle--n,
+.ov-handle--s {
+  width: 18px;
+  height: 7px;
+  margin: -3.5px 0 0 -9px;
+}
+.ov-handle--e,
+.ov-handle--w {
+  width: 7px;
+  height: 18px;
+  margin: -9px 0 0 -3.5px;
+}
+.ov-handle--nw,
+.ov-handle--se {
+  cursor: nwse-resize;
+}
+.ov-handle--ne,
+.ov-handle--sw {
+  cursor: nesw-resize;
+}
+.ov-handle--n,
+.ov-handle--s {
+  cursor: ns-resize;
+}
+.ov-handle--e,
+.ov-handle--w {
+  cursor: ew-resize;
+}
+@media (pointer: coarse) {
+  .ov-handle {
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border-radius: 50%;
+  }
+}
+.ov-lock {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 6px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: #fff;
+  padding: 1px 7px;
+  border-radius: 4px;
+}
+.ov-conn-sel {
+  stroke: var(--blue);
+  stroke-opacity: 0.22;
+  stroke-linecap: round;
+}
+.ov-end {
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--blue);
+  pointer-events: auto;
+  cursor: grab;
+}
+.ov-hover {
+  box-shadow: 0 0 0 2px var(--green), 0 0 0 5px rgba(201, 225, 74, 0.35);
+  border-radius: 4px;
+}
+.ov-marquee {
+  background: rgba(23, 99, 181, 0.07);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+.ov-peer-sel {
+  border: 2px solid;
+  border-radius: 3px;
+}
+.ov-peer-sel span {
+  position: absolute;
+  left: -2px;
+  bottom: 100%;
+  margin-bottom: 2px;
+  padding: 0 6px;
+  border-radius: 4px 4px 4px 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #fff;
+  white-space: nowrap;
+}
+.ov-cursor {
+  transition: transform 0.09s linear;
+  will-change: transform;
+}
+.ov-cursor svg {
+  display: block;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.3));
+}
+.ov-cursor span {
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  padding: 2px 8px 3px;
+  border-radius: 0 8px 8px 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.empty-hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: min(420px, calc(100% - 140px));
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+  pointer-events: none;
+  line-height: 1.5;
+}
+.empty-hint strong {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+/* ---- schwebende Leisten ----------------------------------------------------- */
+.panel {
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-float);
+}
+
+.topbar {
+  position: absolute;
+  top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+  /* über den Hinweisen (Abstimmung, Folgen: z-index 22), damit deren Leiste kein Popover der Kopfleiste verdeckt (Timer) */
+  z-index: 23;
+}
+.topbar > * {
+  pointer-events: auto;
+}
+/* links nur so breit, dass die rechte Gruppe daneben passt (--tr-w misst Toolbar.tsx; Timer/Abstimmung kommen dazu) */
+.topbar--left {
+  left: 14px;
+  max-width: calc(100% - var(--tr-w, 316px) - 38px - var(--safe-l, 0px) - var(--safe-r, 0px));
+}
+.topbar--right {
+  right: 14px;
+}
+.tl-panel {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 6px;
+  gap: 2px;
+  min-width: 0;
+}
+.tl-back {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  flex: none;
+}
+.tl-back:hover {
+  background: var(--ink-3);
+}
+.tl-mark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  flex: none;
+  margin-right: 2px;
+}
+.tl-title {
+  min-width: 0;
+  max-width: 420px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 10px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+button.tl-title:hover {
+  background: var(--ink-3);
+}
+.tl-title--edit {
+  background: #fff;
+  color: var(--ink);
+  border: 0;
+  outline: 2px solid var(--green);
+  text-transform: none;
+  width: 280px;
+}
+.tl-badge {
+  flex: none;
+  margin: 0 6px 0 2px;
+  padding: 3px 8px 2px;
+  border-radius: 6px;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: help;
+}
+
+.presence {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 8px 0 14px;
+}
+.presence__av {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: -6px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #fff;
+  box-shadow: 0 0 0 2.5px var(--ink);
+  flex: none;
+}
+button.presence__av:hover {
+  transform: translateY(-2px);
+}
+.presence__more {
+  background: var(--ink-3);
+}
+.presence__me {
+  margin-left: 8px;
+  box-shadow:
+    0 0 0 2.5px var(--ink),
+    0 0 0 4px var(--green);
+}
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 16px 0 14px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.status__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(201, 225, 74, 0.25);
+}
+.status--connecting .status__dot {
+  background: #ffd08a;
+  box-shadow: 0 0 0 3px rgba(255, 208, 138, 0.25);
+  animation: blink 1s ease-in-out infinite;
+}
+.status--offline .status__dot,
+.status--denied .status__dot {
+  background: var(--pink);
+  box-shadow: 0 0 0 3px rgba(236, 78, 146, 0.3);
+}
+.status--local .status__dot {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+@keyframes blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Werkzeugleiste */
+.toolbar {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  z-index: 20;
+}
+.tb-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #e9e9e4;
+  transition:
+    background 0.12s ease,
+    color 0.12s ease;
+}
+/* Niedrige Fenster (z. B. 1280×800): Knöpfe so flach, dass die senkrechte Leiste zwischen Kopfleiste und
+   Rückgängig-Knöpfe passt (190 px = beide Leisten, Abstände, Trenner); am Handy gilt die waagerechte Leiste unten */
+.toolbar {
+  --tb-h: clamp(28px, calc((100vh - 190px) / var(--tb-n, 15) - 2px), 44px);
+}
+.toolbar > .tb-btn {
+  height: var(--tb-h);
+}
+.tb-btn:hover:not([disabled]) {
+  background: var(--ink-3);
+  color: #fff;
+}
+.tb-btn.is-active {
+  background: var(--green);
+  color: var(--ink);
+}
+.tb-btn[disabled] {
+  opacity: 0.32;
+  cursor: default;
+}
+.tb-sep {
+  height: 1px;
+  margin: 4px 8px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.tb-sticky-icon {
+  position: relative;
+  display: grid;
+}
+.tb-sticky-dot {
+  position: absolute;
+  right: -3px;
+  bottom: -2px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--ink);
+}
+.tb-btn.is-active .tb-sticky-dot {
+  box-shadow: 0 0 0 2px var(--green);
+}
+.tip {
+  position: absolute;
+  left: calc(100% + 14px);
+  top: 50%;
+  transform: translate(-4px, -50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 6px 11px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.12s ease,
+    transform 0.12s ease;
+  box-shadow: var(--shadow-float);
+  z-index: 5;
+}
+.tip kbd {
+  font-family: var(--font);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0;
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: var(--ink-3);
+  color: var(--green);
+}
+.tip--up {
+  left: 50%;
+  top: auto;
+  bottom: calc(100% + 12px);
+  transform: translate(-50%, 4px);
+}
+@media (hover: hover) {
+  .tb-btn:hover .tip {
+    opacity: 1;
+    transform: translate(0, -50%);
+    transition-delay: 0.25s;
+  }
+  .tb-btn:hover .tip--up {
+    transform: translate(-50%, 0);
+  }
+}
+.flyout {
+  position: absolute;
+  left: calc(100% + 10px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  animation: pop-in 0.14s ease;
+}
+.fly-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: #e9e9e4;
+}
+.fly-btn:hover {
+  background: var(--ink-3);
+}
+/* „Weitere Werkzeuge“ (Handy): Raster mit Namen */
+.flyout--more {
+  display: grid;
+  grid-template-columns: repeat(3, 92px);
+  gap: 4px;
+}
+.flyout--more .fly-btn {
+  width: auto;
+  height: 68px;
+  gap: 4px;
+  align-content: center;
+  padding: 6px 4px;
+}
+.fly-label {
+  display: none;
+}
+.flyout--more .fly-label {
+  display: block;
+  font: 600 11.5px/1.15 var(--font-cond);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.fly-btn.is-active {
+  background: var(--green);
+  color: var(--ink);
+}
+.fly-sep {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.16);
+  margin: 0 2px;
+}
+.width-dot {
+  display: block;
+  border-radius: 50%;
+  background: currentColor;
+}
+.swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s ease;
+  flex: none;
+}
+.swatch--round {
+  border-radius: 50%;
+}
+.swatch:hover {
+  transform: scale(1.12);
+}
+.swatch.is-active {
+  box-shadow:
+    0 0 0 2px var(--ink),
+    0 0 0 4px #fff;
+}
+.history {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: flex;
+  gap: 2px;
+  padding: 6px;
+  z-index: 20;
+}
+
+/* Kontextleiste */
+.ctxbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 46px;
+  padding: 0 5px;
+  border-radius: 12px;
+  z-index: 25;
+  max-width: calc(100vw - 16px);
+  animation: fade-in 0.12s ease;
+}
+.ctx-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  padding: 0 3px;
+}
+/* Trennstrich zwischen den Gruppen (zwischen ihnen liegen unsichtbare Mess-Markierungen, daher ~ statt +) */
+.ctx-group ~ .ctx-group,
+.ctxbar__more {
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+.ctxbar__more {
+  width: 41px;
+  margin-left: 2px;
+  padding-left: 4px;
+  border-radius: 0 8px 8px 0;
+}
+/* Menü „···“: Einträge, die nicht in die Leiste passen, als Kacheln mit Namen (wie „Weitere Werkzeuge“) –
+   am Handy gibt es keine Tooltips, nur Symbole wären dort ein Ratespiel */
+.ctx-pop.ctxbar__morepop {
+  left: auto;
+  right: 0;
+  grid-template-columns: repeat(4, 72px);
+  gap: 2px;
+  padding: 6px;
+  width: max-content;
+  max-width: calc(100vw - 16px);
+}
+.ctxbar__morepop .ctx-group {
+  display: contents;
+}
+.ctxbar__morepop button {
+  width: auto;
+  min-width: 0;
+  height: auto;
+  min-height: 58px;
+  padding: 6px 2px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 3px;
+  color: #e9e9e4;
+}
+.ctxbar__morepop button:hover {
+  background: var(--ink-3);
+}
+.ctxbar__morepop button[data-name]::after {
+  content: attr(data-name);
+  max-width: 68px;
+  font: 600 11.5px/1.1 var(--font-cond);
+  letter-spacing: 0.02em;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 340px) {
+  .ctx-pop.ctxbar__morepop {
+    grid-template-columns: repeat(3, 72px);
+  }
+}
+/* niedrige Fenster (Handy quer): breiter und flacher */
+@media (max-height: 500px) and (min-width: 560px) {
+  .ctx-pop.ctxbar__morepop {
+    grid-template-columns: repeat(6, 72px);
+  }
+  .ctxbar__morepop button {
+    min-height: 50px;
+    padding: 4px 2px;
+  }
+}
+.ctx-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #e9e9e4;
+  flex: none;
+}
+.ctx-btn:hover {
+  background: var(--ink-3);
+  color: #fff;
+}
+.ctx-btn.is-active {
+  color: var(--green);
+}
+.ctx-btn--danger:hover {
+  background: var(--pink);
+  color: #fff;
+}
+.color-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px var(--ink),
+    0 0 0 3.5px rgba(255, 255, 255, 0.7);
+}
+.ctx-pop {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  max-width: calc(100vw - 16px);
+  display: grid;
+  grid-template-columns: repeat(5, 26px);
+  gap: 8px;
+  padding: 10px;
+  animation: pop-in 0.12s ease;
+}
+.ctx-font {
+  gap: 0;
+}
+.ctx-a {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+.ctx-a--s {
+  font-size: 14px;
+}
+.ctx-num {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ctxbar--docked {
+  position: fixed;
+  left: 50%;
+  top: auto;
+  bottom: 70px;
+  transform: translateX(-50%);
+}
+.ctxbar--docked .ctx-pop {
+  top: auto;
+  bottom: calc(100% + 10px);
+}
+
+/* unten rechts */
+.bottom-right {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 20;
+}
+.minimap {
+  position: relative;
+  padding: 6px;
+  border-radius: 12px;
+}
+.minimap canvas {
+  display: block;
+  border-radius: 7px;
+  background: var(--canvas);
+  cursor: pointer;
+  touch-action: none;
+}
+.zoombar {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 4px;
+  border-radius: 12px;
+}
+.zb-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #e9e9e4;
+}
+.zb-btn:hover,
+.zb-value:hover {
+  background: var(--ink-3);
+  color: #fff;
+}
+.zb-value {
+  min-width: 62px;
+  height: 36px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+.zb-sep {
+  width: 1px;
+  height: 22px;
+  margin: 0 3px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: var(--shadow-float);
+  border: 1.5px solid var(--green);
+  z-index: 60;
+  animation: rise 0.2s ease;
+}
+
+/* ---- Handy ------------------------------------------------------------------- */
+@media (max-width: 700px) {
+  .topbar {
+    top: 10px;
+  }
+  .topbar--left {
+    left: 10px;
+    max-width: calc(100% - var(--tr-w, 156px) - 28px - var(--safe-l, 0px) - var(--safe-r, 0px));
+  }
+  .topbar--right {
+    right: 10px;
+    gap: 6px;
+  }
+  .tl-panel,
+  .presence,
+  .status {
+    height: 42px;
+  }
+  .tl-mark {
+    display: none;
+  }
+  .tl-title {
+    font-size: 17px;
+    padding: 0 6px;
+  }
+  .tl-title--edit {
+    width: 160px;
+  }
+  .presence {
+    padding: 0 6px 0 12px;
+  }
+  .presence__av {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  .presence__av:not(.presence__me):nth-child(n + 3) {
+    display: none;
+  }
+  .status {
+    padding: 0 12px;
+  }
+  .status__text {
+    display: none;
+  }
+  .toolbar {
+    left: 10px;
+    padding: 4px;
+  }
+  .tb-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .history {
+    left: 10px;
+    bottom: 10px;
+    padding: 4px;
+  }
+  .bottom-right {
+    right: 10px;
+    bottom: 10px;
+  }
+  .zb-btn:last-child,
+  .zb-sep {
+    display: inline-grid;
+  }
+  .flyout {
+    flex-wrap: wrap;
+    width: max-content;
+    max-width: calc(100vw - 80px);
+  }
+}
+
+/* --- C Seiten, Mobil & Barrierefreiheit --- */
+/* Ränder für Notch und Home-Indikator (viewport-fit=cover) */
+.editor {
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+}
+.topbar {
+  top: calc(14px + var(--safe-t));
+}
+.topbar--left {
+  left: calc(14px + var(--safe-l));
+}
+.topbar--right {
+  right: calc(14px + var(--safe-r));
+}
+.history {
+  left: calc(14px + var(--safe-l));
+  bottom: calc(14px + var(--safe-b));
+}
+.bottom-right {
+  right: calc(14px + var(--safe-r));
+  bottom: calc(14px + var(--safe-b));
+}
+.toolbar {
+  left: calc(14px + var(--safe-l));
+}
+
+/* Tooltips auch bei Tastaturfokus, Board mit sichtbarem Fokus */
+.tb-btn:focus-visible .tip {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.tb-btn:focus-visible .tip--up {
+  transform: translate(-50%, 0);
+}
+.board:focus-visible {
+  box-shadow: inset 0 0 0 3px var(--blue);
+}
+
+/* Handy und niedrige Fenster: Werkzeuge als waagerechte Leiste unten mittig.
+   Schwelle 650 px: darunter passt die senkrechte Leiste nicht zwischen Kopfleiste und Rückgängig (Toolbar.tsx LOW_HEIGHT).
+   Toolbar.tsx rückt die Leiste bei knapper Breite zwischen Rückgängig und Zoom (--tb-left, --tb-max). */
+@media (max-width: 700px), (max-height: 650px) {
+  .toolbar {
+    top: auto;
+    left: var(--tb-left, 50%);
+    bottom: calc(10px + var(--safe-b));
+    transform: translateX(var(--tb-shift, -50%));
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    padding: 4px;
+    width: max-content;
+    max-width: min(var(--tb-max, 100vw), calc(100vw - 20px - var(--safe-l) - var(--safe-r)));
+    border-radius: 14px;
+  }
+  .toolbar > .tb-btn {
+    flex: 0 1 auto;
+    min-width: 28px;
+    width: 38px;
+    height: 40px;
+  }
+  .toolbar > .tb-sep {
+    flex: none;
+    width: 1px;
+    height: 24px;
+    margin: 0 3px;
+  }
+  /* Werkzeug-Optionen über der Leiste statt daneben */
+  .toolbar .flyout {
+    top: auto !important;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    translate: -50% 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: max-content;
+    max-width: calc(100vw - 20px);
+  }
+  .toolbar .tip {
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 12px);
+    transform: translate(-50%, 4px);
+  }
+  .toolbar .tb-btn:focus-visible .tip {
+    transform: translate(-50%, 0);
+  }
+  /* Auswahl aktiv: die angedockte Kontextleiste ersetzt die Werkzeugleiste */
+  .editor:has(.ctxbar--docked) .toolbar {
+    display: none;
+  }
+  /* eine Zeile; was nicht passt, steht hinter „···“ (ContextBar misst) */
+  .ctxbar--docked {
+    bottom: calc(10px + var(--safe-b));
+    flex-wrap: nowrap;
+    height: auto;
+    min-height: 46px;
+    width: max-content;
+    max-width: calc(100vw - 20px - var(--safe-l) - var(--safe-r));
+    padding: 3px 5px;
+  }
+  .history {
+    left: calc(10px + var(--safe-l));
+    bottom: calc(10px + var(--safe-b));
+    padding: 4px;
+  }
+  .history .tb-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .bottom-right {
+    right: calc(10px + var(--safe-r));
+    bottom: calc(10px + var(--safe-b));
+  }
+  .zoombar {
+    height: 48px;
+  }
+  .toast {
+    bottom: calc(66px + var(--safe-b));
+  }
+}
+
+/* Hochkant: Rückgängig oben links, Zoom oben rechts – unten bleibt den Werkzeugen */
+@media (max-width: 700px) {
+  .topbar {
+    top: calc(10px + var(--safe-t));
+  }
+  .topbar--left {
+    left: calc(10px + var(--safe-l));
+  }
+  .topbar--right {
+    right: calc(10px + var(--safe-r));
+  }
+  .history {
+    top: calc(60px + var(--safe-t));
+    bottom: auto;
+    left: calc(10px + var(--safe-l));
+    padding: 3px;
+  }
+  .history .tb-btn,
+  .zoombar .zb-btn,
+  .zoombar .zb-value {
+    width: 34px;
+    height: 34px;
+  }
+  .zoombar .zb-value {
+    width: auto;
+    min-width: 50px;
+    font-size: 13px;
+  }
+  .zoombar {
+    height: 40px;
+    padding: 0 3px;
+  }
+  .history .tip--up {
+    top: calc(100% + 10px);
+    bottom: auto;
+  }
+  .bottom-right {
+    top: calc(60px + var(--safe-t));
+    bottom: auto;
+    right: calc(10px + var(--safe-r));
+    /* Zoom oben, weitere Knöpfe darunter */
+    flex-direction: column-reverse;
+  }
+}
+
+/* --- B Darstellung & Performance --- */
+/* Detailstufe „Fläche“: weit herausgezoomt nur farbige Flächen, ohne Text und Schatten */
+.obj-lod {
+  pointer-events: auto;
+}
+.obj-lod--sticky {
+  border-radius: 2px;
+}
+/* Beim Ziehen von Objekten (Inhalt wird neu gerastert): ein einziger weicher Schatten statt drei.
+   Beim Schieben/Zoomen nicht – da wird die Ebene nur verschoben, ein Wechsel würde alles neu zeichnen. */
+.board.is-moving .obj-sticky {
+  box-shadow: 0 6px 12px -7px rgba(0, 0, 0, 0.3);
+}
+/* Text: Darstellung nie größer als h (Auswahl und Andocken kennen nur h) */
+.obj-text:not(.is-editing) {
+  overflow: clip;
+  overflow-clip-margin: 0.2em;
+}
+/* Rahmen: größerer Titel über der Oberkante bei kleinem Zoom (verdeckt keinen Inhalt); die kleinen Titel der Overlay-Ebene dann ausblenden */
+.frame-big-title {
+  padding: 0.12em 0.5em;
+  border-radius: 0.3em;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.12);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #3a3a36;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: auto;
+  cursor: move;
+}
+.board:not(.tool-select) .frame-big-title {
+  pointer-events: none;
+}
+/* Bilder: Schimmer beim Laden, Fläche beim Herauszoomen */
+.obj-image img.is-loading {
+  opacity: 0;
+}
+.image-loading,
+.image-fill {
+  position: absolute;
+  inset: 0;
+  background: #e2e2dc;
+}
+.image-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.55) 50%, transparent 80%);
+  background-size: 200% 100%;
+  animation: img-shimmer 1.3s ease-in-out infinite;
+}
+@keyframes img-shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-loading::after {
+    animation: none;
+  }
+}
+/* Verbinder: gepunktet mit runden Enden, Beschriftung mit weißem Hintergrund in der Pfadmitte */
+.obj-connector path.is-dotted {
+  stroke-linecap: round;
+}
+.conn-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: max-content;
+  max-width: 320px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #fff;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  pointer-events: auto;
+}
+.conn-label-text {
+  display: block;
+}
+/* Hinweis, wenn jemand anderes denselben Text gerade ändert */
+.remote-hint {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: 2;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.35;
+  white-space: nowrap;
+  box-shadow: 0 0 0 1.5px var(--pink);
+  pointer-events: none;
+}
+/* Minimap: Ein-/Ausklappen */
+.mm-toggle {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 10, 10, 0.78);
+  color: #e9e9e4;
+}
+.mm-toggle:hover {
+  background: var(--ink-3);
+  color: #fff;
+}
+.minimap.is-collapsed {
+  padding: 4px;
+}
+.minimap.is-collapsed .mm-toggle {
+  position: static;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+/* --- A Editor-Interaktion --- */
+/* Hover im Auswahlmodus, Andockpunkte, Plus- und Drehgriff */
+.ov-hover--select {
+  box-shadow: 0 0 0 1.5px var(--blue);
+  border-radius: 2px;
+}
+.ov-anchor {
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--blue);
+  pointer-events: auto;
+  cursor: crosshair;
+  touch-action: none;
+}
+.ov-anchor:hover {
+  background: var(--blue);
+  box-shadow: 0 0 0 4px rgba(23, 99, 181, 0.18);
+}
+.ov-add {
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: #fff;
+  box-shadow:
+    0 1px 3px rgba(10, 10, 10, 0.25),
+    0 0 0 2px #fff;
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: none;
+  opacity: 0.88;
+}
+.ov-add:hover {
+  opacity: 1;
+  background: #0f4f95;
+}
+/* über der rechten oberen Ecke, damit er nicht mit dem oberen Plus-Griff kollidiert */
+.ov-rotate {
+  position: absolute;
+  left: 100%;
+  top: -24px;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid var(--blue);
+  pointer-events: auto;
+  touch-action: none;
+  cursor: grab;
+}
+.ov-rotate::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 1.5px;
+  height: 10px;
+  margin-left: -0.75px;
+  background: var(--blue);
+}
+/* Winkel beim Drehen; eingerastet (0°/90°/180°/270°) kurz grün aufleuchten */
+.ov-angle {
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 18px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+.ov-angle.is-snapped {
+  background: var(--green);
+  color: var(--ink);
+  animation: ov-angle-snap 0.35s ease-out;
+}
+/* nur Schatten-Puls: die Lage steckt im transform (scale würde sie mit vergrößern) */
+@keyframes ov-angle-snap {
+  from {
+    box-shadow: 0 0 0 7px rgba(201, 225, 74, 0.55);
+  }
+  to {
+    box-shadow: 0 0 0 0 rgba(201, 225, 74, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ov-angle.is-snapped {
+    animation: none;
+  }
+}
+@media (pointer: coarse) {
+  .ov-rotate {
+    width: 22px;
+    height: 22px;
+    margin: -11px 0 0 -11px;
+    top: -30px;
+  }
+  .ov-add {
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+  }
+}
+
+/* Hilfslinien und Abstandsmarken (Pink, 1 px) */
+.ov-guide,
+.ov-gap line {
+  stroke: var(--pink);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+.ov-gap text {
+  fill: #fff;
+  paint-order: stroke;
+  stroke: var(--pink);
+  stroke-width: 7px;
+  stroke-linejoin: round;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+/* Beschriftung eines Verbinders */
+.ov-conn-label {
+  pointer-events: auto;
+  font: 600 14px var(--font);
+  padding: 3px 8px;
+  border: 1.5px solid var(--blue);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+  text-align: center;
+  box-shadow: 0 2px 10px -4px rgba(10, 10, 10, 0.35);
+}
+
+/* Kontextleiste: Format, Popover-Listen */
+.ctx-fmt {
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1;
+  width: 18px;
+}
+.ctx-fmt--b {
+  font-weight: 800;
+}
+.ctx-fmt--i {
+  font-style: italic;
+  font-weight: 600;
+  font-family: Georgia, serif;
+}
+.ctx-fmt--s {
+  font-weight: 600;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+button.ctx-num--btn {
+  height: 30px;
+  min-width: 42px;
+  padding: 0 4px;
+  border-radius: 7px;
+  color: #fff;
+}
+button.ctx-num--btn:hover {
+  background: var(--ink-3);
+}
+.ctx-num--sm {
+  min-width: 0;
+  font-size: 13px;
+}
+.ctx-pop.ctx-pop--list,
+.ctx-pop.ctx-pop--row,
+.ctx-pop.ctx-pop--border {
+  display: flex;
+  grid-template-columns: none;
+  gap: 2px;
+  padding: 6px;
+}
+.ctx-pop.ctx-pop--list {
+  flex-wrap: wrap;
+  width: 236px;
+  gap: 4px;
+}
+.ctx-pop.ctx-pop--colors {
+  grid-template-columns: repeat(6, 26px);
+}
+.ctx-pop.ctx-pop--arrange {
+  grid-template-columns: repeat(4, 36px);
+  gap: 2px;
+  padding: 6px;
+}
+.ctx-pop.ctx-pop--border {
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.ctx-pop-swatches {
+  display: grid;
+  grid-template-columns: repeat(8, 22px);
+  gap: 7px;
+}
+.ctx-pop-row {
+  display: flex;
+  gap: 4px;
+}
+.ctx-pop-sep {
+  width: 1px;
+  align-self: stretch;
+  margin: 4px 3px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.ctx-chip {
+  height: 30px;
+  min-width: 36px;
+  padding: 0 9px;
+  border-radius: 7px;
+  color: #e9e9e4;
+  font-weight: 600;
+  font-size: 13.5px;
+  font-variant-numeric: tabular-nums;
+  background: var(--ink-2);
+}
+.ctx-chip:hover {
+  background: var(--ink-3);
+  color: #fff;
+}
+.ctx-chip.is-active {
+  background: var(--green);
+  color: var(--ink);
+}
+.ctx-btn[disabled] {
+  opacity: 0.35;
+  cursor: default;
+  background: none;
+}
+.ctx-line-w {
+  display: block;
+  width: 20px;
+  min-height: 1px;
+  border-radius: 4px;
+  background: currentColor;
+}
+
+/* Kontextmenü */
+.ctxmenu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 70;
+  min-width: 232px;
+  padding: 6px;
+  border-radius: 12px;
+  outline: none;
+  animation: pop-in 0.1s ease;
+  /* nie höher als das Fenster */
+  max-height: calc(100dvh - 16px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.ctxmenu__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #f1f1ec;
+}
+.ctxmenu__item kbd {
+  font: 600 12px var(--font-cond);
+  letter-spacing: 0.04em;
+  color: var(--muted-on-ink);
+}
+.ctxmenu__item.is-active {
+  background: var(--ink-3);
+  color: #fff;
+}
+.ctxmenu__item.is-active kbd {
+  color: #d6d6cf;
+}
+.ctxmenu__item.is-danger {
+  color: #ff8fbd;
+}
+.ctxmenu__item.is-danger.is-active {
+  background: var(--pink);
+  color: #fff;
+}
+.ctxmenu__item[aria-disabled] {
+  opacity: 0.38;
+  cursor: default;
+}
+.ctxmenu__sep {
+  height: 1px;
+  margin: 5px 6px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.ctxmenu--sub {
+  z-index: 71;
+  min-width: 210px;
+}
+.ctxmenu__chev {
+  flex: none;
+  color: var(--muted-on-ink);
+}
+.ctxmenu__item.is-active .ctxmenu__chev {
+  color: #fff;
+}
+.ctxmenu__inline {
+  margin: 2px 0 4px 10px;
+  padding-left: 6px;
+  border-left: 2px solid var(--ink-3);
+}
+/* Touch: Tastenkürzel helfen nicht */
+@media (hover: none) {
+  .ctxmenu__item kbd {
+    display: none;
+  }
+}
+
+/* Rahmen-Knopf, -Liste und Präsentation */
+.tl-frames {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px 0 12px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  flex: none;
+}
+.tl-frames:hover,
+.tl-frames.is-active {
+  color: var(--green);
+}
+.frames-panel {
+  position: absolute;
+  top: calc(72px + var(--safe-t, 0px));
+  left: calc(14px + var(--safe-l, 0px));
+  z-index: 30;
+  width: 290px;
+  max-height: calc(100% - 180px);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 14px;
+  animation: pop-in 0.12s ease;
+}
+.frames-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 8px 8px;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.frames-panel__close {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #e9e9e4;
+}
+.frames-panel__close:hover {
+  background: var(--ink-3);
+}
+.frames-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.frames-panel__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 8px;
+  border-radius: 8px;
+  color: #f1f1ec;
+  text-align: left;
+}
+.frames-panel__item:hover {
+  background: var(--ink-3);
+}
+.frames-panel__num {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: var(--ink-3);
+  font: 700 13px var(--font-cond);
+  color: var(--green);
+}
+.frames-panel__title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.frames-panel__empty {
+  margin: 4px 8px 10px;
+  color: var(--muted-on-ink);
+  font-size: 14px;
+}
+.frames-panel__present {
+  margin-top: 8px;
+  height: 40px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--green);
+  color: var(--ink);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.frames-panel__present:hover {
+  background: var(--green-deep);
+}
+.present-bar {
+  position: absolute;
+  left: 50%;
+  bottom: calc(18px + var(--safe-b, 0px));
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 48px;
+  padding: 0 6px;
+  border-radius: 14px;
+  max-width: calc(100vw - 24px);
+}
+.present-bar__pos {
+  flex: none;
+  white-space: nowrap;
+  font: 700 16px var(--font-cond);
+  letter-spacing: 0.04em;
+  color: var(--green);
+  padding: 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+.present-bar__title {
+  min-width: 0;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  padding-right: 6px;
+}
+.is-presenting .ov-frame-title {
+  display: none;
+}
+/* Sehr schmal: der Titel hätte nur noch ein, zwei Buchstaben – dann lieber nur „1 / 3“ */
+@media (max-width: 379px) {
+  .present-bar__title {
+    display: none;
+  }
+}
+/* Handy: seit Sprechernotizen und Übergabe passen die Knöpfe (44 px bei Touch) nicht mehr in eine Zeile – zweizeilig,
+   mittig, statt aus dem Bild zu ragen */
+@media (max-width: 479px) {
+  .present-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    min-height: 48px;
+    width: max-content;
+    padding: 2px 6px 5px;
+  }
+  .present-bar__sep {
+    display: none;
+  }
+}
+
+/* Kürzel-Übersicht */
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 28px;
+  margin: 2px 0 4px;
+  max-height: min(64vh, 580px);
+  overflow-y: auto;
+}
+.shortcuts h3 {
+  margin: 10px 0 4px;
+  font-family: var(--font-cond);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.shortcuts dl {
+  margin: 0;
+}
+.shortcuts dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.shortcuts dt {
+  order: 2;
+  flex: none;
+}
+.shortcuts dd {
+  margin: 0;
+}
+.shortcuts kbd {
+  font: 600 12.5px var(--font-cond);
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.modal:has(.shortcuts) {
+  width: min(780px, calc(100vw - 32px));
+  max-width: none;
+}
+@media (max-width: 700px) {
+  .tl-frames {
+    height: 42px;
+    padding: 0 11px;
+  }
+  .tl-frames__label {
+    display: none;
+  }
+  .frames-panel {
+    top: calc(62px + var(--safe-t, 0px));
+    left: calc(10px + var(--safe-l, 0px));
+    width: calc(100vw - 20px);
+  }
+  .zb-keys {
+    display: none;
+  }
+}
+
+/* ---- Erweiterungspunkte: Board-Menü, Knöpfe oben rechts, Seitenleiste, Upload-Platzhalter ---------------- */
+.tl-menu,
+.tr-btn {
+  height: 48px;
+  min-width: 48px;
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+  color: #fff;
+  flex: none;
+  font: 800 18px var(--font-cond);
+  letter-spacing: 0.08em;
+}
+.tl-menu:hover,
+.tl-menu.is-active,
+.tr-btn:hover,
+.tr-btn.is-active {
+  color: var(--green);
+}
+.editor.has-sidebar .bottom-right {
+  right: calc(14px + var(--sidebar-w) + 12px + var(--safe-r, 0px));
+}
+.editor {
+  --sidebar-w: 340px;
+}
+.sidebar {
+  position: absolute;
+  top: calc(72px + var(--safe-t, 0px));
+  right: calc(14px + var(--safe-r, 0px));
+  bottom: calc(14px + var(--safe-b, 0px));
+  z-index: 30;
+  width: var(--sidebar-w);
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  animation: pop-in 0.12s ease;
+}
+.sidebar__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 8px 8px 10px;
+  border-bottom: 1px solid var(--ink-3);
+}
+.sidebar__tabs {
+  display: flex;
+  gap: 2px;
+}
+.sidebar__tab,
+.sidebar__close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #e9e9e4;
+}
+.sidebar__tab:hover,
+.sidebar__close:hover {
+  background: var(--ink-3);
+}
+.sidebar__tab.is-active {
+  background: var(--green);
+  color: var(--ink);
+}
+.sidebar__title {
+  flex: 1;
+  min-width: 0;
+  padding-left: 6px;
+  font: 700 18px var(--font-cond);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 10px;
+}
+.upload-ph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #e2e2dc;
+  box-shadow: 0 0 0 1.5px rgba(23, 99, 181, 0.55);
+  pointer-events: none;
+}
+.upload-ph::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.55) 50%, transparent 80%);
+  background-size: 200% 100%;
+  animation: img-shimmer 1.3s ease-in-out infinite;
+}
+.upload-ph span {
+  position: relative;
+  z-index: 1;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font: 600 12px var(--font-cond);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .upload-ph::after {
+    animation: none;
+  }
+}
+/* Handy quer und niedrige Fenster: Rahmen-Knopf nur als Symbol, Seitenleiste als Blatt von unten */
+@media (max-height: 560px) {
+  .tl-frames {
+    height: 42px;
+    padding: 0 11px;
+  }
+  .tl-frames__label {
+    display: none;
+  }
+}
+@media (max-width: 700px), (max-height: 560px) {
+  .tl-menu,
+  .tr-btn {
+    height: 42px;
+    min-width: 42px;
+    padding: 0 10px;
+  }
+  .sidebar {
+    top: auto;
+    left: calc(8px + var(--safe-l, 0px));
+    right: calc(8px + var(--safe-r, 0px));
+    bottom: calc(8px + var(--safe-b, 0px));
+    width: auto;
+    height: min(62vh, 520px);
+    z-index: 40;
+  }
+  .editor.has-sidebar .bottom-right {
+    right: calc(14px + var(--safe-r, 0px));
+  }
+}
+
+/* ---- Runde 4: Layout auf allen Displaygrößen ------------------------------------------------------------------ */
+/* Kopfleiste: unter 1100 px nur das Rahmen-Symbol, damit der Board-Titel Platz behält */
+@media (max-width: 1100px) {
+  .tl-frames {
+    padding: 0 13px;
+  }
+  .tl-frames__label {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .tl-mark {
+    display: none;
+  }
+}
+/* Kleines Handy: oben rechts nur der eigene Avatar (Antippen zeigt alle Anwesenden), der Titel bekommt den Platz */
+@media (max-width: 420px) {
+  .topbar .presence__av:not(.presence__me) {
+    display: none;
+  }
+  .topbar .presence__me {
+    margin-left: 0;
+  }
+  .topbar .presence {
+    padding: 0 7px;
+  }
+}
+/* Rahmen-Liste: neben der senkrechten Werkzeugleiste statt darüber; am Handy unter Rückgängig/Zoom */
+.frames-panel {
+  left: calc(80px + var(--safe-l, 0px));
+}
+@media (max-width: 700px), (max-height: 650px) {
+  .frames-panel {
+    left: calc(10px + var(--safe-l, 0px));
+    max-height: calc(100% - 80px - 66px - var(--safe-t, 0px) - var(--safe-b, 0px));
+  }
+}
+@media (max-width: 700px) {
+  .frames-panel {
+    top: calc(110px + var(--safe-t, 0px));
+    max-height: calc(100% - 110px - 66px - var(--safe-t, 0px) - var(--safe-b, 0px));
+  }
+}
+/* Niedrige Fenster mit Platz in der Breite (Laptop quer, 1024×500): Seitenleiste rechts daneben statt als Blatt über
+   Werkzeugen und Zoom; das Blatt bleibt dem Handy hochkant */
+@media (max-height: 560px) and (min-width: 701px) {
+  .sidebar {
+    top: calc(64px + var(--safe-t, 0px));
+    left: auto;
+    right: calc(10px + var(--safe-r, 0px));
+    bottom: calc(10px + var(--safe-b, 0px));
+    width: min(var(--sidebar-w), 42vw);
+    height: auto;
+    z-index: 30;
+  }
+  .editor.has-sidebar .bottom-right {
+    right: calc(20px + min(var(--sidebar-w), 42vw) + var(--safe-r, 0px));
+  }
+}
+
+/* Touch: Tipp-Ziele mind. 40 px (x-display B13, x-mobile M5) */
+@media (pointer: coarse) {
+  .presence__av {
+    width: 38px;
+    height: 38px;
+  }
+  .frames-panel__close,
+  .sidebar__tab,
+  .sidebar__close {
+    width: 40px;
+    height: 40px;
+  }
+  .btn--sm {
+    height: 40px;
+  }
+}
+@media (pointer: coarse) and (max-width: 700px) {
+  .presence__av {
+    width: 34px;
+    height: 34px;
+  }
+  .history .tb-btn,
+  .zoombar .zb-btn,
+  .zoombar .zb-value {
+    height: 40px;
+  }
+  .history,
+  .zoombar {
+    height: auto;
+  }
+}
+
+/* Oberfläche ausblenden (Strg \, Board-Menü): nur das Board bleibt, unten rechts ein Auge zum Zurückholen */
+.ui-restore {
+  display: none;
+}
+body.stachel-ui-hidden .editor .topbar,
+body.stachel-ui-hidden .editor .toolbar,
+body.stachel-ui-hidden .editor .history,
+body.stachel-ui-hidden .editor .bottom-right,
+body.stachel-ui-hidden .editor .sidebar,
+body.stachel-ui-hidden .editor .frames-panel {
+  display: none;
+}
+body.stachel-ui-hidden .editor .ui-restore {
+  position: absolute;
+  right: calc(14px + var(--safe-r));
+  bottom: calc(14px + var(--safe-b));
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: #e9e9e4;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+}
+body.stachel-ui-hidden .editor .ui-restore:hover,
+body.stachel-ui-hidden .editor .ui-restore:focus-visible {
+  opacity: 1;
+  color: var(--green);
+}
+/* Touch: Tastenkürzel-Knopf in der Zoomleiste hilft nicht (mit Tastatur öffnet „?“ die Übersicht weiterhin) */
+@media (pointer: coarse) {
+  .zb-keys {
+    display: none;
+  }
+}

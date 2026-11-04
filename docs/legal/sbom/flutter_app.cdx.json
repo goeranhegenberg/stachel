@@ -1,0 +1,6029 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:e1b700a1-b0fd-416f-9b64-40bbc95b3882",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-02T16:31:36.686Z",
+    "tools": [
+      {
+        "vendor": "stachel",
+        "name": "scratchpad gen.js (flutter pub deps --json + Pub-Cache-LICENSE-Klassifikation)",
+        "version": "1"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "stachel (com.intsode.stachel)",
+      "version": "1.0.1+2",
+      "bom-ref": "pub:stachel@1.0.1+2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "stachel:hinweis",
+        "value": "Lizenz aus LICENSE im Pub-Cache heuristisch klassifiziert. Plattform-Implementierungen fuer windows/linux/macos/ios/web sind als \"nicht im APK\" markiert; Build-Hooks als \"build-zeit\"."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "flutter_lints",
+      "version": "6.0.0",
+      "bom-ref": "pub:flutter_lints@6.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_lints@6.0.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_lints/versions/6.0.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lints",
+      "version": "6.1.0",
+      "bom-ref": "pub:lints@6.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/lints@6.1.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/lints/versions/6.1.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_test",
+      "version": "0.0.0",
+      "bom-ref": "pub:flutter_test@0.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "sdk"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "stream_channel",
+      "version": "2.1.4",
+      "bom-ref": "pub:stream_channel@2.1.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/stream_channel@2.1.4",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/stream_channel/versions/2.1.4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "async",
+      "version": "2.13.1",
+      "bom-ref": "pub:async@2.13.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/async@2.13.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/async/versions/2.13.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "meta",
+      "version": "1.18.3",
+      "bom-ref": "pub:meta@1.18.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/meta@1.18.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/meta/versions/1.18.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "collection",
+      "version": "1.19.1",
+      "bom-ref": "pub:collection@1.19.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/collection@1.19.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/collection/versions/1.19.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "leak_tracker_flutter_testing",
+      "version": "3.0.10",
+      "bom-ref": "pub:leak_tracker_flutter_testing@3.0.10",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/leak_tracker_flutter_testing@3.0.10",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/leak_tracker_flutter_testing/versions/3.0.10"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "matcher",
+      "version": "0.12.20",
+      "bom-ref": "pub:matcher@0.12.20",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/matcher@0.12.20",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/matcher/versions/0.12.20"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "test_api",
+      "version": "0.7.12",
+      "bom-ref": "pub:test_api@0.7.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/test_api@0.7.12",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/test_api/versions/0.7.12"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "term_glyph",
+      "version": "1.2.2",
+      "bom-ref": "pub:term_glyph@1.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/term_glyph@1.2.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/term_glyph/versions/1.2.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string_scanner",
+      "version": "1.4.1",
+      "bom-ref": "pub:string_scanner@1.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/string_scanner@1.4.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/string_scanner/versions/1.4.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "source_span",
+      "version": "1.10.2",
+      "bom-ref": "pub:source_span@1.10.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/source_span@1.10.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/source_span/versions/1.10.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path",
+      "version": "1.9.1",
+      "bom-ref": "pub:path@1.9.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/path@1.9.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/path/versions/1.9.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "stack_trace",
+      "version": "1.12.2",
+      "bom-ref": "pub:stack_trace@1.12.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/stack_trace@1.12.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/stack_trace/versions/1.12.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "boolean_selector",
+      "version": "2.1.2",
+      "bom-ref": "pub:boolean_selector@2.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/boolean_selector@2.1.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/boolean_selector/versions/2.1.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "leak_tracker_testing",
+      "version": "3.0.2",
+      "bom-ref": "pub:leak_tracker_testing@3.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/leak_tracker_testing@3.0.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/leak_tracker_testing/versions/3.0.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "leak_tracker",
+      "version": "11.0.2",
+      "bom-ref": "pub:leak_tracker@11.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/leak_tracker@11.0.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/leak_tracker/versions/11.0.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "vm_service",
+      "version": "15.4.0",
+      "bom-ref": "pub:vm_service@15.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/vm_service@15.4.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/vm_service/versions/15.4.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "clock",
+      "version": "1.1.3",
+      "bom-ref": "pub:clock@1.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/clock@1.1.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/clock/versions/1.1.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter",
+      "version": "0.0.0",
+      "bom-ref": "pub:flutter@0.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "sdk"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "direct"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sky_engine",
+      "version": "0.0.0",
+      "bom-ref": "pub:sky_engine@0.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "sdk"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "vector_math",
+      "version": "2.4.2",
+      "bom-ref": "pub:vector_math@2.4.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/vector_math@2.4.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/vector_math/versions/2.4.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "material_color_utilities",
+      "version": "0.13.0",
+      "bom-ref": "pub:material_color_utilities@0.13.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/material_color_utilities@0.13.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/material_color_utilities/versions/0.13.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "characters",
+      "version": "1.4.1",
+      "bom-ref": "pub:characters@1.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/characters@1.4.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/characters/versions/1.4.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fake_async",
+      "version": "1.3.3",
+      "bom-ref": "pub:fake_async@1.3.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/fake_async@1.3.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/fake_async/versions/1.3.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nur-dev"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "app_links",
+      "version": "7.2.2",
+      "bom-ref": "pub:app_links@7.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/app_links@7.2.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/app_links/versions/7.2.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "direct"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "app_links_web",
+      "version": "1.0.5",
+      "bom-ref": "pub:app_links_web@1.0.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/app_links_web@1.0.5",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/app_links_web/versions/1.0.5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "web",
+      "version": "1.1.2",
+      "bom-ref": "pub:web@1.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/web@1.1.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/web/versions/1.1.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "app_links_platform_interface",
+      "version": "2.0.4",
+      "bom-ref": "pub:app_links_platform_interface@2.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/app_links_platform_interface@2.0.4",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/app_links_platform_interface/versions/2.0.4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "plugin_platform_interface",
+      "version": "2.1.8",
+      "bom-ref": "pub:plugin_platform_interface@2.1.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/plugin_platform_interface@2.1.8",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/plugin_platform_interface/versions/2.1.8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "bom-ref": "pub:flutter_web_plugins@0.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "sdk"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "app_links_linux",
+      "version": "1.0.4",
+      "bom-ref": "pub:app_links_linux@1.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/app_links_linux@1.0.4",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/app_links_linux/versions/1.0.4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher",
+      "version": "6.3.3",
+      "bom-ref": "pub:url_launcher@6.3.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher@6.3.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher/versions/6.3.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "direct"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher_windows",
+      "version": "3.1.6",
+      "bom-ref": "pub:url_launcher_windows@3.1.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher_windows@3.1.6",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher_windows/versions/3.1.6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher_platform_interface",
+      "version": "2.3.2",
+      "bom-ref": "pub:url_launcher_platform_interface@2.3.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher_platform_interface@2.3.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher_platform_interface/versions/2.3.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher_web",
+      "version": "2.4.3",
+      "bom-ref": "pub:url_launcher_web@2.4.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher_web@2.4.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher_web/versions/2.4.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher_macos",
+      "version": "3.2.6",
+      "bom-ref": "pub:url_launcher_macos@3.2.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher_macos@3.2.6",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher_macos/versions/3.2.6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher_linux",
+      "version": "3.2.3",
+      "bom-ref": "pub:url_launcher_linux@3.2.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher_linux@3.2.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher_linux/versions/3.2.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher_ios",
+      "version": "6.4.2",
+      "bom-ref": "pub:url_launcher_ios@6.4.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher_ios@6.4.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher_ios/versions/6.4.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "url_launcher_android",
+      "version": "6.3.33",
+      "bom-ref": "pub:url_launcher_android@6.3.33",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/url_launcher_android@6.3.33",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/url_launcher_android/versions/6.3.33"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "crypto",
+      "version": "3.0.8",
+      "bom-ref": "pub:crypto@3.0.8",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/crypto@3.0.8",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/crypto/versions/3.0.8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "direct"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shared_preferences",
+      "version": "2.5.6",
+      "bom-ref": "pub:shared_preferences@2.5.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences@2.5.6",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/shared_preferences/versions/2.5.6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "direct"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shared_preferences_windows",
+      "version": "2.4.1",
+      "bom-ref": "pub:shared_preferences_windows@2.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences_windows@2.4.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/shared_preferences_windows/versions/2.4.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shared_preferences_platform_interface",
+      "version": "2.4.2",
+      "bom-ref": "pub:shared_preferences_platform_interface@2.4.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences_platform_interface@2.4.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/shared_preferences_platform_interface/versions/2.4.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path_provider_windows",
+      "version": "2.3.0",
+      "bom-ref": "pub:path_provider_windows@2.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/path_provider_windows@2.3.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/path_provider_windows/versions/2.3.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path_provider_platform_interface",
+      "version": "2.1.3",
+      "bom-ref": "pub:path_provider_platform_interface@2.1.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/path_provider_platform_interface@2.1.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/path_provider_platform_interface/versions/2.1.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "platform",
+      "version": "3.2.0",
+      "bom-ref": "pub:platform@3.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/platform@3.2.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/platform/versions/3.2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ffi",
+      "version": "2.2.0",
+      "bom-ref": "pub:ffi@2.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/ffi@2.2.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/ffi/versions/2.2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file",
+      "version": "7.0.1",
+      "bom-ref": "pub:file@7.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file@7.0.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file/versions/7.0.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shared_preferences_web",
+      "version": "2.4.3",
+      "bom-ref": "pub:shared_preferences_web@2.4.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences_web@2.4.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/shared_preferences_web/versions/2.4.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shared_preferences_linux",
+      "version": "2.4.1",
+      "bom-ref": "pub:shared_preferences_linux@2.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences_linux@2.4.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/shared_preferences_linux/versions/2.4.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path_provider_linux",
+      "version": "2.2.2",
+      "bom-ref": "pub:path_provider_linux@2.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/path_provider_linux@2.2.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/path_provider_linux/versions/2.2.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "xdg_directories",
+      "version": "1.1.0",
+      "bom-ref": "pub:xdg_directories@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/xdg_directories@1.1.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/xdg_directories/versions/1.1.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shared_preferences_foundation",
+      "version": "2.5.7",
+      "bom-ref": "pub:shared_preferences_foundation@2.5.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences_foundation@2.5.7",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/shared_preferences_foundation/versions/2.5.7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shared_preferences_android",
+      "version": "2.5.4",
+      "bom-ref": "pub:shared_preferences_android@2.5.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences_android@2.5.4",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/shared_preferences_android/versions/2.5.4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jni",
+      "version": "1.1.1",
+      "bom-ref": "pub:jni@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/jni@1.1.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/jni/versions/1.1.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "package_config",
+      "version": "3.0.0",
+      "bom-ref": "pub:package_config@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/package_config@3.0.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/package_config/versions/3.0.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jni_util",
+      "version": "1.0.0",
+      "bom-ref": "pub:jni_util@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/jni_util@1.0.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/jni_util/versions/1.0.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "args",
+      "version": "2.7.0",
+      "bom-ref": "pub:args@2.7.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/args@2.7.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/args/versions/2.7.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "http",
+      "version": "1.6.0",
+      "bom-ref": "pub:http@1.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/http@1.6.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/http/versions/1.6.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "direct"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "http_parser",
+      "version": "4.1.2",
+      "bom-ref": "pub:http_parser@4.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/http_parser@4.1.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/http_parser/versions/4.1.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typed_data",
+      "version": "1.4.0",
+      "bom-ref": "pub:typed_data@1.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/typed_data@1.4.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/typed_data/versions/1.4.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_secure_storage",
+      "version": "11.2.0",
+      "bom-ref": "pub:flutter_secure_storage@11.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage@11.2.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_secure_storage/versions/11.2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_secure_storage_windows",
+      "version": "4.2.2",
+      "bom-ref": "pub:flutter_secure_storage_windows@4.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage_windows@4.2.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_secure_storage_windows/versions/4.2.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "win32",
+      "version": "6.4.0",
+      "bom-ref": "pub:win32@6.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/win32@6.4.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/win32/versions/6.4.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ffi_leak_tracker",
+      "version": "0.1.2",
+      "bom-ref": "pub:ffi_leak_tracker@0.1.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/ffi_leak_tracker@0.1.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/ffi_leak_tracker/versions/0.1.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path_provider",
+      "version": "2.1.6",
+      "bom-ref": "pub:path_provider@2.1.6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/path_provider@2.1.6",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/path_provider/versions/2.1.6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path_provider_foundation",
+      "version": "2.6.0",
+      "bom-ref": "pub:path_provider_foundation@2.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/path_provider_foundation@2.6.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/path_provider_foundation/versions/2.6.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "objective_c",
+      "version": "9.5.0",
+      "bom-ref": "pub:objective_c@9.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/objective_c@9.5.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/objective_c/versions/9.5.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pub_semver",
+      "version": "2.2.1",
+      "bom-ref": "pub:pub_semver@2.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/pub_semver@2.2.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/pub_semver/versions/2.2.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "logging",
+      "version": "1.3.0",
+      "bom-ref": "pub:logging@1.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/logging@1.3.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/logging/versions/1.3.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "hooks",
+      "version": "2.0.2",
+      "bom-ref": "pub:hooks@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/hooks@2.0.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/hooks/versions/2.0.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yaml",
+      "version": "3.1.4",
+      "bom-ref": "pub:yaml@3.1.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/yaml@3.1.4",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/yaml/versions/3.1.4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "record_use",
+      "version": "0.6.0",
+      "bom-ref": "pub:record_use@0.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/record_use@0.6.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/record_use/versions/0.6.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "code_assets",
+      "version": "1.2.1",
+      "bom-ref": "pub:code_assets@1.2.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/code_assets@1.2.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/code_assets/versions/1.2.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path_provider_android",
+      "version": "2.3.1",
+      "bom-ref": "pub:path_provider_android@2.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/path_provider_android@2.3.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/path_provider_android/versions/2.3.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jni_flutter",
+      "version": "1.0.4+1",
+      "bom-ref": "pub:jni_flutter@1.0.4+1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/jni_flutter@1.0.4+1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/jni_flutter/versions/1.0.4+1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_secure_storage_platform_interface",
+      "version": "2.1.1",
+      "bom-ref": "pub:flutter_secure_storage_platform_interface@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage_platform_interface@2.1.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_secure_storage_platform_interface/versions/2.1.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_secure_storage_web",
+      "version": "2.1.1",
+      "bom-ref": "pub:flutter_secure_storage_web@2.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage_web@2.1.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_secure_storage_web/versions/2.1.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_secure_storage_linux",
+      "version": "3.0.3",
+      "bom-ref": "pub:flutter_secure_storage_linux@3.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage_linux@3.0.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_secure_storage_linux/versions/3.0.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_secure_storage_darwin",
+      "version": "0.4.3",
+      "bom-ref": "pub:flutter_secure_storage_darwin@0.4.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage_darwin@0.4.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_secure_storage_darwin/versions/0.4.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pasteboard",
+      "version": "0.6.0",
+      "bom-ref": "pub:pasteboard@0.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/pasteboard@0.6.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/pasteboard/versions/0.6.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "uuid",
+      "version": "4.6.0",
+      "bom-ref": "pub:uuid@4.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/uuid@4.6.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/uuid/versions/4.6.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fixnum",
+      "version": "1.1.1",
+      "bom-ref": "pub:fixnum@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/fixnum@1.1.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/fixnum/versions/1.1.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfrx",
+      "version": "2.11.0",
+      "bom-ref": "pub:pdfrx@2.11.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/pdfrx@2.11.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/pdfrx/versions/2.11.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "MIT; zieht PDFium (bblanchon/pdfium-binaries chromium/8125) per Native-Assets-Hook ins APK; PDFium-Lizenz landet nicht in NOTICES"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "material_ui",
+      "version": "1.9.0",
+      "bom-ref": "pub:material_ui@1.9.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/material_ui@1.9.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/material_ui/versions/1.9.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "intl",
+      "version": "0.20.3",
+      "bom-ref": "pub:intl@0.20.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/intl@0.20.3",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/intl/versions/0.20.3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_localizations",
+      "version": "0.0.0",
+      "bom-ref": "pub:flutter_localizations@0.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "sdk"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cupertino_ui",
+      "version": "1.1.5",
+      "bom-ref": "pub:cupertino_ui@1.1.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/cupertino_ui@1.1.5",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/cupertino_ui/versions/1.1.5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "synchronized",
+      "version": "3.5.0",
+      "bom-ref": "pub:synchronized@3.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/synchronized@3.5.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/synchronized/versions/3.5.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rxdart",
+      "version": "0.28.0",
+      "bom-ref": "pub:rxdart@0.28.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/rxdart@0.28.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/rxdart/versions/0.28.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfium_flutter",
+      "version": "0.4.1",
+      "bom-ref": "pub:pdfium_flutter@0.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/pdfium_flutter@0.4.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/pdfium_flutter/versions/0.4.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "MIT; Deployment-Schicht fuer PDFium"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfium_dart",
+      "version": "0.4.1",
+      "bom-ref": "pub:pdfium_dart@0.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/pdfium_dart@0.4.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/pdfium_dart/versions/0.4.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "MIT; Build-Hook laedt libpdfium.so von github.com/bblanchon/pdfium-binaries"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "native_toolchain_c",
+      "version": "0.19.2",
+      "bom-ref": "pub:native_toolchain_c@0.19.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/native_toolchain_c@0.19.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/native_toolchain_c/versions/0.19.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "glob",
+      "version": "2.2.0",
+      "bom-ref": "pub:glob@2.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/glob@2.2.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/glob/versions/2.2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "build-zeit (nicht im APK)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "archive",
+      "version": "4.6.0",
+      "bom-ref": "pub:archive@4.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/archive@4.6.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/archive/versions/4.6.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "posix",
+      "version": "6.5.4",
+      "bom-ref": "pub:posix@6.5.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/posix@6.5.4",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/posix/versions/6.5.4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfrx_engine",
+      "version": "0.9.0",
+      "bom-ref": "pub:pdfrx_engine@0.9.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/pdfrx_engine@0.9.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/pdfrx_engine/versions/0.9.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image",
+      "version": "4.8.0",
+      "bom-ref": "pub:image@4.8.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/image@4.8.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image/versions/4.8.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "xml",
+      "version": "6.6.1",
+      "bom-ref": "pub:xml@6.6.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/xml@6.6.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/xml/versions/6.6.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "petitparser",
+      "version": "7.0.2",
+      "bom-ref": "pub:petitparser@7.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/petitparser@7.0.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/petitparser/versions/7.0.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker",
+      "version": "1.2.4",
+      "bom-ref": "pub:image_picker@1.2.4",
+      "licenses": [
+        {
+          "expression": "Apache-2.0 AND BSD-3-Clause"
+        }
+      ],
+      "purl": "pkg:pub/image_picker@1.2.4",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker/versions/1.2.4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "Lizenzdatei BSD-3 + Apache-2.0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker_windows",
+      "version": "0.2.2",
+      "bom-ref": "pub:image_picker_windows@0.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/image_picker_windows@0.2.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker_windows/versions/0.2.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker_platform_interface",
+      "version": "2.11.2",
+      "bom-ref": "pub:image_picker_platform_interface@2.11.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/image_picker_platform_interface@2.11.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker_platform_interface/versions/2.11.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cross_file",
+      "version": "0.3.5+5",
+      "bom-ref": "pub:cross_file@0.3.5+5",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/cross_file@0.3.5+5",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/cross_file/versions/0.3.5+5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_selector_windows",
+      "version": "0.9.3+6",
+      "bom-ref": "pub:file_selector_windows@0.9.3+6",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_selector_windows@0.9.3+6",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_selector_windows/versions/0.9.3+6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_selector_platform_interface",
+      "version": "2.7.0",
+      "bom-ref": "pub:file_selector_platform_interface@2.7.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_selector_platform_interface@2.7.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_selector_platform_interface/versions/2.7.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker_macos",
+      "version": "0.2.2+1",
+      "bom-ref": "pub:image_picker_macos@0.2.2+1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/image_picker_macos@0.2.2+1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker_macos/versions/0.2.2+1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_selector_macos",
+      "version": "0.9.5+2",
+      "bom-ref": "pub:file_selector_macos@0.9.5+2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_selector_macos@0.9.5+2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_selector_macos/versions/0.9.5+2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker_linux",
+      "version": "0.2.2",
+      "bom-ref": "pub:image_picker_linux@0.2.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/image_picker_linux@0.2.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker_linux/versions/0.2.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_selector_linux",
+      "version": "0.9.4+1",
+      "bom-ref": "pub:file_selector_linux@0.9.4+1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_selector_linux@0.9.4+1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_selector_linux/versions/0.9.4+1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker_ios",
+      "version": "0.8.13+14",
+      "bom-ref": "pub:image_picker_ios@0.8.13+14",
+      "licenses": [
+        {
+          "expression": "Apache-2.0 AND BSD-3-Clause"
+        }
+      ],
+      "purl": "pkg:pub/image_picker_ios@0.8.13+14",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker_ios/versions/0.8.13+14"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "Lizenzdatei BSD-3 + Apache-2.0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker_for_web",
+      "version": "3.1.1",
+      "bom-ref": "pub:image_picker_for_web@3.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/image_picker_for_web@3.1.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker_for_web/versions/3.1.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mime",
+      "version": "2.1.0",
+      "bom-ref": "pub:mime@2.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/mime@2.1.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/mime/versions/2.1.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "image_picker_android",
+      "version": "0.8.13+25",
+      "bom-ref": "pub:image_picker_android@0.8.13+25",
+      "licenses": [
+        {
+          "expression": "Apache-2.0 AND BSD-3-Clause"
+        }
+      ],
+      "purl": "pkg:pub/image_picker_android@0.8.13+25",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/image_picker_android/versions/0.8.13+25"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "Lizenzdatei BSD-3 + Apache-2.0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "flutter_plugin_android_lifecycle",
+      "version": "2.0.35",
+      "bom-ref": "pub:flutter_plugin_android_lifecycle@2.0.35",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/flutter_plugin_android_lifecycle@2.0.35",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/flutter_plugin_android_lifecycle/versions/2.0.35"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "audioplayers",
+      "version": "6.8.1",
+      "bom-ref": "pub:audioplayers@6.8.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/audioplayers@6.8.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/audioplayers/versions/6.8.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "audioplayers_windows",
+      "version": "4.4.1",
+      "bom-ref": "pub:audioplayers_windows@4.4.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/audioplayers_windows@4.4.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/audioplayers_windows/versions/4.4.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "audioplayers_platform_interface",
+      "version": "7.2.0",
+      "bom-ref": "pub:audioplayers_platform_interface@7.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/audioplayers_platform_interface@7.2.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/audioplayers_platform_interface/versions/7.2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "audioplayers_web",
+      "version": "5.3.0",
+      "bom-ref": "pub:audioplayers_web@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/audioplayers_web@5.3.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/audioplayers_web/versions/5.3.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "audioplayers_linux",
+      "version": "4.3.0",
+      "bom-ref": "pub:audioplayers_linux@4.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/audioplayers_linux@4.3.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/audioplayers_linux/versions/4.3.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "audioplayers_darwin",
+      "version": "6.5.0",
+      "bom-ref": "pub:audioplayers_darwin@6.5.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/audioplayers_darwin@6.5.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/audioplayers_darwin/versions/6.5.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "audioplayers_android",
+      "version": "5.3.0",
+      "bom-ref": "pub:audioplayers_android@5.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/audioplayers_android@5.3.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/audioplayers_android/versions/5.3.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_picker",
+      "version": "12.3.0",
+      "bom-ref": "pub:file_picker@12.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_picker@12.3.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_picker/versions/12.3.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_picker_web",
+      "version": "3.1.0",
+      "bom-ref": "pub:file_picker_web@3.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_picker_web@3.1.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_picker_web/versions/3.1.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_picker_platform_interface",
+      "version": "3.4.0",
+      "bom-ref": "pub:file_picker_platform_interface@3.4.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_picker_platform_interface@3.4.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_picker_platform_interface/versions/3.4.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "windows_file_picker",
+      "version": "1.3.0",
+      "bom-ref": "pub:windows_file_picker@1.3.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/windows_file_picker@1.3.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/windows_file_picker/versions/1.3.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_picker_linux",
+      "version": "1.1.0",
+      "bom-ref": "pub:file_picker_linux@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_picker_linux@1.1.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_picker_linux/versions/1.1.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "dbus",
+      "version": "0.7.15",
+      "bom-ref": "pub:dbus@0.7.15",
+      "licenses": [
+        {
+          "license": {
+            "id": "MPL-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pub/dbus@0.7.15",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/dbus/versions/0.7.15"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "MPL-2.0 - nur Linux-Desktop, nicht im APK"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "file_picker_darwin",
+      "version": "1.2.0",
+      "bom-ref": "pub:file_picker_darwin@1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/file_picker_darwin@1.2.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/file_picker_darwin/versions/1.2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "nicht im APK (andere Plattform)"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "android_file_picker",
+      "version": "1.1.1",
+      "bom-ref": "pub:android_file_picker@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/android_file_picker@1.1.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/android_file_picker/versions/1.1.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "share_plus",
+      "version": "13.3.1",
+      "bom-ref": "pub:share_plus@13.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/share_plus@13.3.1",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/share_plus/versions/13.3.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "share_plus_platform_interface",
+      "version": "7.2.0",
+      "bom-ref": "pub:share_plus_platform_interface@7.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/share_plus_platform_interface@7.2.0",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/share_plus_platform_interface/versions/7.2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "html",
+      "version": "0.15.7",
+      "bom-ref": "pub:html@0.15.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:pub/html@0.15.7",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/html/versions/0.15.7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "csslib",
+      "version": "1.0.2",
+      "bom-ref": "pub:csslib@1.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pub/csslib@1.0.2",
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pub.dev/packages/csslib/versions/1.0.2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:pub:source",
+          "value": "hosted"
+        },
+        {
+          "name": "stachel:pub:kind",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "PDFium (bblanchon/pdfium-binaries, libpdfium.so)",
+      "version": "chromium/8125",
+      "bom-ref": "extra|PDFium (bblanchon/pdfium-binaries, libpdfium.so)@chromium/8125",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause AND Apache-2.0 (+ Drittlizenzen: FreeType FTL, libjpeg-turbo IJG/BSD-3/Zlib, OpenJPEG BSD-2, LittleCMS MIT, zlib, libpng, Abseil Apache-2.0, ICU?)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app (native asset via pdfium_dart-Hook)"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "Pub-Cache pdfium_dart-0.4.1/hook/build.dart:61"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "NICHT in Flutters NOTICES enthalten - Lizenz manuell (LicenseRegistry.addLicense) ergaenzen; genaue Drittliste in LICENSE des pdfium-binaries-Release (unklar, nicht heruntergeladen)"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfrx_pdfium_gate (nativer Hilfs-Code aus pdfium_dart/src)",
+      "version": "0.4.1",
+      "bom-ref": "extra|pdfrx_pdfium_gate (nativer Hilfs-Code aus pdfium_dart/src)@0.4.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "pdfium_dart-0.4.1/src"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "Flutter Engine (Skia/Impeller, Dart VM, ICU, HarfBuzz, FreeType, BoringSSL ...)",
+      "version": "SDK",
+      "bom-ref": "extra|Flutter Engine (Skia/Impeller, Dart VM, ICU, HarfBuzz, FreeType, BoringSSL ...)@SDK",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause + Drittlizenzen"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "flutter SDK (sky_engine LICENSE)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "automatisch in assets/flutter_assets/NOTICES.Z"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "MaterialIcons-Regular.otf (uses-material-design: true)",
+      "version": "SDK",
+      "bom-ref": "extra|MaterialIcons-Regular.otf (uses-material-design: true)@SDK",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "flutter/app/pubspec.yaml:29"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "Font Barlow / Barlow Condensed (8 TTF, v1.408)",
+      "version": "1.408",
+      "bom-ref": "extra|Font Barlow / Barlow Condensed (8 TTF, v1.408)@1.408",
+      "licenses": [
+        {
+          "license": {
+            "name": "OFL-1.1"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "flutter/app/assets/fonts/*.ttf"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "KEINE OFL-Datei neben den TTFs und kein LicenseRegistry.addLicense"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "Font Source Serif 4 (5 TTF, v4.004, Fontsource-latin-Subset)",
+      "version": "4.004",
+      "bom-ref": "extra|Font Source Serif 4 (5 TTF, v4.004, Fontsource-latin-Subset)@4.004",
+      "licenses": [
+        {
+          "license": {
+            "name": "OFL-1.1 (Reserved Font Name \"Source\")"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "flutter/packages/stachel_board/assets/fonts/"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-SourceSerif4.txt nennt \"Google Inc.\" statt Adobe als Rechteinhaber; RFN \"Source\" bei Subset beachten"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "Font JetBrains Mono (3 TTF, v2.211)",
+      "version": "2.211",
+      "bom-ref": "extra|Font JetBrains Mono (3 TTF, v2.211)@2.211",
+      "licenses": [
+        {
+          "license": {
+            "name": "OFL-1.1"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "flutter/packages/stachel_board/assets/fonts/"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "OFL-JetBrainsMono.txt liegt daneben, wird aber nicht registriert"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lucide icons (268 Pfaddaten in web_constants.g.dart)",
+      "version": "1.61.0",
+      "bom-ref": "extra|lucide icons (268 Pfaddaten in web_constants.g.dart)@1.61.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "ISC AND MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "flutter/packages/stachel_board/lib/src/web/web_constants.g.dart"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "AndroidX / Kotlin stdlib / Media3 (ExoPlayer) u.a. Gradle-Abhaengigkeiten der Plugins",
+      "version": "unklar",
+      "bom-ref": "extra|AndroidX / Kotlin stdlib / Media3 (ExoPlayer) u.a. Gradle-Abhaengigkeiten der Plugins@unklar",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 (ueberwiegend; nicht enumeriert - unklar)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "stachel:ausgeliefert_in",
+          "value": "android-app"
+        },
+        {
+          "name": "stachel:quelle",
+          "value": "Gradle (nicht ausgewertet)"
+        },
+        {
+          "name": "stachel:hinweis",
+          "value": "per ./gradlew app:dependencies bzw. Google oss-licenses-Plugin nachpruefen"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pub:stachel@1.0.1+2",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:http@1.6.0",
+        "pub:shared_preferences@2.5.6",
+        "pub:crypto@3.0.8",
+        "pub:url_launcher@6.3.3",
+        "pub:app_links@7.2.2",
+        "pub:flutter_test@0.0.0",
+        "pub:flutter_lints@6.0.0"
+      ]
+    },
+    {
+      "ref": "pub:flutter_lints@6.0.0",
+      "dependsOn": [
+        "pub:lints@6.1.0"
+      ]
+    },
+    {
+      "ref": "pub:lints@6.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:flutter_test@0.0.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:test_api@0.7.12",
+        "pub:matcher@0.12.20",
+        "pub:path@1.9.1",
+        "pub:fake_async@1.3.3",
+        "pub:clock@1.1.3",
+        "pub:stack_trace@1.12.2",
+        "pub:vector_math@2.4.2",
+        "pub:leak_tracker_flutter_testing@3.0.10",
+        "pub:collection@1.19.1",
+        "pub:meta@1.18.3",
+        "pub:stream_channel@2.1.4"
+      ]
+    },
+    {
+      "ref": "pub:stream_channel@2.1.4",
+      "dependsOn": [
+        "pub:async@2.13.1"
+      ]
+    },
+    {
+      "ref": "pub:async@2.13.1",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:meta@1.18.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:collection@1.19.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:leak_tracker_flutter_testing@3.0.10",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:leak_tracker@11.0.2",
+        "pub:leak_tracker_testing@3.0.2",
+        "pub:matcher@0.12.20",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:matcher@0.12.20",
+      "dependsOn": [
+        "pub:async@2.13.1",
+        "pub:meta@1.18.3",
+        "pub:stack_trace@1.12.2",
+        "pub:term_glyph@1.2.2",
+        "pub:test_api@0.7.12"
+      ]
+    },
+    {
+      "ref": "pub:test_api@0.7.12",
+      "dependsOn": [
+        "pub:async@2.13.1",
+        "pub:boolean_selector@2.1.2",
+        "pub:collection@1.19.1",
+        "pub:meta@1.18.3",
+        "pub:source_span@1.10.2",
+        "pub:stack_trace@1.12.2",
+        "pub:stream_channel@2.1.4",
+        "pub:string_scanner@1.4.1",
+        "pub:term_glyph@1.2.2"
+      ]
+    },
+    {
+      "ref": "pub:term_glyph@1.2.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:string_scanner@1.4.1",
+      "dependsOn": [
+        "pub:source_span@1.10.2"
+      ]
+    },
+    {
+      "ref": "pub:source_span@1.10.2",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:path@1.9.1",
+        "pub:term_glyph@1.2.2"
+      ]
+    },
+    {
+      "ref": "pub:path@1.9.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:stack_trace@1.12.2",
+      "dependsOn": [
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:boolean_selector@2.1.2",
+      "dependsOn": [
+        "pub:source_span@1.10.2",
+        "pub:string_scanner@1.4.1"
+      ]
+    },
+    {
+      "ref": "pub:leak_tracker_testing@3.0.2",
+      "dependsOn": [
+        "pub:leak_tracker@11.0.2",
+        "pub:matcher@0.12.20",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:leak_tracker@11.0.2",
+      "dependsOn": [
+        "pub:clock@1.1.3",
+        "pub:collection@1.19.1",
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1",
+        "pub:vm_service@15.4.0"
+      ]
+    },
+    {
+      "ref": "pub:vm_service@15.4.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:clock@1.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:flutter@0.0.0",
+      "dependsOn": [
+        "pub:characters@1.4.1",
+        "pub:collection@1.19.1",
+        "pub:material_color_utilities@0.13.0",
+        "pub:meta@1.18.3",
+        "pub:vector_math@2.4.2",
+        "pub:sky_engine@0.0.0"
+      ]
+    },
+    {
+      "ref": "pub:sky_engine@0.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:vector_math@2.4.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:material_color_utilities@0.13.0",
+      "dependsOn": [
+        "pub:collection@1.19.1"
+      ]
+    },
+    {
+      "ref": "pub:characters@1.4.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:fake_async@1.3.3",
+      "dependsOn": [
+        "pub:clock@1.1.3",
+        "pub:collection@1.19.1"
+      ]
+    },
+    {
+      "ref": "pub:app_links@7.2.2",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:app_links_linux@1.0.4",
+        "pub:app_links_platform_interface@2.0.4",
+        "pub:app_links_web@1.0.5"
+      ]
+    },
+    {
+      "ref": "pub:app_links_web@1.0.5",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:app_links_platform_interface@2.0.4",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:web@1.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:app_links_platform_interface@2.0.4",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:plugin_platform_interface@2.1.8",
+      "dependsOn": [
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:flutter_web_plugins@0.0.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0"
+      ]
+    },
+    {
+      "ref": "pub:app_links_linux@1.0.4",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:app_links_platform_interface@2.0.4"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher@6.3.3",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:url_launcher_android@6.3.33",
+        "pub:url_launcher_ios@6.4.2",
+        "pub:url_launcher_linux@3.2.3",
+        "pub:url_launcher_macos@3.2.6",
+        "pub:url_launcher_platform_interface@2.3.2",
+        "pub:url_launcher_web@2.4.3",
+        "pub:url_launcher_windows@3.1.6"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher_windows@3.1.6",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher_platform_interface@2.3.2",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher_web@2.4.3",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:url_launcher_platform_interface@2.3.2",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher_macos@3.2.6",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher_linux@3.2.3",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher_ios@6.4.2",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pub:url_launcher_android@6.3.33",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pub:crypto@3.0.8",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:shared_preferences@2.5.6",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:shared_preferences_android@2.5.4",
+        "pub:shared_preferences_foundation@2.5.7",
+        "pub:shared_preferences_linux@2.4.1",
+        "pub:shared_preferences_platform_interface@2.4.2",
+        "pub:shared_preferences_web@2.4.3",
+        "pub:shared_preferences_windows@2.4.1"
+      ]
+    },
+    {
+      "ref": "pub:shared_preferences_windows@2.4.1",
+      "dependsOn": [
+        "pub:file@7.0.1",
+        "pub:flutter@0.0.0",
+        "pub:path@1.9.1",
+        "pub:path_provider_platform_interface@2.1.3",
+        "pub:path_provider_windows@2.3.0",
+        "pub:shared_preferences_platform_interface@2.4.2"
+      ]
+    },
+    {
+      "ref": "pub:shared_preferences_platform_interface@2.4.2",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:path_provider_windows@2.3.0",
+      "dependsOn": [
+        "pub:ffi@2.2.0",
+        "pub:flutter@0.0.0",
+        "pub:path@1.9.1",
+        "pub:path_provider_platform_interface@2.1.3"
+      ]
+    },
+    {
+      "ref": "pub:path_provider_platform_interface@2.1.3",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:platform@3.2.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:platform@3.2.0",
+      "dependsOn": [
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:ffi@2.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:file@7.0.1",
+      "dependsOn": [
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:shared_preferences_web@2.4.3",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:shared_preferences_platform_interface@2.4.2",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:shared_preferences_linux@2.4.1",
+      "dependsOn": [
+        "pub:file@7.0.1",
+        "pub:flutter@0.0.0",
+        "pub:path@1.9.1",
+        "pub:path_provider_linux@2.2.2",
+        "pub:path_provider_platform_interface@2.1.3",
+        "pub:shared_preferences_platform_interface@2.4.2"
+      ]
+    },
+    {
+      "ref": "pub:path_provider_linux@2.2.2",
+      "dependsOn": [
+        "pub:ffi@2.2.0",
+        "pub:flutter@0.0.0",
+        "pub:path@1.9.1",
+        "pub:path_provider_platform_interface@2.1.3",
+        "pub:xdg_directories@1.1.0"
+      ]
+    },
+    {
+      "ref": "pub:xdg_directories@1.1.0",
+      "dependsOn": [
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:shared_preferences_foundation@2.5.7",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:shared_preferences_platform_interface@2.4.2"
+      ]
+    },
+    {
+      "ref": "pub:shared_preferences_android@2.5.4",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:jni@1.1.1",
+        "pub:meta@1.18.3",
+        "pub:shared_preferences_platform_interface@2.4.2"
+      ]
+    },
+    {
+      "ref": "pub:jni@1.1.1",
+      "dependsOn": [
+        "pub:args@2.7.0",
+        "pub:collection@1.19.1",
+        "pub:ffi@2.2.0",
+        "pub:jni_util@1.0.0",
+        "pub:meta@1.18.3",
+        "pub:package_config@3.0.0",
+        "pub:path@1.9.1",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:package_config@3.0.0",
+      "dependsOn": [
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:jni_util@1.0.0",
+      "dependsOn": [
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:args@2.7.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:http@1.6.0",
+      "dependsOn": [
+        "pub:async@2.13.1",
+        "pub:http_parser@4.1.2",
+        "pub:meta@1.18.3",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:http_parser@4.1.2",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:source_span@1.10.2",
+        "pub:string_scanner@1.4.1",
+        "pub:typed_data@1.4.0"
+      ]
+    },
+    {
+      "ref": "pub:typed_data@1.4.0",
+      "dependsOn": [
+        "pub:collection@1.19.1"
+      ]
+    },
+    {
+      "ref": "pub:flutter_secure_storage@11.2.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_secure_storage_darwin@0.4.3",
+        "pub:flutter_secure_storage_linux@3.0.3",
+        "pub:flutter_secure_storage_platform_interface@2.1.1",
+        "pub:flutter_secure_storage_web@2.1.1",
+        "pub:flutter_secure_storage_windows@4.2.2",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:flutter_secure_storage_windows@4.2.2",
+      "dependsOn": [
+        "pub:ffi@2.2.0",
+        "pub:flutter@0.0.0",
+        "pub:flutter_secure_storage_platform_interface@2.1.1",
+        "pub:path@1.9.1",
+        "pub:path_provider@2.1.6",
+        "pub:path_provider_platform_interface@2.1.3",
+        "pub:win32@6.4.0"
+      ]
+    },
+    {
+      "ref": "pub:win32@6.4.0",
+      "dependsOn": [
+        "pub:ffi@2.2.0",
+        "pub:ffi_leak_tracker@0.1.2",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:ffi_leak_tracker@0.1.2",
+      "dependsOn": [
+        "pub:ffi@2.2.0"
+      ]
+    },
+    {
+      "ref": "pub:path_provider@2.1.6",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:path_provider_android@2.3.1",
+        "pub:path_provider_foundation@2.6.0",
+        "pub:path_provider_linux@2.2.2",
+        "pub:path_provider_platform_interface@2.1.3",
+        "pub:path_provider_windows@2.3.0"
+      ]
+    },
+    {
+      "ref": "pub:path_provider_foundation@2.6.0",
+      "dependsOn": [
+        "pub:ffi@2.2.0",
+        "pub:flutter@0.0.0",
+        "pub:objective_c@9.5.0",
+        "pub:path_provider_platform_interface@2.1.3"
+      ]
+    },
+    {
+      "ref": "pub:objective_c@9.5.0",
+      "dependsOn": [
+        "pub:code_assets@1.2.1",
+        "pub:collection@1.19.1",
+        "pub:ffi@2.2.0",
+        "pub:hooks@2.0.2",
+        "pub:logging@1.3.0",
+        "pub:meta@1.18.3",
+        "pub:pub_semver@2.2.1"
+      ]
+    },
+    {
+      "ref": "pub:pub_semver@2.2.1",
+      "dependsOn": [
+        "pub:collection@1.19.1"
+      ]
+    },
+    {
+      "ref": "pub:logging@1.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:hooks@2.0.2",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:crypto@3.0.8",
+        "pub:logging@1.3.0",
+        "pub:meta@1.18.3",
+        "pub:pub_semver@2.2.1",
+        "pub:record_use@0.6.0",
+        "pub:yaml@3.1.4"
+      ]
+    },
+    {
+      "ref": "pub:yaml@3.1.4",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:source_span@1.10.2",
+        "pub:string_scanner@1.4.1"
+      ]
+    },
+    {
+      "ref": "pub:record_use@0.6.0",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:meta@1.18.3",
+        "pub:pub_semver@2.2.1"
+      ]
+    },
+    {
+      "ref": "pub:code_assets@1.2.1",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:hooks@2.0.2"
+      ]
+    },
+    {
+      "ref": "pub:path_provider_android@2.3.1",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:jni@1.1.1",
+        "pub:jni_flutter@1.0.4+1",
+        "pub:path_provider_platform_interface@2.1.3"
+      ]
+    },
+    {
+      "ref": "pub:jni_flutter@1.0.4+1",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:jni@1.1.1"
+      ]
+    },
+    {
+      "ref": "pub:flutter_secure_storage_platform_interface@2.1.1",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:flutter_secure_storage_web@2.1.1",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_secure_storage_platform_interface@2.1.1",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:flutter_secure_storage_linux@3.0.3",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_secure_storage_platform_interface@2.1.1"
+      ]
+    },
+    {
+      "ref": "pub:flutter_secure_storage_darwin@0.4.3",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:pasteboard@0.6.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:web@1.1.2",
+        "pub:uuid@4.6.0",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:uuid@4.6.0",
+      "dependsOn": [
+        "pub:crypto@3.0.8",
+        "pub:fixnum@1.1.1"
+      ]
+    },
+    {
+      "ref": "pub:fixnum@1.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:pdfrx@2.11.0",
+      "dependsOn": [
+        "pub:pdfrx_engine@0.9.0",
+        "pub:pdfium_flutter@0.4.1",
+        "pub:collection@1.19.1",
+        "pub:crypto@3.0.8",
+        "pub:flutter@0.0.0",
+        "pub:path@1.9.1",
+        "pub:path_provider@2.1.6",
+        "pub:rxdart@0.28.0",
+        "pub:synchronized@3.5.0",
+        "pub:url_launcher@6.3.3",
+        "pub:vector_math@2.4.2",
+        "pub:web@1.1.2",
+        "pub:yaml@3.1.4",
+        "pub:material_ui@1.9.0"
+      ]
+    },
+    {
+      "ref": "pub:material_ui@1.9.0",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:cupertino_ui@1.1.5",
+        "pub:flutter@0.0.0",
+        "pub:flutter_localizations@0.0.0",
+        "pub:intl@0.20.3",
+        "pub:material_color_utilities@0.13.0",
+        "pub:vector_math@2.4.2"
+      ]
+    },
+    {
+      "ref": "pub:intl@0.20.3",
+      "dependsOn": [
+        "pub:clock@1.1.3",
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:flutter_localizations@0.0.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:intl@0.20.3",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:cupertino_ui@1.1.5",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:flutter@0.0.0",
+        "pub:flutter_localizations@0.0.0",
+        "pub:intl@0.20.3"
+      ]
+    },
+    {
+      "ref": "pub:synchronized@3.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:rxdart@0.28.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:pdfium_flutter@0.4.1",
+      "dependsOn": [
+        "pub:pdfium_dart@0.4.1",
+        "pub:code_assets@1.2.1",
+        "pub:ffi@2.2.0",
+        "pub:flutter@0.0.0",
+        "pub:hooks@2.0.2",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:pdfium_dart@0.4.1",
+      "dependsOn": [
+        "pub:archive@4.6.0",
+        "pub:code_assets@1.2.1",
+        "pub:ffi@2.2.0",
+        "pub:hooks@2.0.2",
+        "pub:http@1.6.0",
+        "pub:native_toolchain_c@0.19.2"
+      ]
+    },
+    {
+      "ref": "pub:native_toolchain_c@0.19.2",
+      "dependsOn": [
+        "pub:code_assets@1.2.1",
+        "pub:glob@2.2.0",
+        "pub:hooks@2.0.2",
+        "pub:logging@1.3.0",
+        "pub:meta@1.18.3",
+        "pub:pub_semver@2.2.1"
+      ]
+    },
+    {
+      "ref": "pub:glob@2.2.0",
+      "dependsOn": [
+        "pub:async@2.13.1",
+        "pub:collection@1.19.1",
+        "pub:file@7.0.1",
+        "pub:path@1.9.1",
+        "pub:string_scanner@1.4.1"
+      ]
+    },
+    {
+      "ref": "pub:archive@4.6.0",
+      "dependsOn": [
+        "pub:path@1.9.1",
+        "pub:posix@6.5.4"
+      ]
+    },
+    {
+      "ref": "pub:posix@6.5.4",
+      "dependsOn": [
+        "pub:ffi@2.2.0",
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:pdfrx_engine@0.9.0",
+      "dependsOn": [
+        "pub:pdfium_dart@0.4.1",
+        "pub:collection@1.19.1",
+        "pub:crypto@3.0.8",
+        "pub:ffi@2.2.0",
+        "pub:http@1.6.0",
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1",
+        "pub:rxdart@0.28.0",
+        "pub:synchronized@3.5.0",
+        "pub:vector_math@2.4.2",
+        "pub:archive@4.6.0",
+        "pub:image@4.8.0"
+      ]
+    },
+    {
+      "ref": "pub:image@4.8.0",
+      "dependsOn": [
+        "pub:archive@4.6.0",
+        "pub:meta@1.18.3",
+        "pub:xml@6.6.1"
+      ]
+    },
+    {
+      "ref": "pub:xml@6.6.1",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:meta@1.18.3",
+        "pub:petitparser@7.0.2"
+      ]
+    },
+    {
+      "ref": "pub:petitparser@7.0.2",
+      "dependsOn": [
+        "pub:meta@1.18.3",
+        "pub:collection@1.19.1"
+      ]
+    },
+    {
+      "ref": "pub:image_picker@1.2.4",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:image_picker_android@0.8.13+25",
+        "pub:image_picker_for_web@3.1.1",
+        "pub:image_picker_ios@0.8.13+14",
+        "pub:image_picker_linux@0.2.2",
+        "pub:image_picker_macos@0.2.2+1",
+        "pub:image_picker_platform_interface@2.11.2",
+        "pub:image_picker_windows@0.2.2"
+      ]
+    },
+    {
+      "ref": "pub:image_picker_windows@0.2.2",
+      "dependsOn": [
+        "pub:file_selector_platform_interface@2.7.0",
+        "pub:file_selector_windows@0.9.3+6",
+        "pub:flutter@0.0.0",
+        "pub:image_picker_platform_interface@2.11.2"
+      ]
+    },
+    {
+      "ref": "pub:image_picker_platform_interface@2.11.2",
+      "dependsOn": [
+        "pub:cross_file@0.3.5+5",
+        "pub:flutter@0.0.0",
+        "pub:http@1.6.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:cross_file@0.3.5+5",
+      "dependsOn": [
+        "pub:meta@1.18.3",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:file_selector_windows@0.9.3+6",
+      "dependsOn": [
+        "pub:cross_file@0.3.5+5",
+        "pub:file_selector_platform_interface@2.7.0",
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:file_selector_platform_interface@2.7.0",
+      "dependsOn": [
+        "pub:cross_file@0.3.5+5",
+        "pub:flutter@0.0.0",
+        "pub:http@1.6.0",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:image_picker_macos@0.2.2+1",
+      "dependsOn": [
+        "pub:file_selector_macos@0.9.5+2",
+        "pub:file_selector_platform_interface@2.7.0",
+        "pub:flutter@0.0.0",
+        "pub:image_picker_platform_interface@2.11.2"
+      ]
+    },
+    {
+      "ref": "pub:file_selector_macos@0.9.5+2",
+      "dependsOn": [
+        "pub:cross_file@0.3.5+5",
+        "pub:file_selector_platform_interface@2.7.0",
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:image_picker_linux@0.2.2",
+      "dependsOn": [
+        "pub:file_selector_linux@0.9.4+1",
+        "pub:file_selector_platform_interface@2.7.0",
+        "pub:flutter@0.0.0",
+        "pub:image_picker_platform_interface@2.11.2"
+      ]
+    },
+    {
+      "ref": "pub:file_selector_linux@0.9.4+1",
+      "dependsOn": [
+        "pub:cross_file@0.3.5+5",
+        "pub:file_selector_platform_interface@2.7.0",
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:image_picker_ios@0.8.13+14",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:image_picker_platform_interface@2.11.2",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:image_picker_for_web@3.1.1",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:image_picker_platform_interface@2.11.2",
+        "pub:mime@2.1.0",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:mime@2.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pub:image_picker_android@0.8.13+25",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_plugin_android_lifecycle@2.0.35",
+        "pub:image_picker_platform_interface@2.11.2",
+        "pub:meta@1.18.3"
+      ]
+    },
+    {
+      "ref": "pub:flutter_plugin_android_lifecycle@2.0.35",
+      "dependsOn": [
+        "pub:flutter@0.0.0"
+      ]
+    },
+    {
+      "ref": "pub:audioplayers@6.8.1",
+      "dependsOn": [
+        "pub:audioplayers_android@5.3.0",
+        "pub:audioplayers_darwin@6.5.0",
+        "pub:audioplayers_linux@4.3.0",
+        "pub:audioplayers_platform_interface@7.2.0",
+        "pub:audioplayers_web@5.3.0",
+        "pub:audioplayers_windows@4.4.1",
+        "pub:file@7.0.1",
+        "pub:flutter@0.0.0",
+        "pub:http@1.6.0",
+        "pub:meta@1.18.3",
+        "pub:path_provider@2.1.6",
+        "pub:synchronized@3.5.0",
+        "pub:uuid@4.6.0"
+      ]
+    },
+    {
+      "ref": "pub:audioplayers_windows@4.4.1",
+      "dependsOn": [
+        "pub:audioplayers_platform_interface@7.2.0",
+        "pub:flutter@0.0.0"
+      ]
+    },
+    {
+      "ref": "pub:audioplayers_platform_interface@7.2.0",
+      "dependsOn": [
+        "pub:collection@1.19.1",
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:plugin_platform_interface@2.1.8"
+      ]
+    },
+    {
+      "ref": "pub:audioplayers_web@5.3.0",
+      "dependsOn": [
+        "pub:audioplayers_platform_interface@7.2.0",
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:audioplayers_linux@4.3.0",
+      "dependsOn": [
+        "pub:audioplayers_platform_interface@7.2.0",
+        "pub:flutter@0.0.0"
+      ]
+    },
+    {
+      "ref": "pub:audioplayers_darwin@6.5.0",
+      "dependsOn": [
+        "pub:audioplayers_platform_interface@7.2.0",
+        "pub:flutter@0.0.0"
+      ]
+    },
+    {
+      "ref": "pub:audioplayers_android@5.3.0",
+      "dependsOn": [
+        "pub:audioplayers_platform_interface@7.2.0",
+        "pub:flutter@0.0.0"
+      ]
+    },
+    {
+      "ref": "pub:file_picker@12.3.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:file_picker_platform_interface@3.4.0",
+        "pub:android_file_picker@1.1.1",
+        "pub:file_picker_darwin@1.2.0",
+        "pub:file_picker_linux@1.1.0",
+        "pub:windows_file_picker@1.3.0",
+        "pub:file_picker_web@3.1.0",
+        "pub:cross_file@0.3.5+5"
+      ]
+    },
+    {
+      "ref": "pub:file_picker_web@3.1.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:file_picker_platform_interface@3.4.0",
+        "pub:cross_file@0.3.5+5",
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1",
+        "pub:web@1.1.2"
+      ]
+    },
+    {
+      "ref": "pub:file_picker_platform_interface@3.4.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:plugin_platform_interface@2.1.8",
+        "pub:cross_file@0.3.5+5",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:windows_file_picker@1.3.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:file_picker_platform_interface@3.4.0",
+        "pub:cross_file@0.3.5+5",
+        "pub:ffi@2.2.0",
+        "pub:meta@1.18.3",
+        "pub:path@1.9.1",
+        "pub:win32@6.4.0"
+      ]
+    },
+    {
+      "ref": "pub:file_picker_linux@1.1.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:file_picker_platform_interface@3.4.0",
+        "pub:cross_file@0.3.5+5",
+        "pub:dbus@0.7.15",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:dbus@0.7.15",
+      "dependsOn": [
+        "pub:args@2.7.0",
+        "pub:ffi@2.2.0",
+        "pub:meta@1.18.3",
+        "pub:xml@6.6.1"
+      ]
+    },
+    {
+      "ref": "pub:file_picker_darwin@1.2.0",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:file_picker_platform_interface@3.4.0",
+        "pub:cross_file@0.3.5+5",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:android_file_picker@1.1.1",
+      "dependsOn": [
+        "pub:flutter@0.0.0",
+        "pub:file_picker_platform_interface@3.4.0",
+        "pub:cross_file@0.3.5+5",
+        "pub:path@1.9.1"
+      ]
+    },
+    {
+      "ref": "pub:share_plus@13.3.1",
+      "dependsOn": [
+        "pub:cross_file@0.3.5+5",
+        "pub:meta@1.18.3",
+        "pub:mime@2.1.0",
+        "pub:flutter@0.0.0",
+        "pub:flutter_web_plugins@0.0.0",
+        "pub:share_plus_platform_interface@7.2.0",
+        "pub:file@7.0.1",
+        "pub:url_launcher_web@2.4.3",
+        "pub:url_launcher_windows@3.1.6",
+        "pub:url_launcher_linux@3.2.3",
+        "pub:url_launcher_platform_interface@2.3.2",
+        "pub:ffi@2.2.0",
+        "pub:web@1.1.2",
+        "pub:win32@6.4.0"
+      ]
+    },
+    {
+      "ref": "pub:share_plus_platform_interface@7.2.0",
+      "dependsOn": [
+        "pub:cross_file@0.3.5+5",
+        "pub:flutter@0.0.0",
+        "pub:meta@1.18.3",
+        "pub:mime@2.1.0",
+        "pub:plugin_platform_interface@2.1.8",
+        "pub:path_provider@2.1.6",
+        "pub:uuid@4.6.0"
+      ]
+    },
+    {
+      "ref": "pub:html@0.15.7",
+      "dependsOn": [
+        "pub:csslib@1.0.2",
+        "pub:source_span@1.10.2"
+      ]
+    },
+    {
+      "ref": "pub:csslib@1.0.2",
+      "dependsOn": [
+        "pub:source_span@1.10.2"
+      ]
+    }
+  ]
+}

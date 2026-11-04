@@ -1,0 +1,148 @@
+/* Feature-Modul private: Platzhalter, Schloss-Chip, Hinweisband, Countdown, Start-Dialog */
+
+.private-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.private-ph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 50% 50%;
+  box-sizing: border-box;
+  background: repeating-linear-gradient(135deg, #e9eaec 0 14px, #dfe1e4 14px 28px);
+  border: 2px dashed #9aa0a6;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.08);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.private-ph__label {
+  font: 700 14px/1.2 var(--font);
+  color: #5f6368;
+  white-space: nowrap;
+  transform-origin: 50% 50%;
+}
+.private-mine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  background: #111;
+  color: #fff;
+  font: 700 12px/1 var(--font);
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.private-bar {
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100% - 24px);
+  background: #111;
+  color: #fff;
+  border: 2px solid var(--green);
+  border-radius: 12px;
+  padding: 6px 8px 6px 12px;
+  font-size: 14px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.18);
+}
+.private-bar__icon {
+  font-size: 18px;
+}
+.private-bar__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+.private-bar__sub {
+  opacity: 0.85;
+  font-size: 13px;
+}
+.private-bar__btn {
+  flex: none;
+  font: 700 14px/1 var(--font);
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.private-bar__btn--main {
+  background: var(--green);
+  border-color: var(--green);
+  color: #111;
+}
+.private-bar__btn[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+@media (max-width: 700px) {
+  .private-bar {
+    top: 56px;
+    font-size: 13px;
+  }
+  .private-bar__sub {
+    display: none;
+  }
+}
+
+.private-countdown {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 7;
+}
+.private-countdown__num {
+  display: grid;
+  place-items: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #111;
+  color: var(--green);
+  font: 800 76px/1 var(--font-head, var(--font));
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.25);
+}
+.private-countdown__text {
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 700;
+}
+
+.private-start {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.private-start p {
+  margin: 0;
+}
+.private-start__opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.private-start__opt input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+}

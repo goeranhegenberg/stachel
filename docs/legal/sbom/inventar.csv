@@ -1,0 +1,512 @@
+teil;paket;version;lizenz;direkt_oder_transitiv;ausgeliefert_in;hinweis
+server;@fastify/accept-negotiator;2.1.2;MIT;transitiv;docker-image (stachel);
+server;@fastify/ajv-compiler;4.0.7;MIT;transitiv;docker-image (stachel);
+server;@fastify/busboy;3.2.4;MIT;transitiv;docker-image (stachel);
+server;@fastify/cookie;11.1.3;MIT;direkt;docker-image (stachel);
+server;@fastify/deepmerge;3.2.4;MIT;transitiv;docker-image (stachel);
+server;@fastify/error;4.2.1;MIT;transitiv;docker-image (stachel);
+server;@fastify/fast-json-stringify-compiler;5.1.1;MIT;transitiv;docker-image (stachel);
+server;@fastify/forwarded;3.1.2;MIT;transitiv;docker-image (stachel);
+server;@fastify/helmet;13.2.0;MIT;direkt;docker-image (stachel);
+server;@fastify/merge-json-schemas;0.2.2;MIT;transitiv;docker-image (stachel);
+server;@fastify/multipart;10.1.6;MIT;direkt;docker-image (stachel);
+server;@fastify/proxy-addr;5.1.2;MIT;transitiv;docker-image (stachel);
+server;@fastify/send;4.2.0;MIT;transitiv;docker-image (stachel);
+server;@fastify/static;10.1.7;MIT;direkt;docker-image (stachel);
+server;@fontsource/barlow-condensed;5.3.0;OFL-1.1;direkt;docker-image (stachel);OFL-1.1: Lizenztext mitliefern
+server;@fontsource/barlow;5.3.0;OFL-1.1;direkt;docker-image (stachel);"OFL-1.1: Lizenztext mitliefern; Server liefert woff2 fuer QR-Seite (server/src/qr-page.ts:6)"
+server;@hocuspocus/common;4.7.1;MIT;transitiv;docker-image (stachel);
+server;@hocuspocus/server;4.7.1;MIT;direkt;docker-image (stachel);
+server;@img/colour;1.1.0;MIT;transitiv;docker-image (stachel);
+server;@img/sharp-libvips-linux-x64;1.3.4;LGPL-3.0-or-later;transitiv;docker-image (stachel);"LGPL-3.0-or-later (libvips, glib, pango, librsvg, libheif, libexif, fribidi, proxy-libintl als vorkompilierte .so); cairo MPL-1.1; aom mit AOM-Patentlizenz. Dynamisch geladen -> LGPL erfuellbar: Lizenztexte + Quellangebot bei Weitergabe des Images"
+server;@img/sharp-linux-x64;0.35.5;Apache-2.0;transitiv;docker-image (stachel);
+server;@lukeed/ms;2.0.2;MIT;transitiv;docker-image (stachel);
+server;@pinojs/redact;0.4.0;MIT;transitiv;docker-image (stachel);
+server;abstract-logging;2.0.1;MIT;transitiv;docker-image (stachel);
+server;ajv-formats;3.0.1;MIT;transitiv;docker-image (stachel);
+server;ajv;8.20.0;MIT;transitiv;docker-image (stachel);
+server;async-mutex;0.5.0;MIT;transitiv;docker-image (stachel);
+server;atomic-sleep;1.0.0;MIT;transitiv;docker-image (stachel);
+server;avvio;9.3.1;MIT;transitiv;docker-image (stachel);
+server;balanced-match;4.0.4;MIT;transitiv;docker-image (stachel);
+server;brace-expansion;5.0.12;MIT;transitiv;docker-image (stachel);
+server;content-disposition;3.0.0;MIT;transitiv;docker-image (stachel);
+server;cookie;2.0.1;MIT;transitiv;docker-image (stachel);
+server;crossws;0.4.16;MIT;transitiv;docker-image (stachel);
+server;depd;2.0.0;MIT;transitiv;docker-image (stachel);
+server;dequal;2.0.3;MIT;transitiv;docker-image (stachel);
+server;detect-libc;2.1.2;Apache-2.0;transitiv;docker-image (stachel);
+server;escape-html;1.0.3;MIT;transitiv;docker-image (stachel);
+server;fast-decode-uri-component;1.0.1;MIT;transitiv;docker-image (stachel);
+server;fast-deep-equal;3.1.3;MIT;transitiv;docker-image (stachel);
+server;fast-json-stringify;7.1.3;MIT;transitiv;docker-image (stachel);
+server;fast-querystring;1.1.2;MIT;transitiv;docker-image (stachel);
+server;fast-uri;3.1.9;BSD-3-Clause;transitiv;docker-image (stachel);
+server;fast-uri;4.2.3;BSD-3-Clause;transitiv;docker-image (stachel);
+server;fastify-plugin;6.0.1;MIT;transitiv;docker-image (stachel);
+server;fastify;5.12.7;MIT;direkt;docker-image (stachel);
+server;fastq;1.20.3;ISC;transitiv;docker-image (stachel);
+server;find-my-way;9.10.0;MIT;transitiv;docker-image (stachel);
+server;fractional-indexing;4.0.0;CC0-1.0;direkt;docker-image (stachel);CC0-1.0 (Public-Domain-Widmung) - unkritisch
+server;glob;13.0.6;BlueOak-1.0.0;transitiv;docker-image (stachel);
+server;helmet;8.3.0;MIT;transitiv;docker-image (stachel);
+server;http-errors;2.0.1;MIT;transitiv;docker-image (stachel);
+server;inherits;2.0.4;ISC;transitiv;docker-image (stachel);
+server;ipaddr.js;2.5.0;MIT;transitiv;docker-image (stachel);
+server;isomorphic.js;0.2.5;MIT;transitiv;docker-image (stachel);
+server;json-schema-ref-resolver;3.0.1;MIT;transitiv;docker-image (stachel);
+server;json-schema-traverse;1.0.0;MIT;transitiv;docker-image (stachel);
+server;kleur;4.1.5;MIT;transitiv;docker-image (stachel);
+server;lib0;0.2.119;MIT;transitiv;docker-image (stachel);
+server;light-my-request;6.8.0;BSD-3-Clause;transitiv;docker-image (stachel);
+server;lru-cache;11.5.3;BlueOak-1.0.0;transitiv;docker-image (stachel);
+server;mime;3.0.0;MIT;transitiv;docker-image (stachel);
+server;minimatch;10.2.6;BlueOak-1.0.0;transitiv;docker-image (stachel);
+server;minipass;7.1.3;BlueOak-1.0.0;transitiv;docker-image (stachel);
+server;nanoid;6.0.2;MIT;direkt;docker-image (stachel);
+server;on-exit-leak-free;2.1.2;MIT;transitiv;docker-image (stachel);
+server;path-scurry;2.0.2;BlueOak-1.0.0;transitiv;docker-image (stachel);
+server;pino-abstract-transport;3.0.0;MIT;transitiv;docker-image (stachel);
+server;pino-std-serializers;7.1.0;MIT;transitiv;docker-image (stachel);
+server;pino;10.4.0;MIT;transitiv;docker-image (stachel);
+server;process-warning;5.1.1;MIT;transitiv;docker-image (stachel);
+server;quick-format-unescaped;4.0.4;MIT;transitiv;docker-image (stachel);
+server;real-require;1.0.0;MIT;transitiv;docker-image (stachel);
+server;require-from-string;2.0.2;MIT;transitiv;docker-image (stachel);
+server;ret;0.5.1;MIT;transitiv;docker-image (stachel);
+server;reusify;1.1.0;MIT;transitiv;docker-image (stachel);
+server;rfdc;1.4.1;MIT;transitiv;docker-image (stachel);
+server;safe-regex2;5.1.2;MIT;transitiv;docker-image (stachel);
+server;safe-stable-stringify;2.5.0;MIT;transitiv;docker-image (stachel);
+server;secure-json-parse;4.1.1;BSD-3-Clause;transitiv;docker-image (stachel);
+server;semver;7.8.5;ISC;transitiv;docker-image (stachel);
+server;set-cookie-parser;3.2.1;MIT;transitiv;docker-image (stachel);
+server;setprototypeof;1.2.0;ISC;transitiv;docker-image (stachel);
+server;sharp;0.35.5;Apache-2.0;direkt;docker-image (stachel);
+server;sonic-boom;4.2.1;MIT;transitiv;docker-image (stachel);
+server;split2;4.2.0;ISC;transitiv;docker-image (stachel);
+server;statuses;2.0.2;MIT;transitiv;docker-image (stachel);
+server;thread-stream;4.2.0;MIT;transitiv;docker-image (stachel);
+server;toad-cache;3.7.4;MIT;transitiv;docker-image (stachel);
+server;toidentifier;1.0.1;MIT;transitiv;docker-image (stachel);
+server;tslib;2.8.1;0BSD;transitiv;docker-image (stachel);
+server;ws;8.22.0;MIT;direkt;docker-image (stachel);
+server;y-protocols;1.0.7;MIT;direkt;docker-image (stachel);
+server;yjs;13.6.33;MIT;direkt;docker-image (stachel);
+server;@hocuspocus/provider;4.7.1;MIT;direkt (devDependency);nur-dev;
+server;@types/node;22.20.5;MIT;direkt (devDependency);nur-dev;
+server;@types/ws;8.18.2;MIT;direkt (devDependency);nur-dev;
+server;esbuild;0.28.2;MIT;direkt (devDependency);nur-dev;
+server;tsx;4.23.15;MIT;direkt (devDependency);nur-dev;
+server;typescript;7.0.2;Apache-2.0;direkt (devDependency);nur-dev;
+server;vitest;5.0.5;MIT;direkt (devDependency);nur-dev;
+web;@fontsource/barlow-condensed;5.3.0;OFL-1.1;direkt;web-bundle (im docker-image stachel unter /app/web/dist);OFL-1.1: Lizenztext mitliefern
+web;@fontsource/barlow;5.3.0;OFL-1.1;direkt;web-bundle (im docker-image stachel unter /app/web/dist);"OFL-1.1: Lizenztext mitliefern; Server liefert woff2 fuer QR-Seite (server/src/qr-page.ts:6)"
+web;@fontsource/jetbrains-mono;5.3.0;OFL-1.1;direkt;web-bundle (im docker-image stachel unter /app/web/dist);OFL-1.1: Lizenztext mitliefern
+web;@fontsource/source-serif-4;5.3.1;OFL-1.1;direkt;web-bundle (im docker-image stachel unter /app/web/dist);"OFL-1.1, Reserved Font Name ""Source"" (Adobe); Lizenztext mitliefern"
+web;@hocuspocus/common;4.7.1;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@hocuspocus/provider;4.7.1;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@lifeomic/attempt;3.1.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@napi-rs/canvas-linux-x64-gnu;1.1.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);"Skia-Binary (BSD-3); nur im Web-Build-Container, nicht ausgeliefert"
+web;@napi-rs/canvas;1.1.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);"optionale Abh. von pdfjs-dist nur fuer Node; nicht im Browser-Bundle"
+web;@tiptap/core;3.32.0;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-blockquote;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-bold;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-bullet-list;3.32.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;@tiptap/extension-code-block;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-code;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-document;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-dropcursor;3.32.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;@tiptap/extension-gapcursor;3.32.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;@tiptap/extension-hard-break;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-heading;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-highlight;3.32.0;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-horizontal-rule;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-italic;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-link;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-list-item;3.32.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;@tiptap/extension-list-keymap;3.32.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;@tiptap/extension-list;3.32.0;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-ordered-list;3.32.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;@tiptap/extension-paragraph;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-strike;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-text-style;3.32.0;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-text;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extension-underline;3.32.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/extensions;3.32.0;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/pm;3.32.0;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@tiptap/starter-kit;3.32.0;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;ansi-regex;5.0.1;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;ansi-styles;4.3.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;camelcase;5.3.1;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;cliui;6.0.0;ISC;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;color-convert;2.0.1;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;color-name;1.1.4;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;decamelize;1.2.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;dijkstrajs;1.0.3;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;emoji-regex;8.0.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;find-up;4.1.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;fractional-indexing;4.0.0;CC0-1.0;direkt;web-bundle (im docker-image stachel unter /app/web/dist);CC0-1.0 (Public-Domain-Widmung) - unkritisch
+web;get-caller-file;2.0.5;ISC;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;is-fullwidth-code-point;3.0.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;isomorphic.js;0.2.5;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;lib0;0.2.119;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;linkifyjs;4.4.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;locate-path;5.0.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;lucide;1.61.0;ISC;direkt;web-bundle (im docker-image stachel unter /app/web/dist);"ISC + MIT (Feather-Teilmenge) - beide Hinweise noetig; 268 Icons auch in der Flutter-App (web_constants.g.dart)"
+web;nanoid;6.0.2;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;orderedmap;2.1.1;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;p-limit;2.3.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;p-locate;4.1.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;p-try;2.2.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;path-exists;4.0.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;pdfjs-dist;6.4.299;Apache-2.0;direkt;web-bundle (im docker-image stachel unter /app/web/dist);"Apache-2.0; bringt Liberation Sans 1.07.4 (GPL-2.0 mit Font-Exception), Foxit-Fonts, Adobe-CMaps, wasm-Decoder ins Web-Bundle (siehe Extra-Zeilen)"
+web;pngjs;5.0.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;prosemirror-changeset;2.4.4;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;prosemirror-commands;1.7.2;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-dropcursor;1.8.4;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-gapcursor;1.4.1;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-history;1.5.1;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-inputrules;1.5.1;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;prosemirror-keymap;1.2.3;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-model;1.25.12;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-schema-list;1.5.1;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-state;1.4.4;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-tables;1.8.5;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;prosemirror-transform;1.12.4;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;prosemirror-view;1.42.7;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;qrcode;1.5.4;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;react-dom;19.3.1;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;react;19.3.1;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;require-directory;2.1.1;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;require-main-filename;2.0.0;ISC;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;rope-sequence;1.3.4;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;scheduler;0.28.0;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;set-blocking;2.0.0;ISC;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;string-width;4.2.3;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;strip-ansi;6.0.1;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;w3c-keyname;2.2.8;MIT;transitiv;web-bundle (im docker-image stachel unter /app/web/dist);
+web;which-module;2.0.1;ISC;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;wrap-ansi;6.2.0;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;y-prosemirror;1.3.7;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;y-protocols;1.0.7;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;y18n;4.0.3;ISC;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;yargs-parser;18.1.3;ISC;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;yargs;15.4.1;MIT;transitiv;nicht ausgeliefert (nicht im Bundle: tree-shaken/nur Node);
+web;yjs;13.6.33;MIT;direkt;web-bundle (im docker-image stachel unter /app/web/dist);
+web;@hocuspocus/server;4.7.1;MIT;direkt (devDependency);nur-dev;
+web;@playwright/test;1.64.1;Apache-2.0;direkt (devDependency);nur-dev;
+web;@types/node;26.6.5;MIT;direkt (devDependency);nur-dev;
+web;@types/qrcode;1.5.6;MIT;direkt (devDependency);nur-dev;
+web;@types/react;19.3.0;MIT;direkt (devDependency);nur-dev;
+web;@types/react-dom;19.3.0;MIT;direkt (devDependency);nur-dev;
+web;@vitejs/plugin-react;6.1.2;MIT;direkt (devDependency);nur-dev;
+web;typescript;7.0.2;Apache-2.0;direkt (devDependency);nur-dev;
+web;vite;8.3.5;MIT;direkt (devDependency);nur-dev;
+web;vitest;5.0.5;MIT;direkt (devDependency);nur-dev;
+mcp;@hocuspocus/common;4.8.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;@hocuspocus/provider;4.7.1;MIT;direkt;docker-image (stachel-mcp);
+mcp;@hono/node-server;2.1.5;MIT;transitiv;docker-image (stachel-mcp);
+mcp;@lifeomic/attempt;3.1.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;@modelcontextprotocol/sdk;1.32.2;MIT;direkt;docker-image (stachel-mcp);
+mcp;accepts;2.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;ajv-formats;3.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;ajv;8.20.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;body-parser;2.4.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;bytes;3.1.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;call-bind-apply-helpers;1.0.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;call-bound;1.0.4;MIT;transitiv;docker-image (stachel-mcp);
+mcp;content-disposition;2.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;content-type;1.0.5;MIT;transitiv;docker-image (stachel-mcp);
+mcp;content-type;2.1.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;cookie-signature;1.2.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;cookie;0.7.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;cors;2.8.6;MIT;transitiv;docker-image (stachel-mcp);
+mcp;cross-spawn;7.0.6;MIT;transitiv;docker-image (stachel-mcp);
+mcp;debug;4.4.3;MIT;transitiv;docker-image (stachel-mcp);
+mcp;depd;2.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;dunder-proto;1.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;ee-first;1.1.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;encodeurl;2.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;es-define-property;1.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;es-errors;1.3.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;es-object-atoms;1.1.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;escape-html;1.0.3;MIT;transitiv;docker-image (stachel-mcp);
+mcp;etag;1.8.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;eventsource-parser;3.1.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;eventsource;3.0.7;MIT;transitiv;docker-image (stachel-mcp);
+mcp;express-rate-limit;8.7.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;express;5.3.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;fast-deep-equal;3.1.3;MIT;transitiv;docker-image (stachel-mcp);
+mcp;fast-uri;3.1.9;BSD-3-Clause;transitiv;docker-image (stachel-mcp);
+mcp;finalhandler;2.1.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;forwarded;0.2.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;fractional-indexing;4.0.0;CC0-1.0;direkt;docker-image (stachel-mcp);CC0-1.0 (Public-Domain-Widmung) - unkritisch
+mcp;fresh;2.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;function-bind;1.1.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;get-intrinsic;1.3.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;get-proto;1.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;gopd;1.2.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;has-symbols;1.1.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;hasown;2.0.4;MIT;transitiv;docker-image (stachel-mcp);
+mcp;hono;4.13.14;MIT;transitiv;docker-image (stachel-mcp);
+mcp;http-errors;2.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;iconv-lite;0.7.3;MIT;transitiv;docker-image (stachel-mcp);
+mcp;inherits;2.0.4;ISC;transitiv;docker-image (stachel-mcp);
+mcp;ip-address;10.7.5;MIT;transitiv;docker-image (stachel-mcp);
+mcp;ipaddr.js;1.9.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;is-promise;4.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;isexe;2.0.0;ISC;transitiv;docker-image (stachel-mcp);
+mcp;isomorphic.js;0.2.5;MIT;transitiv;docker-image (stachel-mcp);
+mcp;jose;6.2.14;MIT;transitiv;docker-image (stachel-mcp);
+mcp;json-schema-traverse;1.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;json-schema-typed;8.0.2;BSD-2-Clause;transitiv;docker-image (stachel-mcp);
+mcp;lib0;0.2.119;MIT;transitiv;docker-image (stachel-mcp);
+mcp;math-intrinsics;1.1.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;media-typer;1.1.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;merge-descriptors;2.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;mime-db;1.54.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;mime-types;3.0.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;ms;2.1.3;MIT;transitiv;docker-image (stachel-mcp);
+mcp;nanoid;6.0.2;MIT;direkt;docker-image (stachel-mcp);
+mcp;negotiator;1.1.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;object-assign;4.1.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;object-inspect;1.13.4;MIT;transitiv;docker-image (stachel-mcp);
+mcp;on-finished;2.4.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;once;1.4.0;ISC;transitiv;docker-image (stachel-mcp);
+mcp;parseurl;1.3.3;MIT;transitiv;docker-image (stachel-mcp);
+mcp;path-key;3.1.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;path-to-regexp;8.4.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;pkce-challenge;5.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;playwright-core;1.64.1;Apache-2.0;direkt;docker-image (stachel-mcp);"Apache-2.0; buendelt ~80 npm-Pakete inline (lib/utilsBundle.js.LICENSE) + libwebp-wasm (BSD-3); Docker-Build laedt Chromium Headless Shell + ffmpeg (Extra-Zeilen)"
+mcp;proxy-addr;2.0.8;MIT;transitiv;docker-image (stachel-mcp);
+mcp;qs;6.17.1;BSD-3-Clause;transitiv;docker-image (stachel-mcp);
+mcp;range-parser;1.3.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;raw-body;3.0.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;require-from-string;2.0.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;router;2.2.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;safer-buffer;2.1.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;send;1.2.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;serve-static;2.2.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;setprototypeof;1.2.0;ISC;transitiv;docker-image (stachel-mcp);
+mcp;shebang-command;2.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;shebang-regex;3.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;side-channel-list;1.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;side-channel-map;1.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;side-channel-weakmap;1.0.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;side-channel;1.1.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;statuses;2.0.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;toidentifier;1.0.1;MIT;transitiv;docker-image (stachel-mcp);
+mcp;type-is;2.1.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;unpipe;1.0.0;MIT;transitiv;docker-image (stachel-mcp);
+mcp;vary;1.1.2;MIT;transitiv;docker-image (stachel-mcp);
+mcp;which;2.0.2;ISC;transitiv;docker-image (stachel-mcp);
+mcp;wrappy;1.0.2;ISC;transitiv;docker-image (stachel-mcp);
+mcp;ws;8.22.0;MIT;direkt;docker-image (stachel-mcp);
+mcp;y-protocols;1.0.7;MIT;direkt;docker-image (stachel-mcp);
+mcp;yjs;13.6.33;MIT;direkt;docker-image (stachel-mcp);
+mcp;zod-to-json-schema;3.25.2;ISC;transitiv;docker-image (stachel-mcp);
+mcp;zod;4.6.7;MIT;direkt;docker-image (stachel-mcp);
+mcp;@types/node;22.20.5;MIT;direkt (devDependency);nur-dev;
+mcp;@types/ws;8.18.2;MIT;direkt (devDependency);nur-dev;
+mcp;esbuild;0.28.2;MIT;direkt (devDependency);nur-dev;
+mcp;tsx;4.23.15;MIT;direkt (devDependency);nur-dev;
+mcp;typescript;7.0.2;Apache-2.0;direkt (devDependency);nur-dev;
+mcp;vitest;5.0.5;MIT;direkt (devDependency);nur-dev;
+e2e;@playwright/test;1.64.1;Apache-2.0;direkt (devDependency);nur-dev;
+e2e;@types/node;22.20.5;MIT;direkt (devDependency);nur-dev;
+e2e;typescript;7.0.2;Apache-2.0;direkt (devDependency);nur-dev;
+flutter_app;flutter_lints;6.0.0;BSD-3-Clause;direkt;nur-dev;
+flutter_app;lints;6.1.0;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;flutter_test;0.0.0;BSD-3-Clause;direkt;nur-dev;Flutter SDK
+flutter_app;stream_channel;2.1.4;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;async;2.13.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;meta;1.18.3;BSD-3-Clause;transitiv;android-app;
+flutter_app;collection;1.19.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;leak_tracker_flutter_testing;3.0.10;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;matcher;0.12.20;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;test_api;0.7.12;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;term_glyph;1.2.2;BSD-3-Clause;transitiv;android-app;
+flutter_app;string_scanner;1.4.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;source_span;1.10.2;BSD-3-Clause;transitiv;android-app;
+flutter_app;path;1.9.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;stack_trace;1.12.2;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;boolean_selector;2.1.2;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;leak_tracker_testing;3.0.2;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;leak_tracker;11.0.2;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;vm_service;15.4.0;BSD-3-Clause;transitiv;nur-dev;
+flutter_app;clock;1.1.3;Apache-2.0;transitiv;android-app;
+flutter_app;flutter;0.0.0;BSD-3-Clause;direkt;android-app;Flutter SDK
+flutter_app;sky_engine;0.0.0;BSD-3-Clause;transitiv;android-app;Flutter SDK
+flutter_app;vector_math;2.4.2;BSD-3-Clause;transitiv;android-app;
+flutter_app;material_color_utilities;0.13.0;Apache-2.0;transitiv;android-app;
+flutter_app;characters;1.4.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;fake_async;1.3.3;Apache-2.0;transitiv;nur-dev;
+flutter_app;app_links;7.2.2;Apache-2.0;direkt;android-app;
+flutter_app;app_links_web;1.0.5;Apache-2.0;transitiv;nicht im APK (andere Plattform);
+flutter_app;web;1.1.2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;app_links_platform_interface;2.0.4;Apache-2.0;transitiv;android-app;
+flutter_app;plugin_platform_interface;2.1.8;BSD-3-Clause;transitiv;android-app;
+flutter_app;flutter_web_plugins;0.0.0;BSD-3-Clause;transitiv;android-app;Flutter SDK
+flutter_app;app_links_linux;1.0.4;Apache-2.0;transitiv;nicht im APK (andere Plattform);
+flutter_app;url_launcher;6.3.3;BSD-3-Clause;direkt;android-app;
+flutter_app;url_launcher_windows;3.1.6;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;url_launcher_platform_interface;2.3.2;BSD-3-Clause;transitiv;android-app;
+flutter_app;url_launcher_web;2.4.3;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;url_launcher_macos;3.2.6;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;url_launcher_linux;3.2.3;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;url_launcher_ios;6.4.2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;url_launcher_android;6.3.33;BSD-3-Clause;transitiv;android-app;
+flutter_app;crypto;3.0.8;BSD-3-Clause;direkt;android-app;
+flutter_app;shared_preferences;2.5.6;BSD-3-Clause;direkt;android-app;
+flutter_app;shared_preferences_windows;2.4.1;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;shared_preferences_platform_interface;2.4.2;BSD-3-Clause;transitiv;android-app;
+flutter_app;path_provider_windows;2.3.0;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;path_provider_platform_interface;2.1.3;BSD-3-Clause;transitiv;android-app;
+flutter_app;platform;3.2.0;BSD-3-Clause;transitiv;android-app;
+flutter_app;ffi;2.2.0;BSD-3-Clause;transitiv;android-app;
+flutter_app;file;7.0.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;shared_preferences_web;2.4.3;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;shared_preferences_linux;2.4.1;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;path_provider_linux;2.2.2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;xdg_directories;1.1.0;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;shared_preferences_foundation;2.5.7;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;shared_preferences_android;2.5.4;BSD-3-Clause;transitiv;android-app;
+flutter_app;jni;1.1.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;package_config;3.0.0;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;jni_util;1.0.0;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;args;2.7.0;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;http;1.6.0;BSD-3-Clause;direkt;android-app;
+flutter_app;http_parser;4.1.2;BSD-3-Clause;transitiv;android-app;
+flutter_app;typed_data;1.4.0;BSD-3-Clause;transitiv;android-app;
+flutter_app;stachel_client;1.0.1;Apache-2.0 (eigenes Projekt);eigenes Paket (path);android-app;
+flutter_app;flutter_secure_storage;11.2.0;BSD-3-Clause;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;flutter_secure_storage_windows;4.2.2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;win32;6.4.0;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;ffi_leak_tracker;0.1.2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;path_provider;2.1.6;BSD-3-Clause;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;path_provider_foundation;2.6.0;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;objective_c;9.5.0;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;pub_semver;2.2.1;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;logging;1.3.0;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;hooks;2.0.2;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;yaml;3.1.4;MIT;transitiv;build-zeit (nicht im APK);
+flutter_app;record_use;0.6.0;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;code_assets;1.2.1;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;path_provider_android;2.3.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;jni_flutter;1.0.4+1;BSD-3-Clause;transitiv;android-app;
+flutter_app;flutter_secure_storage_platform_interface;2.1.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;flutter_secure_storage_web;2.1.1;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;flutter_secure_storage_linux;3.0.3;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;flutter_secure_storage_darwin;0.4.3;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;pasteboard;0.6.0;Apache-2.0;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;uuid;4.6.0;MIT;transitiv;android-app;
+flutter_app;fixnum;1.1.1;BSD-3-Clause;transitiv;android-app;
+flutter_app;pdfrx;2.11.0;MIT;direkt (ueber stachel_client/stachel_board);android-app;"MIT; zieht PDFium (bblanchon/pdfium-binaries chromium/8125) per Native-Assets-Hook ins APK; PDFium-Lizenz landet nicht in NOTICES"
+flutter_app;material_ui;1.9.0;BSD-3-Clause;transitiv;android-app;
+flutter_app;intl;0.20.3;BSD-3-Clause;transitiv;android-app;
+flutter_app;flutter_localizations;0.0.0;BSD-3-Clause;transitiv;android-app;Flutter SDK
+flutter_app;cupertino_ui;1.1.5;BSD-3-Clause;transitiv;android-app;
+flutter_app;synchronized;3.5.0;MIT;transitiv;android-app;
+flutter_app;rxdart;0.28.0;Apache-2.0;transitiv;android-app;
+flutter_app;pdfium_flutter;0.4.1;MIT;transitiv;android-app;"MIT; Deployment-Schicht fuer PDFium"
+flutter_app;pdfium_dart;0.4.1;MIT;transitiv;android-app;"MIT; Build-Hook laedt libpdfium.so von github.com/bblanchon/pdfium-binaries"
+flutter_app;native_toolchain_c;0.19.2;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;glob;2.2.0;BSD-3-Clause;transitiv;build-zeit (nicht im APK);
+flutter_app;archive;4.6.0;MIT;transitiv;android-app;
+flutter_app;posix;6.5.4;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;pdfrx_engine;0.9.0;MIT;transitiv;android-app;
+flutter_app;image;4.8.0;MIT;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;xml;6.6.1;MIT;transitiv;android-app;
+flutter_app;petitparser;7.0.2;MIT;transitiv;android-app;
+flutter_app;image_picker;1.2.4;Apache-2.0 AND BSD-3-Clause;direkt (ueber stachel_client/stachel_board);android-app;Lizenzdatei BSD-3 + Apache-2.0
+flutter_app;image_picker_windows;0.2.2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;image_picker_platform_interface;2.11.2;BSD-3-Clause;transitiv;android-app;
+flutter_app;cross_file;0.3.5+5;BSD-3-Clause;transitiv;android-app;
+flutter_app;file_selector_windows;0.9.3+6;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;file_selector_platform_interface;2.7.0;BSD-3-Clause;transitiv;android-app;
+flutter_app;image_picker_macos;0.2.2+1;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;file_selector_macos;0.9.5+2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;image_picker_linux;0.2.2;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;file_selector_linux;0.9.4+1;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;image_picker_ios;0.8.13+14;Apache-2.0 AND BSD-3-Clause;transitiv;nicht im APK (andere Plattform);Lizenzdatei BSD-3 + Apache-2.0
+flutter_app;image_picker_for_web;3.1.1;BSD-3-Clause;transitiv;nicht im APK (andere Plattform);
+flutter_app;mime;2.1.0;BSD-3-Clause;transitiv;android-app;
+flutter_app;image_picker_android;0.8.13+25;Apache-2.0 AND BSD-3-Clause;transitiv;android-app;Lizenzdatei BSD-3 + Apache-2.0
+flutter_app;flutter_plugin_android_lifecycle;2.0.35;BSD-3-Clause;transitiv;android-app;
+flutter_app;audioplayers;6.8.1;MIT;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;audioplayers_windows;4.4.1;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;audioplayers_platform_interface;7.2.0;MIT;transitiv;android-app;
+flutter_app;audioplayers_web;5.3.0;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;audioplayers_linux;4.3.0;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;audioplayers_darwin;6.5.0;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;audioplayers_android;5.3.0;MIT;transitiv;android-app;
+flutter_app;file_picker;12.3.0;MIT;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;file_picker_web;3.1.0;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;file_picker_platform_interface;3.4.0;MIT;transitiv;android-app;
+flutter_app;windows_file_picker;1.3.0;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;file_picker_linux;1.1.0;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;dbus;0.7.15;MPL-2.0;transitiv;nicht im APK (andere Plattform);MPL-2.0 - nur Linux-Desktop, nicht im APK
+flutter_app;file_picker_darwin;1.2.0;MIT;transitiv;nicht im APK (andere Plattform);
+flutter_app;android_file_picker;1.1.1;MIT;transitiv;android-app;
+flutter_app;share_plus;13.3.1;BSD-3-Clause;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;share_plus_platform_interface;7.2.0;BSD-3-Clause;transitiv;android-app;
+flutter_app;stachel_board;0.1.0;Apache-2.0 (eigenes Projekt);eigenes Paket (path);android-app;
+flutter_app;html;0.15.7;MIT;direkt (ueber stachel_client/stachel_board);android-app;
+flutter_app;csslib;1.0.2;BSD-3-Clause;transitiv;android-app;
+server;libvips-bundle/aom;3.15.1;BSD-2-Clause (+ AOMedia Patent License 1.0);mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/archive;3.8.9;BSD-2-Clause;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/cairo;1.18.6;MPL-1.1 (cairo: LGPL-2.1 OR MPL-1.1);mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/cgif;0.5.4;MIT;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/exif;0.6.26;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/expat;2.8.5;MIT;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/ffi;3.8.0;MIT;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/fontconfig;2.18.3;fontconfig License (BSD-artig);mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/freetype;2.14.3;FTL;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/fribidi;1.0.17;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/glib;2.90.0;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/harfbuzz;14.5.0;MIT;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/heif;1.23.5;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/highway;1.4.0;BSD-3-Clause;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/imagequant;2.4.1;BSD-2-Clause;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/lcms;2.19.1;MIT;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/mozjpeg;0826579;IJG AND BSD-3-Clause AND Zlib;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/pango;1.58.2;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/pixman;0.46.4;MIT;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/png;1.6.58;libpng-2.0;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/proxy-libintl;0.5;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/rsvg;2.63.2;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/tiff;4.7.2;libtiff;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/uhdr;2.0.2;"MIT (laut sharp-libvips README; upstream libultrahdr: Apache-2.0 - unklar)";mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/vips;8.18.7;LGPL-3.0-or-later;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);LGPL: Lizenztext + Quellangebot (Upstream-Tag) bei Weitergabe des Images [@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/webp;1.6.0;BSD-3-Clause;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/xml2;2.15.4;MIT;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;libvips-bundle/zlib-ng;2.3.3;Zlib;mitgeliefert (kein npm/pub-Paket);docker-image (stachel);[@img/sharp-libvips-linux-x64@1.3.4 (lib/libvips-cpp.so.8.18.7, statisch hineingelinkt)]
+server;node (Docker-Basis node:22-bookworm-slim);22.x;"MIT (+ gebuendelte Drittlizenzen: OpenSSL Apache-2.0, ICU, libuv, V8 BSD-3 u.a.; npm Artistic-2.0)";mitgeliefert (kein npm/pub-Paket);docker-image (stachel + stachel-mcp);Basis-Image enthaelt Debian 12 (GPL/LGPL-Pakete) - bei Weitergabe des Images Debian-Quellangebot noetig [Dockerfile FROM node:22-bookworm-slim]
+web;pdfjs-dist/standard_fonts/LiberationSans (4 TTF);1.07.4;GPL-2.0-only WITH Font-exception-2.0 (Liberation Fonts License, Red Hat);mitgeliefert (kein npm/pub-Paket);web-bundle (web/dist/assets/LiberationSans-*.ttf);"GPL-2 mit Font-Ausnahme: Lizenztext mitliefern; Fonts unveraendert = eigene Quelle [web/src/features/documents/pdfAssets.ts:5]"
+web;pdfjs-dist/standard_fonts/Foxit*.pfb (10 Dateien);6.4.299;BSD-3-Clause (PDFium Authors);mitgeliefert (kein npm/pub-Paket);web-bundle;[web/src/features/documents/pdfAssets.ts:5]
+web;pdfjs-dist/cmaps (Adobe CMap *.bcmap);6.4.299;BSD-3-Clause (Adobe);mitgeliefert (kein npm/pub-Paket);web-bundle;[web/src/features/documents/pdfAssets.ts:6]
+web;pdfjs-dist/wasm/openjpeg.wasm;6.4.299;BSD-2-Clause;mitgeliefert (kein npm/pub-Paket);web-bundle;[web/src/features/documents/pdfAssets.ts:7]
+web;pdfjs-dist/wasm/jbig2.wasm;6.4.299;BSD-3-Clause AND Apache-2.0;mitgeliefert (kein npm/pub-Paket);web-bundle;[web/src/features/documents/pdfAssets.ts:7]
+web;pdfjs-dist/wasm/qcms_bg.wasm;6.4.299;MIT;mitgeliefert (kein npm/pub-Paket);web-bundle;[web/src/features/documents/pdfAssets.ts:7]
+web;lucide icons (Feather-abgeleitete Teilmenge);1.61.0;MIT;mitgeliefert (kein npm/pub-Paket);web-bundle + android-app (Pfaddaten);[node_modules/lucide/LICENSE]
+web;rolldown/vite runtime helpers;vite 8.3.5;MIT;mitgeliefert (kein npm/pub-Paket);web-bundle (rolldown-runtime-*.js);[web/dist/assets/rolldown-runtime-*.js]
+mcp;chromium-headless-shell (Chrome for Testing, Playwright rev 1248);156.0.8078.4;BSD-3-Clause (Chromium) + zahlreiche Drittlizenzen (u.a. LGPL-2.1 ffmpeg-in-chromium, MPL-2.0, ICU, FreeType, Apache-2.0);mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp, /ms-playwright);"Binary-Weitergabe: Chromium-Lizenzbuendel (about:credits) beilegen; genaue Drittlizenzliste unklar (nicht lokal gebaut) [mcp/Dockerfile: node node_modules/playwright-core/cli.js install --with-deps --only-shell chromium]"
+mcp;ffmpeg (Playwright-Build rev 1013);1013;LGPL-2.1-or-later (Playwright-Build, VP8/libvpx BSD-3) - nicht lokal verifiziert, unklar;mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp, /ms-playwright/ffmpeg-1013);wird von Stachel nicht gebraucht (nur Video-Aufnahme) - im Dockerfile nach dem Install loeschbar [playwright-core resolveBrowsers(): jede Browser-Installation zieht ffmpeg mit (lib/coreBundle.js:35195)]
+mcp;debian:fonts-noto-color-emoji;bookworm;OFL-1.1;mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);[playwright --with-deps (debian12 tools)]
+mcp;debian:fonts-liberation;bookworm (1.07.x);GPL-2.0-only WITH Font-exception-2.0;mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);[playwright --with-deps (debian12 tools)]
+mcp;debian:fonts-freefont-ttf;bookworm;GPL-3.0-or-later WITH Font-exception-2.0;mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);[playwright --with-deps (debian12 tools)]
+mcp;debian:fonts-wqy-zenhei;bookworm;"GPL-2.0-only WITH Font-exception-2.0 (laut Debian copyright; unklar)";mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);[playwright --with-deps (debian12 tools)]
+mcp;debian:fonts-tlwg-loma-otf;bookworm;GPL-2.0-or-later WITH Font-exception-2.0 (unklar);mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);[playwright --with-deps (debian12 tools)]
+mcp;debian:fonts-ipafont-gothic;bookworm;IPA;mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);[playwright --with-deps (debian12 tools)]
+mcp;debian:fonts-unifont;bookworm;GPL-2.0-or-later WITH Font-exception-2.0 OR OFL-1.1 (unklar);mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);[playwright --with-deps (debian12 tools)]
+mcp;debian:xvfb + xfonts-scalable + X11/GTK/NSS-Laufzeitbibliotheken (libnss3 MPL-2.0, libglib LGPL, libcairo LGPL/MPL, libpango LGPL, libatk LGPL, libcups Apache-2.0, libasound LGPL ...);bookworm;diverse (MIT/X11, LGPL-2.1+, MPL-2.0, Apache-2.0);mitgeliefert (kein npm/pub-Paket);docker-image (stachel-mcp);Debian-Pakete: Weitergabe des Images = Weitergabe von GPL/LGPL-Binaries -> Quellangebot (snapshot.debian.org) noetig [playwright --with-deps (debian12 chromium + tools)]
+flutter_app;PDFium (bblanchon/pdfium-binaries, libpdfium.so);chromium/8125;BSD-3-Clause AND Apache-2.0 (+ Drittlizenzen: FreeType FTL, libjpeg-turbo IJG/BSD-3/Zlib, OpenJPEG BSD-2, LittleCMS MIT, zlib, libpng, Abseil Apache-2.0, ICU?);mitgeliefert (kein npm/pub-Paket);android-app (native asset via pdfium_dart-Hook);"NICHT in Flutters NOTICES enthalten - Lizenz manuell (LicenseRegistry.addLicense) ergaenzen; genaue Drittliste in LICENSE des pdfium-binaries-Release (unklar, nicht heruntergeladen) [Pub-Cache pdfium_dart-0.4.1/hook/build.dart:61]"
+flutter_app;pdfrx_pdfium_gate (nativer Hilfs-Code aus pdfium_dart/src);0.4.1;MIT;mitgeliefert (kein npm/pub-Paket);android-app;[pdfium_dart-0.4.1/src]
+flutter_app;Flutter Engine (Skia/Impeller, Dart VM, ICU, HarfBuzz, FreeType, BoringSSL ...);SDK;BSD-3-Clause + Drittlizenzen;mitgeliefert (kein npm/pub-Paket);android-app;automatisch in assets/flutter_assets/NOTICES.Z [flutter SDK (sky_engine LICENSE)]
+flutter_app;MaterialIcons-Regular.otf (uses-material-design: true);SDK;Apache-2.0;mitgeliefert (kein npm/pub-Paket);android-app;[flutter/app/pubspec.yaml:29]
+flutter_app;Font Barlow / Barlow Condensed (8 TTF, v1.408);1.408;OFL-1.1;mitgeliefert (kein npm/pub-Paket);android-app;KEINE OFL-Datei neben den TTFs und kein LicenseRegistry.addLicense [flutter/app/assets/fonts/*.ttf]
+flutter_app;Font Source Serif 4 (5 TTF, v4.004, Fontsource-latin-Subset);4.004;"OFL-1.1 (Reserved Font Name ""Source"")";mitgeliefert (kein npm/pub-Paket);android-app;"OFL-SourceSerif4.txt nennt ""Google Inc."" statt Adobe als Rechteinhaber; RFN ""Source"" bei Subset beachten [flutter/packages/stachel_board/assets/fonts/]"
+flutter_app;Font JetBrains Mono (3 TTF, v2.211);2.211;OFL-1.1;mitgeliefert (kein npm/pub-Paket);android-app;OFL-JetBrainsMono.txt liegt daneben, wird aber nicht registriert [flutter/packages/stachel_board/assets/fonts/]
+flutter_app;lucide icons (268 Pfaddaten in web_constants.g.dart);1.61.0;ISC AND MIT;mitgeliefert (kein npm/pub-Paket);android-app;[flutter/packages/stachel_board/lib/src/web/web_constants.g.dart]
+flutter_app;AndroidX / Kotlin stdlib / Media3 (ExoPlayer) u.a. Gradle-Abhaengigkeiten der Plugins;unklar;"Apache-2.0 (ueberwiegend; nicht enumeriert - unklar)";mitgeliefert (kein npm/pub-Paket);android-app;per ./gradlew app:dependencies bzw. Google oss-licenses-Plugin nachpruefen [Gradle (nicht ausgewertet)]

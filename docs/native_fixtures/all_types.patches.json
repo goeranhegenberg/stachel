@@ -1,0 +1,477 @@
+[
+  {
+    "step": "Notiz verschieben",
+    "t": "patch",
+    "rev": 1,
+    "by": "a:jonas",
+    "changes": [
+      {
+        "id": "sticky_rect",
+        "set": {
+          "x": 420
+        }
+      }
+    ]
+  },
+  {
+    "step": "Farbe und Drehung ändern, Fettdruck entfernen",
+    "t": "patch",
+    "rev": 2,
+    "by": "a:jonas",
+    "changes": [
+      {
+        "id": "sticky_rect",
+        "set": {
+          "color": "#ffb3d1",
+          "rotation": -6
+        },
+        "unset": [
+          "bold"
+        ]
+      }
+    ]
+  },
+  {
+    "step": "Rich-Text tippen (mit Klartext-Spiegel)",
+    "t": "patch",
+    "rev": 3,
+    "by": "a:jonas",
+    "changes": [
+      {
+        "id": "sticky_rich",
+        "set": {
+          "text": "Neu: Ablauf Samstag\nBühne\nTechnik\nfett kursiv durch unter code Link markiert pink\nZeile 1\nZeile 2\nPunkt A\nPunkt B\nErstens\nZweitens\nZelte bestellt\nStrom klären\nZitat\nnpm run build\n",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "heading",
+                "attrs": {
+                  "level": 1
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Neu: Ablauf Samstag"
+                  }
+                ]
+              },
+              {
+                "type": "heading",
+                "attrs": {
+                  "level": 2
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bühne"
+                  }
+                ]
+              },
+              {
+                "type": "heading",
+                "attrs": {
+                  "level": 3
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Technik"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "fett",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "text": "kursiv",
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "text": "durch",
+                    "marks": [
+                      {
+                        "type": "strike"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "text": "unter",
+                    "marks": [
+                      {
+                        "type": "underline"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "text": "code",
+                    "marks": [
+                      {
+                        "type": "code"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Link",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://example.org"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "text": "markiert",
+                    "marks": [
+                      {
+                        "type": "highlight",
+                        "attrs": {
+                          "color": "#c9e14a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "text": "pink",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ec4e92"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Zeile 1"
+                  },
+                  {
+                    "type": "hardBreak"
+                  },
+                  {
+                    "type": "text",
+                    "text": "Zeile 2"
+                  }
+                ]
+              },
+              {
+                "type": "bulletList",
+                "content": [
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Punkt A"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Punkt B"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "orderedList",
+                "attrs": {
+                  "start": 1
+                },
+                "content": [
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Erstens"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Zweitens"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": true
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Zelte bestellt"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Strom klären"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "blockquote",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Zitat"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "codeBlock",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "npm run build"
+                  }
+                ]
+              },
+              {
+                "type": "horizontalRule"
+              },
+              {
+                "type": "paragraph"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": "Notiz anlegen",
+    "t": "patch",
+    "rev": 4,
+    "by": "a:jonas",
+    "changes": [
+      {
+        "id": "web_new",
+        "created": {
+          "id": "web_new",
+          "type": "sticky",
+          "x": 900,
+          "y": 0,
+          "w": 200,
+          "h": 200,
+          "z": "zz",
+          "color": "#fff27a",
+          "text": "Vom Web",
+          "createdBy": "a:jonas",
+          "updatedAt": "2026-11-01T12:05:00.000Z"
+        }
+      }
+    ]
+  },
+  {
+    "step": "Tabellenzelle ändern",
+    "t": "patch",
+    "rev": 5,
+    "by": "a:jonas",
+    "changes": [
+      {
+        "id": "table1",
+        "set": {
+          "table": {
+            "rows": [
+              "r1",
+              "r2",
+              "r3"
+            ],
+            "cols": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "cells": {
+              "r1:c1": "Was",
+              "r1:c2": "Wer",
+              "r1:c3": "Wann",
+              "r2:c1": "Zelte",
+              "r2:c2": "Mara",
+              "r2:c3": "Fr",
+              "r3:c1": "Strom",
+              "r3:c2": "Jonas"
+            },
+            "widths": {
+              "c1": 2
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "step": "Stiftstrich und angedockte Notiz samt Verbinder löschen",
+    "t": "patch",
+    "rev": 6,
+    "by": "a:jonas",
+    "changes": [
+      {
+        "id": "sticky_old",
+        "removed": true
+      },
+      {
+        "id": "conn_elbow",
+        "removed": true
+      },
+      {
+        "id": "pen1",
+        "removed": true
+      }
+    ]
+  },
+  {
+    "step": "Reaktion setzen",
+    "t": "patch",
+    "rev": 7,
+    "by": "a:jonas",
+    "changes": [],
+    "ext": {
+      "collab.reactions": {
+        "sticky_rich|👍|m:7": {
+          "o": "sticky_rich",
+          "e": "👍",
+          "u": "m:7",
+          "n": "Jonas",
+          "at": "2026-11-01T12:01:00.000Z"
+        },
+        "web_new|🎉|a:jonas": {
+          "o": "web_new",
+          "e": "🎉",
+          "u": "a:jonas",
+          "n": "jonas",
+          "at": "2026-11-01T12:06:00.000Z"
+        }
+      }
+    }
+  },
+  {
+    "step": "Rahmen nach vorn (z)",
+    "t": "patch",
+    "rev": 8,
+    "by": "a:jonas",
+    "changes": [
+      {
+        "id": "frame1",
+        "set": {
+          "z": "zzz"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,450 @@
+:root {
+  --ink: #0a0a0a;
+  --ink-2: #1c1c1a;
+  --ink-3: #2a2a27;
+  --paper: #ffffff;
+  --canvas: #f3f3ef;
+  --line: #deded8;
+  --muted: #6b6b66;
+  --muted-on-ink: #a3a39c;
+  --green: #c9e14a;
+  --green-deep: #a9c22a;
+  --blue: #1763b5;
+  --pink: #ec4e92;
+  --danger: #d6336c;
+  --radius: 14px;
+  --radius-s: 9px;
+  --shadow-float: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 10px 30px -10px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.18);
+  --shadow-card: 0 1px 2px rgba(10, 10, 10, 0.06), 0 8px 24px -12px rgba(10, 10, 10, 0.18);
+  --font: 'Barlow', system-ui, sans-serif;
+  --font-cond: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- Marke ---------------------------------------------------------------- */
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18em;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+.wordmark--inv {
+  color: #fff;
+}
+.wordmark .stachel-mark {
+  margin-top: -0.12em;
+}
+
+/* ---- Buttons -------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    transform 0.12s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+.btn--primary {
+  background: var(--ink);
+  color: #fff;
+}
+.btn--primary:hover:not([disabled]) {
+  background: #000;
+  box-shadow: 0 0 0 3px var(--green);
+}
+.btn--green {
+  background: var(--green);
+  color: var(--ink);
+}
+.btn--green:hover:not([disabled]) {
+  background: #d6ec5c;
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+.btn--ghost:hover:not([disabled]) {
+  background: var(--ink);
+  color: #fff;
+}
+.btn--danger {
+  background: var(--danger);
+  color: #fff;
+}
+.btn--danger:hover:not([disabled]) {
+  background: #bf2a5d;
+}
+.btn--sm {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 15px;
+}
+
+/* ---- Felder --------------------------------------------------------------- */
+.field {
+  display: grid;
+  gap: 6px;
+}
+.field label {
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.input {
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--ink);
+  background: #fff;
+  font-size: 16px;
+  transition: box-shadow 0.15s ease;
+}
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(201, 225, 74, 0.9);
+}
+
+.alert {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fde7f0;
+  color: #7a1240;
+  border-left: 4px solid var(--pink);
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+/* ---- Dialog --------------------------------------------------------------- */
+/* Höchstens so groß wie der Bildschirm: Titel oben und Knöpfe unten bleiben stehen, der Inhalt dazwischen scrollt
+   (auch Handy quer, Browser-Zoom 200 %). Feste Spur statt auto, sonst wächst die Spalte mit dem Inhalt über den Rand. */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.45);
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  place-items: center;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px))
+    max(16px, env(safe-area-inset-left, 0px));
+  z-index: 100;
+  animation: fade-in 0.15s ease;
+  overscroll-behavior: contain;
+}
+.modal {
+  width: min(440px, 100%);
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+  animation: pop-in 0.18s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+.modal > h2 {
+  flex: none;
+}
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* Platz für Fokusrahmen am Rand, ohne dass er abgeschnitten wird */
+  margin: -4px;
+  padding: 4px;
+}
+/* fieldset ist sonst mindestens so breit wie sein Inhalt (min-inline-size: min-content) und sprengt schmale Dialoge */
+.modal fieldset {
+  min-inline-size: 0;
+}
+/* Knopfleiste bleibt unten sichtbar, der Inhalt läuft darunter durch */
+.modal__body .modal-actions {
+  position: sticky;
+  bottom: -4px;
+  z-index: 2;
+  margin-bottom: -4px;
+  padding: 8px 0 4px;
+  background: #fff;
+}
+@media (max-height: 520px) {
+  .modal {
+    padding: 16px 20px 12px;
+  }
+  .modal h2 {
+    font-size: 24px;
+  }
+}
+.modal h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-cond);
+  font-size: 28px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.modal p {
+  margin: 0 0 22px;
+  color: #3a3a36;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+.splash {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+}
+.splash .stachel-mark {
+  animation: pulse-mark 1.1s ease-in-out infinite;
+}
+@keyframes pulse-mark {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Verbindung im Editor (ui/ConnectionNotice) ---------------------------- */
+.board-loading {
+  position: fixed;
+  /* Kopfzeile (Zurück, Titel) bleibt bedienbar */
+  inset: calc(70px + env(safe-area-inset-top, 0px)) 0 0 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  background: rgba(243, 243, 239, 0.95);
+  backdrop-filter: blur(3px);
+  animation: fade-in 0.2s ease;
+}
+.board-loading__card {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  max-width: min(360px, calc(100vw - 32px));
+  margin-top: -70px;
+  text-align: center;
+}
+.board-loading__spin {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3.5px solid var(--line);
+  border-top-color: var(--ink);
+  border-right-color: var(--green-deep);
+  animation: spin 0.8s linear infinite;
+}
+.board-loading__text {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.board-loading__sub {
+  color: var(--muted);
+  font-size: 15px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.conn-notices {
+  position: fixed;
+  left: 50%;
+  top: calc(14px + env(safe-area-inset-top, 0px));
+  transform: translateX(-50%);
+  z-index: 45;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: min(560px, calc(100vw - 20px));
+  pointer-events: none;
+}
+.conn-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: 14px;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.35;
+  box-shadow: var(--shadow-float);
+  animation: drop-in 0.22s ease;
+}
+.conn-banner b {
+  font-weight: 700;
+}
+.conn-banner__dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation: blink-dot 1.1s ease-in-out infinite;
+}
+.conn-toast {
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--green);
+  box-shadow: var(--shadow-float);
+  animation: drop-in 0.22s ease;
+}
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+@keyframes blink-dot {
+  50% {
+    opacity: 0.35;
+  }
+}
+/* Zwischen den Kopfleisten ist am Desktop Platz; schmal darunter */
+@media (max-width: 1100px) {
+  .conn-notices {
+    top: calc(72px + env(safe-area-inset-top, 0px));
+  }
+}
+@media (max-width: 700px) {
+  .conn-notices {
+    top: calc(108px + env(safe-area-inset-top, 0px));
+  }
+  .board-loading {
+    inset: calc(60px + env(safe-area-inset-top, 0px)) 0 0 0;
+  }
+}
+
+/* ---- Fokus im Hintergrund gesperrt (Dialog offen) ----------------------------- */
+#root[inert] {
+  user-select: none;
+}

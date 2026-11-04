@@ -1,0 +1,247 @@
+<!-- Vorlage für Betreiber einer Stachel-Instanz (deploy/legal-templates/README.md). KEINE Rechtsberatung:
+     alle [eckigen Klammern] ersetzen, Text an die eigene Instanz anpassen und rechtlich prüfen lassen.
+     {{…}} füllt der Server beim Ausliefern. -->
+<h1>Datenschutzerklärung</h1>
+<p class="stand">Stand: [Datum]</p>
+
+<p>Diese Erklärung informiert Sie nach Art. 13 und 14 der Datenschutz-Grundverordnung (DSGVO), welche personenbezogenen
+Daten wir verarbeiten, wenn Sie das Online-Whiteboard <strong>Stachel</strong> nutzen – als Web-App unter
+<a href="{{APP_URL}}">{{ORIGIN}}</a>, in der Android-App „Stachel“ (angemeldet bei dieser Instanz) oder über einen
+KI-Assistenten (MCP).</p>
+
+<h2>1. Verantwortlicher</h2>
+<address>[Name bzw. Firma des Betreibers]<br>
+[Straße Hausnummer]<br>
+[PLZ Ort]<br>
+Deutschland<br>
+Telefon: [Telefonnummer]<br>
+E-Mail: [E-Mail-Adresse]</address>
+<p>[Falls benannt: Kontakt der/des Datenschutzbeauftragten. Sonst:] Einen Datenschutzbeauftragten haben wir nicht benannt, weil die gesetzlichen Voraussetzungen dafür nicht vorliegen
+(Art. 37 DSGVO, § 38 BDSG). Bei allen Fragen zum Datenschutz und zu Ihren Rechten schreiben Sie bitte an die oben genannte
+E-Mail-Adresse.</p>
+
+<h2>2. Das Wichtigste in Kürze</h2>
+<ul>
+  <li>Wir verarbeiten Ihre Daten nur, um Ihnen Stachel bereitzustellen und es sicher zu betreiben.</li>
+  <li><strong>Keine Werbung, kein Tracking, keine Analyse-Dienste, keine Cookies von Drittanbietern.</strong> Schriften,
+    Skripte und das Captcha liefern wir selbst aus. Beim Aufruf von Stachel werden keine Daten an Dritte wie Google
+    übertragen.</li>
+  <li>Server und Sicherungen stehen in [Land]. Alle Verbindungen sind verschlüsselt (HTTPS bzw. WSS).</li>
+  <li>Wir verkaufen keine Daten und verwenden Ihre Inhalte nicht zum Trainieren von KI-Modellen.</li>
+  <li>Ihr Konto können Sie jederzeit selbst löschen (<a href="{{DELETE_URL}}">so geht's</a>), Ihre Daten jederzeit selbst
+    herunterladen.</li>
+</ul>
+
+<h2>3. Welche Daten wir verarbeiten und wozu</h2>
+
+<h3>3.1 Besuch der Webseite und Server-Protokolle</h3>
+<p>Bei jedem Aufruf der Webseite, der Web-App, der App-Schnittstelle oder des KI-Zugangs verarbeiten wir technisch
+notwendige Daten: IP-Adresse, Zeitpunkt, aufgerufene Adresse, Statuscode, übertragene Datenmenge sowie Browser- bzw.
+App-Kennung und verweisende Seite. Zugangs-Codes und E-Mail-Adressen in Adressen machen wir dabei unkenntlich.</p>
+<p>Zweck: Auslieferung der Seiten, Betrieb, Fehlersuche und Abwehr von Angriffen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f
+DSGVO (berechtigtes Interesse an einem stabilen und sicheren Betrieb). Das Zugriffsprotokoll des Webservers löschen wir
+nach <strong>[z. B. 14 Tagen]</strong>. Das Protokoll des Stachel-Servers enthält die IP-Adresse nur gekürzt (ohne letzten Teil)
+und wird fortlaufend überschrieben (höchstens 30 MB).</p>
+
+<h3>3.2 Ihr Konto</h3>
+<p>Bei der Registrierung speichern wir Ihren <strong>Namen</strong>, Ihre <strong>E-Mail-Adresse</strong> und Ihr
+<strong>Passwort</strong> – das Passwort nur als kryptografischen Hash (scrypt), nie im Klartext. Außerdem speichern wir,
+wann Sie das Konto angelegt und bestätigt haben, wann Sie die Nutzungsbedingungen akzeptiert und den Hinweis auf diese
+Erklärung erhalten haben, welche Fassung der Nutzungsbedingungen das war und wann Sie Stachel zuletzt genutzt haben.</p>
+<p>Zweck: Ihr Konto, die Anmeldung und der Nachweis, dass Sie den Nutzungsbedingungen zugestimmt haben.
+Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertrag über die Nutzung von Stachel); für den Nachweis der Zustimmung
+zusätzlich Art. 6 Abs. 1 lit. f DSGVO. Ohne Name, E-Mail-Adresse und Passwort können wir kein Konto anlegen.</p>
+
+<h3>3.3 Anmeldung, Sitzungen und Speicher im Browser bzw. auf dem Gerät</h3>
+<p>Nach der Anmeldung erhält Ihr Browser ein <strong>Sitzungs-Cookie</strong> (<code>stachel_session</code>,
+HttpOnly, Secure) bzw. die App ein <strong>Sitzungs-Token</strong>. Auf dem Server speichern wir davon nur einen Hash.
+Eine Sitzung endet 30 Tage nach der letzten Nutzung oder wenn Sie sich abmelden.</p>
+<p>Die Web-App speichert außerdem einige Einstellungen und Zwischenstände im Speicher Ihres Browsers (Local Storage),
+z. B. zuletzt benutzte Werkzeuge und Emojis, Ansichts- und Sortiereinstellungen und kleine Vorschaubilder Ihrer Boards
+für die Übersicht. Diese Daten verlassen Ihr Gerät nicht von selbst; die Vorschaubilder löschen wir beim Abmelden.</p>
+<p>Rechtsgrundlage für das Speichern auf Ihrem Gerät ist § 25 Abs. 2 Nr. 2 TDDDG (unbedingt erforderlich für den von
+Ihnen gewünschten Dienst – eine Einwilligung ist dafür nicht nötig), für die weitere Verarbeitung Art. 6 Abs. 1 lit. b
+DSGVO. Analyse- oder Werbe-Cookies setzen wir nicht; deshalb gibt es auch kein Cookie-Banner.</p>
+
+<h3>3.4 Inhalte Ihrer Boards</h3>
+<p>Alles, was Sie auf einem Board anlegen – Notizen, Texte, Formen, Zeichnungen, Karten, Tabellen, Mindmaps, Bilder,
+PDF-Dokumente, Kommentare, Reaktionen, Abstimmungen –, speichern wir zusammen mit Ihrer Konto-Kennung als Urheberin oder
+Urheber. Personen, mit denen das Board geteilt ist, sehen diese Inhalte und bei Kommentaren, Reaktionen und Stimmen Ihren
+Namen. Schaltet jemand mit Bearbeitungsrecht die Board-Einstellung „<strong>Autor:in an Haftnotizen zeigen</strong>“ ein,
+steht an jeder Haftnotiz für alle Board-Mitglieder der Name der Person, die sie angelegt hat.</p>
+<p>Wir legen automatisch <strong>Versionen</strong> eines Boards an (Versionsverlauf, mit den Namen der beteiligten
+Personen), merken uns, welche Boards Sie zuletzt geöffnet oder als Favorit markiert haben, und erzeugen ein Vorschaubild
+für die Board-Liste. Aus hochgeladenen Fotos entfernen wir eingebettete Metadaten (z. B. Aufnahmeort und Kameramodell).</p>
+<p><strong>Privater Modus:</strong> Ist er auf einem Board an, speichern wir, was Sie verdeckt anlegen, in einem nur für
+Sie lesbaren Bereich. Die anderen sehen bis zum Aufdecken nur Platzhalter (Lage, Größe, Art – nie den Inhalt). Beim
+Aufdecken wird der Inhalt Teil des Boards.</p>
+<p><strong>Eigene Vorlagen:</strong> Speichern Sie eine Auswahl als Vorlage, liegt sie in Ihrem Konto und ist nur für
+Sie sichtbar, bis Sie sie verwenden oder löschen. Die Vorlagen der Instanz stellen wir bereit; sie enthalten keine Daten
+anderer Nutzerinnen und Nutzer.</p>
+<p>Zweck: Bereitstellung der Whiteboard-Funktionen. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Soweit Board-Inhalte
+Daten <strong>anderer</strong> Personen enthalten (z. B. Namen in einer Aufgabenliste oder Fotos), verarbeiten wir sie
+auf Grundlage unseres berechtigten Interesses und des Interesses der Nutzenden, das Werkzeug wie vorgesehen zu verwenden
+(Art. 6 Abs. 1 lit. f DSGVO). Für die Zulässigkeit dieser Inhalte sind die Personen verantwortlich, die sie
+einstellen.</p>
+
+<h3>3.5 Zusammenarbeit in Echtzeit und Posteingang</h3>
+<p>Während Sie ein Board geöffnet haben, sehen die anderen Anwesenden Ihren Namen, Ihren Mauszeiger bzw. Ihre Auswahl,
+Ihren Status und ggf. kurze Nachrichten am Zeiger. Diese Anwesenheitsdaten werden nur weitergeleitet und
+<strong>nicht gespeichert</strong>. Werden Sie in einem Kommentar erwähnt oder wird Ihnen eine Karte zugewiesen,
+speichern wir das (wer, Textauszug, Board) für Ihren Posteingang. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+<h3>3.6 Teilen und Einladungen</h3>
+<p>Teilen Sie ein Board mit einer E-Mail-Adresse, speichern wir die Freigabe mit Rolle (ansehen, kommentieren,
+bearbeiten) und wer sie erteilt hat. Hat die eingeladene Person noch kein Konto, speichern wir ihre E-Mail-Adresse und
+schicken ihr <strong>eine</strong> Einladung mit Ihrem Namen und dem Board-Titel. In der Liste „Personen mit Zugriff“ sehen
+die Mitglieder eines Boards die Namen der anderen; wer das Board verwaltet, sieht dort auch deren E-Mail-Adressen.</p>
+<p>Erstellen Sie einen <strong>Freigabelink</strong>, kann jede Person, die den Link kennt und ein Stachel-Konto hat, das
+Board in der gewählten Rolle öffnen; wir merken uns, wer das Board über den Link geöffnet hat. Boards sind nicht öffentlich
+auffindbar und werden nicht von Suchmaschinen erfasst.</p>
+<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO Ihnen gegenüber; gegenüber eingeladenen Personen ohne Konto Art. 6 Abs. 1
+lit. f DSGVO (berechtigtes Interesse, die gewünschte Einladung zuzustellen). Die Adresse eingeladener Personen stammt von
+der einladenden Person (Art. 14 DSGVO); diese Erklärung ist in der Einladungsmail verlinkt.</p>
+
+<h3>3.7 E-Mails</h3>
+<p>Wir senden nur E-Mails, die für das Konto und den Dienst nötig sind: Bestätigung der Adresse, Passwort zurücksetzen,
+Einladungen zu Boards, Eingangsbestätigungen und Entscheidungen zu Meldungen (Abschnitt 3.10), Hinweise auf geänderte
+Nutzungsbedingungen und die Bestätigung einer Konto-Löschung. Keine Werbung, kein Newsletter, keine Zählpixel.
+Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO, für Meldungen lit. c.</p>
+
+<h3>3.8 Schutz vor Missbrauch</h3>
+<p>Bei der Registrierung löst Ihr Browser bzw. die App eine kleine Rechenaufgabe (Captcha „ALTCHA“, von uns selbst
+betrieben, ohne Drittanbieter und ohne Cookies). Um Angriffe auf Anmeldung und Registrierung zu bremsen, zählen wir
+Versuche je IP-Adresse, E-Mail-Adresse bzw. Konto kurzzeitig im Arbeitsspeicher des Servers (höchstens eine Stunde).
+Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren Betrieb).</p>
+
+<h3>3.9 Persönliche API-Zugänge und KI-Assistenten (MCP)</h3>
+<p>Auf Wunsch legen Sie in der Web-App einen persönlichen Zugang (API-Token) an, mit dem ein Programm oder KI-Assistent
+Ihrer Wahl (z. B. über das „Model Context Protocol“) in Ihrem Namen auf Ihre Boards zugreift. Wir speichern davon nur
+einen Hash, eine Bezeichnung und den Zeitpunkt der letzten Nutzung. Zugänge können Sie jederzeit widerrufen; nach
+12 Monaten ohne Nutzung verfallen sie.</p>
+<p><strong>Wichtig:</strong> Ein verbundener KI-Assistent liest die Inhalte der Boards, auf die Sie Zugriff haben – auch
+Namen, Kommentare und Inhalte <strong>anderer</strong> Personen auf geteilten Boards sowie Bildschirmfotos von Boards –
+und überträgt sie an den Anbieter des Assistenten, der seinen Sitz auch außerhalb der EU haben kann. Diese Übermittlung
+veranlassen <strong>Sie</strong>; für sie sind Sie bzw. der Anbieter des Assistenten verantwortlich, nicht wir. Verbinden
+Sie einen Assistenten deshalb nur mit Boards, bei denen das mit den anderen Beteiligten abgestimmt ist. Auf dem Board
+erscheint der Assistent für alle sichtbar als „KI (für &lt;Ihr Name&gt;)“.</p>
+<p>Den Vermittlungsdienst unter <code>{{ORIGIN}}/mcp</code> betreiben wir selbst auf demselben Server. Er leitet
+nur Anfragen Ihres Assistenten an Stachel weiter, erstellt auf Anfrage Bildschirmfotos von Boards, speichert keine Inhalte
+dauerhaft und hält eine Verbindung höchstens 30 Minuten ohne Nutzung im Arbeitsspeicher. Rechtsgrundlage: Art. 6 Abs. 1
+lit. b DSGVO.</p>
+
+<h3>3.10 Melden, Blockieren und Moderation</h3>
+<p>Über „Melden“ können Sie Inhalte, Boards und Personen melden (Art. 16 der Verordnung (EU) 2022/2065 über digitale
+Dienste, DSA). Wir speichern die Meldung mit Ihrem Namen, Ihrer Konto-Kennung und E-Mail-Adresse, dem Grund, Ihrem Text,
+dem gemeldeten Board bzw. Objekt, der betroffenen Person und einer Kopie des gemeldeten Inhalts zum Zeitpunkt der
+Meldung (als Beleg). Die Meldung geht per E-Mail an uns; Sie erhalten eine Eingangsbestätigung und unsere Entscheidung.
+Der gemeldeten Person nennen wir Ihren Namen nicht. Treffen wir eine Maßnahme, teilen wir der betroffenen Person die
+Begründung mit (Art. 17 DSA). Prüfen dürfen wir dafür die gemeldeten Inhalte.</p>
+<p>Blockieren Sie eine Person, speichern wir das, damit deren Einladungen und Erwähnungen Sie nicht mehr erreichen; die
+blockierte Person erfährt davon nichts. Sperren wir ein Konto oder Board, speichern wir die Sperre mit Grund.</p>
+<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. c DSGVO in Verbindung mit Art. 16 und 17 DSA sowie Art. 6 Abs. 1 lit. f DSGVO
+(berechtigtes Interesse an einem rechtmäßigen und sicheren Dienst und am Nachweis unserer Entscheidungen); Blockieren:
+Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+<h3>3.11 Die Android-App</h3>
+<p>Melden Sie sich in der Android-App „Stachel“ bei dieser Instanz an, gelten für die Daten, die dabei an diese Instanz
+gehen, die Angaben dieser Erklärung. Für die App selbst (Vertrieb, Speicher auf dem Gerät) gilt die Datenschutzerklärung
+ihres Herausgebers im App-Store. [Streichen, wenn die Instanz nicht mit der App genutzt wird.]</p>
+
+<h3>3.12 Kontakt</h3>
+<p>Wenn Sie uns schreiben oder anrufen, verarbeiten wir Ihre Angaben, um Ihr Anliegen zu bearbeiten (Art. 6 Abs. 1
+lit. b DSGVO bei Fragen zu Ihrem Konto, sonst lit. f; bei Anträgen zu Ihren Rechten lit. c). Wir löschen sie, wenn das
+Anliegen erledigt ist, Anfragen zu Ihren Rechten nach Ablauf von drei Jahren (Nachweis).</p>
+
+<h2>4. Empfänger und Auftragsverarbeiter</h2>
+<ul>
+  <li><strong>Hosting:</strong> [Name und Anschrift des Hosting-Anbieters, Standort der Server] – Auftragsverarbeiter nach Art. 28 DSGVO.</li>
+  <li><strong>E-Mail-Versand:</strong> [Name und Anschrift des E-Mail-Anbieters] (Absender [Absenderadresse]) – Auftragsverarbeiter nach Art. 28 DSGVO.</li>
+  <li><strong>Datensicherung:</strong> [Ort und Anbieter der Sicherungen]</li>
+  <li><strong>Andere Nutzerinnen und Nutzer:</strong> Inhalte eines Boards und Ihr Name sind für die Personen sichtbar,
+    mit denen das Board geteilt ist; Ihre E-Mail-Adresse sieht nur, wer das Board verwaltet.</li>
+  <li><strong>KI-Anbieter, die Sie selbst verbinden</strong> (Abschnitt 3.9) – auf Ihre Veranlassung.</li>
+  <li><strong>Behörden und Gerichte:</strong> nur, wenn wir gesetzlich dazu verpflichtet sind.</li>
+</ul>
+<p>Eine Übermittlung in Länder außerhalb der EU bzw. des EWR durch uns findet nicht statt. Zu KI-Assistenten, die Sie
+selbst verbinden, siehe Abschnitt 3.9.</p>
+
+<h2>5. Speicherdauer</h2>
+<div class="table"><table>
+  <tr><th>Daten</th><th>Speicherdauer</th></tr>
+  <tr><td>Konto</td><td>bis Sie es löschen; nicht bestätigte Registrierungen 7 Tage</td></tr>
+  <tr><td>Bestätigungs- und Passwort-Links</td><td>24 Stunden bzw. 1 Stunde, nur einmal nutzbar</td></tr>
+  <tr><td>Sitzungen</td><td>30 Tage nach der letzten Nutzung oder bis zum Abmelden</td></tr>
+  <tr><td>Board-Inhalte, Favoriten, „zuletzt geöffnet“</td><td>solange das Board bzw. Ihr Konto besteht</td></tr>
+  <tr><td>Gelöschte Boards</td><td>30 Tage im Papierkorb, danach endgültig samt Bildern, Dokumenten und Versionen</td></tr>
+  <tr><td>Versionen eines Boards</td><td>bis 24 Stunden alle, bis 30 Tage stündlich, bis 1 Jahr täglich, danach gelöscht; benannte Versionen, solange das Board besteht</td></tr>
+  <tr><td>Privater Modus, eigene Vorlagen</td><td>bis zum Aufdecken bzw. Löschen, spätestens mit Ihrem Konto</td></tr>
+  <tr><td>Erwähnungen und Zuweisungen (Posteingang)</td><td>60 Tage</td></tr>
+  <tr><td>Offene Einladungen an E-Mail-Adressen</td><td>bis Annahme, Rücknahme oder Löschung des Boards, höchstens 90 Tage</td></tr>
+  <tr><td>Persönliche API-Zugänge</td><td>bis zum Widerruf, verfallen nach 12 Monaten ohne Nutzung</td></tr>
+  <tr><td>Meldungen</td><td>bis zur Entscheidung, danach 1 Jahr (Nachweis, Widerspruchsfrist); Ihre E-Mail-Adresse darin wird mit Ihrem Konto gelöscht</td></tr>
+  <tr><td>Blockierte Personen, Sperren</td><td>bis zum Aufheben bzw. bis zur Löschung des Kontos</td></tr>
+  <tr><td>Zähler gegen Missbrauch, Captcha</td><td>höchstens 1 Stunde</td></tr>
+  <tr><td>Zugriffsprotokoll des Webservers</td><td>[z. B. 14 Tage]</td></tr>
+  <tr><td>Protokoll des Stachel-Servers (IP gekürzt)</td><td>fortlaufend überschrieben, höchstens 30 MB</td></tr>
+  <tr><td>Datensicherungen</td><td>[Rhythmus und Aufbewahrung der Sicherungen]</td></tr>
+</table></div>
+<p>[Prüfen:] Gesetzliche Aufbewahrungspflichten (z. B. nach Handels- oder Steuerrecht) betreffen Stachel derzeit nicht, weil der
+Dienst kostenlos ist.</p>
+
+<h2 id="konto-loeschen">6. Konto löschen</h2>
+<p>Sie können Ihr Konto jederzeit selbst löschen – in der App unter „Konto“ → „Konto löschen“, im Web nach dem Anmelden
+unter <a href="{{APP_URL}}?konto=1">Konto</a> → „Konto löschen“. Eine Anleitung ohne Anmeldung finden Sie unter
+<a href="{{DELETE_URL}}">{{DELETE_URL}}</a>. Wenn Sie keinen Zugang mehr haben, schreiben Sie uns von Ihrer
+Konto-Adresse an [E-Mail-Adresse]; wir löschen dann innerhalb eines Monats und bestätigen es Ihnen.</p>
+<p>Sofort gelöscht werden: Ihr Konto, Ihre Sitzungen, persönlichen API-Zugänge, Favoriten, Ihr Posteingang, private
+Bereiche, eigene Vorlagen, Ihre Liste blockierter Personen und Einladungen an Ihre Adresse. Für Boards, die Ihnen
+gehören, wählen Sie: endgültig löschen oder an eine Person mit Zugriff übergeben. Was Sie auf Boards
+<strong>anderer</strong> beigetragen haben (Notizen, Kommentare, Reaktionen, Stimmen), bleibt dort als Teil der
+gemeinsamen Arbeit erhalten; Ihr Name wird dort und im Versionsverlauf durch „Gelöschtes Konto“ ersetzt. Sie erhalten
+eine Bestätigung per E-Mail.</p>
+
+<h2>7. Ihre Rechte</h2>
+<p>Sie haben das Recht auf</p>
+<ul>
+  <li><strong>Auskunft</strong> über die zu Ihnen gespeicherten Daten (Art. 15 DSGVO),</li>
+  <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO) – Name und Passwort ändern Sie selbst unter
+    „Konto“,</li>
+  <li><strong>Löschung</strong> (Art. 17 DSGVO) – siehe Abschnitt 6,</li>
+  <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO),</li>
+  <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO) – unter „Konto“ → „Meine Daten herunterladen“ erhalten Sie
+    ein ZIP mit Ihren Kontodaten und Ihren Boards (JSON) samt Bildern und Dokumenten,</li>
+  <li><strong>Widerspruch</strong> gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO aus Gründen, die
+    sich aus Ihrer besonderen Situation ergeben (Art. 21 DSGVO).</li>
+</ul>
+<p>Wenden Sie sich dazu an [E-Mail-Adresse]. Wir antworten innerhalb eines Monats.</p>
+<p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Für uns
+zuständig ist [Name und Anschrift der zuständigen Datenschutz-Aufsichtsbehörde].</p>
+
+<h2>8. Keine automatisierten Entscheidungen</h2>
+<p>Wir treffen keine Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen (Art. 22 DSGVO), und
+erstellen keine Profile. Über Meldungen und Sperren entscheiden Menschen.</p>
+
+<h2>9. Mindestalter</h2>
+<p>Stachel richtet sich an Personen ab <strong>18 Jahren</strong>. Mit der Registrierung bestätigen Sie, dass Sie
+mindestens 18 Jahre alt sind. Erfahren wir, dass ein Konto einer jüngeren Person gehört, löschen wir es.</p>
+
+<h2>10. Sicherheit</h2>
+<p>Wir schützen Ihre Daten mit technischen und organisatorischen Maßnahmen, u. a. verschlüsselter Übertragung (HTTPS
+mit HSTS), Passwörtern und Tokens nur als Hash, strenger Zugriffsprüfung je Board, Begrenzung von Anmeldeversuchen,
+Containern ohne Sonderrechte, täglichen Sicherungen und regelmäßigen Sicherheitsupdates. Sicherheitslücken melden Sie
+bitte an [E-Mail-Adresse].</p>
+
+<h2>11. Pflicht zur Bereitstellung</h2>
+<p>Sie sind weder gesetzlich noch vertraglich verpflichtet, uns Daten zu geben. Ohne Name, E-Mail-Adresse und Passwort
+können Sie aber kein Konto anlegen, und ohne die technisch nötigen Verbindungsdaten können wir Stachel nicht
+ausliefern.</p>
+
+<h2>12. Quelltext und andere Instanzen</h2>
+<p>Stachel ist Open-Source-Software (Apache-2.0). Diese Erklärung gilt nur für die von uns betriebene Instanz
+{{ORIGIN}}. Wer Stachel selbst betreibt, ist für seine Instanz selbst
+verantwortlich.</p>
+
+<h2>13. Änderungen</h2>
+<p>Wir passen diese Erklärung an, wenn sich Stachel oder die Rechtslage ändert. Es gilt die jeweils hier veröffentlichte
+Fassung; über wesentliche Änderungen informieren wir angemeldete Nutzerinnen und Nutzer im Dienst.</p>

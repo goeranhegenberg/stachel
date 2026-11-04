@@ -1,0 +1,152 @@
+/* Board-Übersicht: Vorlagen-Leiste und Vorlagen-Auswahl (Modul tools). */
+.tools-tpl {
+  margin: 0 0 30px;
+}
+.tools-tpl__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font: 600 13px var(--font-cond);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4a4a45;
+}
+.tools-tpl__title span {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--green);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.tools-tpl__list {
+  list-style: none;
+  margin: 0;
+  padding: 2px 2px 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+.tools-tpl__card {
+  position: relative;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 0 0 1.5px var(--ink);
+  transition: transform 0.16s ease;
+}
+.tools-tpl__card:hover {
+  transform: translateY(-2px);
+}
+.tools-tpl__use {
+  display: grid;
+  width: 100%;
+  text-align: left;
+  padding: 0 0 12px;
+  border-radius: var(--radius);
+}
+.tools-tpl__use:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+.tools-tpl__use .board-card__thumb {
+  height: 100px;
+  border-bottom-color: var(--ink);
+  object-fit: cover;
+}
+.tools-tpl__blank {
+  display: block;
+}
+.tools-tpl__name {
+  padding: 10px 44px 0 14px;
+  font: 700 19px/1.05 var(--font-cond);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tools-tpl__meta {
+  padding: 3px 14px 0;
+  font-size: 12.5px;
+  color: var(--muted-on-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tools-tpl__cta {
+  justify-self: start;
+  margin: 10px 14px 0;
+  height: 28px;
+  padding: 0 12px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--ink);
+  font: 600 13px var(--font-cond);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.tools-tpl__card .board-menu {
+  top: 106px;
+  right: 6px;
+}
+.tools-tpl__card .board-menu__btn {
+  color: #fff;
+}
+
+/* Vorschaubilder vom Server füllen die Kachel */
+.board-card__thumb.tools-thumb {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Neues Board: Vorlage wählen */
+.tools-tpl-pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  margin: 10px 0 16px;
+  padding: 2px;
+}
+.tools-tpl-pick__item {
+  display: grid;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13.5px;
+  line-height: 1.2;
+  box-shadow: inset 0 0 0 1.5px var(--line);
+}
+.tools-tpl-pick__item.is-active {
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+.tools-tpl-pick__item span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 2px;
+}
+.tools-tpl-pick__thumb {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--canvas) radial-gradient(rgba(10, 10, 10, 0.16) 1px, transparent 1.2px) 0 0 / 10px 10px;
+}
+.tools-tpl-pick__thumb--blank {
+  font: 300 30px var(--font);
+  color: var(--muted);
+}

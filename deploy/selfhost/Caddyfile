@@ -1,0 +1,13 @@
+# Caddy in front of Stachel (docker compose --profile https up -d): automatic HTTPS for STACHEL_DOMAIN.
+# WebSockets (/sync, /native) are proxied transparently. /mcp goes to the optional MCP container (--profile mcp).
+{$STACHEL_DOMAIN} {
+	encode zstd gzip
+
+	handle /mcp* {
+		reverse_proxy stachel-mcp:8096
+	}
+
+	handle {
+		reverse_proxy stachel:8080
+	}
+}
