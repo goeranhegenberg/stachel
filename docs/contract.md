@@ -301,6 +301,26 @@ Dateien geändert haben (höchstens alle 30 s geprüft, kein Neustart nötig).
 Mit Sitzung (Cookie, Bearer `sts_…` oder `stk_…`), sonst 401. Clients zeigen die Kategorie nur, wenn `templates` nicht leer
 ist, und fügen ein wie eigene Vorlagen (Web: „Einfügen“, App: Web-Aktion `structure.insert`).
 
+### Import (`docs/features/import.md`, `server/src/import/`)
+
+Boards aus Miro übernehmen (REST-API v2, nur auf Wunsch der Person). Typen `shared/import.ts`, Einzelheiten, Fehlercodes,
+Grenzen und Daten in `docs/features/import.md` §2–§6. Mit Sitzung (Cookie, Bearer `sts_…` oder `stk_…`), schreibend mit
+`X-Stachel: 1`; Ausnahme ist nur `POST /api/import/miro/callback` (Formular der Bestätigungsseite, abgesichert über
+`state` + `nonce`).
+
+| Methode + Pfad | Antwort |
+|---|---|
+| `GET /api/import/sources` | `ImportSources` (`miro.enabled/token/oauth/connected`) |
+| `POST /api/import/miro/token` `{token}` | `{ok, conn, expiresAt}` – Token nur im Speicher (60 min); 400 `miro_token_invalid`, 403 `import_disabled`, 502 `miro_unavailable` |
+| `POST /api/import/miro/oauth/start` `{client?}` | `{ok, url}` – Miro-Freigabeseite; 404 `oauth_disabled` |
+| `GET /api/import/miro/callback?code&state` (ohne Sitzungspflicht) | 302 zur Web-App `?import=miro[&error=]` bzw. Bestätigungs-/Fertig-/Fehlerseite (HTML) |
+| `POST /api/import/miro/callback` `state, nonce` (Formular) | Fertig- bzw. Fehlerseite (HTML) |
+| `DELETE /api/import/miro/oauth` | `{ok}` – Widerruf bei Miro, gespeicherte Verbindung gelöscht |
+| `GET /api/import/miro/boards?conn=&query=&offset=` | `ImportRemoteBoards`; 401 `miro_conn_expired` |
+| `POST /api/import/miro/jobs` `{conn, boards, options?}` | 202 `{ok, jobs}`; 403 `board_limit`, 429 `import_limit` |
+| `GET /api/import/jobs`, `GET /api/import/jobs/:id` | `{ok, jobs}` (7 Tage) bzw. `{ok, job}`; fremde → 404 |
+| `DELETE /api/import/jobs/:id` | `{ok, job}` – abbrechen (`canceled`) |
+
 ## 4. Echtzeit (Hocuspocus)
 
 - WebSocket `wss://<origin>/sync`, Hocuspocus-Protokoll, Dokumentname **`board:<boardId>`**.

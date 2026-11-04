@@ -1,0 +1,542 @@
+{
+  "data": [
+    {
+      "id": "3458764612350000001",
+      "type": "shape",
+      "data": {
+        "content": "<p>Start</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#c9df56",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 0.0,
+        "y": -600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 200.0,
+        "height": 80.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000001"
+      }
+    },
+    {
+      "id": "3458764612350000002",
+      "type": "shape",
+      "data": {
+        "content": "<p>Anmeldung prüfen</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 0.0,
+        "y": -400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 240.0,
+        "height": 100.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000002"
+      }
+    },
+    {
+      "id": "3458764612350000003",
+      "type": "shape",
+      "data": {
+        "content": "<p>Vollständig?</p>",
+        "shape": "rhombus"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#fef445",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 0.0,
+        "y": -180.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000003"
+      }
+    },
+    {
+      "id": "3458764612350000004",
+      "type": "shape",
+      "data": {
+        "content": "<p>Nachfragen</p>",
+        "shape": "flow_chart_predefined_process"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 400.0,
+        "y": -180.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 240.0,
+        "height": 100.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000004"
+      }
+    },
+    {
+      "id": "3458764612350000005",
+      "type": "shape",
+      "data": {
+        "content": "<p>Bestätigung senden</p>",
+        "shape": "parallelogram"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "left",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 0.0,
+        "y": 50.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 260.0,
+        "height": 100.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000005"
+      }
+    },
+    {
+      "id": "3458764612350000006",
+      "type": "shape",
+      "data": {
+        "content": "<p>Teilnehmerliste</p>",
+        "shape": "flow_chart_document"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": -400.0,
+        "y": 50.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 120.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000006"
+      }
+    },
+    {
+      "id": "3458764612350000007",
+      "type": "shape",
+      "data": {
+        "content": "<p>Datenbank</p>",
+        "shape": "can"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#ffffff",
+        "fillColor": "#2d9bf0",
+        "fillOpacity": "1.0",
+        "fontFamily": "roboto_condensed",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": -400.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 140.0,
+        "height": 160.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000007"
+      }
+    },
+    {
+      "id": "3458764612350000008",
+      "type": "shape",
+      "data": {
+        "content": "<p>Ende</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#f24726",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 0.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 200.0,
+        "height": 80.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000008"
+      }
+    },
+    {
+      "id": "3458764612350000009",
+      "type": "shape",
+      "data": {
+        "content": "<p>Archiv</p>",
+        "shape": "flow_chart_magnetic_drum"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 400.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 200.0,
+        "height": 120.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000009"
+      }
+    },
+    {
+      "id": "3458764612350000010",
+      "type": "shape",
+      "data": {
+        "content": "<p>max. 3 Tage</p>",
+        "shape": "flow_chart_note_curly_left"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "1.0",
+        "color": "#1a1a1a",
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 700.0,
+        "y": -180.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 180.0,
+        "height": 100.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000010"
+      }
+    },
+    {
+      "id": "3458764612350000011",
+      "type": "shape",
+      "data": {
+        "content": "<p>Neu</p>",
+        "shape": "flow_chart_unbekannt_neu"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 700.0,
+        "y": 50.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 160.0,
+        "height": 100.0,
+        "rotation": 45.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/shapes/3458764612350000011"
+      }
+    },
+    {
+      "id": "3458764612350000012",
+      "type": "text",
+      "data": {
+        "content": "<p>Ablauf Anmeldung</p>"
+      },
+      "style": {
+        "color": "#1a1a1a",
+        "fillColor": "transparent",
+        "fontFamily": "arial",
+        "fontSize": "36",
+        "textAlign": "center"
+      },
+      "position": {
+        "x": 0.0,
+        "y": -800.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 600.0,
+        "height": 54.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNfl0002=/texts/3458764612350000012"
+      }
+    }
+  ],
+  "size": 12,
+  "limit": 50,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/x/items?limit=50"
+  },
+  "type": "cursor-list"
+}

@@ -1,0 +1,1160 @@
+{
+  "size": 29,
+  "limit": 50,
+  "total": 29,
+  "data": [
+    {
+      "id": "3458764689463062304",
+      "type": "shape",
+      "data": {
+        "content": "<p>rectangle</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "#ffffff",
+        "fillOpacity": "0.5",
+        "fontFamily": "arial",
+        "fontSize": "10",
+        "borderColor": "#e6280e",
+        "borderWidth": "1.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "left",
+        "textAlignVertical": "middle",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062304"
+      },
+      "createdAt": "2026-11-04T20:04:49Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:49Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062307",
+      "type": "shape",
+      "data": {
+        "content": "<p>round_rectangle</p>",
+        "shape": "round_rectangle"
+      },
+      "style": {
+        "fillColor": "#fef445",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "2.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dashed",
+        "textAlign": "center",
+        "textAlignVertical": "bottom",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 320.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062307"
+      },
+      "createdAt": "2026-11-04T20:04:50Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:50Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062314",
+      "type": "shape",
+      "data": {
+        "content": "<p>circle</p>",
+        "shape": "circle"
+      },
+      "style": {
+        "fillColor": "#fac710",
+        "fillOpacity": "1.0",
+        "fontFamily": "roboto",
+        "fontSize": "18",
+        "borderColor": "#e6280e",
+        "borderWidth": "4.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dotted",
+        "textAlign": "right",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 200.0
+      },
+      "position": {
+        "x": 640.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062314"
+      },
+      "createdAt": "2026-11-04T20:04:50Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:50Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062321",
+      "type": "shape",
+      "data": {
+        "content": "<p>triangle</p>",
+        "shape": "triangle"
+      },
+      "style": {
+        "fillColor": "#f24726",
+        "fillOpacity": "1.0",
+        "fontFamily": "caveat",
+        "fontSize": "24",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "8.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "left",
+        "textAlignVertical": "middle",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0,
+        "rotation": 10.0
+      },
+      "position": {
+        "x": 960.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062321"
+      },
+      "createdAt": "2026-11-04T20:04:51Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:51Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062326",
+      "type": "shape",
+      "data": {
+        "content": "<p>rhombus</p>",
+        "shape": "rhombus"
+      },
+      "style": {
+        "fillColor": "#e6e6e6",
+        "fillOpacity": "0.5",
+        "fontFamily": "noto_sans",
+        "fontSize": "36",
+        "borderColor": "#e6280e",
+        "borderWidth": "1.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "center",
+        "textAlignVertical": "bottom",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 1280.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062326"
+      },
+      "createdAt": "2026-11-04T20:04:51Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:51Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062328",
+      "type": "shape",
+      "data": {
+        "content": "<p>parallelogram</p>",
+        "shape": "parallelogram"
+      },
+      "style": {
+        "fillColor": "#cee741",
+        "fillOpacity": "1.0",
+        "fontFamily": "arial",
+        "fontSize": "10",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "2.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dashed",
+        "textAlign": "right",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 1600.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062328"
+      },
+      "createdAt": "2026-11-04T20:04:51Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:51Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062331",
+      "type": "shape",
+      "data": {
+        "content": "<p>trapezoid</p>",
+        "shape": "trapezoid"
+      },
+      "style": {
+        "fillColor": "#8fd14f",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "borderColor": "#e6280e",
+        "borderWidth": "4.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dotted",
+        "textAlign": "left",
+        "textAlignVertical": "middle",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062331"
+      },
+      "createdAt": "2026-11-04T20:04:52Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:52Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062338",
+      "type": "shape",
+      "data": {
+        "content": "<p>pentagon</p>",
+        "shape": "pentagon"
+      },
+      "style": {
+        "fillColor": "#0ca789",
+        "fillOpacity": "1.0",
+        "fontFamily": "roboto",
+        "fontSize": "18",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "8.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "center",
+        "textAlignVertical": "bottom",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 200.0
+      },
+      "position": {
+        "x": 320.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062338"
+      },
+      "createdAt": "2026-11-04T20:04:52Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:52Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062346",
+      "type": "shape",
+      "data": {
+        "content": "<p>hexagon</p>",
+        "shape": "hexagon"
+      },
+      "style": {
+        "fillColor": "#12cdd4",
+        "fillOpacity": "0.5",
+        "fontFamily": "caveat",
+        "fontSize": "24",
+        "borderColor": "#e6280e",
+        "borderWidth": "1.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "right",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 200.0
+      },
+      "position": {
+        "x": 640.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062346"
+      },
+      "createdAt": "2026-11-04T20:04:54Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:54Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062351",
+      "type": "shape",
+      "data": {
+        "content": "<p>octagon</p>",
+        "shape": "octagon"
+      },
+      "style": {
+        "fillColor": "#2d9bf0",
+        "fillOpacity": "1.0",
+        "fontFamily": "noto_sans",
+        "fontSize": "36",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "2.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dashed",
+        "textAlign": "left",
+        "textAlignVertical": "middle",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 200.0
+      },
+      "position": {
+        "x": 960.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062351"
+      },
+      "createdAt": "2026-11-04T20:04:54Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:54Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062353",
+      "type": "shape",
+      "data": {
+        "content": "<p>wedge_round_rectangle_callout</p>",
+        "shape": "wedge_round_rectangle_callout"
+      },
+      "style": {
+        "fillColor": "#414bb2",
+        "fillOpacity": "1.0",
+        "fontFamily": "arial",
+        "fontSize": "10",
+        "borderColor": "#e6280e",
+        "borderWidth": "4.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dotted",
+        "textAlign": "center",
+        "textAlignVertical": "bottom",
+        "color": "#ffffff"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 1280.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062353"
+      },
+      "createdAt": "2026-11-04T20:04:54Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:54Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062356",
+      "type": "shape",
+      "data": {
+        "content": "<p>star</p>",
+        "shape": "star"
+      },
+      "style": {
+        "fillColor": "#9510ac",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "8.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "right",
+        "textAlignVertical": "top",
+        "color": "#ffffff"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 200.0
+      },
+      "position": {
+        "x": 1600.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062356"
+      },
+      "createdAt": "2026-11-04T20:04:54Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:54Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062358",
+      "type": "shape",
+      "data": {
+        "content": "<p>flow_chart_predefined_process</p>",
+        "shape": "flow_chart_predefined_process"
+      },
+      "style": {
+        "fillColor": "#652cb3",
+        "fillOpacity": "0.5",
+        "fontFamily": "roboto",
+        "fontSize": "18",
+        "borderColor": "#e6280e",
+        "borderWidth": "1.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "left",
+        "textAlignVertical": "middle",
+        "color": "#ffffff"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062358"
+      },
+      "createdAt": "2026-11-04T20:04:55Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:55Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062363",
+      "type": "shape",
+      "data": {
+        "content": "<p>cloud</p>",
+        "shape": "cloud"
+      },
+      "style": {
+        "fillColor": "#da0063",
+        "fillOpacity": "1.0",
+        "fontFamily": "caveat",
+        "fontSize": "24",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "2.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dashed",
+        "textAlign": "center",
+        "textAlignVertical": "bottom",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 320.0,
+        "y": 600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062363"
+      },
+      "createdAt": "2026-11-04T20:04:55Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:55Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062366",
+      "type": "shape",
+      "data": {
+        "content": "<p>cross</p>",
+        "shape": "cross"
+      },
+      "style": {
+        "fillColor": "#808080",
+        "fillOpacity": "1.0",
+        "fontFamily": "noto_sans",
+        "fontSize": "36",
+        "borderColor": "#e6280e",
+        "borderWidth": "4.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dotted",
+        "textAlign": "right",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 640.0,
+        "y": 600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062366"
+      },
+      "createdAt": "2026-11-04T20:04:55Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:55Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062368",
+      "type": "shape",
+      "data": {
+        "content": "<p>can</p>",
+        "shape": "can"
+      },
+      "style": {
+        "fillColor": "#1a1a1a",
+        "fillOpacity": "1.0",
+        "fontFamily": "arial",
+        "fontSize": "10",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "8.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "left",
+        "textAlignVertical": "middle",
+        "color": "#ffffff"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 960.0,
+        "y": 600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062368"
+      },
+      "createdAt": "2026-11-04T20:04:56Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:56Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062394",
+      "type": "shape",
+      "data": {
+        "content": "<p>right_arrow</p>",
+        "shape": "right_arrow"
+      },
+      "style": {
+        "fillColor": "#d5f692",
+        "fillOpacity": "0.5",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "borderColor": "#e6280e",
+        "borderWidth": "1.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "center",
+        "textAlignVertical": "bottom",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 1280.0,
+        "y": 600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062394"
+      },
+      "createdAt": "2026-11-04T20:04:56Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:56Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062400",
+      "type": "shape",
+      "data": {
+        "content": "<p>left_arrow</p>",
+        "shape": "left_arrow"
+      },
+      "style": {
+        "fillColor": "#a6ccf5",
+        "fillOpacity": "1.0",
+        "fontFamily": "roboto",
+        "fontSize": "18",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "2.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dashed",
+        "textAlign": "right",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 1600.0,
+        "y": 600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062400"
+      },
+      "createdAt": "2026-11-04T20:04:57Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:57Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062404",
+      "type": "shape",
+      "data": {
+        "content": "<p>left_right_arrow</p>",
+        "shape": "left_right_arrow"
+      },
+      "style": {
+        "fillColor": "#ffcee0",
+        "fillOpacity": "1.0",
+        "fontFamily": "caveat",
+        "fontSize": "24",
+        "borderColor": "#e6280e",
+        "borderWidth": "4.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "dotted",
+        "textAlign": "left",
+        "textAlignVertical": "middle",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 900.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062404"
+      },
+      "createdAt": "2026-11-04T20:04:57Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:57Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062409",
+      "type": "shape",
+      "data": {
+        "content": "<p>left_brace</p>",
+        "shape": "left_brace"
+      },
+      "style": {
+        "fillColor": "#ffffff",
+        "fillOpacity": "1.0",
+        "fontFamily": "noto_sans",
+        "fontSize": "36",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "8.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "center",
+        "textAlignVertical": "bottom",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 320.0,
+        "y": 900.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062409"
+      },
+      "createdAt": "2026-11-04T20:04:57Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:57Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062415",
+      "type": "shape",
+      "data": {
+        "content": "<p>right_brace</p>",
+        "shape": "right_brace"
+      },
+      "style": {
+        "fillColor": "#ffffff",
+        "fillOpacity": "0.5",
+        "fontFamily": "arial",
+        "fontSize": "10",
+        "borderColor": "#e6280e",
+        "borderWidth": "1.0",
+        "borderOpacity": "1.0",
+        "borderStyle": "normal",
+        "textAlign": "right",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 220.0,
+        "height": 160.0
+      },
+      "position": {
+        "x": 640.0,
+        "y": 900.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/shapes/3458764689463062415"
+      },
+      "createdAt": "2026-11-04T20:04:57Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:57Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062434",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062434"
+      },
+      "createdAt": "2026-11-04T20:04:58Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:04:58Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062439",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 300.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062439"
+      },
+      "createdAt": "2026-11-04T20:04:59Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:04:59Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062441",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 600.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062441"
+      },
+      "createdAt": "2026-11-04T20:04:59Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:04:59Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062445",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 900.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062445"
+      },
+      "createdAt": "2026-11-04T20:04:59Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:04:59Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062448",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 1200.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062448"
+      },
+      "createdAt": "2026-11-04T20:05:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:05:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062460",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 1500.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062460"
+      },
+      "createdAt": "2026-11-04T20:05:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:05:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062462",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 1800.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062462"
+      },
+      "createdAt": "2026-11-04T20:05:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:05:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463062468",
+      "type": "shape",
+      "geometry": {
+        "width": 220.0,
+        "height": 140.0
+      },
+      "position": {
+        "x": 2100.0,
+        "y": 1400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items/3458764689463062468"
+      },
+      "createdAt": "2026-11-04T20:05:01Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:05:01Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items?limit=50&cursor="
+  },
+  "type": "cursor-list"
+}

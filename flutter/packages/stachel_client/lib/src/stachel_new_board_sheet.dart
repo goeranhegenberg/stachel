@@ -9,12 +9,15 @@ import 'stachel_style.dart';
 /// template until it is typed by hand, at most 120 characters, empty = „Bitte gib einen Namen ein.“.
 ///
 /// [onCreate] creates the board (template id null = empty board) and opens it; an error stays in the sheet.
+/// [onImport]: „Board importieren“ (docs/features/import.md) next to the heading – the sheet closes first; null = not
+/// offered (the instance has no import).
 Future<void> showStachelNewBoardSheet(
   BuildContext context, {
   required List<StachelBoardInfo> templates,
   StachelBoardInfo? initialTemplate,
   required ImageProvider? Function(StachelBoardInfo board) thumbnail,
   required Future<void> Function(String title, String? templateId) onCreate,
+  VoidCallback? onImport,
 }) => showModalBottomSheet<void>(
   context: context,
   isScrollControlled: true,
@@ -24,6 +27,7 @@ Future<void> showStachelNewBoardSheet(
     initialTemplate: initialTemplate,
     thumbnail: thumbnail,
     onCreate: onCreate,
+    onImport: onImport,
   ),
 );
 
@@ -34,12 +38,14 @@ class StachelNewBoardSheet extends StatefulWidget {
     this.initialTemplate,
     required this.thumbnail,
     required this.onCreate,
+    this.onImport,
   });
 
   final List<StachelBoardInfo> templates;
   final StachelBoardInfo? initialTemplate;
   final ImageProvider? Function(StachelBoardInfo board) thumbnail;
   final Future<void> Function(String title, String? templateId) onCreate;
+  final VoidCallback? onImport;
 
   @override
   State<StachelNewBoardSheet> createState() => _StachelNewBoardSheetState();
@@ -110,9 +116,25 @@ class _StachelNewBoardSheetState extends State<StachelNewBoardSheet> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              widget.initialTemplate != null ? 'BOARD AUS VORLAGE' : 'NEUES BOARD',
-              style: TextStyle(fontFamily: Sk.cond, fontSize: 20, fontWeight: FontWeight.w800),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    widget.initialTemplate != null ? 'BOARD AUS VORLAGE' : 'NEUES BOARD',
+                    style: TextStyle(fontFamily: Sk.cond, fontSize: 20, fontWeight: FontWeight.w800),
+                  ),
+                ),
+                if (widget.onImport case final onImport? when widget.initialTemplate == null)
+                  TextButton.icon(
+                    key: const Key('stachelImportBoard'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      onImport();
+                    },
+                    icon: const Icon(Icons.move_to_inbox_outlined),
+                    label: const Text('BOARD IMPORTIEREN'),
+                  ),
+              ],
             ),
             if (templates.isNotEmpty) ...[
               const SizedBox(height: 12),

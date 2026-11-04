@@ -77,7 +77,8 @@ export class StachelApi {
     if (!res.ok || json?.ok === false) {
       const code = json?.error ?? `http_${res.status}`;
       let msg = json?.message ?? `Stachel antwortet mit HTTP ${res.status}.`;
-      if (res.status === 401) msg = 'Das API-Token ist ungültig oder widerrufen. Bitte in Stachel unter „KI-Zugang (MCP)“ ein neues anlegen.';
+      // 401 der Import-Endpunkte (miro_conn_expired …) betrifft die Miro-Verbindung, nicht das API-Token
+      if (res.status === 401 && !String(code).startsWith('miro_')) msg = 'Das API-Token ist ungültig oder widerrufen. Bitte in Stachel unter „KI-Zugang (MCP)“ ein neues anlegen.';
       throw new StachelError(res.status, code, msg);
     }
     return json as T;

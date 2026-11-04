@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "id": "3458764612340000036",
+      "type": "group",
+      "data": {
+        "items": [
+          "3458764612340000011",
+          "3458764612340000012"
+        ]
+      }
+    }
+  ],
+  "size": 1,
+  "limit": 10,
+  "total": 1,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/groups"
+  },
+  "type": "cursor-list"
+}

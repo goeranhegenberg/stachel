@@ -1,0 +1,10 @@
+{
+  "size": 0,
+  "limit": 50,
+  "total": 0,
+  "data": [],
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/mindmap_nodes?limit=50&cursor="
+  },
+  "type": "cursor-list"
+}

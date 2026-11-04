@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "id": "3458764612360000026",
+      "type": "connector",
+      "shape": "curved",
+      "style": {
+        "color": "#1a1a1a",
+        "endStrokeCap": "stealth",
+        "fontSize": "14",
+        "startStrokeCap": "none",
+        "strokeColor": "#1a1a1a",
+        "strokeStyle": "normal",
+        "strokeWidth": "2.0",
+        "textOrientation": "horizontal"
+      },
+      "isSupported": true,
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNmm0003=/connectors/3458764612360000026"
+      },
+      "startItem": {
+        "id": "3458764612360000025",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNmm0003=/items/3458764612360000025"
+        },
+        "position": {
+          "x": "100.0%",
+          "y": "50.0%"
+        }
+      },
+      "endItem": {
+        "id": "3458764612360000009",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNmm0003=/items/3458764612360000009"
+        },
+        "position": {
+          "x": "0.0%",
+          "y": "50.0%"
+        }
+      }
+    }
+  ],
+  "size": 1,
+  "limit": 50,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/x/items?limit=50"
+  },
+  "type": "cursor-list"
+}

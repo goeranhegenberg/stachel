@@ -19,6 +19,7 @@ import { assertNoFrameClash, freeOrigin, overlapWarnings, GAP } from './ops/plac
 import { addThread, mentionsIn, readThreads, reply, resolve, Y_COMMENTS } from './ops/comments';
 import { DESIGN_GUIDE, INSTRUCTIONS, schemaText } from './guide';
 import { COLOR_DE, resolveColor } from './board/palette';
+import { registerImportTool } from './import-miro';
 
 export const SERVER_INFO = { name: 'stachel', version: '0.1.0' };
 
@@ -847,6 +848,10 @@ ${lines(Object.entries(patches).map(([id, p]) => ({ id, ...p })))}`);
       return text(`Erledigt: ${JSON.stringify(r.state)}`);
     }),
   );
+
+  // ---------- Import ----------
+
+  registerImportTool(server, () => ({ api: agent.api, webUrl: agent.webUrl, onBoardCreated: () => agent.invalidateBoards() }), wrap);
 
   // ---------- Hilfe ----------
 

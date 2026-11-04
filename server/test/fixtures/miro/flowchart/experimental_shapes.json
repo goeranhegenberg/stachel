@@ -1,0 +1,52 @@
+{
+  "3458764612350000001": {
+    "id": "3458764612350000001",
+    "type": "shape",
+    "data": {
+      "content": "<p>Start</p>",
+      "shape": "flow_chart_terminator"
+    },
+    "style": {
+      "borderColor": "#1a1a1a",
+      "borderOpacity": "1.0",
+      "borderStyle": "normal",
+      "borderWidth": "2.0",
+      "color": "#1a1a1a",
+      "fillColor": "#c9df56",
+      "fillOpacity": "1.0",
+      "fontFamily": "open_sans",
+      "fontSize": "14",
+      "textAlign": "center",
+      "textAlignVertical": "middle"
+    },
+    "geometry": {
+      "width": 200.0,
+      "height": 80.0
+    }
+  },
+  "3458764612350000008": {
+    "id": "3458764612350000008",
+    "type": "shape",
+    "data": {
+      "content": "<p>Ende</p>",
+      "shape": "flow_chart_terminator"
+    },
+    "style": {
+      "borderColor": "#1a1a1a",
+      "borderOpacity": "1.0",
+      "borderStyle": "normal",
+      "borderWidth": "2.0",
+      "color": "#1a1a1a",
+      "fillColor": "#f24726",
+      "fillOpacity": "1.0",
+      "fontFamily": "open_sans",
+      "fontSize": "14",
+      "textAlign": "center",
+      "textAlignVertical": "middle"
+    },
+    "geometry": {
+      "width": 200.0,
+      "height": 80.0
+    }
+  }
+}

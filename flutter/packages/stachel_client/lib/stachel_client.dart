@@ -17,6 +17,8 @@ export 'src/stachel_clipboard.dart';
 export 'src/stachel_comments.dart';
 export 'src/stachel_documents.dart';
 export 'src/stachel_home_screen.dart';
+export 'src/stachel_import_api.dart';
+export 'src/stachel_import_screen.dart';
 export 'src/stachel_new_board_sheet.dart';
 export 'src/stachel_offline.dart';
 export 'src/stachel_offline_sheet.dart';

@@ -1,0 +1,11 @@
+{
+  "data": [],
+  "limit": 20,
+  "offset": 0,
+  "size": 0,
+  "total": 0,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVNmm0003=/tags"
+  },
+  "type": "list"
+}

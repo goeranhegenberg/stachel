@@ -103,6 +103,11 @@ a.boards-top__name:hover {
   text-transform: uppercase;
   letter-spacing: -0.01em;
 }
+.boards-head__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .boards-head__new {
   height: 50px;
   padding: 0 24px;
@@ -468,6 +473,10 @@ a.boards-top__name:hover {
   .boards-top__logout {
     width: 38px;
     padding: 0;
+  }
+  .boards-head__actions {
+    width: 100%;
+    flex-direction: column-reverse;
   }
   .boards-head__new {
     width: 100%;

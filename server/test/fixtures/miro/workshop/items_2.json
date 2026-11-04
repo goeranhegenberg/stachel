@@ -1,0 +1,589 @@
+{
+  "data": [
+    {
+      "id": "3458764612340000011",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Gruppe A</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "dark_blue",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": -300.0,
+        "y": 700.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000011"
+      }
+    },
+    {
+      "id": "3458764612340000012",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Gruppe B</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "gray",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": -80.0,
+        "y": 700.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000012"
+      }
+    },
+    {
+      "id": "3458764612340000013",
+      "type": "text",
+      "data": {
+        "content": "<p>Retrospektive <strong>Sommerfest</strong> 2026</p>"
+      },
+      "style": {
+        "color": "#1a1a1a",
+        "fillColor": "transparent",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "64",
+        "textAlign": "left"
+      },
+      "position": {
+        "x": -400.0,
+        "y": -600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 1600.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/texts/3458764612340000013"
+      }
+    },
+    {
+      "id": "3458764612340000014",
+      "type": "text",
+      "data": {
+        "content": "<p>Hinweis: <span style=\"color:#e6282e\">bis 30.11.</span> nachtragen</p>"
+      },
+      "style": {
+        "color": "#050038",
+        "fillColor": "#fef445",
+        "fillOpacity": "0.5",
+        "fontFamily": "roboto_mono",
+        "fontSize": "24",
+        "textAlign": "center"
+      },
+      "position": {
+        "x": 900.0,
+        "y": -600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 500.0,
+        "height": 60.0,
+        "rotation": -5.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/texts/3458764612340000014"
+      }
+    },
+    {
+      "id": "3458764612340000015",
+      "type": "card",
+      "data": {
+        "assigneeId": "3458764500000000002",
+        "description": "<p>Angebot von zwei Firmen einholen</p>",
+        "dueDate": "2026-11-20T23:00:00Z",
+        "title": "<p>Bühne für 2027 buchen</p>"
+      },
+      "style": {
+        "cardTheme": "#2d9bf0"
+      },
+      "position": {
+        "x": 1800.0,
+        "y": -200.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 320.0,
+        "height": 94.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/cards/3458764612340000015"
+      }
+    },
+    {
+      "id": "3458764612340000016",
+      "type": "app_card",
+      "data": {
+        "description": "<p>Aus dem Ticketsystem</p>",
+        "fields": [
+          {
+            "value": "In Arbeit",
+            "tooltip": "Status",
+            "fillColor": "#2fa9e3",
+            "textColor": "#1a1a1a",
+            "iconShape": "round"
+          },
+          {
+            "value": "Hoch",
+            "tooltip": "Priorität"
+          }
+        ],
+        "status": "disconnected",
+        "title": "<p>Ticket ORGA-12</p>"
+      },
+      "style": {
+        "fillColor": "#fac710"
+      },
+      "position": {
+        "x": 1800.0,
+        "y": 50.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 320.0,
+        "height": 160.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/app_cards/3458764612340000016"
+      }
+    },
+    {
+      "id": "3458764612340000017",
+      "type": "image",
+      "data": {
+        "imageUrl": "https://api.miro.com/v2/boards/uXjVNwk0001=/resources/images/3458764612340000017?format=preview&redirect=false",
+        "title": "Gruppenfoto.jpg"
+      },
+      "style": {},
+      "position": {
+        "x": 1800.0,
+        "y": 400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 400.0,
+        "height": 300.0,
+        "rotation": 10.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/images/3458764612340000017"
+      }
+    },
+    {
+      "id": "3458764612340000018",
+      "type": "document",
+      "data": {
+        "documentUrl": "https://api.miro.com/v2/boards/uXjVNwk0001=/resources/documents/3458764612340000018?redirect=false",
+        "title": "Ablaufplan.pdf"
+      },
+      "style": {},
+      "position": {
+        "x": 2300.0,
+        "y": 400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 300.0,
+        "height": 424.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/documents/3458764612340000018"
+      }
+    },
+    {
+      "id": "3458764612340000019",
+      "type": "document",
+      "data": {
+        "documentUrl": "https://api.miro.com/v2/boards/uXjVNwk0001=/resources/documents/3458764612340000019?redirect=false",
+        "title": "Helferliste.docx"
+      },
+      "style": {},
+      "position": {
+        "x": 2700.0,
+        "y": 400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 300.0,
+        "height": 424.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/documents/3458764612340000019"
+      }
+    },
+    {
+      "id": "3458764612340000020",
+      "type": "embed",
+      "data": {
+        "contentType": "video",
+        "description": null,
+        "html": "<iframe src=\"https://www.example.org/embed/abc\"></iframe>",
+        "mode": "inline",
+        "previewUrl": "https://img.example.org/abc.jpg",
+        "providerName": "Videodienst",
+        "providerUrl": "https://www.example.org/",
+        "title": "Aufbau im Zeitraffer",
+        "url": "https://www.example.org/watch?v=abc"
+      },
+      "style": {},
+      "position": {
+        "x": 1800.0,
+        "y": 900.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 480.0,
+        "height": 270.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/embeds/3458764612340000020"
+      }
+    },
+    {
+      "id": "3458764612340000021",
+      "type": "preview",
+      "data": {
+        "url": "https://example.org/artikel/sommerfest"
+      },
+      "style": {},
+      "position": {
+        "x": 2400.0,
+        "y": 900.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 400.0,
+        "height": 120.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/previews/3458764612340000021"
+      }
+    },
+    {
+      "id": "3458764612340000022",
+      "type": "doc_format",
+      "data": {
+        "contentType": "html"
+      },
+      "style": {},
+      "position": {
+        "x": 3000.0,
+        "y": 900.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 600.0,
+        "height": 800.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/doc_formats/3458764612340000022"
+      }
+    },
+    {
+      "id": "3458764612340000023",
+      "type": "data_table_format",
+      "data": {},
+      "style": {},
+      "position": {
+        "x": 3000.0,
+        "y": -400.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 800.0,
+        "height": 400.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/data_table_formats/3458764612340000023"
+      }
+    },
+    {
+      "id": "3458764612340000024",
+      "type": "shape",
+      "data": {
+        "content": "<p>Ziele <u>2027</u></p>",
+        "shape": "round_rectangle"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "1.0",
+        "borderStyle": "dashed",
+        "borderWidth": "3.0",
+        "color": "#ffffff",
+        "fillColor": "#8fd14f",
+        "fillOpacity": "1.0",
+        "fontFamily": "georgia",
+        "fontSize": "28",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": -1400.0,
+        "y": -600.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 300.0,
+        "height": 120.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/shapes/3458764612340000024"
+      }
+    },
+    {
+      "id": "3458764612340000025",
+      "type": "shape",
+      "data": {
+        "content": "<p>Budget</p>",
+        "shape": "circle"
+      },
+      "style": {
+        "borderColor": "#1a1a1a",
+        "borderOpacity": "0.0",
+        "borderStyle": "normal",
+        "borderWidth": "2.0",
+        "color": "#1a1a1a",
+        "fillColor": "#da0063",
+        "fillOpacity": "0.4",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": -1400.0,
+        "y": -300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 160.0,
+        "height": 160.0,
+        "rotation": 0.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/shapes/3458764612340000025"
+      }
+    },
+    {
+      "id": "3458764612340000026",
+      "type": "kanban",
+      "data": {},
+      "style": {},
+      "position": {
+        "x": 4000.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 300.0,
+        "height": 300.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/kanbans/3458764612340000026"
+      }
+    }
+  ],
+  "size": 16,
+  "limit": 50,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/x/items?limit=50"
+  },
+  "type": "cursor-list"
+}

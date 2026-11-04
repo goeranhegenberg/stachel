@@ -120,7 +120,7 @@ describe('MCP-Server gegen echten Stachel-Server', () => {
 
   it('Tools, Ressourcen, Prompt', async () => {
     const tools = (await client.listTools()).tools.map((t) => t.name);
-    for (const t of ['list_boards', 'get_board_overview', 'get_objects', 'search', 'create_objects', 'create_notes', 'create_mindmap', 'create_kanban', 'connect', 'update_objects', 'arrange_objects', 'auto_layout', 'group_objects', 'delete_objects', 'get_comments', 'add_comment', 'undo', 'screenshot', 'private_mode']) {
+    for (const t of ['list_boards', 'get_board_overview', 'get_objects', 'search', 'create_objects', 'create_notes', 'create_mindmap', 'create_kanban', 'connect', 'update_objects', 'arrange_objects', 'auto_layout', 'group_objects', 'delete_objects', 'get_comments', 'add_comment', 'undo', 'screenshot', 'private_mode', 'import_miro_board']) {
       expect(tools).toContain(t);
     }
     const res = await client.listResources();

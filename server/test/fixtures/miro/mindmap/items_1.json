@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "id": "3458764612360000025",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Budget klären</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "yellow",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": -700.0,
+        "y": -100.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNmm0003=/sticky_notes/3458764612360000025"
+      }
+    }
+  ],
+  "size": 1,
+  "limit": 50,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/x/items?limit=50"
+  },
+  "type": "cursor-list"
+}

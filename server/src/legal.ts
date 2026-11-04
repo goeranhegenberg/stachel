@@ -150,7 +150,8 @@ Dieses Archiv enthält die Daten, die ${brand} (${url}) zu deinem Konto speicher
 maschinenlesbaren Format (Art. 20 DSGVO):
 
 - konto.json: Konto (Name, E-Mail, Zeitpunkte), deine Boards, Mitgliedschaften auf Boards anderer,
-  Favoriten, von dir verschickte offene Einladungen, KI-Zugänge (nur Name und Zeitpunkte, ohne Token).
+  Favoriten, von dir verschickte offene Einladungen, KI-Zugänge (nur Name und Zeitpunkte, ohne Token),
+  Import-Berichte und verbundene Import-Zugänge (nur Zeitpunkte, ohne Token).
 - boards/<Titel> (<ID>)/board.json: Inhalt jedes eigenen Boards – alle Objekte (Notizen, Formen, Texte,
   Verbinder …) als JSON wie in der Stachel-App-Schnittstelle, dazu Kommentare, Abstimmungen usw. unter "ext".
 - boards/<Titel> (<ID>)/dateien/: hochgeladene Bilder und PDFs des Boards (Dateiname = ID im board.json).
@@ -233,6 +234,12 @@ export function registerDataExport(app: FastifyInstance, deps: ExportDeps) {
       })),
       eigeneVorlagen: q<{ name: string; object_count: number; created_at: string; objects: string }>('SELECT name, object_count, created_at, objects FROM user_templates WHERE user_key = ? ORDER BY created_at', key).map((t) => ({ name: t.name, objekte: t.object_count, angelegtAm: t.created_at, inhalt: JSON.parse(t.objects) as unknown })),
       erwaehnungen: q<{ board_id: string; created_at: string }>('SELECT board_id, created_at FROM mentions WHERE user_key = ? ORDER BY created_at DESC', key).map((m) => ({ boardId: m.board_id, am: m.created_at })),
+      // Import aus Miro (import/jobs.ts): Berichte ohne Tokens; verbundene Miro-Zugänge nur mit Zeitpunkten
+      importe: q<{ id: string; source: string; source_board: string; source_name: string; board_id: string | null; status: string; report: string | null; error: string | null; created_at: string; finished_at: string | null }>(
+        'SELECT id, source, source_board, source_name, board_id, status, report, error, created_at, finished_at FROM import_jobs WHERE user_key = ? ORDER BY created_at DESC',
+        key,
+      ).map((j) => ({ id: j.id, quelle: j.source, quellBoard: j.source_board, quellName: j.source_name, boardId: j.board_id, status: j.status, fehler: j.error, bericht: j.report ? (JSON.parse(j.report) as unknown) : null, am: j.created_at, fertigAm: j.finished_at })),
+      importVerbindungen: q<{ provider: string; created_at: string; used_at: string }>('SELECT provider, created_at, used_at FROM import_links WHERE user_key = ?', key).map((l) => ({ quelle: l.provider, verbundenAm: l.created_at, zuletztBenutzt: l.used_at })),
     };
 
     function* entries(): Generator<ZipEntry> {

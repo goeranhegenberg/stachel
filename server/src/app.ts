@@ -57,6 +57,8 @@ import { APP_HEADER, APP_SESSION_PATH, APP_SESSION_PREFIX, NATIVE_PATH } from '.
 import { appSessionToken, registerAppSession } from './native/auth.js';
 import { registerNativePublicRoutes, registerNativeRoutes } from './native/routes.js';
 import { NativeGateway } from './native/gateway.js';
+import { CALLBACK_PATH as IMPORT_CALLBACK_PATH, setupImport, type ImportModule } from './import/routes.js';
+import { mapBoard } from './import/miro/map.js';
 
 const require = createRequire(import.meta.url);
 
@@ -98,7 +100,7 @@ declare module 'fastify' {
  */
 export function redactUrl(url: string): string {
   return url
-    .replace(/([?&]code=)[^&#]*/g, '$1***')
+    .replace(/([?&](?:code|state|conn)=)[^&#]*/g, '$1***')
     .replace(/^(\/api\/auth\/qr\/)(?!approve(?:[/?#]|$))[^/?#]+/, '$1***')
     .replace(/^(\/qr\/)[^/?#]+/, '$1***')
     .replace(/^((?:\/[^/?#]+)*?\/(?:verify|reset)\/)[^/?#]+/, '$1***')
@@ -141,6 +143,8 @@ export interface App {
   native: NativeGateway;
   /** einmaliges Bereinigen alter Bild-Originale (image-clean.ts); Zahl der geänderten Bilder */
   imageCleanup: Promise<number>;
+  /** Import aus Miro (import/routes.ts): Verbindungen, Aufträge */
+  imports: ImportModule;
   close: () => Promise<void>;
 }
 
@@ -181,6 +185,8 @@ export async function buildApp(cfg: Config): Promise<App> {
   const native = new NativeGateway({ cfg, db, sessions, hocuspocus: sync.hocuspocus, events, access, privateMode: sync.privateMode });
   /** Person vergessen (Konto löschen): API-Tokens, Posteingang, Name auf Boards → „Gelöschtes Konto“ (forget-person.ts) */
   const forget = async (who: { key: string; name?: string }) => {
+    // Import aus Miro: Widerruf versuchen, Verbindungen und Import-Berichte löschen (import/routes.ts)
+    await imports.forgetUser(who.key);
     // Privat-Ablagen der Person (privater Modus) gehören nur ihr: ganz löschen
     await sync.privateMode.forgetUser(who.key);
     // eigene Liste blockierter Personen weg; in Meldungen bleibt der Beleg, die Mail-Adresse der Person geht (blocks.ts, reports.ts)
@@ -233,6 +239,19 @@ export async function buildApp(cfg: Config): Promise<App> {
           },
     trustProxy: cfg.trustProxy,
     bodyLimit: 1024 * 1024,
+  });
+  // Import aus Miro (docs/features/import.md): Verbindungen, Aufträge, Routen
+  const imports = setupImport({
+    cfg,
+    db,
+    imagesDir,
+    sessions,
+    uploads,
+    events,
+    saveVersion: (id, name, by) => sync.versions.saveNamed(id, name, by),
+    emailOf: (key) => accounts?.byKey(key)?.email ?? null,
+    mapBoard,
+    log: (msg) => app.log.info(msg),
   });
   // verkleinerte Fassungen (?w=256|1024), beim ersten Abruf erzeugt; eigener Ordner, damit images/ nur Originale hat
   const variants = new ImageVariants(path.join(cfg.dataDir, 'image-variants'), (msg, err) => app.log.warn({ err }, msg));
@@ -348,6 +367,7 @@ export async function buildApp(cfg: Config): Promise<App> {
     if (!['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method)) return;
     if (p === '/api/auth/qr/approve' || p === APP_CODE_PATH) return;
     if (p === APP_SESSION_PATH && req.method === 'POST') return; // Org-App holt ihr Token (wie app-code)
+    if (p === IMPORT_CALLBACK_PATH && req.method === 'POST') return; // Bestätigungsseite (Formular), abgesichert über state + nonce
     if (req.headers[CSRF_HEADER.toLowerCase()] !== '1') return sendError(reply, 403, 'csrf', MESSAGES.csrf);
   });
 
@@ -672,6 +692,8 @@ export async function buildApp(cfg: Config): Promise<App> {
     // KI-Zugang (MCP): Tokens verwalten (api-tokens.ts)
     registerApiTokens(scope, { tokens: apiTokens, mcpUrl: cfg.mcpUrl ?? `${cfg.publicUrl}/mcp` });
     // Apps: native REST-Routen mit Sitzung, z. B. Posteingang (native/routes.ts, Vertrag §8.11)
+    // Import aus Miro (import/routes.ts, docs/features/import.md §2)
+    imports.routes(scope);
     registerNativeRoutes(scope, { inbox: sync.inbox, versions: sync.versions, boardTitle: (id) => getBoard(id)?.title, ...(access.local ? { visible: (req: FastifyRequest, boardId: string) => access.roleOf({ key: req.session!.userKey }, boardId) !== null } : {}) });
 
     scope.get<{ Querystring: { open?: string } }>('/api/boards', async (req) => {
@@ -797,6 +819,9 @@ export async function buildApp(cfg: Config): Promise<App> {
     });
   });
 
+  // Rückruf von Miro (ohne Sitzungspflicht, import/routes.ts)
+  await imports.publicRoutes(app);
+
   // ---------- QR-Hinweisseite ----------
 
   // `?handy=1`: Rücksprung von „In der {Org-App} öffnen“, wenn die App den Link nicht übernommen hat
@@ -878,6 +903,9 @@ export async function buildApp(cfg: Config): Promise<App> {
     try {
       const r = applyRetention(db, cfg.instance.auth, Date.now(), (id) => apiTokens.disconnect(id));
       if (r.users || r.invites || r.tokens || r.reports) app.log.info(`Löschfristen: ${r.users} Personen, ${r.invites} Einladungen, ${r.tokens} KI-Tokens, ${r.reports} Meldungen entfernt`);
+      // Import: Berichte nach 30 Tagen, Miro-Verbindungen nach 60 Tagen ohne Nutzung
+      const i = imports.purge();
+      if (i.jobs || i.links) app.log.info(`Löschfristen Import: ${i.jobs} Berichte, ${i.links} Verbindungen entfernt`);
     } catch (e) {
       app.log.error(e);
     }
@@ -893,6 +921,7 @@ export async function buildApp(cfg: Config): Promise<App> {
     clearInterval(housekeeping);
     clearInterval(retentionTimer);
     await trash.stop();
+    await imports.close();
     events.closeAll();
     await native.close();
     await sync.close();
@@ -901,5 +930,5 @@ export async function buildApp(cfg: Config): Promise<App> {
     db.close();
   };
 
-  return { app, db, sessions, pairings, hocuspocus: sync.hocuspocus, trash, apiTokens, access, native, imageCleanup, close };
+  return { app, db, sessions, pairings, hocuspocus: sync.hocuspocus, trash, apiTokens, access, native, imageCleanup, imports, close };
 }

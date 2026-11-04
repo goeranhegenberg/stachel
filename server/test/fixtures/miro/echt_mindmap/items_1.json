@@ -1,0 +1,528 @@
+{
+  "size": 16,
+  "limit": 50,
+  "total": 16,
+  "data": [
+    {
+      "id": "3458764689463215517",
+      "type": "data_table_format",
+      "position": {
+        "x": 927.3673110720564,
+        "y": -185.31019332161685,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/data_table_formats/3458764689463215517"
+      },
+      "createdAt": "2026-11-04T20:06:47Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:06:47Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463308211",
+      "type": "paint",
+      "position": {
+        "x": 41.63356766256604,
+        "y": 384.02212926593097,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463308211"
+      },
+      "createdAt": "2026-11-04T20:07:22Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:07:22Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410952",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 233.65714285714282,
+        "height": 109.71428571428571
+      },
+      "position": {
+        "x": 922.4146372081348,
+        "y": 503.2612352498123,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:41Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410953",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 169.19999999999996,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": -417.62704467773455,
+        "y": -133.71428571428635,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410953"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:56Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410955",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 127.30285714285712,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": -395.34133039202027,
+        "y": -44.57142857142918,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410955"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:56Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410957",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 140.1942857142857,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": -402.19847324916304,
+        "y": 44.571428571428044,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410957"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:56Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410959",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 135.35999999999999,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": -399.6270446777346,
+        "y": 133.71428571428618,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410959"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:58Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410961",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 172.42285714285714,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": 419.3413303920199,
+        "y": -133.71428571428635,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410961"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:47Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410963",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 145.0285714285714,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": 404.7699018205915,
+        "y": -44.57142857142918,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410963"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:47Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410965",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 188.53714285714284,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": 427.9127589634486,
+        "y": 44.571428571428044,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410965"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:47Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463410967",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 132.13714285714283,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": 397.9127589634486,
+        "y": 133.71428571428618,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410967"
+      },
+      "createdAt": "2026-11-04T20:08:25Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:08:50Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463411618",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 83.7942857142857,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410961"
+        },
+        "id": "3458764689463410961"
+      },
+      "position": {
+        "x": 335.1428571428571,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463411618"
+      },
+      "createdAt": "2026-11-04T20:09:11Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:09:11Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463411766",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 87.01714285714284,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463411618"
+        },
+        "id": "3458764689463411618"
+      },
+      "position": {
+        "x": 289.714285714286,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463411766"
+      },
+      "createdAt": "2026-11-04T20:09:24Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:09:24Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463411819",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 119.24571428571429,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410953"
+        },
+        "id": "3458764689463410953"
+      },
+      "position": {
+        "x": -352.2857142857142,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463411819"
+      },
+      "createdAt": "2026-11-04T20:09:28Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:09:28Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463411863",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 162.75428571428571,
+        "height": 61.71428571428571
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410955"
+        },
+        "id": "3458764689463410955"
+      },
+      "position": {
+        "x": -353.1428571428572,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463411863"
+      },
+      "createdAt": "2026-11-04T20:09:32Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:09:32Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463519097",
+      "type": "mindmap_node",
+      "geometry": {
+        "width": 172.0,
+        "height": 36.0
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463410952"
+        },
+        "id": "3458764689463410952"
+      },
+      "position": {
+        "x": 236.29999999999995,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items/3458764689463519097"
+      },
+      "createdAt": "2026-11-04T20:09:52Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "isSupported": false,
+      "modifiedAt": "2026-11-04T20:09:52Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/items?limit=50&cursor="
+  },
+  "type": "cursor-list"
+}

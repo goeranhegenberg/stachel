@@ -1,0 +1,1084 @@
+{
+  "data": [
+    {
+      "id": "3458764612360000001",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Stadtfest&nbsp;2027</p>"
+          }
+        },
+        "isRoot": true
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "pill"
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 180.0,
+        "height": 60.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000001"
+      }
+    },
+    {
+      "id": "3458764612360000002",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Programm</p>"
+          }
+        },
+        "direction": "end"
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 300.0,
+        "y": -200.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000002"
+      },
+      "parent": {
+        "id": "3458764612360000001",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000003",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Bands</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 500.0,
+        "y": -260.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000003"
+      },
+      "parent": {
+        "id": "3458764612360000002",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000002"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000004",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Workshops</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 500.0,
+        "y": -200.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000004"
+      },
+      "parent": {
+        "id": "3458764612360000002",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000002"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000005",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Kinder</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 500.0,
+        "y": -140.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000005"
+      },
+      "parent": {
+        "id": "3458764612360000002",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000002"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000006",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Technik</p>"
+          }
+        },
+        "direction": "end"
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 300.0,
+        "y": 150.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000006"
+      },
+      "parent": {
+        "id": "3458764612360000001",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000007",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Strom</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 500.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000007"
+      },
+      "parent": {
+        "id": "3458764612360000006",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000006"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000008",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Licht</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 500.0,
+        "y": 150.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000008"
+      },
+      "parent": {
+        "id": "3458764612360000006",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000006"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000009",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Finanzen</p>"
+          }
+        },
+        "direction": "start"
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": -300.0,
+        "y": -100.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000009"
+      },
+      "parent": {
+        "id": "3458764612360000001",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000010",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Sponsoren</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": -500.0,
+        "y": -160.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000010"
+      },
+      "parent": {
+        "id": "3458764612360000009",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000009"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000011",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Tickets</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": -500.0,
+        "y": -100.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000011"
+      },
+      "parent": {
+        "id": "3458764612360000009",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000009"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000012",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Helfer</p>"
+          }
+        },
+        "direction": "start"
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": -300.0,
+        "y": 200.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000012"
+      },
+      "parent": {
+        "id": "3458764612360000001",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000013",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 4</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 700.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000013"
+      },
+      "parent": {
+        "id": "3458764612360000007",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000007"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000014",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 5</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 900.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000014"
+      },
+      "parent": {
+        "id": "3458764612360000013",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000013"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000015",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 6</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 1100.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000015"
+      },
+      "parent": {
+        "id": "3458764612360000014",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000014"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000016",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 7</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 1300.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000016"
+      },
+      "parent": {
+        "id": "3458764612360000015",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000015"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000017",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 8</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 1500.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000017"
+      },
+      "parent": {
+        "id": "3458764612360000016",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000016"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000018",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 9</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 1700.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000018"
+      },
+      "parent": {
+        "id": "3458764612360000017",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000017"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000019",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 10</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 1900.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000019"
+      },
+      "parent": {
+        "id": "3458764612360000018",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000018"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000020",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 11</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 2100.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000020"
+      },
+      "parent": {
+        "id": "3458764612360000019",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000019"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000021",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 12</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 2300.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000021"
+      },
+      "parent": {
+        "id": "3458764612360000020",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000020"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000022",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ebene 13</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 2500.0,
+        "y": 90.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000022"
+      },
+      "parent": {
+        "id": "3458764612360000021",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000021"
+        }
+      }
+    },
+    {
+      "id": "3458764612360000023",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Ideen</p>"
+          }
+        },
+        "isRoot": true
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "pill"
+      },
+      "position": {
+        "x": 2000.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000023"
+      }
+    },
+    {
+      "id": "3458764612360000024",
+      "type": "mindmap_node",
+      "data": {
+        "nodeView": {
+          "type": "text",
+          "data": {
+            "content": "<p>Foodtrucks</p>"
+          }
+        }
+      },
+      "style": {
+        "nodeColor": "#1a1a1a",
+        "shape": "none"
+      },
+      "position": {
+        "x": 2200.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000024"
+      },
+      "parent": {
+        "id": "3458764612360000023",
+        "links": {
+          "self": "https://api.miro.com/v2-experimental/boards/uXjVNmm0003=/mindmap_nodes/3458764612360000023"
+        }
+      }
+    }
+  ],
+  "size": 24,
+  "limit": 50,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/x/items?limit=50"
+  },
+  "type": "cursor-list"
+}

@@ -1,0 +1,1365 @@
+{
+  "size": 36,
+  "limit": 50,
+  "total": 36,
+  "data": [
+    {
+      "id": "3458764689462895717",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><strong>Fett</strong> und <em>kursiv</em></p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "gray",
+        "textAlign": "left",
+        "textAlignVertical": "top"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895717"
+      },
+      "createdAt": "2026-11-04T20:03:32Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:32Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895725",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Link: <a href=\"https://stachel.intsode.com\">Stachel</a></p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "light_yellow",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 260.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895725"
+      },
+      "createdAt": "2026-11-04T20:03:32Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:32Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895726",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Notiz 3: yellow</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "yellow",
+        "textAlign": "right",
+        "textAlignVertical": "top"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 520.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895726"
+      },
+      "createdAt": "2026-11-04T20:03:33Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:33Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895728",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><u>unterstrichen</u> <s>durchgestrichen</s></p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "orange",
+        "textAlign": "left",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 780.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895728"
+      },
+      "createdAt": "2026-11-04T20:03:33Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:33Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895733",
+      "type": "sticky_note",
+      "data": {
+        "content": "<ol><li>erstens</li><li>zweitens</li></ol>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_green",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 260.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895733"
+      },
+      "createdAt": "2026-11-04T20:03:33Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:33Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895738",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Notiz 6: green</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "green",
+        "textAlign": "right",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 260.0,
+        "y": 260.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895738"
+      },
+      "createdAt": "2026-11-04T20:03:34Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:34Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895741",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><strong>Fett</strong> und <em>kursiv</em></p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "dark_green",
+        "textAlign": "left",
+        "textAlignVertical": "bottom"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 520.0,
+        "y": 260.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895741"
+      },
+      "createdAt": "2026-11-04T20:03:34Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:34Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895748",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Link: <a href=\"https://stachel.intsode.com\">Stachel</a></p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "cyan",
+        "textAlign": "center",
+        "textAlignVertical": "bottom"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 780.0,
+        "y": 260.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895748"
+      },
+      "createdAt": "2026-11-04T20:03:34Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:34Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895750",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Notiz 9: light_pink</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_pink",
+        "textAlign": "right",
+        "textAlignVertical": "bottom"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 520.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895750"
+      },
+      "createdAt": "2026-11-04T20:03:34Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:34Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895753",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><u>unterstrichen</u> <s>durchgestrichen</s></p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "pink",
+        "textAlign": "left",
+        "textAlignVertical": "top"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 260.0,
+        "y": 520.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895753"
+      },
+      "createdAt": "2026-11-04T20:03:35Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:35Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895758",
+      "type": "sticky_note",
+      "data": {
+        "content": "<ol><li>erstens</li><li>zweitens</li></ol>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "violet",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 520.0,
+        "y": 520.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895758"
+      },
+      "createdAt": "2026-11-04T20:03:35Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:35Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895761",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Notiz 12: red</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "red",
+        "textAlign": "right",
+        "textAlignVertical": "top"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 780.0,
+        "y": 520.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895761"
+      },
+      "createdAt": "2026-11-04T20:03:35Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:35Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895764",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><strong>Fett</strong> und <em>kursiv</em></p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_blue",
+        "textAlign": "left",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 780.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895764"
+      },
+      "createdAt": "2026-11-04T20:03:36Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:36Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895765",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Link: <a href=\"https://stachel.intsode.com\">Stachel</a></p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "blue",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 260.0,
+        "y": 780.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895765"
+      },
+      "createdAt": "2026-11-04T20:03:36Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:36Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895768",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Notiz 15: dark_blue</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "dark_blue",
+        "textAlign": "right",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "position": {
+        "x": 520.0,
+        "y": 780.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895768"
+      },
+      "createdAt": "2026-11-04T20:03:36Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:36Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689462895771",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><u>unterstrichen</u> <s>durchgestrichen</s></p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "black",
+        "textAlign": "left",
+        "textAlignVertical": "bottom"
+      },
+      "geometry": {
+        "width": 230.0,
+        "height": 149.82857142857142
+      },
+      "position": {
+        "x": 780.0,
+        "y": 780.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689462895771"
+      },
+      "createdAt": "2026-11-04T20:03:36Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:03:36Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023431",
+      "type": "frame",
+      "data": {
+        "format": "custom",
+        "showContent": true,
+        "title": "Retro-Rahmen",
+        "type": "freeform"
+      },
+      "style": {
+        "fillColor": "#fff9b1"
+      },
+      "geometry": {
+        "width": 1000.0,
+        "height": 700.0
+      },
+      "position": {
+        "x": 1600.0,
+        "y": 300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/frames/3458764689463023431",
+        "related": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items?parent_item_id=3458764689463023431&limit=10&cursor="
+      },
+      "createdAt": "2026-11-04T20:04:34Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:34Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023433",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Was lief gut?</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_green",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 199.99999999999997,
+        "height": 229.14572864321605
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items/3458764689463023431"
+        },
+        "id": "3458764689463023431"
+      },
+      "position": {
+        "x": 150.0,
+        "y": 150.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689463023433"
+      },
+      "createdAt": "2026-11-04T20:04:35Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:35Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023444",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Was lief schlecht?</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_pink",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 199.99999999999997,
+        "height": 229.14572864321605
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items/3458764689463023431"
+        },
+        "id": "3458764689463023431"
+      },
+      "position": {
+        "x": 450.0,
+        "y": 150.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689463023444"
+      },
+      "createdAt": "2026-11-04T20:04:36Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:36Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023459",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><strong>Maßnahmen</strong></p><ul><li>mehr testen</li></ul>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_blue",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 199.99999999999997,
+        "height": 229.14572864321605
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items/3458764689463023431"
+        },
+        "id": "3458764689463023431"
+      },
+      "position": {
+        "x": 750.0,
+        "y": 150.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689463023459"
+      },
+      "createdAt": "2026-11-04T20:04:36Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:36Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023462",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Kind unten links</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "yellow",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "geometry": {
+        "width": 199.99999999999997,
+        "height": 229.14572864321605
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items/3458764689463023431"
+        },
+        "id": "3458764689463023431"
+      },
+      "position": {
+        "x": 150.0,
+        "y": 500.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/sticky_notes/3458764689463023462"
+      },
+      "createdAt": "2026-11-04T20:04:37Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:37Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023464",
+      "type": "text",
+      "data": {
+        "content": "<p>Text im Rahmen</p>"
+      },
+      "style": {
+        "fillColor": "#ffffff",
+        "fillOpacity": "0.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "textAlign": "left",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 300.0
+      },
+      "parent": {
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items/3458764689463023431"
+        },
+        "id": "3458764689463023431"
+      },
+      "position": {
+        "x": 500.0,
+        "y": 600.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/texts/3458764689463023464"
+      },
+      "createdAt": "2026-11-04T20:04:37Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:37Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023467",
+      "type": "image",
+      "data": {
+        "imageUrl": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/resources/images/3458764518316514224?format=preview&redirect=false",
+        "title": "Hochgeladenes PNG"
+      },
+      "geometry": {
+        "width": 64.0,
+        "height": 64.0
+      },
+      "position": {
+        "x": 450.0,
+        "y": 1300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/images/3458764689463023467"
+      },
+      "createdAt": "2026-11-04T20:04:38Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:38Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023469",
+      "type": "text",
+      "data": {
+        "content": "<p>Überschrift groß</p>"
+      },
+      "style": {
+        "fillColor": "#ffffff",
+        "fillOpacity": "0.0",
+        "fontFamily": "open_sans",
+        "fontSize": "64",
+        "textAlign": "left",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 600.0
+      },
+      "position": {
+        "x": 1200.0,
+        "y": 1000.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/texts/3458764689463023469"
+      },
+      "createdAt": "2026-11-04T20:04:38Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:38Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023472",
+      "type": "text",
+      "data": {
+        "content": "<p>Roter Text auf Gelb</p>"
+      },
+      "style": {
+        "fillColor": "#fef445",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "24",
+        "textAlign": "center",
+        "color": "#e6280e"
+      },
+      "geometry": {
+        "width": 300.0
+      },
+      "position": {
+        "x": 1200.0,
+        "y": 1140.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/texts/3458764689463023472"
+      },
+      "createdAt": "2026-11-04T20:04:39Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "group": {
+        "id": "3458764689463023565"
+      },
+      "modifiedAt": "2026-11-04T20:04:47Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023474",
+      "type": "text",
+      "data": {
+        "content": "<p><em>Kleiner kursiver Text</em> mit <a href=\"https://example.org\">Link</a></p>"
+      },
+      "style": {
+        "fillColor": "#ffffff",
+        "fillOpacity": "0.0",
+        "fontFamily": "roboto_mono",
+        "fontSize": "12",
+        "textAlign": "right",
+        "color": "#0ca789"
+      },
+      "geometry": {
+        "width": 280.0000000028571
+      },
+      "position": {
+        "x": 1200.0,
+        "y": 1280.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/texts/3458764689463023474"
+      },
+      "createdAt": "2026-11-04T20:04:39Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:39Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023477",
+      "type": "text",
+      "data": {
+        "content": "<p>gedreht 15°</p>"
+      },
+      "style": {
+        "fillColor": "#ffffff",
+        "fillOpacity": "0.0",
+        "fontFamily": "open_sans",
+        "fontSize": "20",
+        "textAlign": "left",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 200.0,
+        "rotation": 15.0
+      },
+      "position": {
+        "x": 1700.0,
+        "y": 1100.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/texts/3458764689463023477"
+      },
+      "createdAt": "2026-11-04T20:04:39Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:39Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023481",
+      "type": "card",
+      "data": {
+        "description": "<p>Beschreibung mit <strong>fett</strong></p>",
+        "dueDate": "2026-12-01T10:00:00Z",
+        "title": "Karte mit Fälligkeit"
+      },
+      "style": {
+        "cardTheme": "#2d9bf0"
+      },
+      "geometry": {
+        "width": 320.0,
+        "height": 60.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 1700.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/cards/3458764689463023481"
+      },
+      "createdAt": "2026-11-04T20:04:39Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:39Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023482",
+      "type": "card",
+      "data": {
+        "description": "Schlichte Beschreibung",
+        "dueDate": "2027-01-15T00:00:00Z",
+        "title": "Zweite Karte"
+      },
+      "style": {
+        "cardTheme": "#e6280e"
+      },
+      "geometry": {
+        "width": 320.0,
+        "height": 60.0
+      },
+      "position": {
+        "x": 360.0,
+        "y": 1700.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/cards/3458764689463023482"
+      },
+      "createdAt": "2026-11-04T20:04:40Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:40Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023485",
+      "type": "card",
+      "data": {
+        "title": "Karte ohne Datum"
+      },
+      "style": {
+        "cardTheme": "#8fd14f"
+      },
+      "geometry": {
+        "width": 320.0,
+        "height": 60.0
+      },
+      "position": {
+        "x": 720.0,
+        "y": 1700.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/cards/3458764689463023485"
+      },
+      "createdAt": "2026-11-04T20:04:40Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:40Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023546",
+      "type": "shape",
+      "data": {
+        "content": "<p>Gruppe 1</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "#d5f692",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "2.0",
+        "borderOpacity": "0.0",
+        "borderStyle": "normal",
+        "textAlign": "left",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 180.0,
+        "height": 120.0
+      },
+      "position": {
+        "x": 1300.0,
+        "y": 1700.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/shapes/3458764689463023546"
+      },
+      "createdAt": "2026-11-04T20:04:46Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "group": {
+        "id": "3458764689463023565"
+      },
+      "modifiedAt": "2026-11-04T20:04:47Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023553",
+      "type": "shape",
+      "data": {
+        "content": "<p>Gruppe 2</p>",
+        "shape": "circle"
+      },
+      "style": {
+        "fillColor": "#d5f692",
+        "fillOpacity": "1.0",
+        "fontFamily": "open_sans",
+        "fontSize": "14",
+        "borderColor": "#1a1a1a",
+        "borderWidth": "2.0",
+        "borderOpacity": "0.0",
+        "borderStyle": "normal",
+        "textAlign": "left",
+        "textAlignVertical": "top",
+        "color": "#1a1a1a"
+      },
+      "geometry": {
+        "width": 180.0,
+        "height": 120.0
+      },
+      "position": {
+        "x": 1520.0,
+        "y": 1700.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/shapes/3458764689463023553"
+      },
+      "createdAt": "2026-11-04T20:04:46Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "group": {
+        "id": "3458764689463023565"
+      },
+      "modifiedAt": "2026-11-04T20:04:47Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023570",
+      "type": "embed",
+      "data": {
+        "contentType": "video",
+        "description": "Microplastics are accumulating in human brains at an alarming rate https://www.youtube.com/watch?v&#61;0PT5c1z3LL8 &#34;Nanoplastics and Human Health&#34; with Matthew J Campen, PhD, MSPH https://www.youtube.com/watch?v&#61;RRBN_4L09Mg 00:00 Intro 00:05 The cool thing 00:17 End",
+        "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FjNQXAC9IVRw%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjNQXAC9IVRw&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FjNQXAC9IVRw%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube\" width=\"640\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture\" allowfullscreen=\"true\"></iframe>",
+        "mode": "inline",
+        "previewUrl": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/resources/images/3458764518316468712?format=preview&redirect=false",
+        "providerName": "YouTube",
+        "providerUrl": "https://www.youtube.com/",
+        "title": "Me at the zoo",
+        "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+      },
+      "geometry": {
+        "width": 480.0,
+        "height": 360.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 2200.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/embeds/3458764689463023570"
+      },
+      "createdAt": "2026-11-04T20:04:48Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:48Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023573",
+      "type": "document",
+      "data": {
+        "documentUrl": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/resources/documents/3458764518316489492?redirect=false",
+        "title": "Dummy-PDF"
+      },
+      "geometry": {
+        "width": 300.0,
+        "height": 424.5378151260504
+      },
+      "position": {
+        "x": 650.0,
+        "y": 2200.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/documents/3458764689463023573"
+      },
+      "createdAt": "2026-11-04T20:04:49Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:49Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463023574",
+      "type": "app_card",
+      "data": {
+        "description": "<p>Beschreibung der App-Karte</p>",
+        "fields": [
+          {
+            "fillColor": "#2d9bf0",
+            "iconShape": "round",
+            "textColor": "#ffffff",
+            "tooltip": "Status",
+            "value": "In Arbeit"
+          },
+          {
+            "fillColor": "#e6280e",
+            "textColor": "#ffffff",
+            "value": "Prio hoch"
+          }
+        ],
+        "owned": true,
+        "status": "connected",
+        "title": "App-Karte Ticket"
+      },
+      "style": {
+        "fillColor": "#2d9bf0"
+      },
+      "geometry": {
+        "width": 320.0,
+        "height": 60.0
+      },
+      "position": {
+        "x": 1100.0,
+        "y": 2200.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/app_cards/3458764689463023574"
+      },
+      "createdAt": "2026-11-04T20:04:49Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:04:49Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    },
+    {
+      "id": "3458764689463140251",
+      "type": "image",
+      "data": {
+        "imageUrl": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/resources/images/3458764518316503447?format=preview&redirect=false",
+        "title": "Bild per URL"
+      },
+      "geometry": {
+        "width": 320.0,
+        "height": 108.08652246256239
+      },
+      "position": {
+        "x": -500.0,
+        "y": 1300.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/images/3458764689463140251"
+      },
+      "createdAt": "2026-11-04T20:05:44Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-11-04T20:05:44Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items?limit=50&cursor="
+  },
+  "type": "cursor-list"
+}

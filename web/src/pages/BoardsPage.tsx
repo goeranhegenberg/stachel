@@ -18,6 +18,7 @@ import './boards-live.css';
 // Modus local: Filter, Teilen, Rolle, Konto-Link, Impressum (pages/account/)
 import { BoardShareDialog, OwnerFilterBar, RoleTag, shareAction, useLocalBoards } from './account/boardsLocal';
 import { LegalFooter } from './account/Footer';
+import { ImportEntry } from '../features/import';
 
 /** Vorschaubild: vom Server (Modul tools), sonst zuletzt gesehener Inhalt (lokal), sonst leer (Punktraster). */
 function BoardThumb({ board }: { board: BoardInfo }) {
@@ -516,9 +517,13 @@ export function BoardsPage({ user, onLoggedOut }: { user: User; onLoggedOut: () 
             <span className="boards-head__kicker">{localMode.local ? localMode.brand : (localMode.orgName ?? localMode.brand)}</span>
             <h1>Boards</h1>
           </div>
-          <button className="btn btn--green boards-head__new" onClick={() => setDialog({ kind: 'create' })}>
-            <IconPlus size={20} /> Neues Board
-          </button>
+          <div className="boards-head__actions">
+            {/* Import aus anderen Whiteboards (features/import), nur wenn die Instanz ihn anbietet */}
+            <ImportEntry onImported={load} />
+            <button className="btn btn--green boards-head__new" onClick={() => setDialog({ kind: 'create' })}>
+              <IconPlus size={20} /> Neues Board
+            </button>
+          </div>
         </div>
 
         {actionError && (

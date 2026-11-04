@@ -1,0 +1,10 @@
+{
+  "data": [],
+  "size": 0,
+  "limit": 10,
+  "total": 0,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVNmm0003=/groups"
+  },
+  "type": "cursor-list"
+}

@@ -153,6 +153,46 @@ ihres Herausgebers im App-Store. [Streichen, wenn die Instanz nicht mit der App 
 lit. b DSGVO bei Fragen zu Ihrem Konto, sonst lit. f; bei Anträgen zu Ihren Rechten lit. c). Wir löschen sie, wenn das
 Anliegen erledigt ist, Anfragen zu Ihren Rechten nach Ablauf von drei Jahren (Nachweis).</p>
 
+<!-- Abschnitt 3.13 „Import aus Miro“: streichen, wenn STACHEL_IMPORT=off gesetzt ist (dann auch die Zeilen in 4, 5 und 6). -->
+<h3>3.13 Import aus Miro</h3>
+<p>Auf Ihren Wunsch übernehmen wir Boards aus Ihrem Konto beim Whiteboard-Dienst Miro als neue Boards in Stachel
+(„Board importieren“ → „Aus Miro“, in der App oder über einen KI-Assistenten). Miro betreibt die
+<strong>RealtimeBoard, Inc.</strong> (dba Miro), 315 Montgomery Street, Suite 900, San Francisco, CA 94104, USA; ihr
+Vertreter in der EU (Art. 27 DSGVO) ist die RealtimeBoard B.V., Singel 542, 1017 AZ Amsterdam, Niederlande. Miro ist
+eine Marke der RealtimeBoard, Inc. Stachel steht in keiner Verbindung zu Miro.</p>
+<p><strong>Welche Daten:</strong> Nur wenn Sie den Import starten, und nur für die Boards, die Sie auswählen, ruft unser
+Server über die Programmierschnittstelle (REST-API) von Miro deren Inhalte ab: Name und Beschreibung des Boards, Notizen,
+Texte, Formen, Karten, Rahmen, Verbinder, Tags, Mindmaps, Bilder und Dokumente (PDF). Für die Auswahl zeigen wir Ihnen die
+Liste Ihrer Miro-Boards (Name, Beschreibung, Änderungsdatum), ohne sie zu speichern. <strong>Nicht</strong> übernommen
+werden Personendaten aus Miro wie Ersteller, Zuständige, Mitglieder oder Ihr Miro-Profil. Die Inhalte selbst können
+Personendaten enthalten (z. B. Namen auf Notizen, Fotos); aus Bildern entfernen wir eingebettete Metadaten wie bei einem
+Upload. Es gibt keinen Abgleich im Hintergrund: Nach dem Import besteht keine Verbindung zwischen dem neuen Board und
+Miro.</p>
+<p><strong>Zugang zu Miro</strong> – Sie wählen einen von zwei Wegen:
+(a) <strong>persönliches Zugriffstoken</strong>, das Sie in Miro erzeugen und bei uns einfügen: Wir halten es nur im
+Arbeitsspeicher des Servers, an Ihr Konto gebunden und höchstens 60 Minuten – nicht in der Datenbank und nicht im
+Protokoll. Die dafür angelegte App können Sie danach in Miro löschen.
+(b) <strong>„Mit Miro verbinden“</strong> [nur, wenn Sie eine eigene Miro-App eingerichtet haben (MIRO_CLIENT_ID),
+sonst streichen]: Sie bestätigen auf einer Seite von Miro den Zugriff unserer Miro-App „[Name Ihrer Miro-App, z. B.
+Instanzname und „Import“]“ (nur Lesen von Boards, Berechtigung <code>boards:read</code>).
+Das kurzlebige Zugriffstoken halten wir nur im Arbeitsspeicher. Das Token zum Erneuern (Refresh-Token) speichern wir
+verschlüsselt und an Ihr Konto gebunden, bis Sie „Verbindung trennen“ wählen (wir widerrufen es dann auch bei Miro), Ihr
+Konto löschen oder 60 Tage lang nichts importieren. Ihr Miro-Passwort erhalten wir nie; die Anmeldung bei Miro
+verarbeitet Miro selbst.</p>
+<p><strong>Was Miro dabei erfährt:</strong> Bei jedem Abruf erhält Miro das Zugriffstoken, die angefragten
+Board-Kennungen und die IP-Adresse unseres Servers, also dass Ihr Miro-Zugang für einen Import genutzt wird. Weitere Daten
+aus Stachel geben wir nicht an Miro. Miro verarbeitet Daten auch in den USA; die RealtimeBoard, Inc. ist nach dem
+EU-U.S. Data Privacy Framework zertifiziert (Angemessenheitsbeschluss der EU-Kommission, Art. 45 DSGVO). Für die
+Verarbeitung bei Miro ist Miro verantwortlich; es gilt die
+<a href="https://miro.com/legal/privacy-policy/" rel="noopener">Datenschutzerklärung von Miro</a>.</p>
+<p><strong>Import-Berichte:</strong> Zu jedem Import speichern wir einen Bericht (Kennung und Name des Miro-Boards, neues
+Board, Zeitpunkt, Status, Zahl übernommener und nicht übernommener Objekte, ggf. Fehlermeldung). Sie sehen ihn 7 Tage;
+nach 30 Tagen löschen wir ihn, mit Ihrem Konto sofort. Er ist in „Meine Daten herunterladen“ enthalten. Das Protokoll des
+Servers enthält zum Import nur Kennungen, Zahlen und Fehlerarten, keine Inhalte und keine Tokens. Das importierte Board
+behandeln wir wie jedes andere Board (Abschnitt 3.4).</p>
+<p>Zweck: Übernahme Ihrer eigenen Inhalte auf Ihren Wunsch (Datenübertragbarkeit). Rechtsgrundlage: Art. 6 Abs. 1 lit. b
+DSGVO; soweit die Inhalte Daten anderer Personen enthalten, gilt Abschnitt 3.4.</p>
+
 <h2>4. Empfänger und Auftragsverarbeiter</h2>
 <ul>
   <li><strong>Hosting:</strong> [Name und Anschrift des Hosting-Anbieters, Standort der Server] – Auftragsverarbeiter nach Art. 28 DSGVO.</li>
@@ -161,10 +201,13 @@ Anliegen erledigt ist, Anfragen zu Ihren Rechten nach Ablauf von drei Jahren (Na
   <li><strong>Andere Nutzerinnen und Nutzer:</strong> Inhalte eines Boards und Ihr Name sind für die Personen sichtbar,
     mit denen das Board geteilt ist; Ihre E-Mail-Adresse sieht nur, wer das Board verwaltet.</li>
   <li><strong>KI-Anbieter, die Sie selbst verbinden</strong> (Abschnitt 3.9) – auf Ihre Veranlassung.</li>
+  <li><strong>Miro</strong> (RealtimeBoard, Inc., USA) – nur, wenn Sie einen Import aus Miro starten (Abschnitt 3.13).</li>
   <li><strong>Behörden und Gerichte:</strong> nur, wenn wir gesetzlich dazu verpflichtet sind.</li>
 </ul>
 <p>Eine Übermittlung in Länder außerhalb der EU bzw. des EWR durch uns findet nicht statt. Zu KI-Assistenten, die Sie
 selbst verbinden, siehe Abschnitt 3.9.</p>
+<p>Ausnahme: Beim Import aus Miro (Abschnitt 3.13) senden wir auf Ihren Wunsch Zugriffstoken und Board-Kennungen an Miro
+in den USA (Angemessenheitsbeschluss zum EU-U.S. Data Privacy Framework, Art. 45 DSGVO).</p>
 
 <h2>5. Speicherdauer</h2>
 <div class="table"><table>
@@ -181,6 +224,9 @@ selbst verbinden, siehe Abschnitt 3.9.</p>
   <tr><td>Persönliche API-Zugänge</td><td>bis zum Widerruf, verfallen nach 12 Monaten ohne Nutzung</td></tr>
   <tr><td>Meldungen</td><td>bis zur Entscheidung, danach 1 Jahr (Nachweis, Widerspruchsfrist); Ihre E-Mail-Adresse darin wird mit Ihrem Konto gelöscht</td></tr>
   <tr><td>Blockierte Personen, Sperren</td><td>bis zum Aufheben bzw. bis zur Löschung des Kontos</td></tr>
+  <tr><td>Import aus Miro: persönliches Zugriffstoken</td><td>nur im Arbeitsspeicher, höchstens 60 Minuten</td></tr>
+  <tr><td>Import aus Miro: Verbindung („Mit Miro verbinden“)</td><td>bis zum Trennen oder zur Löschung des Kontos, spätestens 60 Tage nach dem letzten Import</td></tr>
+  <tr><td>Import-Berichte</td><td>30 Tage (sichtbar 7 Tage), mit Ihrem Konto sofort</td></tr>
   <tr><td>Zähler gegen Missbrauch, Captcha</td><td>höchstens 1 Stunde</td></tr>
   <tr><td>Zugriffsprotokoll des Webservers</td><td>[z. B. 14 Tage]</td></tr>
   <tr><td>Protokoll des Stachel-Servers (IP gekürzt)</td><td>fortlaufend überschrieben, höchstens 30 MB</td></tr>
@@ -200,6 +246,8 @@ gehören, wählen Sie: endgültig löschen oder an eine Person mit Zugriff über
 <strong>anderer</strong> beigetragen haben (Notizen, Kommentare, Reaktionen, Stimmen), bleibt dort als Teil der
 gemeinsamen Arbeit erhalten; Ihr Name wird dort und im Versionsverlauf durch „Gelöschtes Konto“ ersetzt. Sie erhalten
 eine Bestätigung per E-Mail.</p>
+<p>Ebenfalls sofort gelöscht werden Ihre Import-Berichte und eine gespeicherte Verbindung zu Miro (die wir dabei auch
+bei Miro widerrufen, Abschnitt 3.13).</p>
 
 <h2>7. Ihre Rechte</h2>
 <p>Sie haben das Recht auf</p>

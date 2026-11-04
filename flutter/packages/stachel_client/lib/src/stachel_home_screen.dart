@@ -7,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stachel_board/stachel_board.dart';
 
 import 'stachel_boards_api.dart';
+import 'stachel_import_api.dart';
+import 'stachel_import_screen.dart';
 import 'stachel_licenses.dart';
 import 'stachel_moderation.dart';
 import 'stachel_offline.dart';
@@ -87,6 +89,9 @@ class _StachelHomeScreenState extends State<StachelHomeScreen> {
   StachelSort _sort = StachelSort.recent;
   StachelOwnerFilter _filter = StachelOwnerFilter.all;
   bool _trashOpen = false;
+
+  /// What the instance offers for „Board importieren“ (null = unknown / not offered).
+  StachelImportSources? _importSources;
 
   /// Board of the open rename/delete dialog (closed when someone else deletes it, A14) and whether it is the delete
   /// confirmation (own deletion: the „RÜCKGÄNGIG“ hint follows instead).
@@ -181,6 +186,7 @@ class _StachelHomeScreenState extends State<StachelHomeScreen> {
     }
     await _load();
     if (!mounted) return;
+    unawaited(_loadImportSources());
     _events = _boards.events().listen(
       _onEvent,
       onError: (Object e) {
@@ -327,6 +333,33 @@ class _StachelHomeScreenState extends State<StachelHomeScreen> {
       if (b.template) b,
   ]);
 
+  /// Whether the instance offers an import (`GET /api/import/sources`); older servers or errors: no entry.
+  Future<void> _loadImportSources() async {
+    final boards = _boards;
+    if (boards is! HttpStachelBoardsApi) return;
+    try {
+      final s = await StachelImportApi(boards).sources();
+      if (mounted) setState(() => _importSources = s);
+    } on StachelException catch (_) {}
+  }
+
+  /// „Board importieren“ (docs/features/import.md); afterwards the list reloads and „Board öffnen“ opens the board.
+  Future<void> _import() async {
+    final boards = _boards;
+    if (boards is! HttpStachelBoardsApi) return;
+    final open = await showStachelImport(
+      context,
+      api: StachelImportApi(boards),
+      sources: _importSources,
+      launcher: widget.launcher,
+      onImported: () => _reloadSoon(),
+      onLoginLost: _fail,
+    );
+    if (!mounted) return;
+    unawaited(_load(quiet: true));
+    if (open != null) await _openBoard(open.id, title: open.title);
+  }
+
   /// „Neues Board“ (A08) – optionally from [template] (A09 „Verwenden“, „Board daraus anlegen“).
   Future<void> _newBoard({StachelBoardInfo? template}) async {
     final admin = _admin;
@@ -335,6 +368,7 @@ class _StachelHomeScreenState extends State<StachelHomeScreen> {
       templates: admin == null ? const [] : _templates,
       initialTemplate: template,
       thumbnail: _boards.thumbnail,
+      onImport: _importSources?.available == true ? () => unawaited(_import()) : null,
       onCreate: (title, templateId) async {
         final b = templateId != null && admin != null
             ? await admin.duplicateBoard(templateId, title: title)

@@ -1,0 +1,46 @@
+/* Knopf „Board importieren“ auf der Board-Übersicht (features/import/entry.tsx). */
+.import-entry {
+  height: 50px;
+  padding: 0 22px;
+  font-size: 18px;
+  background: #fff;
+}
+.import-entry__run {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 2px;
+  padding: 2px 9px 2px 8px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+.import-entry__run::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink);
+  animation: import-pulse 1.1s ease-in-out infinite;
+}
+.import-entry:hover:not([disabled]) .import-entry__run {
+  box-shadow: 0 0 0 1.5px #fff;
+}
+@keyframes import-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .import-entry__run::before {
+    animation: none;
+  }
+}
+@media (max-width: 620px) {
+  .import-entry {
+    width: 100%;
+    height: 46px;
+  }
+}

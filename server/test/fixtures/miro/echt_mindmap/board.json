@@ -1,0 +1,77 @@
+{
+  "id": "uXjVERwbpEU=",
+  "type": "board",
+  "name": "Stachel Test Mindmap",
+  "description": "Testdaten für den Stachel-Import: Mindmap, Kommentar, Tabelle, Freihand",
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D",
+    "related": "https://api.miro.com/v2/boards/uXjVERwbpEU%3D/members?limit=20&offset=0"
+  },
+  "organization": {
+    "id": "3458764500000000098",
+    "type": "organization"
+  },
+  "createdAt": "2026-11-04T19:53:17Z",
+  "createdBy": {
+    "id": "3458764500000000001",
+    "type": "user",
+    "name": "Person A"
+  },
+  "currentUserMembership": {
+    "id": "3458764500000000001",
+    "type": "board_member",
+    "name": "Person A",
+    "role": "owner"
+  },
+  "lastOpenedAt": "2026-11-04T20:11:04Z",
+  "lastOpenedBy": {
+    "id": "3458764500000000001",
+    "type": "user",
+    "name": "Person A"
+  },
+  "modifiedAt": "2026-11-04T20:09:52Z",
+  "modifiedBy": {
+    "id": "3458764500000000001",
+    "type": "user",
+    "name": "Person A"
+  },
+  "owner": {
+    "id": "3458764500000000001",
+    "type": "user",
+    "name": "Person A"
+  },
+  "permissionsPolicy": {
+    "collaborationToolsStartAccess": "all_editors",
+    "copyAccess": "anyone",
+    "copyAccessLevel": "anyone",
+    "sharingAccess": "team_members_with_editing_rights"
+  },
+  "policy": {
+    "permissionsPolicy": {
+      "collaborationToolsStartAccess": "all_editors",
+      "copyAccess": "anyone",
+      "copyAccessLevel": "anyone",
+      "sharingAccess": "team_members_with_editing_rights"
+    },
+    "sharingPolicy": {
+      "access": "private",
+      "accessPasswordRequired": false,
+      "inviteToAccountAndBoardLinkAccess": "editor",
+      "organizationAccess": "private",
+      "teamAccess": "edit"
+    }
+  },
+  "sharingPolicy": {
+    "access": "private",
+    "accessPasswordRequired": false,
+    "inviteToAccountAndBoardLinkAccess": "editor",
+    "organizationAccess": "private",
+    "teamAccess": "edit"
+  },
+  "team": {
+    "id": "3458764500000000099",
+    "type": "team",
+    "name": "Team"
+  },
+  "viewLink": "https://miro.com/app/board/uXjVERwbpEU="
+}

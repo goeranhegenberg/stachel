@@ -1,0 +1,51 @@
+{
+  "id": "uXjVNfl0002=",
+  "type": "board",
+  "name": "Ablauf Anmeldung",
+  "description": "",
+  "createdAt": "2026-10-01T09:00:00Z",
+  "createdBy": {
+    "id": "3458764500000000001",
+    "name": "Person A",
+    "type": "user"
+  },
+  "modifiedAt": "2026-10-01T09:00:00Z",
+  "modifiedBy": {
+    "id": "3458764500000000001",
+    "name": "Person A",
+    "type": "user"
+  },
+  "owner": {
+    "id": "3458764500000000001",
+    "name": "Person A",
+    "type": "user"
+  },
+  "team": {
+    "id": "3458764500000000099",
+    "name": "Team",
+    "type": "team"
+  },
+  "viewLink": "https://miro.com/app/board/uXjVNfl0002=",
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVNfl0002="
+  },
+  "policy": {
+    "permissionsPolicy": {
+      "collaborationToolsStartAccess": "all_editors",
+      "copyAccess": "anyone",
+      "sharingAccess": "team_members_with_editing_rights"
+    },
+    "sharingPolicy": {
+      "access": "private",
+      "inviteToAccountAndBoardLinkAccess": "no_access",
+      "organizationAccess": "private",
+      "teamAccess": "edit"
+    }
+  },
+  "currentUserMembership": {
+    "id": "3458764500000000001",
+    "name": "Person A",
+    "role": "owner",
+    "type": "board_member"
+  }
+}

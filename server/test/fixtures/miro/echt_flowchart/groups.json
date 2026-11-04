@@ -1,0 +1,9 @@
+{
+  "size": 0,
+  "limit": 10,
+  "data": [],
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVER3yaiw%3D/items?limit=10&cursor="
+  },
+  "type": "cursor-list"
+}

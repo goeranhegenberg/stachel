@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "fillColor": "red",
+      "id": "3458764612340000027",
+      "title": "Dringend",
+      "type": "tag"
+    },
+    {
+      "fillColor": "light_green",
+      "id": "3458764612340000028",
+      "title": "Erledigt",
+      "type": "tag"
+    },
+    {
+      "fillColor": "dark_blue",
+      "id": "3458764612340000029",
+      "title": "Orga",
+      "type": "tag"
+    },
+    {
+      "fillColor": "violet",
+      "id": "3458764612340000030",
+      "title": "Ein ausgesprochen langer Tag-Name, der die Grenze sprengt",
+      "type": "tag"
+    }
+  ],
+  "limit": 20,
+  "offset": 0,
+  "size": 4,
+  "total": 4,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/tags?limit=20&offset=0"
+  },
+  "type": "list"
+}

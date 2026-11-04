@@ -1,0 +1,48 @@
+{
+  "size": 4,
+  "offset": 0,
+  "limit": 20,
+  "total": 4,
+  "data": [
+    {
+      "id": "3458764689457308587",
+      "type": "tag",
+      "title": "Wichtig",
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/tags/3458764689457308587"
+      },
+      "fillColor": "red"
+    },
+    {
+      "id": "3458764689458874643",
+      "type": "tag",
+      "title": "Idee",
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/tags/3458764689458874643"
+      },
+      "fillColor": "light_green"
+    },
+    {
+      "id": "3458764689460869596",
+      "type": "tag",
+      "title": "Frage",
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/tags/3458764689460869596"
+      },
+      "fillColor": "blue"
+    },
+    {
+      "id": "3458764689460869597",
+      "type": "tag",
+      "title": "Später",
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/tags/3458764689460869597"
+      },
+      "fillColor": "yellow"
+    }
+  ],
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/tags?limit=20&offset=0"
+  },
+  "type": "list"
+}

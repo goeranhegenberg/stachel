@@ -1,0 +1,420 @@
+{
+  "data": [
+    {
+      "id": "3458764612340000001",
+      "type": "frame",
+      "data": {
+        "format": "custom",
+        "showContent": true,
+        "title": "Was lief gut?",
+        "type": "freeform"
+      },
+      "style": {
+        "fillColor": "#ffffffff"
+      },
+      "position": {
+        "x": -700.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 1200.0,
+        "height": 900.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/frames/3458764612340000001"
+      }
+    },
+    {
+      "id": "3458764612340000002",
+      "type": "frame",
+      "data": {
+        "format": "custom",
+        "showContent": true,
+        "title": "Was machen wir besser?",
+        "type": "freeform"
+      },
+      "style": {
+        "fillColor": "#f5f6f8"
+      },
+      "position": {
+        "x": 700.0,
+        "y": 0.0,
+        "origin": "center",
+        "relativeTo": "canvas_center"
+      },
+      "geometry": {
+        "width": 1200.0,
+        "height": 900.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/frames/3458764612340000002"
+      }
+    },
+    {
+      "id": "3458764612340000003",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Tolle Stimmung beim Aufbau</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_yellow",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": 150.0,
+        "y": 164.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000003"
+      },
+      "parent": {
+        "id": "3458764612340000001",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612340000004",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p><strong>Catering</strong> war p&uuml;nktlich&nbsp;&amp; lecker</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "light_green",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": 400.0,
+        "y": 164.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000004"
+      },
+      "parent": {
+        "id": "3458764612340000001",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612340000005",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Viele neue Helfer:innen</p><p>&#8203;</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "cyan",
+        "textAlign": "left",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": 650.0,
+        "y": 164.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000005"
+      },
+      "parent": {
+        "id": "3458764612340000001",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612340000006",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Bühne&nbsp;stand <em>pünktlich</em></p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "orange",
+        "textAlign": "center",
+        "textAlignVertical": "middle"
+      },
+      "position": {
+        "x": 150.0,
+        "y": 450.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000006"
+      },
+      "parent": {
+        "id": "3458764612340000001",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612340000007",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Lange Version</p>",
+        "shape": "rectangle"
+      },
+      "style": {
+        "fillColor": "violet",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": 525.0,
+        "y": 450.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 350.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000007"
+      },
+      "parent": {
+        "id": "3458764612340000001",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000001"
+        }
+      }
+    },
+    {
+      "id": "3458764612340000008",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Kassensystem langsam</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "red",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": 150.0,
+        "y": 164.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000008"
+      },
+      "parent": {
+        "id": "3458764612340000002",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000002"
+        }
+      }
+    },
+    {
+      "id": "3458764612340000009",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Mehr Schatten</p><p>auf dem Platz</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "pink",
+        "textAlign": "right",
+        "textAlignVertical": "bottom"
+      },
+      "position": {
+        "x": 400.0,
+        "y": 164.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000009"
+      },
+      "parent": {
+        "id": "3458764612340000002",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000002"
+        }
+      }
+    },
+    {
+      "id": "3458764612340000010",
+      "type": "sticky_note",
+      "data": {
+        "content": "<p>Toiletten&shy;wagen fr&uuml;her bestellen</p>",
+        "shape": "square"
+      },
+      "style": {
+        "fillColor": "black",
+        "textAlign": "center",
+        "textAlignVertical": "top"
+      },
+      "position": {
+        "x": 650.0,
+        "y": 164.0,
+        "origin": "center",
+        "relativeTo": "parent_top_left"
+      },
+      "geometry": {
+        "width": 199.0,
+        "height": 228.0
+      },
+      "createdAt": "2026-10-01T09:00:00Z",
+      "createdBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "modifiedAt": "2026-10-01T09:00:00Z",
+      "modifiedBy": {
+        "id": "3458764500000000001",
+        "type": "user"
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/sticky_notes/3458764612340000010"
+      },
+      "parent": {
+        "id": "3458764612340000002",
+        "links": {
+          "self": "https://api.miro.com/v2/boards/uXjVNwk0001=/items/3458764612340000002"
+        }
+      }
+    }
+  ],
+  "size": 10,
+  "limit": 50,
+  "links": {
+    "self": "https://api.miro.com/v2/boards/x/items?limit=50",
+    "next": "https://api.miro.com/v2/boards/x/items?limit=50&cursor=MzQ1ODc2NDYxMjM0MDAwMDAxMA=="
+  },
+  "type": "cursor-list",
+  "cursor": "MzQ1ODc2NDYxMjM0MDAwMDAxMA=="
+}

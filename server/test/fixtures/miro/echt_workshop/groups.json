@@ -1,0 +1,24 @@
+{
+  "size": 1,
+  "limit": 10,
+  "data": [
+    {
+      "id": "3458764689463023565",
+      "type": "group",
+      "data": {
+        "items": [
+          "3458764689463023472",
+          "3458764689463023546",
+          "3458764689463023553"
+        ]
+      },
+      "links": {
+        "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/groups/3458764689463023565"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.miro.com/v2/boards/uXjVER3u8pE%3D/items?limit=10&cursor="
+  },
+  "type": "cursor-list"
+}

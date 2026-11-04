@@ -31,6 +31,9 @@ file, no trackers, no external calls.
   [`flutter/`](flutter/).
 - **AI access (MCP):** an optional [Model Context Protocol](https://modelcontextprotocol.io) server lets assistants such as
   Claude read and design boards live, with screenshots for self-checks ([`docs/features/mcp.md`](docs/features/mcp.md)).
+- **Import from Miro** via the Miro REST API: copy your own boards into new Stachel boards with a personal access token or
+  by connecting through your own Miro app ([`docs/selfhosting.md`](docs/selfhosting.md#import-from-miro)). Miro is a
+  trademark of RealtimeBoard, Inc.; Stachel is not affiliated with Miro.
 - **Privacy by design:** self-hosted fonts, no CDN, no analytics; Content-Security-Policy `default-src 'self'`.
 
 The user interface is currently **German**.
@@ -158,6 +161,14 @@ Without `STACHEL_SMTP_HOST` no mail leaves the server: messages including their 
 The MCP container (`ghcr.io/goeranhegenberg/stachel-mcp`) reads `STACHEL_URL` (address of Stachel, e.g.
 `http://stachel:8080`), `PORT` (`8096`), `HOST`, `MCP_PATH` (`/mcp`), `STACHEL_WEB_URL` (web app for screenshots, default
 `STACHEL_URL`), `STACHEL_MCP_BROWSER`, `STACHEL_MCP_SHOT_TIMEOUT_MS` and `MCP_TARBALL`.
+
+### Import from Miro
+
+| Variable | Default | Description |
+|---|---|---|
+| `STACHEL_IMPORT` | `on` | `off` switches the import off completely. |
+| `STACHEL_IMPORT_MIRO_TOKEN` | `on` | `off`: no pasting of personal Miro access tokens. |
+| `MIRO_CLIENT_ID` / `MIRO_CLIENT_SECRET` | – | Your own Miro app for „Mit Miro verbinden“ (OAuth, scope `boards:read`, redirect URI `<PUBLIC_URL>/api/import/miro/callback`); setup and limits in [docs/selfhosting.md](docs/selfhosting.md#import-from-miro). |
 
 ### Native apps
 

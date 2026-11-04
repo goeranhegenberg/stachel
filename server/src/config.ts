@@ -69,6 +69,82 @@ export interface Config {
   /** Ringpuffer für Resume: höchstens so viele Patches und so alt */
   nativeBufferMax: number;
   nativeBufferMs: number;
+  /** Import aus anderen Whiteboards (docs/features/import.md §5, server/src/import/) */
+  import: ImportConfig;
+}
+
+/** Import aus Miro (docs/features/import.md §5). */
+export interface ImportConfig {
+  /** STACHEL_IMPORT ≠ off */
+  enabled: boolean;
+  /** persönliches Zugriffstoken einfügen (STACHEL_IMPORT_MIRO_TOKEN ≠ off) */
+  tokenEnabled: boolean;
+  /** „Mit Miro verbinden“: MIRO_CLIENT_ID und MIRO_CLIENT_SECRET gesetzt, Redirect Vorgabe <PUBLIC_URL>/api/import/miro/callback */
+  oauth: { clientId: string; clientSecret: string; redirectUri: string } | null;
+  /** gleichzeitige Importe der Instanz (STACHEL_IMPORT_CONCURRENCY) */
+  concurrency: number;
+  /** Boards je Person und Tag (STACHEL_IMPORTS_PER_DAY, 0 = unbegrenzt) */
+  perDay: number;
+  /** Objekte je Board (STACHEL_IMPORT_MAX_OBJECTS) */
+  maxObjects: number;
+  /** Bilder/Dokumente je Board (STACHEL_IMPORT_MAX_IMAGES) */
+  maxImages: number;
+  /** zusätzliche erlaubte Datei-Hosts (STACHEL_IMPORT_MIRO_HOSTS, `*.` erlaubt) */
+  extraHosts: string[];
+  /** REST-API (Standard https://api.miro.com; STACHEL_IMPORT_MIRO_API_BASE nur für Tests/Entwicklung) */
+  apiBase: string;
+  /** Freigabeseite (Standard https://miro.com; STACHEL_IMPORT_MIRO_AUTH_BASE nur für Tests/Entwicklung) */
+  authBase: string;
+  /**
+   * Hosts (`host:port`) aus STACHEL_IMPORT_MIRO_API_BASE/-AUTH_BASE: dort sind auch http und lokale Adressen erlaubt
+   * (Fake-Miro in Tests und Sandbox). Leer im Betrieb.
+   */
+  devHosts: string[];
+}
+
+export const MIRO_API_BASE = 'https://api.miro.com';
+export const MIRO_AUTH_BASE = 'https://miro.com';
+
+/** Abschnitt `import` aus der Umgebung (docs/features/import.md §5). */
+export function loadImportConfig(env: NodeJS.ProcessEnv, publicUrl: string): ImportConfig {
+  const off = (v: string | undefined) => (v ?? '').trim().toLowerCase() === 'off' || (v ?? '').trim() === '0' || (v ?? '').trim().toLowerCase() === 'false';
+  const num = (v: string | undefined, def: number, min: number, max: number) => {
+    const n = Number(str(v, String(def)));
+    if (!Number.isFinite(n) || n < 0) throw new Error(`Ungültiger Wert „${v}“: erwartet eine Zahl ≥ 0`);
+    return Math.min(max, Math.max(min, Math.floor(n)));
+  };
+  const devBase = (v: string | undefined): string | null => {
+    const s = (v ?? '').trim();
+    if (!s) return null;
+    let u: URL;
+    try {
+      u = new URL(s);
+    } catch {
+      throw new Error(`STACHEL_IMPORT_MIRO_*_BASE="${s}" ist keine Adresse (nur für Tests, z. B. http://127.0.0.1:8791).`);
+    }
+    if (u.protocol !== 'http:' && u.protocol !== 'https:') throw new Error(`STACHEL_IMPORT_MIRO_*_BASE="${s}": nur http(s).`);
+    return u.origin;
+  };
+  const clientId = str(env.MIRO_CLIENT_ID, '');
+  const clientSecret = str(env.MIRO_CLIENT_SECRET, '');
+  const apiDev = devBase(env.STACHEL_IMPORT_MIRO_API_BASE);
+  const authDev = devBase(env.STACHEL_IMPORT_MIRO_AUTH_BASE);
+  return {
+    enabled: !off(env.STACHEL_IMPORT),
+    tokenEnabled: !off(env.STACHEL_IMPORT_MIRO_TOKEN),
+    oauth:
+      clientId && clientSecret
+        ? { clientId, clientSecret, redirectUri: fullUrl(env.MIRO_REDIRECT_URI) || `${publicUrl}/api/import/miro/callback` }
+        : null,
+    concurrency: num(env.STACHEL_IMPORT_CONCURRENCY, 2, 1, 32),
+    perDay: num(env.STACHEL_IMPORTS_PER_DAY, 20, 0, 100_000),
+    maxObjects: num(env.STACHEL_IMPORT_MAX_OBJECTS, 20_000, 1, 1_000_000),
+    maxImages: num(env.STACHEL_IMPORT_MAX_IMAGES, 1_000, 0, 100_000),
+    extraHosts: (env.STACHEL_IMPORT_MIRO_HOSTS ?? '').split(',').map((h) => h.trim().toLowerCase()).filter(Boolean),
+    apiBase: apiDev ?? MIRO_API_BASE,
+    authBase: authDev ?? MIRO_AUTH_BASE,
+    devHosts: [apiDev, authDev].filter((x): x is string => !!x).map((o) => new URL(o).host.toLowerCase()),
+  };
 }
 
 export interface LandingConfig {
@@ -186,6 +262,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env, overrides: Part
     templatePacks: loadTemplatePackConfig(env, dataDir, instance.brand),
     nativeBufferMax: 1000,
     nativeBufferMs: 10 * 60_000,
+    import: loadImportConfig(env, publicUrl),
   };
   return { ...cfg, ...overrides };
 }

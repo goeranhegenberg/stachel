@@ -48,8 +48,8 @@ die Daten gehen an den Anbieter des Assistenten (docs/legal/datenschutz.md §8).
 
 ## Tools
 
-Alle Tools nehmen `board` (Board-ID). Jede schreibende Ausführung ist **ein** Rückgängig-Schritt des Assistenten;
-`undo` nimmt nur seine eigenen Schritte zurück (die der Menschen bleiben). Ungültige Eingaben werden mit deutscher
+Alle Tools nehmen `board` (Board-ID; bei `import_miro_board` die Miro-Board-ID). Jede schreibende Ausführung ist
+**ein** Rückgängig-Schritt des Assistenten; `undo` nimmt nur seine eigenen Schritte zurück (die der Menschen bleiben). Ungültige Eingaben werden mit deutscher
 Meldung und Korrekturhinweis abgelehnt, nichts wird halb geschrieben.
 
 | Tool | Zweck |
@@ -73,6 +73,7 @@ Meldung und Korrekturhinweis abgelehnt, nichts wird halb geschrieben.
 | `private_mode` | privater Modus: Zustand (mit Zahl verdeckter Objekte), starten (`anonymous`, `own_reveal`), aufdecken (Countdown 0–10 s), eigene aufdecken, Countdown abbrechen; verdeckte Inhalte anderer sieht der Assistent nie, `get_board_overview` meldet `privateMode` |
 | `screenshot` | PNG der echten Darstellung: ganzes Board, Rahmen, ids oder Bereich; `labels` heftet Nummern an und liefert die Legende Nummer → id |
 | `get_design_guide` | Gestaltungsregeln bzw. Objektschema |
+| `import_miro_board` | Board aus Miro als neues Stachel-Board übernehmen (Abschnitt unten); `board` ist hier die Miro-Board-ID bzw. der Link |
 
 Dazu **Ressourcen** `stachel://guide/design` (So baut man ein gutes Board: Aufbau, Standard-Abstände, Farben,
 Hierarchie, Rahmen) und `stachel://guide/schema` (alle Typen und Felder) sowie der **Prompt** `board_gestalten`.
@@ -84,6 +85,33 @@ Texte sind einfaches Markdown: jede Zeile ein Absatz, `**fett**`, `*kursiv*`, `~
 Schutz vor typischen Fehlern: Rahmen dürfen sich nach einer Änderung nicht teilweise überdecken (sonst vermischen sich
 ihre Inhalte; die Meldung schlägt eine freie Stelle vor). Neue und verschobene Objekte, die andere überdecken, sowie
 Objekte, die ihren Rahmen verlassen, meldet das Ergebnis als Hinweis.
+
+## Import aus Miro (`import_miro_board`)
+
+Importiert ein Board aus Miro über die Miro-REST-API (persönliches Zugriffstoken) als neues Stachel-Board. Code
+`mcp/src/import-miro.ts`; der MCP-Server liest selbst nichts bei Miro, sondern nutzt die Import-Endpunkte des Servers
+(`docs/features/import.md` §2) mit dem API-Token der Person – Ergebnis und Grenzen sind dieselben wie im Web. Miro ist eine
+Marke der RealtimeBoard, Inc. Stachel steht in keiner Verbindung zu Miro.
+
+| Parameter | Bedeutung |
+|---|---|
+| `token` | persönliches Miro-Zugriffstoken der Person (Pflicht, außer mit `job`) |
+| `board` | Miro-Board-ID oder Link `https://miro.com/app/board/<id>/` (andere Hosts werden abgelehnt); **weglassen** = Liste der Boards, die das Token sieht (bis 200, `query` grenzt ein) – der Assistent fragt dann, welches |
+| `keepColors`, `description` | wie `ImportOptions` (`shared/import.ts`): Originalfarben der Notizen, Board-Beschreibung als Text |
+| `wait` | Standard `true`: bis zum Ende warten (Abfrage alle `IMPORT_POLL_MS`, höchstens 5 min), sonst Stand melden |
+| `job` | Stand eines laufenden Imports abfragen (Job-ID aus einer früheren Antwort, ohne `token`) |
+
+Ablauf: `POST /api/import/miro/token` → `conn`; ohne `board` `GET /api/import/miro/boards` (bis 4 Seiten); mit `board`
+`POST /api/import/miro/jobs` → `GET /api/import/jobs/:id` bis `done`/`failed`/`canceled`. Antwort bei Erfolg: neues
+Board als `{id, title, link}` (Link = `STACHEL_WEB_URL` bzw. `STACHEL_URL` + `/b/<id>`, der Server leitet auch bei
+`STACHEL_BASE_PATH` weiter) und der Bericht (übernommen je Typ, angepasst, nicht übernommen, Hinweise). Fehler kommen mit
+dem deutschen Text des Servers (`miro_token_invalid`, `import_disabled`, `import_limit`, `board_limit` …); kennt die
+Instanz den Import nicht (404), sagt das Werkzeug das.
+
+Token-Umgang: Das Miro-Token geht genau einmal an Stachel (`/api/import/miro/token`, der Server hält es nur im Speicher,
+60 min); der MCP-Server speichert und loggt es nicht und gibt es in keiner Antwort zurück (Test prüft das). Hinweis für
+Menschen: Das Token steht trotzdem im Gesprächsverlauf des Assistenten – nach dem Import kann man die App in Miro löschen
+bzw. das Token dort widerrufen.
 
 ## Beispiel
 
@@ -146,6 +174,8 @@ Assistent ──MCP──> mcp/ (stachel-mcp) ──HTTP /api/* + WebSocket /syn
 
 ## Tests
 
+- `cd mcp && npx vitest run test/import-miro.test.ts` – `import_miro_board` gegen einen Fake-Stachel (Ablauf, Board-Liste,
+  Warten/Stand, Fehlertexte, Token nie in Antworten).
 - `cd mcp && npx vitest run test/markdown.test.ts test/ops.test.ts test/sync-web.test.ts` – Markdown ↔ Rich-Text,
   Validierung/Anlegen/Ändern/Löschen, Layout (Raster, Cluster, Fluss, Mindmap) ohne Überlappung, Abgleich mit der Web-App.
 - `cd mcp && npx vitest run test/integration.test.ts` (vorher `cd e2e && npm run build`) – echter Server + MCP über
