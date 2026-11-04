@@ -6,6 +6,8 @@ import '../../model/collab.dart' show Person;
 import '../../model/board_source.dart';
 import '../board_editor.dart';
 import '../board_view.dart';
+import '../desktop.dart';
+import '../ui/board_side_panel.dart';
 import '../ui/board_hints.dart';
 import 'menu_item_def.dart';
 import 'registry.dart';
@@ -150,30 +152,45 @@ class BoardUi {
   final _openSheets = <Route<Object?>>[];
 
   /// Opens a bottom sheet; with [closeOnSelectionChange] (popovers of the context bar) a change of the selection
-  /// closes it like the web closes its popover.
+  /// closes it like the web closes its popover. Large windows ([BoardDesktop.isWide], UX-Review P12): with [side] a
+  /// panel at the right edge instead ([showBoardSidePanel], titled [title]), else the sheet stays at most
+  /// [wideSheetWidth] wide.
   Future<T?> openSheet<T>(
     BuildContext context,
     WidgetBuilder builder, {
     bool closeOnSelectionChange = true,
     bool scrollControlled = false,
+    bool side = false,
+    String? title,
   }) {
     Route<Object?>? route;
-    return showModalBottomSheet<T>(
-      context: context,
-      showDragHandle: true,
-      isScrollControlled: scrollControlled,
-      builder: (ctx) {
-        final r = ModalRoute.of(ctx);
-        if (r != null && !identical(r, route)) {
-          route = r;
-          if (closeOnSelectionChange) _openSheets.add(r);
-        }
-        return builder(ctx);
-      },
-    ).whenComplete(() {
+    Widget track(BuildContext ctx) {
+      final r = ModalRoute.of(ctx);
+      if (r != null && !identical(r, route)) {
+        route = r;
+        if (closeOnSelectionChange) _openSheets.add(r);
+      }
+      return builder(ctx);
+    }
+
+    final wide = BoardDesktop.wideOf(context);
+    final Future<T?> open = side && wide
+        ? showBoardSidePanel<T>(context, title: title, builder: track)
+        : showModalBottomSheet<T>(
+            context: context,
+            showDragHandle: true,
+            isScrollControlled: scrollControlled,
+            constraints: wide ? const BoxConstraints(maxWidth: wideSheetWidth) : null,
+            builder: track,
+          );
+    return open.whenComplete(() {
       if (route != null) _openSheets.remove(route);
     });
   }
+
+  /// Widest a sheet from the bottom gets in a large window (Material 3's width of a bottom sheet, so wide sheets like
+  /// the template gallery keep their room).
+  static const wideSheetWidth = 640.0;
 
   /// Opens the registered sheet [id] (null if there is none).
   Future<Object?>? openRegisteredSheet(BuildContext context, String id, {Map<String, Object?> args = const {}}) {
@@ -184,6 +201,8 @@ class BoardUi {
       (ctx) => def.build(ctx, this, args),
       closeOnSelectionChange: def.closeOnSelectionChange,
       scrollControlled: def.scrollControlled,
+      side: def.side,
+      title: def.sideTitle,
     );
   }
 

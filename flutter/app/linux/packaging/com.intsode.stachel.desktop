@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Stachel
+GenericName=Whiteboard
+GenericName[de]=Whiteboard
+Comment=Shared whiteboard: boards, notes and ideas, live with everyone
+Comment[de]=Das gemeinsame Whiteboard – Boards, Notizen, Ideen, live mit allen
+Exec=stachel %u
+Icon=com.intsode.stachel
+Terminal=false
+Categories=Office;ProjectManagement;
+Keywords=whiteboard;board;sticky notes;mind map;collaboration;
+Keywords[de]=Whiteboard;Board;Haftnotiz;Mindmap;Zusammenarbeit;
+MimeType=x-scheme-handler/stachel;
+StartupWMClass=com.intsode.stachel
+StartupNotify=true

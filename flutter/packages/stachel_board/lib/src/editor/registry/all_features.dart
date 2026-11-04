@@ -32,6 +32,7 @@ import '../../features/onboarding/register.dart';
 import '../../features/commands/register.dart';
 import '../../features/private/register.dart';
 import '../../features/stack/register.dart';
+import '../../features/desktop/register.dart';
 import '../../features/clipboard/clipboard.dart' show pasteFiles, pasteTextAs;
 import '../../features/documents/documents.dart' show pasteClipboardFiles;
 import '../../features/search/search_bar.dart' show searchIncludesHidden;
@@ -76,6 +77,7 @@ BoardRegistry registerAllFeatures(BoardRegistry r) {
   registerCommands(r); // Q3
   registerPrivate(r); // Privater Modus (Welle UX+Q)
   registerStack(r); // Q2 Notiz-Stapel
+  registerDesktop(r); // Desktop (Maus + Tastatur)
   return r;
 }
 

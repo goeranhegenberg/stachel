@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../desktop.dart';
 import '../registry/board_ui.dart';
 import '../registry/menu_item_def.dart';
 import 'board_context_bar.dart' show sectionHeading;
@@ -40,6 +41,11 @@ List<(MenuSection, List<MenuEntry>)> menuSections(BoardUi ui, MenuAt at) {
 /// below 700 px) and runs the chosen entry with the screen's [context] after the sheet closed. The board menu comes
 /// grouped (tiles of [MenuSection.quick] on top, then the headed groups); the web keeps its flat list.
 Future<void> showBoardMenu(BuildContext context, BoardUi ui, MenuTarget on, MenuAt at) async {
+  // desktop (docs/features/desktop.md §1): a right click pops the menu up at the pointer; in the desktop app the board
+  // menu pops up under its button
+  final anchor =
+      ui.view?.takeMenuAnchor() ?? (on == MenuTarget.board && BoardDesktop.enabled ? boardMenuAnchor(context) : null);
+  if (anchor != null) return showBoardPopup(context, ui, on, at, anchor);
   final grouped = on == MenuTarget.board ? menuSections(ui, at) : null;
   final entries = menuEntries(ui, on, at);
   if (entries.isEmpty) return;
@@ -244,4 +250,175 @@ class _Badge extends StatelessWidget {
       style: const TextStyle(color: Colors.white, fontSize: 11.5, fontWeight: FontWeight.w700),
     ),
   );
+}
+
+// ---- desktop: menus as popups (docs/features/desktop.md §1) ---------------------------------------------------------
+
+/// Key hint at the right of a popup row (web `MenuItem.shortcut`), by the entry's key; the keys themselves are handled
+/// by the board's keyboard handling.
+const menuShortcuts = <String, String>{
+  'stachelMenuCopy': 'Strg C',
+  'stachelMenuCut': 'Strg X',
+  'stachelMenuPaste': 'Strg V',
+  'stachelPaste': 'Strg V',
+  'stachelMenuDuplicate': 'Strg D',
+  'stachelMenuDelete': 'Entf',
+  'stachelMenuEdit': 'Enter',
+  'stachelMenuGroup': 'Strg G',
+  'stachelMenuUngroup': 'Strg Umschalt G',
+  'stachelMenuLock': 'Strg Umschalt L',
+  'stachelMenuHide': 'Strg Umschalt H',
+  'stachelMenuForward': 'Strg ]',
+  'stachelMenuBackward': 'Strg [',
+  'stachelMenuFront': 'Strg Umschalt ]',
+  'stachelMenuBack': 'Strg Umschalt [',
+  'stachelMenuCopyStyle': 'Strg Alt C',
+  'stachelMenuPasteStyle': 'Strg Alt V',
+  'stachelMenuZoom': 'Umschalt 2',
+  'stachelMenuUndo': 'Strg Z',
+  'stachelMenuRedo': 'Strg Y',
+  'stachelMenuMindCollapse': 'Strg .',
+  'stachelSelectAll': 'Strg A',
+  'stachelFitAll': 'Umschalt 1',
+  'stachelBoardSearch': 'Strg F',
+  'stachelCanvasSearch': 'Strg F',
+  'stachelBoardReplace': 'Strg H',
+  'stachelBoardPalette': 'Strg K',
+  'stachelBoardVersions': 'Strg Alt H',
+  'stachelBoardFullscreen': 'F11',
+  'stachelBoardGrid': "Strg '",
+  'stachelCanvasGrid': "Strg '",
+};
+
+/// Where the board menu pops up when it has no pointer position: under its button at the top right.
+Offset boardMenuAnchor(BuildContext context) {
+  final size = MediaQuery.sizeOf(context);
+  return Offset(size.width - 8, MediaQuery.paddingOf(context).top + kToolbarHeight);
+}
+
+/// Menu [on] as a popup at [anchor] (global position, web context menu): the board menu with its group headings, a
+/// submenu opens as a popup of its own at the same place (its rows only), the chosen entry runs with [context] after
+/// the popup closed.
+Future<void> showBoardPopup(BuildContext context, BoardUi ui, MenuTarget on, MenuAt at, Offset anchor) async {
+  var groups = <(String, List<MenuEntry>)>[
+    if (on == MenuTarget.board)
+      for (final (s, l) in menuSections(ui, at)) (s.title, l)
+    else
+      ('', menuEntries(ui, on, at)),
+  ];
+  if (groups.every((g) => g.$2.isEmpty)) return;
+  var pos = anchor;
+  for (;;) {
+    final picked = await _popup(context, ui, groups, pos, _keys[on]!);
+    if (picked == null || !context.mounted) return;
+    final sub = picked.items;
+    if (sub == null) {
+      picked.onSelect?.call(context, ui);
+      return;
+    }
+    groups = [(picked.label.toUpperCase(), sub)];
+    pos += const Offset(16, 8);
+  }
+}
+
+Future<MenuEntry?> _popup(
+  BuildContext context,
+  BoardUi ui,
+  List<(String, List<MenuEntry>)> groups,
+  Offset at,
+  String key,
+) {
+  final overlay = Overlay.of(context).context.findRenderObject()! as RenderBox;
+  final p = overlay.globalToLocal(at);
+  final theme = ui.theme;
+  final items = <PopupMenuEntry<MenuEntry>>[];
+  for (final (title, list) in groups) {
+    if (list.isEmpty) continue;
+    if (title.isNotEmpty) {
+      if (items.isNotEmpty) items.add(const PopupMenuDivider(height: 9));
+      items.add(
+        PopupMenuItem<MenuEntry>(
+          enabled: false,
+          height: 26,
+          child: Text(title, style: theme.label(size: 11.5, color: theme.grey)),
+        ),
+      );
+    }
+    for (final (i, e) in list.indexed) {
+      if (e.sep && i > 0 && title.isEmpty) items.add(const PopupMenuDivider(height: 9));
+      items.add(
+        PopupMenuItem<MenuEntry>(
+          key: e.key == null ? null : Key(e.key!),
+          value: e,
+          enabled: !e.disabled,
+          height: 36,
+          child: _PopupRow(entry: e, theme: theme),
+        ),
+      );
+    }
+  }
+  // the first row carries the menu's key (tests, like the sheet's list)
+  items.insert(
+    0,
+    PopupMenuItem<MenuEntry>(key: Key('${key}Popup'), enabled: false, height: 0, child: const SizedBox()),
+  );
+  return showMenu<MenuEntry>(
+    context: context,
+    position: RelativeRect.fromRect(Rect.fromLTWH(p.dx, p.dy, 0, 0), Offset.zero & overlay.size),
+    items: items,
+    color: theme.surface,
+    constraints: const BoxConstraints(minWidth: 230, maxWidth: 360),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+      side: BorderSide(color: theme.ink.withValues(alpha: 0.2)),
+    ),
+  );
+}
+
+/// One row of a popup: icon, label (red when dangerous), the value/subtitle, the key hint, a counter, ›.
+class _PopupRow extends StatelessWidget {
+  const _PopupRow({required this.entry, required this.theme});
+  final MenuEntry entry;
+  final BoardUiTheme theme;
+
+  @override
+  Widget build(BuildContext context) {
+    final e = entry;
+    final color = e.disabled ? theme.grey.withValues(alpha: 0.6) : (e.danger ? theme.danger : theme.ink);
+    final hint = menuShortcuts[e.key];
+    final dim = TextStyle(color: theme.grey, fontSize: 12.5);
+    return Row(
+      children: [
+        SizedBox(width: 26, child: e.icon == null ? null : Icon(e.icon, size: 19, color: color)),
+        const SizedBox(width: 8),
+        Expanded(
+          flex: 3,
+          child: Text(
+            e.label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(color: color, fontSize: 14),
+          ),
+        ),
+        if (e.subtitle != null)
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Text(e.subtitle!, maxLines: 1, overflow: TextOverflow.ellipsis, style: dim),
+            ),
+          ),
+        if (hint != null)
+          Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: Text(hint, maxLines: 1, style: dim),
+          ),
+        if (e.badge != null)
+          Padding(
+            padding: const EdgeInsets.only(left: 8),
+            child: _Badge(text: e.badge!, theme: theme),
+          ),
+        if (e.items != null) Icon(Icons.chevron_right, size: 18, color: color),
+      ],
+    );
+  }
 }

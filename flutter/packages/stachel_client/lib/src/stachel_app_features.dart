@@ -357,16 +357,17 @@ Future<void> pickStachelMedia(BuildContext context, BoardUi ui) async {
     builder: (ctx) => SafeArea(
       child: Wrap(
         children: [
-          ListTile(
-            key: const Key('stachelPhotoCamera'),
-            leading: const Icon(Icons.photo_camera_outlined),
-            title: const Text('Foto aufnehmen'),
-            onTap: () => Navigator.of(ctx).pop('camera'),
-          ),
+          if (stachelHasCamera)
+            ListTile(
+              key: const Key('stachelPhotoCamera'),
+              leading: const Icon(Icons.photo_camera_outlined),
+              title: const Text('Foto aufnehmen'),
+              onTap: () => Navigator.of(ctx).pop('camera'),
+            ),
           ListTile(
             key: const Key('stachelPhotoGallery'),
             leading: const Icon(Icons.photo_library_outlined),
-            title: const Text('Bild aus der Galerie'),
+            title: Text(stachelHasCamera ? 'Bild aus der Galerie' : 'Bilddatei'),
             onTap: () => Navigator.of(ctx).pop('gallery'),
           ),
           if (pdf)

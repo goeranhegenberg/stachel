@@ -89,6 +89,19 @@ abstract class BoardGestureHandler {
 
 enum _Mode { idle, pending, held, pan, drag, handle, holdEmpty, marquee, pinch, draw, done }
 
+/// What drives the primary pointer (docs/features/desktop.md §1).
+enum BoardPointer {
+  /// Finger or stylus: the touch gestures of [BoardGestures].
+  touch,
+
+  /// Left mouse button like the web: no hold times, dragging the empty board selects a rectangle (with editing
+  /// rights, else it pans), dragging an object moves it right away (selected first), the slop is [BoardGestures.mouseSlop].
+  mouse,
+
+  /// Middle mouse button, Leertaste + left button: dragging pans the view, nothing else.
+  pan,
+}
+
 /// Touch gestures of the board as a state machine (concept §3.3), plain Dart so tests drive it with events:
 ///
 /// | gesture | effect |
@@ -102,6 +115,9 @@ enum _Mode { idle, pending, held, pan, drag, handle, holdEmpty, marquee, pinch, 
 /// | tap / double tap | [BoardGestureHandler.tap] / [BoardGestureHandler.doubleTap] |
 /// | 2 fingers | pinch zoom + pan; a second finger ends any one-finger gesture |
 ///
+/// A mouse ([BoardPointer.mouse]) drags objects and selection rectangles right away and has no hold times; the middle
+/// button and Leertaste ([BoardPointer.pan]) pan.
+///
 /// The widget feeds pointer events and calls [timeout] when [deadline] has passed.
 class BoardGestures {
   BoardGestures(
@@ -112,6 +128,7 @@ class BoardGestures {
     this.menuSlop = 8,
     this.doubleTapTime = const Duration(milliseconds: 300),
     this.doubleTapSlop = 40,
+    this.mouseSlop = 4,
   });
 
   final BoardGestureHandler handler;
@@ -128,6 +145,9 @@ class BoardGestures {
   final Duration doubleTapTime;
   final double doubleTapSlop;
 
+  /// Movement (screen px) that turns a mouse press into a drag (web: 4 px).
+  final double mouseSlop;
+
   final _pointers = <int, Offset>{};
   final _samples = <(Duration, Offset)>[];
   _Mode _mode = _Mode.idle;
@@ -140,29 +160,46 @@ class BoardGestures {
   Offset? _lastTapAt;
   Duration? _lastTapTime;
   bool _moved = false;
+  BoardPointer _input = BoardPointer.touch;
+
+  /// What drives the current primary pointer.
+  BoardPointer get input => _input;
+
+  /// The current gesture pans the view (cursor „grabbing“ on the desktop).
+  bool get panning => _mode == _Mode.pan;
 
   /// When [timeout] must be called (holding a finger still); null = nothing pending. After the first timeout a
   /// second one may follow (grab at [holdTime], menu at [menuTime]).
-  Duration? get deadline => switch (_mode) {
-    _Mode.pending => _downAt + (_hit.objectId != null && !(_hit.movable && handler.editable) ? menuTime : holdTime),
-    _Mode.held => _hit.objectId == null ? null : _downAt + menuTime,
-    _ => null,
-  };
+  Duration? get deadline => _input != BoardPointer.touch
+      ? null
+      : switch (_mode) {
+          _Mode.pending =>
+            _downAt + (_hit.objectId != null && !(_hit.movable && handler.editable) ? menuTime : holdTime),
+          _Mode.held => _hit.objectId == null ? null : _downAt + menuTime,
+          _ => null,
+        };
 
   /// Time of the current finger's touch down.
   Duration get downAt => _downAt;
 
   bool get active => _mode != _Mode.idle;
 
-  void down(int pointer, Offset p, Duration t) {
+  void down(int pointer, Offset p, Duration t, {BoardPointer input = BoardPointer.touch}) {
     _pointers[pointer] = p;
     if (_pointers.length == 1) {
       _primary = pointer;
+      _input = input;
       _down = _last = p;
       _downAt = t;
       _samples
         ..clear()
         ..add((t, p));
+      if (input == BoardPointer.pan) {
+        _hit = GestureHit.empty;
+        _mode = _Mode.pan;
+        handler.panStart(p);
+        return;
+      }
       _hit = handler.hitAt(p);
       if (_hit.handle != null && handler.editable) {
         _mode = _Mode.handle;
@@ -190,6 +227,9 @@ class BoardGestures {
     _samples.add((t, p));
     if (_samples.length > 20) _samples.removeAt(0);
     switch (_mode) {
+      case _Mode.pending when _input == BoardPointer.mouse:
+        if ((p - _down).distance < mouseSlop) return;
+        _mouseDragStart(p);
       case _Mode.pending:
         if ((p - _down).distance < slop) return;
         if (_hit.objectId != null && _hit.selected && _hit.movable && handler.editable) {
@@ -232,6 +272,25 @@ class BoardGestures {
         break;
     }
     _last = p;
+  }
+
+  /// A mouse press moved beyond [mouseSlop] (web pointer gestures): a comment pin or an object moves right away, the
+  /// empty board (or a locked object) gets a selection rectangle; read only it pans.
+  void _mouseDragStart(Offset p) {
+    final editable = handler.editable;
+    if (editable && (_hit.overlayMovable || (_hit.objectId != null && _hit.movable))) {
+      _mode = _Mode.drag;
+      handler.dragStart(_down, _hit, grabbed: false);
+      handler.dragUpdate(p);
+    } else if (editable && _hit.overlay == null) {
+      _mode = _Mode.marquee;
+      handler.marqueeStart(_down);
+      handler.marqueeUpdate(_down, p);
+    } else {
+      _mode = _Mode.pan;
+      handler.panStart(_down);
+      handler.panUpdate(p - _down);
+    }
   }
 
   /// The finger was held still until [deadline].

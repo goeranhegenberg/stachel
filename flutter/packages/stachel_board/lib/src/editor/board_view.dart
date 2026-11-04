@@ -23,7 +23,9 @@ import '../render/presence_painter.dart';
 import '../render/text_layout.dart';
 import 'board_editor.dart';
 import 'camera.dart';
+import 'desktop.dart';
 import 'gestures.dart';
+import '../features/desktop/keyboard.dart' show BoardKeyboard;
 import 'registry/tool_def.dart';
 import 'registry/type_behavior.dart';
 import 'rich_text_field.dart';
@@ -38,6 +40,12 @@ import 'two_finger_tap.dart';
 /// 300 ms), handles resize/rotate/add, long press + drag on the empty board selects a rectangle, tapping a selected
 /// note edits its text in place ([BoardTextEditor]). The others' cursors, selections and „schreibt hier“ on top
 /// ([PresencePainter]); own viewport/selection/editing go out as presence.
+///
+/// A mouse works like the web (docs/features/desktop.md §1): wheel zooms at the pointer (setting „Mausrad:
+/// Schwenken“ pans), Umschalt + wheel pans sideways, Strg + wheel and a trackpad pinch zoom, a trackpad swipe pans, middle button / Leertaste / right button + drag pan, a left
+/// drag on the empty board selects a rectangle (Strg: lasso, Umschalt: adds), objects move right away (Alt: a copy,
+/// no snapping), Umschalt + click adds to the selection, a right click opens the object or board menu at the pointer,
+/// hover outlines and cursors for handles and tools.
 class BoardView extends StatefulWidget {
   const BoardView({
     super.key,
@@ -151,6 +159,12 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     text: _overlayText,
     repaint: Listenable.merge([camera, widget.controller, widget.controller.uploads]),
   );
+  late final _HoverPainter _hoverPainter = _HoverPainter(
+    hovered: hovered,
+    scene: scene,
+    camera: camera,
+    lookup: (id) => widget.controller.state[id],
+  );
   late final DraftPainter _draftPainter = DraftPainter(
     draft: editor.draft,
     camera: camera,
@@ -193,6 +207,7 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     selection.addListener(_reportPresence);
     editor.onHaptic ??= HapticFeedback.selectionClick;
     editor.addListener(_editorChanged);
+    BoardDesktop.spaceDown.addListener(_refreshCursor);
     if (widget.controller.loaded) scene.sync();
   }
 
@@ -211,6 +226,9 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     editor.removeListener(_editorChanged);
     camera.removeListener(_reportPresence);
     selection.removeListener(_reportPresence);
+    BoardDesktop.spaceDown.removeListener(_refreshCursor);
+    hovered.dispose();
+    _cursor.dispose();
     widget.controller.presence.cancelPending();
     _acts?.cancel();
     _holdTimer?.cancel();
@@ -611,8 +629,8 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
       widget.onSelect?.call(null);
       return;
     }
-    // „Mehrfachauswahl“ on (D02): the tapped object's group in or out
-    if (editor.multiSelect) {
+    // „Mehrfachauswahl“ on (D02) or Umschalt + click (web): the tapped object's group in or out
+    if (editor.multiSelect || _shiftClick) {
       editor.toggleInSelection(o.id);
       final s = editor.selected;
       widget.onSelect?.call(s.length == 1 ? s.single : (s.isEmpty ? null : o));
@@ -628,8 +646,14 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     }
     // a tap into a multi-selection keeps only the object's group (D03): selected below
     final group = editor.groupOf(o.id);
-    // tap on the selected note/text/shape: edit its text (like the web)
-    if (wasEditing == null && setEquals(selection.value, {o.id}) && _writable(o) && editor.editable && !o.locked) {
+    // tap on the selected note/text/shape: edit its text (phone); a mouse click does not (web: double click, Enter or
+    // typing starts writing)
+    if (wasEditing == null &&
+        _downKind != PointerDeviceKind.mouse &&
+        setEquals(selection.value, {o.id}) &&
+        _writable(o) &&
+        editor.editable &&
+        !o.locked) {
       editText(o.id);
       widget.onSelect?.call(o);
       return;
@@ -722,6 +746,10 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     _pendingAtGesture = widget.controller.pendingCount;
     _beforeGrab = grabbed ? selection.value : null;
     if (grabbed) editor.onHaptic?.call();
+    if (_downKind == PointerDeviceKind.mouse && HardwareKeyboard.instance.isAltPressed && _altCopy(hit.objectId)) {
+      editor.dragStart(camera.value.toWorld(p));
+      return;
+    }
     editor.dragStart(camera.value.toWorld(p), grab: hit.objectId);
     final o = hit.objectId == null ? null : widget.controller.state[hit.objectId!];
     if (o != null) widget.onSelect?.call(o);
@@ -738,6 +766,7 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     }
     _dragScreen = p;
     _gestureChanged = true;
+    editor.snapOff = _downKind == PointerDeviceKind.mouse && HardwareKeyboard.instance.isAltPressed;
     editor.dragUpdate(camera.value.toWorld(p));
     // dragged to the view's edge: the view pans along (web, D18)
     if (edgeVelocity(p, _size) != Offset.zero && !_edgeTicker.isActive) _edgeTicker.start();
@@ -860,8 +889,10 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     editor.onHaptic?.call();
     if (editor.editingId != null) finishEditing();
     // „Mehrfachauswahl“ on: the area adds to the selection (web: Umschalt)
-    editor.marqueeBase = editor.multiSelect ? selection.value : const {};
-    if (editor.lasso) _lasso.value = [p];
+    editor.marqueeBase = editor.multiSelect || _shiftClick ? selection.value : const {};
+    // web: Strg + drag draws a lasso
+    final mouseLasso = _downKind == PointerDeviceKind.mouse && _modPressed;
+    if (editor.lasso || mouseLasso) _lasso.value = [p];
   }
 
   @override
@@ -1088,20 +1119,195 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
     return _ignored.remove(e.pointer);
   }
 
+  /// Smallest wheel step seen so far = one notch (web `createNotchCounter`: every notch zooms the same, whatever the
+  /// system's scroll distance).
+  double _notchUnit = double.infinity;
+
+  int _notches(double dy) {
+    final y = dy.abs();
+    if (y == 0) return 0;
+    _notchUnit = math.min(_notchUnit, y);
+    return dy.sign.toInt() * math.max(1, (y / _notchUnit).round());
+  }
+
+  /// Wheel and trackpad like the web (`Editor.tsx` wheel): Strg + wheel zooms at the pointer (a mouse notch e^0,35 ≈
+  /// 42 %), a mouse wheel zooms at the pointer too (≈ 13 % per notch, at most 3 notches per event; setting „Mausrad:
+  /// Schwenken“: it pans), Umschalt + wheel pans sideways, a trackpad swipe pans and a pinch zooms. The web guesses
+  /// mouse or trackpad from the deltas (`createWheelClassifier`); Flutter knows the device ([PointerDeviceKind], a
+  /// precision touchpad sends `PointerPanZoom…`), so only a real mouse wheel zooms without Strg.
   void _onSignal(PointerSignalEvent e) {
     if (e is PointerScrollEvent) {
       _stopInertia();
-      final ctrl = HardwareKeyboard.instance.isControlPressed;
-      if (ctrl || e.kind == PointerDeviceKind.mouse) {
-        final factor = 1 - e.scrollDelta.dy * 0.0015;
-        camera.zoomAt(e.localPosition, camera.value.z * factor.clamp(0.5, 2.0));
+      final keys = HardwareKeyboard.instance;
+      final mouse = e.kind == PointerDeviceKind.mouse;
+      final d = e.scrollDelta;
+      if (keys.isControlPressed || keys.isMetaPressed) {
+        final amount = mouse ? _notches(d.dy) * 100.0 : d.dy;
+        camera.zoomAt(e.localPosition, camera.value.z * math.exp((-amount * 0.0035).clamp(-0.35, 0.35)));
+      } else if (mouse && !keys.isShiftPressed && BoardDesktop.wheel.value == WheelMode.zoom) {
+        final n = _notches(d.dy).clamp(-3, 3);
+        camera.zoomAt(e.localPosition, camera.value.z * math.exp(-n * 0.12));
       } else {
-        camera.panBy(-e.scrollDelta);
+        camera.panBy(-(keys.isShiftPressed && d.dx == 0 ? Offset(d.dy, 0) : d));
       }
     } else if (e is PointerScaleEvent) {
       camera.zoomAt(e.localPosition, camera.value.z * e.scale);
     }
   }
+
+  // ---- mouse (desktop, docs/features/desktop.md §1) -----------------------------------------------------------------
+
+  /// Object under the mouse (thin outline like the web's hover), null = none.
+  final hovered = ValueNotifier<String?>(null);
+  final _cursor = ValueNotifier<MouseCursor>(SystemMouseCursors.basic);
+  Offset? _hoverAt;
+
+  /// A pressed right button: dragging pans (web „Rechtsklick + Ziehen“), a click opens the menu.
+  ({int pointer, Offset at, bool moved})? _right;
+
+  /// Global position of the right click whose menu is opening ([takeMenuAnchor]).
+  Offset? _menuAnchor;
+
+  /// The position of the right click that opens a menu right now (once): the menu pops up there instead of coming as
+  /// a sheet from the bottom. Null = not opened by the mouse.
+  Offset? takeMenuAnchor() {
+    final a = _menuAnchor;
+    _menuAnchor = null;
+    return a;
+  }
+
+  static bool get _modPressed => HardwareKeyboard.instance.isControlPressed || HardwareKeyboard.instance.isMetaPressed;
+
+  /// Umschalt held on a mouse press (adds to the selection).
+  bool get _shiftClick => _downKind == PointerDeviceKind.mouse && HardwareKeyboard.instance.isShiftPressed;
+
+  /// Alt + drag (web „Kopie ziehen“): copies of [id]'s selection (or group) take the place of the originals and get
+  /// selected – the drag moves them, the originals stay. False if nothing could be copied.
+  bool _altCopy(String? id) {
+    if (id == null || !editor.editable) return false;
+    final ids = selection.value.contains(id) ? selection.value : editor.groupOf(id);
+    final objs = [
+      for (final i in ids)
+        if (widget.controller.state[i] case final o? when !o.locked) o,
+    ];
+    if (objs.isEmpty) return false;
+    return editor.pasteObjects(editor.withAttachedConnectors(objs), offset: Offset.zero).isNotEmpty;
+  }
+
+  void _mouseDown(PointerDownEvent e) {
+    _stopInertia();
+    if (_onTextField(e.localPosition)) return; // caret, selection and the field's own menu
+    // keys go to the board again (also away from the search field), like a click on the web's board
+    BoardKeyboard.focusBoard(context);
+    _downKind = e.kind;
+    if (e.buttons & kSecondaryMouseButton != 0) {
+      _right = (pointer: e.pointer, at: e.localPosition, moved: false);
+      return;
+    }
+    final pan = e.buttons & kMiddleMouseButton != 0 || BoardDesktop.spaceDown.value;
+    if (!pan && e.buttons & kPrimaryMouseButton == 0) return; // back/forward buttons
+    _lastPointer = e.localPosition;
+    hovered.value = null;
+    _gestures.down(e.pointer, e.localPosition, e.timeStamp, input: pan ? BoardPointer.pan : BoardPointer.mouse);
+    _refreshCursor();
+  }
+
+  void _mouseMove(PointerMoveEvent e) {
+    final r = _right;
+    if (r != null && r.pointer == e.pointer) {
+      if (!r.moved && (e.localPosition - r.at).distance < _gestures.mouseSlop) return;
+      if (!r.moved) _right = (pointer: r.pointer, at: r.at, moved: true);
+      camera.panBy(e.delta);
+      _cursor.value = SystemMouseCursors.grabbing;
+      return;
+    }
+    _lastPointer = _hoverAt = e.localPosition;
+    _gestures.move(e.pointer, e.localPosition, e.timeStamp);
+    _refreshCursor();
+  }
+
+  void _mouseUp(PointerUpEvent e) {
+    final r = _right;
+    _hoverAt = e.localPosition;
+    if (r != null && r.pointer == e.pointer) {
+      _right = null;
+      if (!r.moved) _contextMenu(e.localPosition, e.position);
+      _refreshCursor();
+      return;
+    }
+    _lastPointer = e.localPosition;
+    _gestures.up(e.pointer, e.timeStamp);
+    _hover(e.localPosition);
+  }
+
+  /// Right click (web `onContextMenu`): the object's menu (selected first, like holding it) or the empty board's menu,
+  /// popping up at the pointer.
+  void _contextMenu(Offset p, Offset global) {
+    final w = camera.value.toWorld(p);
+    final o = scene.hitTest(w, camera.value.z, prefer: editor.hitPreference);
+    if (editor.editingId != null && editor.editingId != o?.id) finishEditing();
+    _menuAnchor = global;
+    if (o != null) {
+      longPressObject(p, GestureHit(objectId: o.id));
+    } else {
+      widget.onLongPress?.call(w);
+    }
+    // the screen opens its menu right away; an anchor nobody took must not move a later menu
+    SchedulerBinding.instance.addPostFrameCallback((_) => _menuAnchor = null);
+  }
+
+  /// Mouse moved without a button: hover outline and cursor.
+  void _hover(Offset p) {
+    _hoverAt = p;
+    String? id;
+    if (editor.tool == BoardTool.select && !editor.dragging && !editor.handling && editor.handleAt(p) == null) {
+      final o = scene.hitTest(camera.value.toWorld(p), camera.value.z, prefer: editor.hitPreference);
+      if (o != null && !selection.value.contains(o.id) && o.id != editor.editingId) id = o.id;
+    }
+    hovered.value = id;
+    _refreshCursor();
+  }
+
+  void _refreshCursor() {
+    final p = _hoverAt;
+    if (p != null && mounted) _cursor.value = cursorAt(p);
+  }
+
+  /// Mouse cursor at [p] (web: resize arrows on the handles, grab while panning, move on the selection, the tools'
+  /// cursors).
+  @visibleForTesting
+  MouseCursor cursorAt(Offset p) {
+    if ((_right?.moved ?? false) || _gestures.panning) return SystemMouseCursors.grabbing;
+    if (BoardDesktop.spaceDown.value || editor.featureTool == 'hand') return SystemMouseCursors.grab;
+    if (editor.dragging) return SystemMouseCursors.move;
+    if (editor.handling) return _cursor.value;
+    if (editor.mindButtonAt(p) != null) return SystemMouseCursors.click;
+    final handle = editor.editable ? editor.handleAt(p) : null;
+    if (handle != null) return handleCursor(handle);
+    if (editor.tool != BoardTool.select) {
+      return switch (editor.tool) {
+        BoardTool.text => SystemMouseCursors.text,
+        BoardTool.comment => SystemMouseCursors.click,
+        _ => SystemMouseCursors.precise,
+      };
+    }
+    if (collab.hitAt(p, camera.value, _size, _overlayText) != null) return SystemMouseCursors.click;
+    final o = scene.hitTest(camera.value.toWorld(p), camera.value.z, prefer: editor.hitPreference);
+    if (o != null && editor.editable && !o.locked && selection.value.contains(o.id)) return SystemMouseCursors.move;
+    return SystemMouseCursors.basic;
+  }
+
+  /// Cursor of a selection handle (resize corners and edges, rotate, plus, ends and anchors).
+  static MouseCursor handleCursor(String handle) => switch (handle) {
+    'nw' || 'se' => SystemMouseCursors.resizeUpLeftDownRight,
+    'ne' || 'sw' => SystemMouseCursors.resizeUpRightDownLeft,
+    'n' || 's' => SystemMouseCursors.resizeUpDown,
+    'e' || 'w' => SystemMouseCursors.resizeLeftRight,
+    'rotate' => SystemMouseCursors.grab,
+    'label' => SystemMouseCursors.move,
+    _ when handle.startsWith('end-') || handle.startsWith('anchor-') => SystemMouseCursors.precise,
+    _ => SystemMouseCursors.click,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -1124,10 +1330,25 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
             _keepEditedVisible();
           });
         }
-        return Listener(
+        final listener = Listener(
           behavior: HitTestBehavior.opaque,
           onPointerSignal: _onSignal,
+          onPointerHover: (e) {
+            if (e.kind == PointerDeviceKind.mouse) _hover(e.localPosition);
+          },
+          // trackpad (Windows precision touchpad, macOS): two fingers pan, pinch zooms at the fingers
+          onPointerPanZoomStart: (e) {
+            _stopInertia();
+            _panZoomAt = e.localPosition;
+            _pinch = PinchTracker(camera.value, e.localPosition);
+          },
+          onPointerPanZoomUpdate: (e) {
+            final p = _pinch;
+            if (p != null) camera.value = p.update(_panZoomAt + e.pan, e.scale);
+          },
+          onPointerPanZoomEnd: (_) => _pinch = null,
           onPointerDown: (e) {
+            if (e.kind == PointerDeviceKind.mouse) return _mouseDown(e);
             if (_palmDown(e)) return;
             _stopInertia();
             _multiTaps.down(e.pointer, e.localPosition, e.timeStamp);
@@ -1139,6 +1360,7 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
             _scheduleHold();
           },
           onPointerMove: (e) {
+            if (e.kind == PointerDeviceKind.mouse) return _mouseMove(e);
             if (_ignored.contains(e.pointer)) return;
             _multiTaps.move(e.pointer, e.localPosition);
             _multiTapsDue(e.timeStamp);
@@ -1147,6 +1369,7 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
             if (_gestures.deadline == null) _holdTimer?.cancel();
           },
           onPointerUp: (e) {
+            if (e.kind == PointerDeviceKind.mouse) return _mouseUp(e);
             if (_released(e)) return;
             _holdTimer?.cancel();
             final taps = _multiTaps.up(e.pointer, e.timeStamp);
@@ -1156,6 +1379,7 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
             _scheduleMultiTap(e.timeStamp);
           },
           onPointerCancel: (e) {
+            if (e.kind == PointerDeviceKind.mouse) _right = null;
             if (_released(e)) return;
             _holdTimer?.cancel();
             _multiTaps.cancel(e.pointer);
@@ -1180,6 +1404,9 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
                 child: RepaintBoundary(
                   child: CustomPaint(painter: _presence, size: size),
                 ),
+              ),
+              IgnorePointer(
+                child: CustomPaint(painter: _hoverPainter, size: size),
               ),
               IgnorePointer(
                 child: CustomPaint(painter: _handles, size: size),
@@ -1215,9 +1442,23 @@ class BoardViewState extends State<BoardView> with TickerProviderStateMixin impl
             ],
           ),
         );
+        return ValueListenableBuilder<MouseCursor>(
+          valueListenable: _cursor,
+          builder: (context, cursor, child) => MouseRegion(
+            cursor: cursor,
+            onExit: (_) {
+              _hoverAt = null;
+              hovered.value = null;
+            },
+            child: child,
+          ),
+          child: listener,
+        );
       },
     );
   }
+
+  Offset _panZoomAt = Offset.zero;
 
   /// Pointer inside the open text field: it gets the touch (caret, selection), the board does not.
   bool _onTextField(Offset p) {
@@ -1434,4 +1675,44 @@ class _FlashPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _FlashPainter old) => !identical(old, this);
+}
+
+/// Thin outline around the object under the mouse (web hover: blue, 1.5 px, follows the rotation), screen space.
+class _HoverPainter extends CustomPainter {
+  _HoverPainter({required this.hovered, required this.scene, required this.camera, required this.lookup})
+    : super(repaint: Listenable.merge([hovered, camera]));
+
+  final ValueListenable<String?> hovered;
+  final BoardScene scene;
+  final ValueListenable<Camera> camera;
+  final BoardObject? Function(String id) lookup;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final id = hovered.value;
+    final o = id == null ? null : lookup(id);
+    if (o == null) return;
+    final cam = camera.value;
+    final stroke = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5
+      ..color = const Color(0xFF1763B5);
+    if (o.type == 'connector' || o.type == 'pen') {
+      final r = scene.grid.rectOf(o.id) ?? objectRect(o);
+      canvas.drawRect(cam.rectToScreen(r).inflate(2), stroke);
+      return;
+    }
+    final r = cam.rectToScreen(objectRect(o));
+    canvas.save();
+    if (o.rotation != 0) {
+      canvas.translate(r.center.dx, r.center.dy);
+      canvas.rotate(o.rotation * math.pi / 180);
+      canvas.translate(-r.center.dx, -r.center.dy);
+    }
+    canvas.drawRect(r.inflate(1), stroke);
+    canvas.restore();
+  }
+
+  @override
+  bool shouldRepaint(covariant _HoverPainter old) => !identical(old, this);
 }

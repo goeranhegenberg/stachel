@@ -40,6 +40,7 @@
       "license": "BSD-3-Clause AND Apache-2.0 (+ bundled)",
       "source": "https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium%2F8125",
       "parts": ["flutter_app"],
+      "note": "Same release on every platform: libpdfium.so (Android, Linux), pdfium.dll (Windows), downloaded by the build hook of pdfium_dart.",
       "files": [
         "flutter/packages/stachel_client/assets/licenses/pdfium/LICENSE.txt",
         "flutter/packages/stachel_client/assets/licenses/pdfium/pdfium.txt",
@@ -78,6 +79,36 @@
       "source": "https://developer.android.com/jetpack/androidx",
       "parts": ["flutter_app"],
       "note": "Gradle dependencies of the plugins above, not enumerated individually; predominantly Apache-2.0 (text in section 5)."
+    },
+    {
+      "name": "Microsoft Visual C++ runtime (msvcp140.dll, vcruntime140.dll, vcruntime140_1.dll)",
+      "version": "14.x (Visual Studio 2022)",
+      "license": "Microsoft Software License Terms (redistributable, not open source)",
+      "source": "https://learn.microsoft.com/cpp/windows/redistributing-visual-cpp-files",
+      "parts": ["flutter_app (Windows)"],
+      "note": "Distributable Code of Visual Studio, placed next to stachel.exe by the installer; the MSIX additionally carries the other VC runtime DLLs added by the msix tool."
+    },
+    {
+      "name": "Inno Setup (setup and uninstall program of Stachel-Setup-<version>.exe)",
+      "version": "6.7.3",
+      "license": "Inno Setup License (zlib-like)",
+      "source": "https://jrsoftware.org/isinfo.php",
+      "parts": ["flutter_app (Windows)"],
+      "files": ["tools/licenses/texts/innosetup.txt"]
+    },
+    {
+      "name": "AppImage type-2 runtime (start code of Stachel-<version>-x86_64.AppImage, from appimagetool 1.9.1)",
+      "license": "MIT AND LGPL-2.1-or-later AND BSD-2-Clause (+ bundled)",
+      "source": "https://github.com/AppImage/type2-runtime",
+      "parts": ["flutter_app (Linux)"],
+      "note": "MIT; statically linked: libfuse 3 (LGPL-2.1-or-later), squashfuse (BSD-2-Clause), zstd/zlib/xz (BSD/zlib/public domain). Texts in section 5, source code: upstream repository and the written offer in section 1."
+    },
+    {
+      "name": "System libraries on Linux (GTK 3, GLib, libsecret, GStreamer, EGL/GLES)",
+      "license": "LGPL-2.1-or-later and others (not shipped)",
+      "source": "https://packages.ubuntu.com/",
+      "parts": ["flutter_app (Linux)"],
+      "note": "Not part of the packages: taken from the distribution (.deb, AppImage) or from the GNOME runtime snap gnome-42-2204 (Snap)."
     },
     {
       "name": "Node.js runtime (node:22-bookworm-slim)",

@@ -8,8 +8,11 @@ import 'stachel_board_screen.dart';
 import 'stachel_client_base.dart';
 import 'stachel_style.dart';
 
-/// Camera or gallery? (null = cancelled)
-Future<StachelPhotoSource?> askPhotoSource(BuildContext context) => showModalBottomSheet<StachelPhotoSource>(
+/// Camera or gallery? (null = cancelled; without a camera – desktop – straight to the file dialog)
+Future<StachelPhotoSource?> askPhotoSource(BuildContext context) async =>
+    stachelHasCamera ? _askPhotoSource(context) : StachelPhotoSource.gallery;
+
+Future<StachelPhotoSource?> _askPhotoSource(BuildContext context) => showModalBottomSheet<StachelPhotoSource>(
   context: context,
   showDragHandle: true,
   builder: (ctx) => SafeArea(

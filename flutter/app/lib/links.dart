@@ -81,14 +81,19 @@ String? _objectOf(Uri uri) {
   return o != null && o.length == 1 && stachelBoardIdPattern.hasMatch(o.single) ? o.single : null;
 }
 
+/// Own URL scheme of the desktop apps (Windows registry / MSIX protocol, Linux `x-scheme-handler`).
+const desktopScheme = 'stachel';
+
 /// Incoming links; the root screen takes them from [pending].
 class StachelAppLinks {
   StachelAppLinks(this.base);
   final String base;
   final pending = ValueNotifier<AppLink?>(null);
 
-  /// True if [uri] was a link of this app.
+  /// True if [uri] was a link of this app. Desktop also takes `stachel://<host>/<path>` (URL protocol registered by the
+  /// installers, docs/release/desktop.md) – the same link as `https://<host>/<path>`.
   bool handle(Uri uri) {
+    if (uri.scheme == desktopScheme) uri = uri.replace(scheme: Uri.parse(base).scheme);
     final link = appLinkFrom(uri, base);
     if (link == null) return false;
     pending.value = link;

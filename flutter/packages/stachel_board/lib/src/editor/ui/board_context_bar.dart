@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../model/board_object.dart';
@@ -68,9 +70,16 @@ List<(CtxItem, CtxSection)> contextEntries(BuildContext context, BoardUi ui, Lis
 /// behind „Mehr“ („Weitere Aktionen“, grouped by [CtxSection]). Popovers are sheets that a new selection closes
 /// ([BoardUi.openSheet]).
 class BoardContextBar extends StatelessWidget {
-  const BoardContextBar({super.key, required this.ui, this.label, this.onClose});
+  const BoardContextBar({super.key, required this.ui, this.label, this.onClose, this.floating = false});
 
   final BoardUi ui;
+
+  /// Large windows ([BoardFloatingContextBar]): one row of icon buttons with tooltips (like the web's bar over the
+  /// selection), the rest behind „Mehr“; no label row.
+  final bool floating;
+
+  /// Widest a floating bar gets.
+  static const floatingMaxWidth = 760.0;
 
   /// Overrides [describeSelection].
   final String? label;
@@ -92,6 +101,7 @@ class BoardContextBar extends StatelessWidget {
     final entries = contextEntries(context, ui, objs);
     final items = [for (final (i, _) in entries) i];
     final sections = {for (final (i, s) in entries) i.key: s};
+    if (floating) return _floatingBar(context, items, sections, locked: locked, text: text);
     return ui.theme.panelOf(
       key: const Key('stachelBoardSelection'),
       padding: const EdgeInsets.fromLTRB(12, 6, 2, 4),
@@ -154,6 +164,65 @@ class BoardContextBar extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _floatingBar(
+    BuildContext context,
+    List<CtxItem> items,
+    Map<String, CtxSection> sections, {
+    required bool locked,
+    required String text,
+  }) {
+    final editor = ui.editor;
+    return LayoutBuilder(
+      builder: (context, c) {
+        final avail = (c.maxWidth.isFinite ? c.maxWidth : floatingMaxWidth) - 2 * moreWidth - (locked ? 30 : 0) - 16;
+        final n = fitCount([for (final i in items) i.width], avail, moreW: 0);
+        final more = items.sublist(n);
+        return ui.theme.panelOf(
+          key: const Key('stachelBoardSelection'),
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+          child: Tooltip(
+            message: locked ? '$text · gesperrt' : text,
+            waitDuration: const Duration(milliseconds: 800),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (locked)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    child: Icon(Icons.lock_outline, size: 18, color: ui.theme.grey),
+                  ),
+                for (final i in items.take(n)) _button(context, i),
+                if (more.isNotEmpty)
+                  SizedBox(
+                    width: moreWidth,
+                    child: IconButton(
+                      key: const Key('stachelCtxMore'),
+                      tooltip: 'Weitere Aktionen',
+                      onPressed: () => _more(context, more, sections),
+                      icon: Icon(Icons.more_horiz, color: ui.theme.ink),
+                    ),
+                  ),
+                SizedBox(
+                  width: moreWidth,
+                  child: IconButton(
+                    tooltip: 'Auswahl aufheben (Esc)',
+                    onPressed:
+                        onClose ??
+                        () {
+                          editor.multiSelect = false;
+                          editor.select(const {});
+                        },
+                    icon: const Icon(Icons.close),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -258,6 +327,66 @@ class BoardContextBar extends StatelessWidget {
     );
     if (picked != null && context.mounted) picked.onTap(context, ui);
   }
+}
+
+/// Large windows (desktop, tablet – UX-Review P12): the context bar floats above the selection like the web's (centered,
+/// below it when there is no room above, always inside the view) and follows camera and selection. Hidden while the
+/// selection is being dragged, resized or rotated.
+class BoardFloatingContextBar extends StatelessWidget {
+  const BoardFloatingContextBar({super.key, required this.ui, this.leftInset = 0});
+
+  final BoardUi ui;
+
+  /// Room kept free at the left edge (the side tool bar).
+  final double leftInset;
+
+  /// Space between the selection's box and the bar (room for the rotate handle above it).
+  static const gap = 44.0;
+
+  @override
+  Widget build(BuildContext context) => ListenableBuilder(
+    listenable: Listenable.merge([ui.editor.camera, ui.editor.selection, ui.editor, ui.controller]),
+    builder: (context, _) {
+      final editor = ui.editor;
+      final ids = editor.selection.value;
+      final box = ids.isEmpty ? null : editor.selectionBounds(ids);
+      if (box == null || editor.dragging || editor.handling) return const SizedBox.shrink();
+      final screen = editor.camera.value.rectToScreen(box);
+      return CustomSingleChildLayout(
+        delegate: _FloatingBarLayout(screen, leftInset: leftInset),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: BoardContextBar.floatingMaxWidth),
+          child: BoardContextBar(ui: ui, floating: true),
+        ),
+      );
+    },
+  );
+}
+
+/// Places the floating bar centered above [selection] (screen), below it without room, clamped into the view.
+class _FloatingBarLayout extends SingleChildLayoutDelegate {
+  _FloatingBarLayout(this.selection, {required this.leftInset});
+  final Rect selection;
+  final double leftInset;
+
+  static const margin = 8.0;
+
+  @override
+  BoxConstraints getConstraintsForChild(BoxConstraints constraints) =>
+      BoxConstraints.loose(Size(math.max(0, constraints.maxWidth - leftInset - 2 * margin), constraints.maxHeight));
+
+  @override
+  Offset getPositionForChild(Size size, Size child) {
+    final minX = leftInset + margin, maxX = math.max(minX, size.width - child.width - margin);
+    final x = (selection.center.dx - child.width / 2).clamp(minX, maxX);
+    var y = selection.top - BoardFloatingContextBar.gap - child.height;
+    if (y < margin) y = selection.bottom + BoardFloatingContextBar.gap;
+    y = y.clamp(margin, math.max(margin, size.height - child.height - margin));
+    return Offset(x, y);
+  }
+
+  @override
+  bool shouldRelayout(_FloatingBarLayout old) => old.selection != selection || old.leftInset != leftInset;
 }
 
 /// Small grey heading of a group in a sheet (context bar „Mehr“, board menu).

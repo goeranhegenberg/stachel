@@ -41,6 +41,7 @@ void registerFrames(BoardRegistry r) {
     SheetDef(
       id: framesListSheet,
       build: (context, ui, _) => FramesListSheet(ui: ui),
+      side: true, // large windows: panel at the right (UX-Review P12)
     ),
   );
   r.defineOverlay(

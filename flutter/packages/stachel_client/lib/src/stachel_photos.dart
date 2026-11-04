@@ -23,6 +23,11 @@ class StachelPhoto {
 /// Where a photo comes from.
 enum StachelPhotoSource { camera, gallery }
 
+/// Whether „Foto aufnehmen“ is offered. Not on desktop (Windows, Linux, macOS): image_picker has no camera there and
+/// the gallery is a file dialog. Tests (`FLUTTER_TEST`) behave like a phone; they may set it.
+bool stachelHasCamera =
+    Platform.environment.containsKey('FLUTTER_TEST') || !(Platform.isWindows || Platform.isLinux || Platform.isMacOS);
+
 /// Picks a photo (camera or gallery), resized and compressed on the device. Tests replace it.
 abstract class StachelPhotoPicker {
   /// Null = cancelled.

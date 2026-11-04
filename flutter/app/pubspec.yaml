@@ -1,8 +1,8 @@
 name: stachel
-description: "Stachel – das gemeinsame Whiteboard (native App, docs/stachel_app_konzept.md)."
+description: "Stachel – das gemeinsame Whiteboard."
 publish_to: 'none'
 
-version: 1.3.1+6
+version: 1.4.0+7
 
 environment:
   sdk: ^3.11.0
@@ -19,11 +19,16 @@ dependencies:
   crypto: ^3.0.3
   url_launcher: 6.3.3
   app_links: 7.2.2
+  desktop_drop: 0.8.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  msix: 3.18.0
+  image: 4.8.0
+  integration_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true
@@ -55,3 +60,20 @@ flutter:
           weight: 600
         - asset: assets/fonts/Barlow-Bold.ttf
           weight: 700
+
+# Microsoft Store package (dart run msix:create --store; windows/installer/build.ps1 -Msix, docs/release/desktop.md).
+# identity_name, publisher and publisher_display_name are placeholders: after reserving the name „Stachel“ in Partner
+# Center copy the three values from Product identity (Package/Identity/Name, Package/Identity/Publisher,
+# Package/Properties/PublisherDisplayName) here. Without --store the package is signed with a test certificate.
+msix_config:
+  display_name: Stachel
+  identity_name: PLATZHALTER.Stachel
+  publisher: CN=00000000-0000-0000-0000-000000000000
+  publisher_display_name: PLATZHALTER
+  logo_path: windows/packaging/stachel_logo.png
+  languages: de-de, en-us
+  capabilities: internetClient
+  protocol_activation: stachel
+  architecture: x64
+  os_min_version: 10.0.17763.0
+  build_windows: false

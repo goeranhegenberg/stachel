@@ -9,7 +9,7 @@ import 'gesture_onboarding.dart';
 
 /// UX P5 (B5): gesture introduction on the first board of the device (overlay that opens it) and „Gesten-Einführung“
 /// in the board menu right after „Gesten“ (section „MEHR“ in the grouped phone menu, UX P7). Phone only – the
-/// web has mouse and keyboard and its shortcut overview.
+/// web has mouse and keyboard and its shortcut overview; the desktop app shows mouse and keyboard cards instead.
 ///
 /// Owner: UX-A2 (Welle UX+Q).
 void registerOnboarding(BoardRegistry r) {
@@ -28,7 +28,7 @@ void registerOnboarding(BoardRegistry r) {
       section: MenuSection.more,
       entry: (ui, at) => MenuEntry(
         key: 'stachelBoardOnboarding',
-        label: 'Gesten-Einführung',
+        label: GestureOnboarding.menuLabel,
         icon: Icons.school_outlined,
         onSelect: (context, ui) => unawaited(showGestureOnboarding(context, ui)),
       ),

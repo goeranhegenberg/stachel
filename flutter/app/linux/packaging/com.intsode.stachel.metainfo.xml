@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata (software centers, Snap/deb); docs/release/desktop.md -->
+<component type="desktop-application">
+  <id>com.intsode.stachel</id>
+  <name>Stachel</name>
+  <summary>Shared whiteboard: boards, notes and ideas, live with everyone</summary>
+  <summary xml:lang="de">Das gemeinsame Whiteboard – Boards, Notizen, Ideen, live mit allen</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <developer id="com.intsode">
+    <name>Göran Hegenberg</name>
+  </developer>
+  <description>
+    <p>Stachel is an open-source online whiteboard for teams: an endless canvas with sticky notes, shapes, text,
+      connectors, pen, frames, images, PDFs, mind maps and comments. All changes reach everyone live.</p>
+    <p xml:lang="de">Stachel ist ein quelloffenes Online-Whiteboard für Teams: eine endlose Fläche mit Haftnotizen, Formen,
+      Text, Verbindern, Stift, Rahmen, Bildern, PDFs, Mindmaps und Kommentaren. Alle Änderungen kommen sofort bei allen an.</p>
+  </description>
+  <launchable type="desktop-id">com.intsode.stachel.desktop</launchable>
+  <url type="homepage">https://github.com/goeranhegenberg/stachel</url>
+  <url type="bugtracker">https://github.com/goeranhegenberg/stachel/issues</url>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+  <provides>
+    <binary>stachel</binary>
+  </provides>
+</component>

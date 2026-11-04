@@ -845,7 +845,8 @@ class BoardEditor extends ChangeNotifier with BoardEditorTools, BoardEditorMind 
     if (origin == null) return;
     var dx = p.dx - _dragFrom.dx, dy = p.dy - _dragFrom.dy;
     final box = _dragBox;
-    if (box != null) {
+    if (snapOff) guides.value = const SnapGuides();
+    if (box != null && !snapOff) {
       final s = snapMove(box.shift(Offset(dx, dy)), _snapOthers, snapPx / camera.value.z);
       dx += s.dx;
       dy += s.dy;
@@ -881,6 +882,9 @@ class BoardEditor extends ChangeNotifier with BoardEditorTools, BoardEditorMind 
   }
 
   bool get dragging => _dragOrigin != null;
+
+  /// Alt is held while moving (web „Alt beim Ziehen: Einrasten aus“): no guides, no snapping to other objects.
+  bool snapOff = false;
 
   /// A handle (resize, rotate, connector end …) is being dragged.
   bool get handling => _handle != null;

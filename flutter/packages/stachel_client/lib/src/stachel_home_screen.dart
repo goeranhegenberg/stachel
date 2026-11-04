@@ -654,6 +654,9 @@ class _StachelHomeScreenState extends State<StachelHomeScreen> {
             ),
           ),
         );
+      } else if (MediaQuery.sizeOf(context).width >= gridFrom) {
+        // UX-Review P12: tablet and desktop show the boards as a grid of cards
+        children.add(_grid([for (final b in visible) _tile(b, q)]));
       } else {
         for (final b in visible) {
           children.add(_tile(b, q));
@@ -750,6 +753,52 @@ class _StachelHomeScreenState extends State<StachelHomeScreen> {
         ),
       ),
     ],
+  );
+
+  /// From this width the board list is a grid of cards (UX-Review P12: tablet, desktop).
+  static const gridFrom = 600.0;
+
+  /// Width of a card in the grid (at least; the columns share the row).
+  static const gridCard = 340.0;
+
+  /// The board tiles as cards in columns of at least [gridCard].
+  Widget _grid(List<Widget> tiles) => LayoutBuilder(
+    key: const Key('stachelBoardGrid'),
+    builder: (context, c) {
+      final cols = ((c.maxWidth - 16) / gridCard).floor().clamp(1, 6);
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(8, 4, 8, 0),
+        child: Column(
+          children: [
+            for (var i = 0; i < tiles.length; i += cols)
+              IntrinsicHeight(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    for (var j = i; j < i + cols; j++)
+                      Expanded(
+                        child: j < tiles.length
+                            ? Padding(
+                                padding: const EdgeInsets.all(6),
+                                child: Material(
+                                  color: Sk.surface,
+                                  clipBehavior: Clip.antiAlias,
+                                  shape: RoundedRectangleBorder(
+                                    side: BorderSide(color: Sk.ink.withValues(alpha: 0.25)),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Center(child: tiles[j]),
+                                ),
+                              )
+                            : const SizedBox.shrink(),
+                      ),
+                  ],
+                ),
+              ),
+          ],
+        ),
+      );
+    },
   );
 
   Widget _tile(StachelBoardInfo b, String q) => _BoardTile(

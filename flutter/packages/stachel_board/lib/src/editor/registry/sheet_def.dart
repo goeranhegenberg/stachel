@@ -12,6 +12,8 @@ class SheetDef implements RegistryEntry {
     this.order = 0,
     this.closeOnSelectionChange = false,
     this.scrollControlled = true,
+    this.side = false,
+    this.sideTitle,
   });
 
   @override
@@ -25,4 +27,10 @@ class SheetDef implements RegistryEntry {
   /// Popover of the context bar: a new selection closes it (D44).
   final bool closeOnSelectionChange;
   final bool scrollControlled;
+
+  /// Large windows (UX-Review P12): a panel at the right edge instead of a sheet (lists like frames, comments).
+  final bool side;
+
+  /// Heading of the side panel.
+  final String? sideTitle;
 }

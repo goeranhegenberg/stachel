@@ -214,3 +214,151 @@ String? activeToolHint(BoardUi ui) {
   }
   return null;
 }
+
+/// Key letters of the web's tools (web `defineTool({key})`, docs/features/desktop.md): shown in the tooltips of the
+/// large-window tool bar („Haftnotiz (N)“).
+const webToolKeys = {
+  'select': 'V',
+  'hand': 'H',
+  'desktop.hand': 'H',
+  'sticky': 'N',
+  'text': 'T',
+  'shape': 'S',
+  'connector': 'L',
+  'pen': 'P',
+  'eraser': 'E',
+  'frame': 'F',
+  'collab.comment': 'C',
+};
+
+/// Tooltip of a tool button: its name, with the web's key letter if it has one.
+String toolTooltip(ToolDef t) {
+  final k = webToolKeys[t.id];
+  return k == null ? t.label : '${t.label} ($k)';
+}
+
+/// Large windows (desktop, tablet – UX-Review P12, [BoardDesktop.isWide]): the tool bar as a floating panel at the left
+/// edge of the board like the web – every tool (also the phone's „Weitere Werkzeuge“ and tools hidden on the phone,
+/// e.g. the hand), icons with tooltips incl. the web's key letter, Rückgängig/Wiederholen at the bottom. The active
+/// tool's options stand in a panel to the right of the bar instead of above a bottom bar.
+class BoardSideToolbar extends StatelessWidget {
+  const BoardSideToolbar({super.key, required this.ui, this.enabled = true, this.beforeHistory});
+
+  final BoardUi ui;
+
+  /// False while editing is paused (offline too long, read only).
+  final bool enabled;
+
+  /// Runs before undo/redo (the board ends writing first).
+  final VoidCallback? beforeHistory;
+
+  /// Width of the bar's buttons.
+  static const button = 44.0;
+
+  /// Width of the options panel next to the bar.
+  static const optionsWidth = 420.0;
+
+  List<ToolDef> _tools() => [
+    for (final t in ui.registry.tools.list())
+      if (t.available?.call(ui) ?? true) t,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = ui.theme;
+    final tools = _tools();
+    final active = tools.where((t) => t.isActive(ui) && t.options != null).firstOrNull;
+    final c = ui.controller;
+    Widget iconButton(String key, String tip, IconData icon, {bool on = false, VoidCallback? onTap}) => Tooltip(
+      message: tip,
+      preferBelow: false,
+      child: Semantics(
+        button: true,
+        selected: on,
+        label: tip,
+        child: InkWell(
+          key: Key(key),
+          borderRadius: BorderRadius.circular(6),
+          onTap: onTap,
+          child: Container(
+            width: button,
+            height: button - 4,
+            alignment: Alignment.center,
+            decoration: on ? BoxDecoration(color: theme.accent, borderRadius: BorderRadius.circular(6)) : null,
+            child: Icon(
+              icon,
+              size: 22,
+              color: onTap == null ? theme.grey.withValues(alpha: 0.45) : (on ? Colors.white : theme.ink),
+            ),
+          ),
+        ),
+      ),
+    );
+    void history(void Function() run) {
+      beforeHistory?.call();
+      run();
+    }
+
+    final bar = theme.panelOf(
+      key: const Key('stachelSideToolbar'),
+      padding: const EdgeInsets.all(4),
+      // the tools scroll in a low window, Rückgängig/Wiederholen stay visible at the bottom
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Flexible(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (final t in tools)
+                    iconButton(
+                      t.keyName ?? 'stachelTool-${t.id}',
+                      toolTooltip(t),
+                      t.icon,
+                      on: t.isActive(ui),
+                      onTap: enabled ? () => pickTool(context, ui, t) : null,
+                    ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            width: button - 12,
+            height: 1,
+            margin: const EdgeInsets.symmetric(vertical: 4),
+            color: theme.ink.withValues(alpha: 0.15),
+          ),
+          iconButton(
+            'stachelUndo',
+            'Rückgängig (Strg Z)',
+            Icons.undo,
+            onTap: enabled && c.canUndo ? () => history(c.undo) : null,
+          ),
+          iconButton(
+            'stachelRedo',
+            'Wiederholen (Strg Y)',
+            Icons.redo,
+            onTap: enabled && c.canRedo ? () => history(c.redo) : null,
+          ),
+        ],
+      ),
+    );
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        bar,
+        if (active != null && enabled)
+          Padding(
+            padding: const EdgeInsets.only(left: 8),
+            child: theme.panelOf(
+              key: const Key('stachelSideToolOptions'),
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: SizedBox(width: optionsWidth, child: active.options!(context, ui)),
+            ),
+          ),
+      ],
+    );
+  }
+}

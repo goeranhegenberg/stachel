@@ -3,13 +3,15 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../editor/desktop.dart';
 import '../../editor/registry/board_ui.dart';
 import '../view/board_prefs.dart';
 
 /// UX P5 (B5): a short introduction to the board's gestures on the first board opened on this device – four cards
 /// with tiny animations (move/zoom, hold = grab, hold on the empty board + drag = select, two fingers = undo).
 /// Skippable, shown once per device ([BoardPrefs] key [seenKey], kept by the app), opened again from the board menu
-/// („Gesten-Einführung“).
+/// („Gesten-Einführung“). In the desktop app ([BoardDesktop.enabled]) the cards speak of mouse and keyboard instead
+/// ([desktopCards], docs/features/desktop.md §1).
 abstract final class GestureOnboarding {
   /// Device setting: the introduction was seen (`'1'`).
   static const seenKey = 'stachel.onboarding.gestures';
@@ -58,6 +60,43 @@ abstract final class GestureOnboarding {
       text: 'Mit zwei Fingern tippen macht den letzten Schritt rückgängig, mit drei Fingern stellt ihn wieder her.',
     ),
   ];
+
+  /// The cards of the desktop app: wheel, drag, drag on the empty board, right click instead of finger gestures. The
+  /// wheel card follows the setting „Mausrad“ ([BoardDesktop.wheel], default „Zoomen“ like the web).
+  static List<OnboardingCard> get desktopCards => [
+    OnboardingCard(
+      key: 'wheel',
+      title: 'Ansicht bewegen',
+      text: BoardDesktop.wheel.value == WheelMode.zoom
+          ? 'Mausrad = zoomen, Umschalt + Mausrad = seitlich verschieben. Ziehen mit gedrückter Leertaste, mittlerer '
+                'oder rechter Maustaste verschiebt die Ansicht, am Trackpad zwei Finger.'
+          : 'Mausrad = verschieben (mit Umschalt seitlich), Strg + Mausrad = zoomen. Ziehen mit gedrückter Leertaste, '
+                'mittlerer oder rechter Maustaste verschiebt die Ansicht auch.',
+    ),
+    const OnboardingCard(
+      key: 'drag',
+      title: 'Objekte ziehen',
+      text: 'Objekte direkt mit der Maus ziehen. Doppelklick bearbeitet den Text, Alt + Ziehen zieht eine Kopie.',
+    ),
+    const OnboardingCard(
+      key: 'marquee',
+      title: 'Ziehen = auswählen',
+      text: 'Auf leerer Fläche ziehen wählt alles im Rechteck aus. Umschalt + Klick nimmt einzelne Objekte dazu.',
+    ),
+    const OnboardingCard(
+      key: 'menu',
+      title: 'Rechtsklick = Menü',
+      text:
+          'Rechtsklick öffnet das Menü des Objekts oder der Fläche. Strg Z macht rückgängig, ? zeigt alle '
+          'Tastenkürzel.',
+    ),
+  ];
+
+  /// The cards for this app: mouse and keyboard on the desktop, fingers on the phone.
+  static List<OnboardingCard> get current => BoardDesktop.enabled ? desktopCards : cards;
+
+  /// Name of the entry in the board menu.
+  static String get menuLabel => BoardDesktop.enabled ? 'Einführung Maus und Tastatur' : 'Gesten-Einführung';
 }
 
 /// One card of the introduction.
@@ -159,7 +198,7 @@ class _GestureOnboardingDialogState extends State<GestureOnboardingDialog> with 
   }
 
   void _next() {
-    if (_page >= GestureOnboarding.cards.length - 1) {
+    if (_page >= GestureOnboarding.current.length - 1) {
       Navigator.of(context).pop();
       return;
     }
@@ -169,7 +208,7 @@ class _GestureOnboardingDialogState extends State<GestureOnboardingDialog> with 
   @override
   Widget build(BuildContext context) {
     final theme = widget.ui.theme;
-    final cards = GestureOnboarding.cards;
+    final cards = GestureOnboarding.current;
     final last = _page == cards.length - 1;
     return Dialog(
       key: const Key('stachelOnboarding'),
@@ -308,7 +347,171 @@ class OnboardingPainter extends CustomPainter {
         _select(canvas, size, v);
       case 'undo':
         _undo(canvas, size, v);
+      case 'wheel':
+        _wheel(canvas, size, v);
+      case 'drag':
+        _drag(canvas, size, v);
+      case 'marquee':
+        _marquee(canvas, size, v);
+      case 'menu':
+        _menu(canvas, size, v);
     }
+  }
+
+  // ---- desktop cards (mouse pointer instead of a finger) ------------------------------------------------------------
+
+  /// The mouse pointer (arrow, white with ink outline); [pressed] draws a small accent ring at its tip.
+  void _pointer(Canvas canvas, Offset at, {double pressed = 0}) {
+    if (pressed > 0) {
+      canvas.drawCircle(
+        at,
+        6 + 8 * pressed,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2.5
+          ..color = accent.withValues(alpha: pressed.clamp(0.0, 1.0)),
+      );
+    }
+    final path = Path()
+      ..moveTo(at.dx, at.dy)
+      ..lineTo(at.dx, at.dy + 22)
+      ..lineTo(at.dx + 6, at.dy + 17)
+      ..lineTo(at.dx + 10, at.dy + 26)
+      ..lineTo(at.dx + 14, at.dy + 24)
+      ..lineTo(at.dx + 10, at.dy + 15)
+      ..lineTo(at.dx + 17, at.dy + 15)
+      ..close();
+    canvas.drawPath(path, Paint()..color = const Color(0xFFFFFFFF));
+    canvas.drawPath(
+      path,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.6
+        ..strokeJoin = StrokeJoin.round
+        ..color = const Color(0xFF0A0A0A),
+    );
+  }
+
+  /// A small mouse with its wheel turning ([turn] −1 … 1) and an optional key cap next to it („Strg“).
+  void _mouse(Canvas canvas, Offset at, double turn, {String? key}) {
+    final body = RRect.fromRectAndRadius(Rect.fromCenter(center: at, width: 30, height: 44), const Radius.circular(15));
+    canvas.drawRRect(body, Paint()..color = const Color(0xFFFFFFFF));
+    final line = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2
+      ..color = const Color(0xFF0A0A0A);
+    canvas.drawRRect(body, line);
+    canvas.drawLine(at + const Offset(0, -22), at + const Offset(0, -6), line);
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(
+        Rect.fromCenter(center: at + Offset(0, -12 + 3 * turn), width: 5, height: 9),
+        const Radius.circular(2),
+      ),
+      Paint()..color = accent,
+    );
+    if (key == null) return;
+    final tp = TextPainter(
+      text: TextSpan(
+        text: key,
+        style: const TextStyle(color: Color(0xFF0A0A0A), fontSize: 12, fontWeight: FontWeight.w700),
+      ),
+      textDirection: TextDirection.ltr,
+    )..layout();
+    final cap = Rect.fromLTWH(at.dx - 24 - tp.width - 12, at.dy - 12, tp.width + 12, 24);
+    canvas.drawRRect(RRect.fromRectAndRadius(cap, const Radius.circular(5)), Paint()..color = const Color(0xFFFFFFFF));
+    canvas.drawRRect(RRect.fromRectAndRadius(cap, const Radius.circular(5)), line);
+    tp.paint(canvas, cap.center - Offset(tp.width / 2, tp.height / 2));
+    tp.dispose();
+  }
+
+  void _wheel(Canvas canvas, Size size, double v) {
+    final c = size.center(Offset.zero);
+    // 0 … 0.45: the wheel pans down; 0.5 … 0.95: Strg + wheel zooms in
+    final pan = _seg(v, 0.05, 0.45) * 50 - 25;
+    final zoom = 1 + _seg(v, 0.55, 0.95) * 0.45;
+    _dots(canvas, size, Offset(c.dx, c.dy - pan), zoom);
+    canvas.save();
+    canvas.translate(c.dx, c.dy - pan);
+    canvas.scale(zoom);
+    _note(canvas, const Rect.fromLTWH(-70, -34, 54, 48), _yellow);
+    _note(canvas, const Rect.fromLTWH(-6, -18, 54, 48), _green);
+    canvas.restore();
+    _mouse(canvas, Offset(size.width - 34, size.height - 36), math.sin(v * 40), key: v >= 0.5 ? 'Strg' : null);
+    _pointer(canvas, c + const Offset(20, 10));
+  }
+
+  void _drag(Canvas canvas, Size size, double v) {
+    _dots(canvas, size, Offset.zero, 1);
+    final press = _seg(v, 0.08, 0.2);
+    final move = _seg(v, 0.25, 0.75);
+    final start = Offset(size.width * 0.32, size.height * 0.5);
+    final end = Offset(size.width * 0.68, size.height * 0.42);
+    final at = Offset.lerp(start, end, move)!;
+    _note(
+      canvas,
+      Rect.fromCenter(center: Offset(size.width * 0.72, size.height * 0.72), width: 50, height: 40),
+      _green,
+    );
+    _note(canvas, Rect.fromCenter(center: at, width: 76, height: 62), _yellow, selected: press >= 1);
+    _pointer(canvas, at + const Offset(6, 4), pressed: v < 0.8 ? press : 0);
+  }
+
+  void _marquee(Canvas canvas, Size size, double v) {
+    _dots(canvas, size, Offset.zero, 1);
+    final drag = _seg(v, 0.12, 0.7);
+    final a = Offset(size.width * 0.18, size.height * 0.18);
+    final b = Offset.lerp(a, Offset(size.width * 0.74, size.height * 0.84), drag)!;
+    final rect = Rect.fromPoints(a, b);
+    final notes = [
+      (Rect.fromLTWH(size.width * 0.26, size.height * 0.3, 50, 40), _yellow),
+      (Rect.fromLTWH(size.width * 0.5, size.height * 0.46, 50, 40), _orange),
+      (Rect.fromLTWH(size.width * 0.8, size.height * 0.24, 44, 36), _green),
+    ];
+    for (final (r, color) in notes) {
+      _note(canvas, r, color, selected: drag > 0 && rect.overlaps(r));
+    }
+    if (drag > 0) {
+      canvas.drawRect(rect, Paint()..color = const Color(0x221763B5));
+      canvas.drawRect(
+        rect,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.5
+          ..color = _blue,
+      );
+    }
+    _pointer(canvas, drag > 0 ? b : a, pressed: drag > 0 && v < 0.75 ? 1 : 0);
+  }
+
+  void _menu(Canvas canvas, Size size, double v) {
+    _dots(canvas, size, Offset.zero, 1);
+    final note = Rect.fromCenter(center: Offset(size.width * 0.34, size.height * 0.5), width: 76, height: 62);
+    final open = v >= 0.25 && v < 0.9;
+    _note(canvas, note, _yellow, selected: open);
+    final at = note.center + const Offset(8, 6);
+    if (open) {
+      final m = Rect.fromLTWH(at.dx + 6, at.dy + 4, 104, 86);
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(m.shift(const Offset(2, 3)), const Radius.circular(6)),
+        Paint()..color = const Color(0x33000000),
+      );
+      canvas.drawRRect(RRect.fromRectAndRadius(m, const Radius.circular(6)), Paint()..color = const Color(0xFFFFFFFF));
+      final row = Paint()
+        ..color = const Color(0x55000000)
+        ..strokeWidth = 2
+        ..strokeCap = StrokeCap.round;
+      for (var i = 0; i < 4; i++) {
+        final y = m.top + 16 + i * 18.0;
+        if (i == 1) {
+          canvas.drawRect(
+            Rect.fromLTWH(m.left + 4, y - 8, m.width - 8, 16),
+            Paint()..color = accent.withValues(alpha: 0.18),
+          );
+        }
+        canvas.drawLine(Offset(m.left + 12, y), Offset(m.left + 12 + (i.isEven ? 62 : 48), y), row);
+      }
+    }
+    _pointer(canvas, at, pressed: v >= 0.12 && v < 0.25 ? _seg(v, 0.12, 0.25) : 0);
   }
 
   static double _seg(double v, double a, double b) => Curves.easeInOut.transform(((v - a) / (b - a)).clamp(0.0, 1.0));

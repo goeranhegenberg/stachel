@@ -1,0 +1,173 @@
+name: Desktop
+
+# Stachel app for Windows and Linux (docs/release/desktop.md):
+#   Windows  Stachel-Setup-<version>.exe (Inno Setup, not code-signed) + Stachel-<version>-x64.msix (unsigned, Store only)
+#   Linux    stachel_<version>_amd64.deb, Stachel-<version>-x86_64.AppImage, stachel_<version>_amd64.snap
+# Tags v*: everything is attached to the GitHub release (created if missing, like release.yml). The Snap also goes to
+# the Snap Store (channel edge for pre-release tags like v1.3.0-rc.1, else candidate) – only if the repository secret
+# SNAPCRAFT_STORE_CREDENTIALS exists (snapcraft export-login). Pushes to main that touch the desktop parts and manual
+# runs only build (artifacts of the run).
+on:
+  push:
+    tags: ["v*"]
+    branches: [main]
+    paths:
+      - "flutter/app/windows/**"
+      - "flutter/app/linux/**"
+      - "flutter/app/snap/**"
+      - "flutter/app/pubspec.*"
+      - ".github/workflows/desktop.yml"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to attach the packages to (empty = only build)"
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  FLUTTER_VERSION: 3.47.2
+  TAG: ${{ github.event.inputs.tag || (startsWith(github.ref, 'refs/tags/') && github.ref_name) || '' }}
+
+jobs:
+  public-tree:
+    name: Public tree
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG || github.sha }}
+      - run: tools/release/check-public-tree.sh
+
+  windows:
+    name: Windows (installer + MSIX)
+    needs: public-tree
+    runs-on: windows-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: flutter/app
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG || github.sha }}
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - name: Inno Setup
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup -y --no-progress }
+      - run: flutter pub get
+      # smoke test: the real app starts on Windows (login page; without a sandbox no login)
+      - run: flutter test integration_test/desktop_smoke_test.dart -d windows
+      - name: Build installer and MSIX
+        shell: pwsh
+        run: ./windows/installer/build.ps1 -Msix
+      - name: Collect
+        shell: pwsh
+        run: |
+          $v = (Select-String -Path pubspec.yaml -Pattern '^version:\s*([0-9.]+)').Matches[0].Groups[1].Value
+          New-Item -ItemType Directory -Force dist | Out-Null
+          Copy-Item "build\installer\Stachel-Setup-$v.exe" dist\
+          Copy-Item build\windows\msix\stachel.msix "dist\Stachel-$v-x64.msix"
+          Get-ChildItem dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: windows
+          path: flutter/app/dist/*
+          if-no-files-found: error
+
+  linux:
+    name: Linux (deb, AppImage, Snap)
+    needs: public-tree
+    # Ubuntu 22.04: glibc 2.35 like the Snap base core22 – the packages also run on newer systems
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    env:
+      SNAP_CREDS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+    defaults:
+      run:
+        working-directory: flutter/app
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG || github.sha }}
+      - name: Build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev \
+            libsecret-1-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev desktop-file-utils xvfb
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get
+      # smoke test under a virtual display with its own session bus (no keyring: the login stays in memory)
+      - run: dbus-run-session -- xvfb-run -a flutter test integration_test/desktop_smoke_test.dart -d linux
+      - run: flutter build linux --release
+      - run: desktop-file-validate linux/packaging/com.intsode.stachel.desktop
+      - run: linux/packaging/package.sh all
+      - run: linux/packaging/package.sh snap-prep
+      - name: Snap
+        id: snap
+        uses: snapcore/action-build@v1
+        with:
+          path: flutter/app
+      - name: Collect
+        run: |
+          mkdir -p dist
+          cp build/linux/packages/*.deb build/linux/packages/*.AppImage dist/
+          cp ./*.snap dist/   # snapcraft writes it into the project directory
+          ls -la dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: linux
+          path: flutter/app/dist/*
+          if-no-files-found: error
+      - name: Snap Store (edge/candidate)
+        if: env.TAG != '' && env.SNAP_CREDS != ''
+        env:
+          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+        uses: snapcore/action-publish@v1
+        with:
+          snap: ${{ steps.snap.outputs.snap }}
+          release: ${{ contains(env.TAG, '-') && 'edge' || 'candidate' }}
+
+  release:
+    name: Attach to the GitHub release
+    needs: [windows, linux]
+    # (implicitly only if windows and linux succeeded)
+    if: github.event.inputs.tag != '' || startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG }}
+      - uses: actions/download-artifact@v8
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Checksums
+        run: cd dist && sha256sum * > SHA256SUMS-desktop.txt && cat SHA256SUMS-desktop.txt
+      - name: Upload
+        run: |
+          # release.yml may create the release at the same time
+          gh release view "$TAG" >/dev/null 2>&1 \
+            || gh release create "$TAG" --verify-tag --generate-notes --title "Stachel ${TAG#v}" \
+            || gh release view "$TAG" >/dev/null
+          gh release upload "$TAG" dist/* --clobber

@@ -1,0 +1,70 @@
+# Snap of the Stachel app (Snap Store „stachel“, docs/release/desktop.md). Packs the Flutter bundle built beforehand
+# (flutter build linux --release on Ubuntu 22.04, like the .deb and the AppImage) – snapcraft does not build Flutter
+# itself, so all three Linux packages contain the very same build.
+#   cd flutter/app && flutter build linux --release && linux/packaging/package.sh snap-prep && snapcraft pack
+#   (CI: .github/workflows/desktop.yml)
+# The version comes from pubspec.yaml (adopt-info + override-pull).
+name: stachel
+title: Stachel
+summary: Shared whiteboard – boards, notes and ideas, live with everyone
+description: |
+  Stachel is an open-source online whiteboard for teams: an endless canvas with sticky notes, shapes, text,
+  connectors, pen, frames, images, PDFs, mind maps and comments. All changes reach everyone live.
+  This is the desktop app; it connects to a Stachel server (default stachel.intsode.com).
+license: Apache-2.0
+website: https://github.com/goeranhegenberg/stachel
+source-code: https://github.com/goeranhegenberg/stachel
+issues: https://github.com/goeranhegenberg/stachel/issues
+icon: linux/packaging/icons/hicolor/256x256/apps/com.intsode.stachel.png
+base: core22
+grade: stable
+confinement: strict
+adopt-info: stachel
+compression: lzo
+
+# GApplication of the runner (unique app: a second start hands its link to the running one) owns this bus name
+slots:
+  dbus-stachel:
+    interface: dbus
+    bus: session
+    name: com.intsode.stachel
+
+apps:
+  stachel:
+    command: stachel
+    desktop: usr/share/applications/com.intsode.stachel.desktop
+    common-id: com.intsode.stachel
+    # GTK 3, libsecret and GStreamer from the GNOME runtime (content snap gnome-42-2204), not bundled
+    extensions: [gnome]
+    plugs:
+      - network
+      - home
+      - removable-media
+      # login kept in the keyring (libsecret, flutter_secure_storage); not auto-connected – without it the app keeps
+      # the login only while it runs. Auto-connect is requested in the Snap Store forum (docs/release/desktop.md).
+      - password-manager-service
+      - audio-playback
+    slots:
+      - dbus-stachel
+
+parts:
+  stachel:
+    plugin: dump
+    source: build/linux/x64/release/bundle
+    override-pull: |
+      craftctl default
+      craftctl set version="$(sed -nE 's/^version:[[:space:]]*([0-9]+\.[0-9]+\.[0-9]+).*/\1/p' "$CRAFT_PROJECT_DIR/pubspec.yaml")"
+    override-build: |
+      craftctl default
+      install -Dm644 "$CRAFT_PROJECT_DIR/linux/packaging/com.intsode.stachel.desktop" \
+        "$CRAFT_PART_INSTALL/usr/share/applications/com.intsode.stachel.desktop"
+      # the desktop file of a snap points at the snap's icon and command
+      sed -i -e 's|^Icon=.*|Icon=${SNAP}/meta/gui/icon.png|' -e 's|^Exec=stachel|Exec=stachel|' \
+        "$CRAFT_PART_INSTALL/usr/share/applications/com.intsode.stachel.desktop"
+      install -Dm644 "$CRAFT_PROJECT_DIR/linux/packaging/com.intsode.stachel.metainfo.xml" \
+        "$CRAFT_PART_INSTALL/usr/share/metainfo/com.intsode.stachel.metainfo.xml"
+      # license files of the repo root, copied into the project by `linux/packaging/package.sh snap-prep`
+      # (LXD/Multipass builds only see flutter/app)
+      for f in LICENSE NOTICE THIRD_PARTY_NOTICES; do
+        install -Dm644 "$CRAFT_PROJECT_DIR/build/linux/legal/$f" "$CRAFT_PART_INSTALL/usr/share/doc/stachel/$f"
+      done

@@ -495,11 +495,8 @@ Future<void> showStachelCommentList(
   required void Function(CommentThread t) onOpen,
   String filter = 'open',
   ValueChanged<String>? onFilter,
-}) => showModalBottomSheet<StachelCommentRescue>(
-  context: context,
-  isScrollControlled: true,
-  showDragHandle: true,
-  builder: (ctx) => _CommentList(
+}) {
+  Widget list(BuildContext ctx) => _CommentList(
     editor: editor,
     filter: filter,
     onFilter: onFilter,
@@ -507,8 +504,18 @@ Future<void> showStachelCommentList(
       Navigator.of(ctx).pop();
       onOpen(t);
     },
-  ),
-);
+  );
+  // large windows (UX-Review P12): a panel at the right like the web's sidebar
+  if (BoardDesktop.wideOf(context)) {
+    return showBoardSidePanel<void>(context, title: 'KOMMENTARE', panelKey: 'stachelCommentPanel', builder: list);
+  }
+  return showModalBottomSheet<StachelCommentRescue>(
+    context: context,
+    isScrollControlled: true,
+    showDragHandle: true,
+    builder: list,
+  );
+}
 
 class _CommentList extends StatefulWidget {
   const _CommentList({required this.editor, required this.onOpen, required this.filter, this.onFilter});

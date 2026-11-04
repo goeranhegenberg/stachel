@@ -857,7 +857,11 @@ class _StachelBoardScreenState extends State<StachelBoardScreen> with WidgetsBin
               ],
               bottom: PreferredSize(preferredSize: const Size.fromHeight(5), child: Sk.stripe(height: 5)),
             ),
-      body: BoardUiScope(ui: _ui, child: _starting ? const SizedBox.shrink() : _body()),
+      // hardware keys like the web (docs/features/desktop.md): on the phone too when a keyboard is connected
+      body: BoardUiScope(
+        ui: _ui,
+        child: _starting ? const SizedBox.shrink() : BoardKeyboard(ui: _ui, child: _body()),
+      ),
     );
   }
 
@@ -892,6 +896,10 @@ class _StachelBoardScreenState extends State<StachelBoardScreen> with WidgetsBin
         : const <(CommentThread, CommentMessage)>[];
     // `view` cannot mark mentions read (the server rejects every op): no notice that would never go away
     final mention = mentions.isEmpty ? null : mentions.first.$1.id;
+    // UX-Review P12 / desktop: large windows put the tool bar at the left over the board and float the context bar
+    // above the selection (like the web); the phone keeps its bars at the bottom
+    final wide = BoardDesktop.wideOf(context);
+    final selecting = !editing && !hidden && c.mayEdit && _editor.selection.value.isNotEmpty;
     return Column(
       children: [
         Expanded(
@@ -964,8 +972,26 @@ class _StachelBoardScreenState extends State<StachelBoardScreen> with WidgetsBin
                   ),
                 )
               // no context bar for `view`/`comment` (web: hidden there; the object menu keeps link, browser, comment)
-              else if (!editing && !hidden && c.mayEdit && _editor.selection.value.isNotEmpty)
+              else if (selecting && !wide)
                 Positioned(left: 8, right: 8, bottom: 8, child: _contextBar()),
+              if (selecting && wide && hint == null)
+                Positioned.fill(
+                  child: BoardFloatingContextBar(ui: _ui, leftInset: showTools ? _sideToolbarInset : 0),
+                ),
+              if (showTools && wide)
+                Positioned(
+                  left: 12,
+                  top: 12,
+                  bottom: 12,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: BoardSideToolbar(
+                      ui: _ui,
+                      enabled: _editor.editable,
+                      beforeHistory: () => _viewKey.currentState?.finishEditing(),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
@@ -988,7 +1014,7 @@ class _StachelBoardScreenState extends State<StachelBoardScreen> with WidgetsBin
               ],
             ),
           )
-        else if (showTools)
+        else if (showTools && !wide)
           BoardToolbar(
             ui: _ui,
             enabled: _editor.editable,
@@ -1026,6 +1052,9 @@ class _StachelBoardScreenState extends State<StachelBoardScreen> with WidgetsBin
   }
 
   Widget _contextBar() => BoardContextBar(ui: _ui);
+
+  /// Room the side tool bar takes at the left (large windows): the floating context bar stays clear of it.
+  static const _sideToolbarInset = 12 + BoardSideToolbar.button + 8 + 8;
 
   /// Banner over a shown board; null = live and fine.
   Widget? _banner() {
