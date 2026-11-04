@@ -1,7 +1,8 @@
 // Mindmaps zwischen Org-App (Native-API, Vertrag §8.6 `mind`) und echtem Browser gegen den ECHTEN Server:
 // - Browser legt eine Mindmap an (Tab/Enter) → die App bekommt Knoten samt Layout,
 // - App legt Unterthemen an, schreibt, klappt ein → der Browser zeigt es, und sein EIGENES Layout (Canvas-Textmessung)
-//   ergibt genau dieselben Lagen/Größen (Web ordnet nach einer lokalen Änderung neu an: nichts verschiebt sich),
+//   ergibt dieselben Lagen/Größen (Web ordnet nach einer lokalen Änderung neu an: nichts verschiebt sich; ±4 px,
+//   expectSameLayout),
 // - eingeklappter Knoten links zeigt die Zahl, Browser-Tab am Knoten der App kommt in der App an.
 // Screenshot: docs/screenshots/native-mind-web.png (Vergleich mit dem Golden der App goldens/mindmap.png).
 import { expect, test, type Page } from '@playwright/test';
@@ -37,6 +38,18 @@ test.afterAll(async () => {
 
 type Node = { id: string; x: number; y: number; w: number; h: number; text?: string; color?: string; mind?: Record<string, unknown> };
 const layout = (list: Node[]) => Object.fromEntries(list.map((n) => [n.id, [n.x, n.y, n.w, n.h, JSON.stringify(n.mind ?? {}), n.color, n.text]]));
+
+/** Lage und Größe auf ±4 px gleich, alles andere genau: Der Server misst Text mit Schriftmetriken, der Browser mit
+ * Canvas; Chromium unter Linux (GitHub-CI) liegt dabei 1–3 px neben Windows. */
+const PX = 4;
+function expectSameLayout(got: ReturnType<typeof layout>, want: ReturnType<typeof layout>) {
+  expect(Object.keys(got).sort()).toEqual(Object.keys(want).sort());
+  for (const [id, w] of Object.entries(want)) {
+    const g = got[id];
+    expect(g.slice(4), id).toEqual(w.slice(4));
+    for (let i = 0; i < 4; i++) expect(Math.abs((g[i] as number) - (w[i] as number)), `${id} ${'xywh'[i]}`).toBeLessThanOrEqual(PX);
+  }
+}
 
 /** App-Stand aus welcome + Patches. */
 function appState(a: NativeClient) {
@@ -136,7 +149,7 @@ test('Mindmap: Browser ↔ App, Layout des Servers = Layout des Browsers', async
   // der Browser hat wirklich neu angeordnet (mit „!“ war die Wurzel breiter) …
   expect(a.messages.some((m) => m.t === 'patch' && (m.changes as Msg[]).some((c) => c.set?.text === 'Sommerfest!'))).toBe(true);
   // … und danach steht wieder genau das Layout des Servers da
-  expect(layout(minds(a))).toEqual(server1);
+  expectSameLayout(layout(minds(a)), server1);
   await page.waitForTimeout(150);
   await page.screenshot({ path: path.join(SHOTS, 'native-mind-web.png') });
 
@@ -155,6 +168,6 @@ test('Mindmap: Browser ↔ App, Layout des Servers = Layout des Browsers', async
   // und wieder: das Web hätte dasselbe Layout
   const server2 = layout(minds(a));
   await browserRelayout(page, root.id);
-  expect(layout(minds(a))).toEqual(server2);
+  expectSameLayout(layout(minds(a)), server2);
   a.close();
 });
