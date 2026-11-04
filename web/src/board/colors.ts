@@ -26,6 +26,39 @@ export const SHAPE_FILLS = ['#ffffff', '#000000', '#c9e14a', '#1763b5', '#ec4e92
 /** Farben für Striche, Verbinder und Text. */
 export const INK_COLORS = ['#0a0a0a', '#1763b5', '#ec4e92', '#7aa21b', '#e8590c', '#7048e8', '#8a8a85', '#ffffff'];
 
+/** Schrift auf Notizen und freien Farben: Schwarz (wie überall) bzw. Weiß. */
+export const INK_DARK = '#0a0a0a';
+export const INK_LIGHT = '#ffffff';
+
+const HEX6 = /^#[0-9a-f]{6}$/i;
+
+/** Relative Leuchtdichte nach WCAG 2.x (sRGB linearisiert, 0 = Schwarz … 1 = Weiß); null bei ungültiger Farbe. */
+export function relativeLuminance(hex: string): number | null {
+  if (!HEX6.test(hex)) return null;
+  const lin = (i: number) => {
+    const c = parseInt(hex.slice(i, i + 2), 16) / 255;
+    return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  };
+  return 0.2126 * lin(1) + 0.7152 * lin(3) + 0.0722 * lin(5);
+}
+
+/** Kontrastverhältnis zweier Farben nach WCAG 2.x (1 … 21). */
+export function contrastRatio(a: string, b: string): number {
+  const la = relativeLuminance(a) ?? 1;
+  const lb = relativeLuminance(b) ?? 1;
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+}
+
+/**
+ * Schrift einer Haftnotiz (und jeder frei gewählten Notizfarbe): die der beiden Schriftfarben Schwarz/Weiß mit dem
+ * höheren Kontrast nach WCAG, bei Gleichstand Schwarz. Auf allen hellen Notizfarben (die zwölf alten) bleibt es Schwarz,
+ * auf den dunklen wird es Weiß. Die App rechnet dasselbe (`stachel_board` `readableInk`).
+ */
+export function readableInk(bg: string | undefined): string {
+  if (!bg || !HEX6.test(bg)) return INK_DARK;
+  return contrastRatio(bg, INK_LIGHT) > contrastRatio(bg, INK_DARK) ? INK_LIGHT : INK_DARK;
+}
+
 /** Lesbare Textfarbe auf einem Hintergrund. */
 export function textOn(bg: string | undefined): string {
   if (!bg || !/^#[0-9a-f]{6}$/i.test(bg)) return '#0a0a0a';

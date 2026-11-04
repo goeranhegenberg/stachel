@@ -42,13 +42,11 @@ abstract interface class BoardAdminHost {
   /// `GET /api/native/v1/boards/:id/versions/:vid/snapshot` as JSON (`{board, version, below, snapshot}`).
   Future<Map<String, Object?>> versionSnapshot(String id);
 
-  // ---- export (N07/N08) and preview image (N09) ------------------------------------------------------------------
+  // ---- export (N07/N08); the preview image of the overview is rendered by the server (P8, Welle B) --------------
 
   /// Hands a file to the system share sheet („Teilen“ instead of the web's download).
   Future<void> shareFile(Uint8List bytes, String fileName, String mimeType);
 
-  /// `PUT /api/boards/:id/thumbnail` (PNG/JPEG/WebP, at most 2048 px); returns the new `thumbnailAt`.
-  Future<String?> uploadThumbnail(Uint8List bytes, String mimeType);
 
   // ---- AI access (B13, `/api/tokens`) ----------------------------------------------------------------------------
 

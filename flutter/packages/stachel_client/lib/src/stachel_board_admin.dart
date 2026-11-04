@@ -126,8 +126,6 @@ class StachelBoardAdmin implements BoardAdminHost {
   Future<void> shareFile(Uint8List bytes, String fileName, String mimeType) =>
       sharer.shareFile(bytes, fileName, mimeType);
 
-  @override
-  Future<String?> uploadThumbnail(Uint8List bytes, String mimeType) => api.uploadThumbnail(boardId, bytes, mimeType);
 
   @override
   Future<McpTokens> listTokens() async {
@@ -195,8 +193,6 @@ mixin StachelAdminHost on BoardHost implements BoardAdminHost, OwnTemplatesHost,
   @override
   Future<void> shareFile(Uint8List bytes, String fileName, String mimeType) =>
       admin.shareFile(bytes, fileName, mimeType);
-  @override
-  Future<String?> uploadThumbnail(Uint8List bytes, String mimeType) => admin.uploadThumbnail(bytes, mimeType);
   @override
   Future<McpTokens> listTokens() => admin.listTokens();
   @override

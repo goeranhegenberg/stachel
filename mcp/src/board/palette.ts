@@ -4,7 +4,10 @@
 
 export type ColorUse = 'fill' | 'ink';
 
-/** Helle Flächenfarben: die 12 Haftnotiz-Farben (STICKY_COLORS), auch für Formen und Rahmen. */
+/**
+ * Flächenfarben: die 36 Haftnotiz-Farben (STICKY_COLORS – Raster aus zwölf Farbtönen × hell/kräftig/dunkel), auch für
+ * Formen und Rahmen. Auf dunklen Notizen schreibt die Web-App automatisch weiß (Kontrast nach WCAG).
+ */
 const FILL: Record<string, string> = {
   yellow: '#fff27a',
   green: '#c9e14a',
@@ -17,6 +20,30 @@ const FILL: Record<string, string> = {
   teal: '#7fd6e0',
   midblue: '#7fb2f0',
   stone: '#d4d4cc',
+  sunflower: '#ffd23f',
+  tangerine: '#ff8c42',
+  raspberry: '#f25c78',
+  grass: '#7bc950',
+  lagoon: '#2ec4b6',
+  lavender: '#b388eb',
+  red: '#c62828',
+  royal: '#1565c0',
+  aubergine: '#6a1b9a',
+  brown: '#6d4c41',
+  charcoal: '#2b2b2b',
+  lightindigo: '#cdd3f8',
+  indigo: '#5c6bc0',
+  sky: '#29a8e0',
+  limegreen: '#a4b81c',
+  ochre: '#8a6a00',
+  wine: '#7f1d1d',
+  blackberry: '#880e4f',
+  night: '#283593',
+  navy: '#0d2c6b',
+  ocean: '#01579b',
+  darkteal: '#00695c',
+  forest: '#1b5e20',
+  olive: '#556b2f',
   white: '#ffffff',
   gray: '#e9e9e4',
   black: '#000000',
@@ -66,9 +93,43 @@ const ALIASES: Record<string, string> = {
   mittelblau: 'midblue',
   steingrau: 'stone',
   stein: 'stone',
+  sonnengelb: 'sunflower',
+  mandarine: 'tangerine',
+  himbeere: 'raspberry',
+  grasgrün: 'grass',
+  grasgruen: 'grass',
+  lagune: 'lagoon',
+  lavendel: 'lavender',
+  dunkelrot: 'red',
+  tannengrün: 'forest',
+  tannengruen: 'forest',
+  dunkelgrün: 'forest',
+  dunkelgruen: 'forest',
+  waldgrün: 'forest',
+  waldgruen: 'forest',
+  hellindigo: 'lightindigo',
+  himmelblau: 'sky',
+  limette: 'limegreen',
+  ocker: 'ochre',
+  weinrot: 'wine',
+  bordeaux: 'wine',
+  brombeere: 'blackberry',
+  nachtblau: 'night',
+  marineblau: 'navy',
+  marine: 'navy',
+  ozeanblau: 'ocean',
+  dunkeltürkis: 'darkteal',
+  dunkeltuerkis: 'darkteal',
+  oliv: 'olive',
+  königsblau: 'royal',
+  koenigsblau: 'royal',
+  dunkelblau: 'royal',
+  braun: 'brown',
+  anthrazit: 'charcoal',
+  dunkelgrau: 'charcoal',
 };
 
-/** Haftnotiz-Farben der Web-App (12, eine Quelle: shared/protocol.ts). */
+/** Haftnotiz-Farben der Web-App (36, eine Quelle: shared/protocol.ts). */
 export { STICKY_COLORS } from '../../../shared/protocol';
 
 /** Alle Farbnamen für Beschreibungen. */
@@ -108,6 +169,29 @@ export const COLOR_DE: Record<string, string> = {
   coral: 'Koralle',
   midblue: 'Mittelblau',
   stone: 'Steingrau',
+  sunflower: 'Sonnengelb',
+  tangerine: 'Mandarine',
+  raspberry: 'Himbeere',
+  grass: 'Grasgrün',
+  lagoon: 'Lagune',
+  lavender: 'Lavendel',
+  forest: 'Waldgrün',
+  lightindigo: 'Hellindigo',
+  indigo: 'Indigo',
+  sky: 'Himmelblau',
+  limegreen: 'Limette',
+  ochre: 'Ocker',
+  wine: 'Weinrot',
+  blackberry: 'Brombeere',
+  night: 'Nachtblau',
+  navy: 'Marineblau',
+  ocean: 'Ozeanblau',
+  darkteal: 'Dunkeltürkis',
+  olive: 'Oliv',
+  royal: 'Königsblau',
+  aubergine: 'Aubergine',
+  brown: 'Braun',
+  charcoal: 'Anthrazit',
 };
 
 /** Name zum Gruppieren nach Farbe (cluster). */

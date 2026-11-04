@@ -53,15 +53,24 @@ Keine eigenen Felder.
 
 ## Server (docs/contract.md §3)
 
-- `PUT /api/boards/:id/thumbnail` – Vorschaubild (PNG/JPEG/WebP, ≤ 512 KB, ≤ 2000 px), Tabelle `board_thumbnails`.
-- `GET /api/boards/:id/thumbnail?v=<thumbnailAt>` – Bild.
+- `GET /api/boards/:id/thumbnail?v=<thumbnailAt>` – Vorschaubild (WebP 560 × 260), Tabelle `board_thumbnails` (Spalte
+  `renderer`: 1 = früher vom Browser hochgeladen, 2 = Server). `PUT` wird nur noch quittiert (alte Clients).
+- `POST /api/boards/:id/photo-notes` – Zettel abfotografieren (`docs/features/photo-notes.md`).
 - `POST /api/boards/:id/duplicate` `{title?, template?}` – Kopie inkl. Live-Stand, Bilder (neue IDs) und Vorschaubild;
   `template: true` markiert die Kopie als Vorlage (Tabelle `board_templates`).
 - `BoardInfo.thumbnailAt?`, `BoardInfo.template?` in `GET /api/boards`.
 - Code: `server/src/thumbnails.ts`, `server/src/board-copies.ts`; Tests: `server/test/thumbnails.test.ts`.
 
-Vorschaubilder erzeugt der Browser (560 × 260, WebP bzw. PNG) mit derselben Darstellung wie der Export, 4 s nach der
-letzten Änderung (höchstens alle 30 s), nach dem ersten Sync und beim Verlassen des Boards.
+Vorschaubilder erzeugt seit Welle B (P8) der **Server** (`ServerThumbnails` in `server/src/thumbnails.ts`): nach dem
+Speichern eines Board-Dokuments 5 s Ruhe, höchstens einmal je Minute und Board, eins nach dem anderen; beim Start werden
+fehlende und vom Browser stammende Vorschauen nachgeholt (`backfill`). Das SVG baut der React-freie Web-Code
+`features/tools/thumbSvg.ts` (Notizen mit WCAG-Schrift, Formen, Text, Verbinder, Stift, Bilder als verkleinerte
+Originale des Boards, Karten, Mindmaps, Rahmen mit Titel; Tabellen/Zeitleisten/Fremdtypen als Fläche mit Titel), sharp
+rastert es mit den Barlow-Schriften aus `server/assets/fonts` (fontconfig im Temp-Ordner, `STACHEL_FONTS_DIR`).
+**Lesbar:** Text mindestens 13 Bildpunkte (auf die Fläche gekürzt, sonst Balken), Rahmentitel immer, Maßstab mindestens
+0,3 – größere Boards zeigen den Ausschnitt mit den meisten ganz sichtbaren Objekten. **Privat:** nur das Board-Dokument
+(private Ablagen nie), ausgeblendete Objekte fehlen; Abruf nur mit Board-Recht. Browser und Apps laden nichts mehr hoch.
+Tests: `server/test/thumbnails-render.test.ts`, `server/test/thumbnails.test.ts`.
 
 ## Export
 
@@ -108,6 +117,7 @@ Paket P1 (Auswahl & Anordnen): `web/src/board/ops/native.ts` (Kern) und `web/src
 | `tools.layerStep` | `{ids, dir: 1\|-1}` | `undo` | `{}` bzw. `skipped` (nichts Überlappendes in der Richtung) |
 | `tools.copyStyle` | `{id}` | `none` (schreibt nichts) | `data` = Format `{type, fields}` (Positivliste je Typ), `toast` „Format kopiert.“ |
 | `tools.pasteStyle` | `{ids, style}` oder `{ids, from}`, `painter?` | `undo` | `{}`; passt nichts: `toast` „Das Format passt nicht zu dieser Auswahl.“ (mit `painter`: „… zu diesem Objekt.“) |
+| `tools.photoNotes` | `{notes: [{x,y,w,h,color,text}] (1–60), x, y}` (Zettel aus `POST …/photo-notes`, ggf. korrigiert; Mitte) | `undo` | `select` = `focus` = neue Notizen, `toast` „N Notizen angelegt.“ (`photoNotes.ts`, Welle B) |
 
 Gleicher Code wie der Editor: Gruppen `board/ops/groups.ts`; Ausrichten/Verteilen `board/ops/arrange.ts`
 (`arrangeUnits`, `arrangePatches` – Gruppen als Einheit, ohne Verbinder/Gesperrte, Rahmen nehmen Inhalt mit über

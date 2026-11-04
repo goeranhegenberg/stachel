@@ -24,6 +24,7 @@ export 'src/stachel_offline.dart';
 export 'src/stachel_offline_sheet.dart';
 export 'src/stachel_overview.dart';
 export 'src/stachel_photo_flow.dart';
+export 'src/stachel_photo_notes.dart';
 export 'src/stachel_photos.dart';
 export 'src/stachel_private.dart';
 export 'src/stachel_secret_store.dart';

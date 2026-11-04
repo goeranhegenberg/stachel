@@ -2,7 +2,7 @@
 // aber ohne DOM-Objekte des Editors. Unbekannte Typen anderer Module erscheinen als Fläche in ihrer Farbe.
 import { memo, type ReactNode } from 'react';
 import type { BoardObject } from '../../protocol';
-import { textOn, userColor } from '../../board/colors';
+import { readableInk, textOn, userColor } from '../../board/colors';
 import { arrowHeadAt, connectorGeometry, connectorPath, dashArray } from '../../board/connector';
 import type { Rect } from '../../board/geometry';
 import { smoothPath } from '../../board/pen';
@@ -69,7 +69,7 @@ function objectEl(o: BoardObject, lookup: (id: string) => BoardObject | undefine
         <g key={o.id} transform={rot}>
           <rect x={x} y={y + 2} width={w} height={h} fill="rgba(0,0,0,.08)" />
           <rect x={x} y={y} width={w} height={h} fill={fill} />
-          {o.text && <TextBox text={o.text} x={x + pad} y={y + pad} w={w - 2 * pad} h={h - 2 * pad} fs={fs} color={textOn(fill)} anchor="middle" />}
+          {o.text && <TextBox text={o.text} x={x + pad} y={y + pad} w={w - 2 * pad} h={h - 2 * pad} fs={fs} color={readableInk(fill)} anchor="middle" />}
         </g>
       );
     }

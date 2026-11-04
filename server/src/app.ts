@@ -44,7 +44,8 @@ import { ApiTokens, registerApiTokens } from './api-tokens.js';
 import { registerBoardCopies } from './board-copies.js';
 import { forgetVersions, registerVersions } from './versions.js';
 import { registerTrash, setupTrash, Trash } from './trash.js';
-import { decorateBoards, registerThumbnails } from './thumbnails.js';
+import { decorateBoards, registerThumbnails, ServerThumbnails } from './thumbnails.js';
+import { registerPhotoNotes } from './photo-notes.js';
 import { registerUserRoutes, rememberUser, setupUsers } from './users.js';
 import type { Hocuspocus } from '@hocuspocus/server';
 import { BoardAccess, registerAccessGuard } from './access.js';
@@ -143,6 +144,8 @@ export interface App {
   native: NativeGateway;
   /** einmaliges Bereinigen alter Bild-Originale (image-clean.ts); Zahl der geänderten Bilder */
   imageCleanup: Promise<number>;
+  /** Vorschaubilder (thumbnails.ts) */
+  thumbs: ServerThumbnails;
   /** Import aus Miro (import/routes.ts): Verbindungen, Aufträge */
   imports: ImportModule;
   close: () => Promise<void>;
@@ -179,7 +182,16 @@ export async function buildApp(cfg: Config): Promise<App> {
   const pairings = new PairingStore(db, crypt);
   // Persönliche API-Tokens für KI-Assistenten (MCP), api-tokens.ts
   const apiTokens = new ApiTokens(db, verifier, crypt);
-  const sync = createSync(cfg, db, sessions, events, apiTokens, access);
+  // Vorschaubilder der Übersicht rendert der Server (P8, thumbnails.ts): nach dem Speichern gedrosselt, beim Start nachholen
+  const thumbs = new ServerThumbnails({
+    db,
+    imagesDir,
+    events,
+    ...(cfg.thumbnailIdleMs !== undefined ? { idleMs: cfg.thumbnailIdleMs } : {}),
+    ...(cfg.thumbnailGapMs !== undefined ? { minGapMs: cfg.thumbnailGapMs } : {}),
+    log: (msg, err) => app.log.warn({ err }, msg),
+  });
+  const sync = createSync(cfg, db, sessions, events, apiTokens, access, (id) => thumbs.schedule(id));
   apiTokens.attach(sync.hocuspocus);
   // Native-API (Apps ohne WebView): JSON auf Objekt-Ebene über /native/v1, der Server schreibt Yjs
   const native = new NativeGateway({ cfg, db, sessions, hocuspocus: sync.hocuspocus, events, access, privateMode: sync.privateMode });
@@ -562,7 +574,7 @@ export async function buildApp(cfg: Config): Promise<App> {
   registerNativePublicRoutes(app, { minApps: { org: cfg.nativeMinApp, stachel: cfg.nativeMinStachelApp }, devActions: cfg.nativeDevActions });
 
   // Betriebsart für die Web-App; Modus local: eigene Konten (accounts.ts), Org-Anmeldung aus
-  registerInstanceInfo(app, cfg.instance, { orgPasswordLogin: org.passwordLogin, orgAndroidPackage: cfg.androidPackage || null });
+  registerInstanceInfo(app, cfg.instance, { orgPasswordLogin: org.passwordLogin, orgAndroidPackage: cfg.androidPackage || null, photoNotes: cfg.photoNotes.enabled });
   const mailer = createMailer(cfg.instance, cfg.dataDir, (msg, err) => (err ? app.log.error({ err }, msg) : app.log.info(msg)));
   let localLogin: ReturnType<typeof registerAccounts>['login'] | null = null;
   if (accounts) {
@@ -686,6 +698,8 @@ export async function buildApp(cfg: Config): Promise<App> {
     registerBoardEvents(scope, events, access.local ? (req, e) => access.eventVisible({ key: req.session!.userKey }, e) : undefined);
     // PDF-Dokumente: Original hochladen/abrufen (Seiten kommen als Bilder)
     registerDocuments(scope, { db, imagesDir, boardExists: (id) => Boolean(getBoard(id)), uploads });
+    // Zettel abfotografieren: Foto → Zettel mit Farbe und Text, nur im Speicher (photo-notes.ts, P10)
+    await registerPhotoNotes(scope, { cfg: cfg.photoNotes, boardExists: (id) => Boolean(getBoard(id)) });
     // Privater Modus: Zustand, Starten, Aufdecken (private-mode.ts, docs/features/private.md)
     registerPrivateRoutes(scope, sync.privateMode, (id) => Boolean(getBoard(id)));
     registerTrash(scope, trash, db);
@@ -882,6 +896,10 @@ export async function buildApp(cfg: Config): Promise<App> {
     },
   );
 
+  // Vorschaubilder nachholen (fehlend, vom Browser hochgeladen oder älterer Renderer) – im Hintergrund, eins nach dem anderen
+  const missingThumbs = cfg.thumbnailBackfill === false ? 0 : thumbs.backfill();
+  if (missingThumbs) app.log.info(`${missingThumbs} Vorschaubilder werden neu erzeugt`);
+
   const housekeeping = setInterval(() => {
     try {
       pairings.purgeOld();
@@ -920,6 +938,7 @@ export async function buildApp(cfg: Config): Promise<App> {
     closed = true;
     clearInterval(housekeeping);
     clearInterval(retentionTimer);
+    thumbs.stop();
     await trash.stop();
     await imports.close();
     events.closeAll();
@@ -930,5 +949,5 @@ export async function buildApp(cfg: Config): Promise<App> {
     db.close();
   };
 
-  return { app, db, sessions, pairings, hocuspocus: sync.hocuspocus, trash, apiTokens, access, native, imageCleanup, imports, close };
+  return { app, db, sessions, pairings, hocuspocus: sync.hocuspocus, trash, apiTokens, access, native, imageCleanup, thumbs, imports, close };
 }

@@ -42,6 +42,12 @@ abstract class StachelAppHost extends BoardHost {
   /// „Teilen …“ (instances with own accounts, [StachelClient.showsRoles]): the sharing sheet of this board.
   Future<void> shareBoard() async {}
 
+  /// „Zettel abfotografieren“ (P10): the server offers it (`GET /api/instance` `photoNotes`).
+  bool get photoNotesAvailable => false;
+
+  /// Camera/gallery → server → preview → notes (stachel_photo_notes.dart).
+  Future<void> photoNotes(BuildContext context, BoardUi ui) async {}
+
   /// „Link öffnen?“ → Öffnen (P8): the link from a text on the board in the system browser.
   @override
   Future<void> openUrl(String url) async {
@@ -233,6 +239,33 @@ BoardRegistry registerStachelAppFeatures(BoardRegistry r) {
           label: 'Teilen …',
           icon: Icons.person_add_alt_1_outlined,
           onSelect: (_, ui) => _host(ui)!.shareBoard(),
+        );
+      },
+    ),
+  );
+  // „Zettel abfotografieren“ (P10, web board menu `tools.photoNotes` · 22): only where the server offers it, with edit
+  // rights and the web action on the server
+  r.defineMenuItem(
+    MenuItemDef(
+      id: 'tools.photoNotes',
+      on: MenuTarget.board,
+      order: 22,
+      section: MenuSection.board,
+      sectionOrder: 21,
+      entry: (ui, at) {
+        final host = _host(ui);
+        if (host == null ||
+            !host.photoNotesAvailable ||
+            !ui.controller.mayEdit ||
+            !ui.controller.loaded ||
+            !ui.controller.canAct('tools.photoNotes')) {
+          return null;
+        }
+        return MenuEntry(
+          key: 'stachelBoardPhotoNotes',
+          label: 'Zettel abfotografieren …',
+          icon: Icons.document_scanner_outlined,
+          onSelect: (context, ui) => host.photoNotes(context, ui),
         );
       },
     ),

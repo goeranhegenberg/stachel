@@ -56,10 +56,17 @@ ENV NODE_ENV=production \
     DATA_DIR=/data \
     WEB_DIST=/app/web/dist \
     STACHEL_AUTH=local
+# Texterkennung für „Zettel abfotografieren“ (server/src/photo-notes.ts): Tesseract 5 mit Deutsch und Englisch, läuft
+# offline als eigener Prozess (Apache-2.0); abschaltbar mit STACHEL_PHOTO_NOTES=0
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-deu tesseract-ocr-eng \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /app/server
 COPY --from=server-deps --chown=root:root /app/server/package.json ./package.json
 COPY --from=server-deps --chown=root:root /app/server/node_modules ./node_modules
 COPY --from=server --chown=root:root /app/server/dist ./dist
+# Schriften der Vorschaubilder (Barlow, OFL; thumbnails.ts richtet fontconfig darauf ein)
+COPY --chown=root:root server/assets ./assets
 COPY --from=web --chown=root:root /app/web/dist /app/web/dist
 COPY LICENSE NOTICE THIRD_PARTY_NOTICES TRADEMARKS.md /usr/share/doc/stachel/
 # `docker exec <container> stachel-admin users|verify <email>|reset-link <email>` (server/src/admin.ts)

@@ -7,11 +7,15 @@ describe('Barrierefreiheit', () => {
   it('alle Farben der Paletten haben deutsche Namen', () => {
     for (const c of [...STICKY_COLORS, ...SHAPE_FILLS, ...INK_COLORS, ...USER_COLORS]) expect(colorName(c), c).not.toMatch(/^#/);
     expect(colorName('#FFF27A')).toBe('Gelb');
-    // 12 Notizfarben: die alten sieben unverändert an ihrer Stelle, dahinter fünf neue
-    expect(STICKY_COLORS).toHaveLength(12);
-    expect(STICKY_COLORS.slice(0, 7)).toEqual(['#fff27a', '#c9e14a', '#ffb3d1', '#9fd3ff', '#ffd08a', '#e2d5ff', '#ffffff']);
-    expect(STICKY_COLORS.slice(7).map(colorName)).toEqual(['Koralle', 'Mint', 'Türkis', 'Mittelblau', 'Steingrau']);
-    expect(new Set(STICKY_COLORS.map(colorName)).size).toBe(12);
+    // 36 Notizfarben: Raster 12 Farbtöne × hell/kräftig/dunkel; die bisherigen Werte stecken darin (nur Tannengrün nicht)
+    expect(STICKY_COLORS).toHaveLength(36);
+    expect(STICKY_COLORS.slice(0, 12).map(colorName)).toEqual(['Gelb', 'Orange', 'Koralle', 'Rosa', 'Lila', 'Hellindigo', 'Mittelblau', 'Hellblau', 'Türkis', 'Mint', 'Grün', 'Weiß']);
+    expect(STICKY_COLORS.slice(12, 24).map(colorName)).toEqual(['Sonnengelb', 'Mandarine', 'Rot', 'Himbeere', 'Lavendel', 'Indigo', 'Königsblau', 'Himmelblau', 'Lagune', 'Grasgrün', 'Limette', 'Steingrau']);
+    expect(STICKY_COLORS.slice(24).map(colorName)).toEqual(['Ocker', 'Braun', 'Weinrot', 'Brombeere', 'Aubergine', 'Nachtblau', 'Marineblau', 'Ozeanblau', 'Dunkeltürkis', 'Waldgrün', 'Oliv', 'Anthrazit']);
+    expect(new Set(STICKY_COLORS.map(colorName)).size).toBe(36);
+    const before24 = ['#fff27a', '#c9e14a', '#ffb3d1', '#9fd3ff', '#ffd08a', '#e2d5ff', '#ffffff', '#ff9e8a', '#b9ecd8', '#7fd6e0', '#7fb2f0', '#d4d4cc', '#ffd23f', '#ff8c42', '#f25c78', '#7bc950', '#2ec4b6', '#b388eb', '#c62828', '#2e7d32', '#1565c0', '#6a1b9a', '#6d4c41', '#2b2b2b'];
+    expect(before24.filter((c) => !STICKY_COLORS.includes(c))).toEqual(['#2e7d32']);
+    expect(colorName('#2e7d32')).toBe('Tannengrün');
     expect(colorName('#123456')).toBe('#123456');
   });
 

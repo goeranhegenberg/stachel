@@ -44,8 +44,10 @@ export class BoardEvents {
     };
   }
 
-  emit(e: BoardEvent, now = Date.now()) {
-    if (e.type === 'updated') {
+  /** `force`: `updated` ohne Drossel (neues Vorschaubild – sonst sähe die Übersicht es erst beim nächsten Speichern). */
+  emit(e: BoardEvent, now = Date.now(), force = false) {
+    if (e.type === 'updated' && force) this.lastUpdated.set(e.id, now);
+    else if (e.type === 'updated') {
       const last = this.lastUpdated.get(e.id) ?? 0;
       if (now - last < UPDATED_EVERY_MS) return;
       this.lastUpdated.set(e.id, now);

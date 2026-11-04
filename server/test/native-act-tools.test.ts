@@ -1,5 +1,5 @@
 // Web-Aktionen des Moduls tools für die App (docs/contract.md §8.12, Paket P1): tools.layerStep (layers.ts),
-// tools.copyStyle/tools.pasteStyle (style.ts, wie formatPainter.tsx). Ergebnis = dieselbe Web-Funktion direkt auf einem
+// tools.copyStyle/tools.pasteStyle (style.ts, wie formatPainter.tsx), tools.photoNotes (photoNotes.ts, Welle B). Ergebnis = dieselbe Web-Funktion direkt auf einem
 // Browser-Store; Rückgängig; Hinweise wie im Web; Prüfung der args.
 import * as Y from 'yjs';
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
@@ -9,6 +9,7 @@ import { compareKeys } from '../../web/src/board/fractional';
 import { layerStepPatches } from '../../web/src/features/tools/layers';
 import { CORE_STYLE_TRAITS, extractStyle, stylePatches } from '../../web/src/features/tools/style';
 import { adjustTextPatch } from '../../web/src/editor/interaction/textWidth';
+import { photoNoteObjects } from '../../web/src/features/tools/photoNotes';
 import { loginMember, startEnv, waitFor, type TestEnv } from './helpers.js';
 import { appSession, NativeClient, webClient, type Msg } from './native-client.js';
 
@@ -158,5 +159,46 @@ describe('Werkzeug-Aktionen (P1)', () => {
     }
     const bad = await send(a, [{ op: 'act', name: 'tools.layerStep', args: { ids: ['n'], dir: 2 } }]);
     expect(bad.error).toBe('invalid_input');
+  });
+});
+
+describe('Zettel abfotografieren (Welle B)', () => {
+  const NOTES = [
+    { x: 40, y: 40, w: 200, h: 200, color: '#2b2b2b', text: 'Bühne' },
+    { x: 280, y: 40, w: 200, h: 200, color: '#ff8c42', text: 'Bierwagen' },
+    { x: 40, y: 280, w: 300, h: 200, color: '#7bc950', text: 'Breiter Zettel' },
+  ];
+
+  it('tools.photoNotes legt die Notizen wie photoNoteObjects an (Mitte bei x/y), gewählt, ein Rückgängig-Schritt', async () => {
+    const { a, w, welcome } = await setup();
+    expect(welcome.actions['tools.photoNotes']).toBe(1);
+    a.send({ t: 'step' });
+    const ack = await send(a, [{ op: 'act', name: 'tools.photoNotes', args: { notes: NOTES, x: 1000, y: 500 } }]);
+    expect(ack.t).toBe('ack');
+    const res = (ack.results as Record<string, { select?: string[]; toast?: string }>)['0']!;
+    expect(res.toast).toBe('3 Notizen angelegt.');
+    expect(res.select).toHaveLength(3);
+    await waitFor(() => res.select!.every((id) => w.objects.has(id)));
+    const got = res.select!.map((id) => ({ text: field(w, id, 'text'), color: field(w, id, 'color'), x: field(w, id, 'x') as number, y: field(w, id, 'y') as number, w: field(w, id, 'w') }));
+    // Referenz: dieselbe Web-Funktion, um (1000, 500) zentriert
+    const ref = photoNoteObjects(NOTES);
+    const minX = Math.min(...ref.map((o) => o.x));
+    const maxX = Math.max(...ref.map((o) => o.x + o.w));
+    const minY = Math.min(...ref.map((o) => o.y));
+    const maxY = Math.max(...ref.map((o) => o.y + o.h));
+    const dx = Math.round(1000 - (minX + maxX) / 2);
+    const dy = Math.round(500 - (minY + maxY) / 2);
+    expect(got).toEqual(ref.map((o) => ({ text: o.text, color: o.color, x: o.x + dx, y: o.y + dy, w: o.w })));
+    expect(got[2]!.w).toBe(350);
+    await undo(a);
+    await waitFor(() => res.select!.every((id) => !w.objects.has(id)));
+  });
+
+  it('prüft die Zettel (Farbe, Größe, Anzahl)', async () => {
+    const { a } = await setup();
+    for (const bad of [{ notes: [] }, { notes: [{ ...NOTES[0], color: 'rot' }] }, { notes: Array.from({ length: 61 }, () => NOTES[0]) }, { notes: [{ ...NOTES[0], w: 0 }] }]) {
+      const r = await send(a, [{ op: 'act', name: 'tools.photoNotes', args: { x: 0, y: 0, ...bad } }]);
+      expect(r.t, JSON.stringify(bad).slice(0, 60)).toBe('nack');
+    }
   });
 });

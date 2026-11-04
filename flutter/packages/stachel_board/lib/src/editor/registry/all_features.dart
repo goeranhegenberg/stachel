@@ -22,7 +22,6 @@ import '../../features/laser/register.dart';
 import '../../features/cursor_chat/register.dart';
 import '../../features/versions/register.dart';
 import '../../features/export/register.dart';
-import '../../features/thumbnail/register.dart';
 import '../../features/mcp/register.dart';
 import '../../features/documents/register.dart';
 import '../../features/richtext/register.dart';
@@ -67,7 +66,6 @@ BoardRegistry registerAllFeatures(BoardRegistry r) {
   registerCursorChat(r); // P5
   registerVersions(r); // P6
   registerExport(r); // P6
-  registerThumbnail(r); // P6
   registerMcp(r); // P6
   registerDocuments(r); // P7
   registerRichtext(r); // P8

@@ -208,7 +208,8 @@ describe('Wiederherstellen', () => {
     const board = await newBoard(admin, 'Lageplan');
     const img = await upload(admin, board.id, makePng(300, 20));
     expect((await admin.get(`${img.url}?w=256`)).status).toBe(200); // Variante anlegen
-    expect((await admin.req('PUT', `/api/boards/${board.id}/thumbnail`, { body: new Uint8Array(makePng(8, 8)), headers: { 'Content-Type': 'image/png' } })).status).toBe(200);
+    // Vorschaubild wie nach dem Rendern durch den Server (thumbnails.ts)
+    env.srv.db.prepare("INSERT OR REPLACE INTO board_thumbnails (board_id, mime, data, width, height, updated_at, renderer) VALUES (?, 'image/png', ?, 8, 8, ?, 2)").run(board.id, makePng(8, 8), new Date().toISOString());
     expect((await admin.req('PUT', `/api/boards/${board.id}/favorite`)).status).toBe(200);
     env.srv.db.prepare('INSERT INTO board_templates (board_id, created_at) VALUES (?, ?)').run(board.id, new Date().toISOString());
     putDoc(board.id, (doc) => {
@@ -300,7 +301,7 @@ describe('Endgültig löschen', () => {
     const board = await newBoard(admin, 'Weg damit');
     const img = await upload(admin, board.id, makePng(300, 20));
     expect((await admin.get(`${img.url}?w=256`)).status).toBe(200);
-    await admin.req('PUT', `/api/boards/${board.id}/thumbnail`, { body: new Uint8Array(makePng(8, 8)), headers: { 'Content-Type': 'image/png' } });
+    env.srv.db.prepare("INSERT OR REPLACE INTO board_thumbnails (board_id, mime, data, width, height, updated_at, renderer) VALUES (?, 'image/png', ?, 8, 8, ?, 2)").run(board.id, makePng(8, 8), new Date().toISOString());
     await admin.req('PUT', `/api/boards/${board.id}/favorite`);
     putDoc(board.id, (doc) => doc.getMap('objects').set('i1', imageObj('i1', img.id)));
     expect(fs.existsSync(imageFile(img.id)) && fs.existsSync(variantFile(img.id))).toBe(true);

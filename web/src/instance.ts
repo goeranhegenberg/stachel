@@ -21,6 +21,8 @@ export interface Instance {
   orgPasswordLogin: boolean;
   /** Modus org: Android-Paket der App für „In der App öffnen“ (null = kein Knopf auf Android) */
   orgAndroidPackage: string | null;
+  /** „Zettel abfotografieren“ auf diesem Server (STACHEL_PHOTO_NOTES); fehlt bei älteren Servern = aus */
+  photoNotes?: boolean;
 }
 
 const ORG_NAME = 'Organisation';
@@ -64,6 +66,7 @@ export function loadInstance(): Promise<Instance> {
         orgAppName: org ? (text(d.orgAppName) ?? `${orgName}-App`) : null,
         orgPasswordLogin: org && d.orgPasswordLogin === true,
         orgAndroidPackage: org ? text(d.orgAndroidPackage, 200) : null,
+        photoNotes: d.photoNotes === true,
       };
     })
     .catch(() => FALLBACK_INSTANCE)
@@ -89,6 +92,9 @@ export function useInstance(): Instance | null {
 
 /** Synchron (nach dem ersten Laden): Modus local? */
 export const isLocal = () => current?.auth === 'local';
+
+/** Synchron (nach dem ersten Laden): „Zettel abfotografieren“ verfügbar? */
+export const photoNotesAvailable = () => current?.photoNotes === true;
 
 /** Nur für Tests. */
 export function setInstanceForTest(i: Instance | null) {

@@ -1,7 +1,7 @@
 // Kern-Objekttypen im Typ-Register: Darstellung, Größe, Bearbeiten, Griffe. Verhalten wie vor dem Umbau auf Register.
 import { memo, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { STICKY_COLORS, type BoardObject } from '../../protocol';
-import { INK_COLORS, SHAPE_FILLS, textOn } from '../../board/colors';
+import { INK_COLORS, readableInk, SHAPE_FILLS, textOn } from '../../board/colors';
 import { mapRect, worldToScreen, type Handle } from '../../board/geometry';
 import { arrowHeadAt, connectorBounds, connectorGeometry, connectorPath, dashArray, isAttached, type ConnectorGeometry } from '../../board/connector';
 import { scalePoints, smoothPath } from '../../board/pen';
@@ -40,7 +40,7 @@ function StickyView({ o, editing, remoteName, cb }: ObjectViewProps) {
   const tStyle: CSSProperties = { fontSize: fs, ...formatStyle(o, 500, 'center') };
   const T = textEngine();
   return (
-    <div className="obj obj-sticky" data-id={o.id} data-type="sticky" style={placeStyle(o, { background: fill, color: textOn(fill) })}>
+    <div className="obj obj-sticky" data-id={o.id} data-type="sticky" style={placeStyle(o, { background: fill, color: readableInk(fill) })}>
       <div className="sticky-body" style={{ padding: pad, alignItems: flexAlign(valignOf(o)) }}>
         {editing ? <T.Edit o={o} variant="sticky" className="sticky-text" style={tStyle} cb={cb} onForeign={setForeign} /> : <T.View o={o} variant="sticky" className="sticky-text" style={tStyle} />}
       </div>

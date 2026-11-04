@@ -8,6 +8,7 @@ import 'package:stachel_board/stachel_board.dart';
 import 'stachel_board_images.dart';
 import 'stachel_board_prefs.dart';
 import 'stachel_boards_api.dart';
+import 'stachel_photo_notes.dart';
 import 'stachel_clipboard.dart';
 import 'stachel_cache.dart';
 import 'stachel_chime.dart';
@@ -221,7 +222,19 @@ class _StachelBoardScreenState extends State<StachelBoardScreen> with WidgetsBin
     // N10: board menu „Offline verfügbar“ (state + refreshes with this board's session)
     StachelOffline.instance.attach(_boards, widget.client.httpClient);
     unawaited(StachelOffline.instance.load());
+    // P10: board menu „Zettel abfotografieren“ only if the server offers it (live boards; tests with a fixture source
+    // set nothing up for `/api/instance`)
+    if (widget.source == null) {
+      unawaited(
+        _boards.photoNotesAvailable().then((v) {
+          if (mounted && v != _photoNotes) setState(() => _photoNotes = v);
+        }),
+      );
+    }
   }
+
+  /// The server offers „Zettel abfotografieren“ (P10).
+  bool _photoNotes = false;
 
   /// Cached state first (a local file, decoded in the background), then connect – with resume from the cached
   /// revision.
@@ -1226,6 +1239,11 @@ class _Host extends StachelAppHost
   Future<void> renameBoard() => s._rename();
   @override
   Future<void> shareBoard() => s._share();
+  @override
+  bool get photoNotesAvailable => s._photoNotes;
+  @override
+  Future<void> photoNotes(BuildContext context, BoardUi ui) =>
+      startPhotoNotes(context, ui, api: s._boards, boardId: s.widget.boardId, picker: s.widget.photoPicker);
   // P2: small settings on the device (recently used emoji, like the web's localStorage)
   @override
   Future<String?> readSetting(String key) async => (await SharedPreferences.getInstance()).getString(key);

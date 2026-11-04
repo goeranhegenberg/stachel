@@ -138,6 +138,14 @@ export interface WebModel {
   /** n neue Ebenen-Schlüssel über `top` bzw. unter `bottom` (fractional.ts, mit Zufallskürzel) */
   keysAbove(top: string | null, n: number): string[];
   keysBelow(bottom: string | null, n: number): string[];
+  /**
+   * Vorschaubild der Übersicht als SVG (web/src/features/tools/thumbSvg.ts): Objekte von unten nach oben, Hintergrund,
+   * Bilder als data:-URI; null = leer. `wantedImages` = Bilder im Ausschnitt mit gewünschter Breite.
+   */
+  thumbnail(
+    objects: Record<string, unknown>[],
+    opts: { background?: string; images?: ReadonlyMap<string, string> },
+  ): { svg: string; wantedImages: { imageId: string; px: number }[] } | null;
   /** verfügbare Web-Aktionen mit Version (welcome.actions); `dev` = mit Sandbox-Aktionen */
   actionList(dev: boolean): Record<string, number>;
   /** Name, Version und `args` einer Web-Aktion prüfen (unbekannt/zu alt → unsupported, `args` falsch → invalid_input) */

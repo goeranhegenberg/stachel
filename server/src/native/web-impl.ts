@@ -26,6 +26,7 @@ import { nanoid } from 'nanoid';
 import { metricsMeasure } from './text-metrics';
 import { privateRoute } from '../../../web/src/features/private/route';
 import { applyText, mergeText } from './ytext-merge';
+import { thumbnailSvg } from '../../../web/src/features/tools/thumbSvg';
 import type { MindTreeSpec, WebActCheck, WebActInput, WebCollab, WebMind, WebModel, WebStore } from './web-api';
 
 // Textbreiten wie im Browser (Mindmap-Größen): Schriftmaße aus dem Chromium statt Canvas
@@ -272,6 +273,10 @@ export const WEB: WebModel = {
   compareKeys,
   keysAbove,
   keysBelow,
+  thumbnail(objects, opts) {
+    const r = thumbnailSvg(objects as unknown as BoardObject[], opts);
+    return r ? { svg: r.svg, wantedImages: r.wantedImages } : null;
+  },
   actionList: (dev) => nativeActionList({ dev }),
   checkAction,
 };

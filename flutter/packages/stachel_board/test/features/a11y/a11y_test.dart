@@ -7,7 +7,6 @@ import 'dart:ui' show Tristate;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:stachel_board/src/features/a11y/a11y_layer.dart';
-import 'package:stachel_board/src/features/a11y/color_names.dart';
 import 'package:stachel_board/stachel_board.dart';
 
 import '../richtext/p8_board.dart';

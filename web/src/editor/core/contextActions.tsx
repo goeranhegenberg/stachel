@@ -1,6 +1,7 @@
 // Kern-Einträge der Kontextleiste (Reihenfolge 10–90). Feature-Module hängen eigene Gruppen dazwischen.
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { STICKY_COLORS, type BoardObject, type DashStyle, type LineStyle, type TextAlign, type VerticalAlign } from '../../protocol';
+import { ColorPicker, CustomColorToggle, RecentSwatches } from '../../ui/ColorPicker';
 import { INK_COLORS, SHAPE_FILLS } from '../../board/colors';
 import { isWholeGroup } from '../../board/ops/groups';
 import { align, distribute, type AlignMode } from '../../board/ops/arrange';
@@ -69,11 +70,14 @@ const V_ALIGNS: { valign: VerticalAlign; label: string }[] = [
 
 const colorableOf = (sel: readonly BoardObject[]) => sel.filter((o) => typeDef(o).colorable !== false);
 
+/** Notizfarben der gemischten Auswahl (Gelb, Grün, Rosa, Hellblau – wie vor dem 36er-Raster). */
+const MIXED_STICKY = ['#fff27a', '#c9e14a', '#ffb3d1', '#9fd3ff'];
+
 /** Gemeinsame Palette der Typen, sonst eine gemischte Auswahl. */
 function paletteOf(objs: readonly BoardObject[]): readonly string[] {
   const palettes = new Set(objs.map((o) => typeDef(o).palette));
   const only = palettes.size === 1 ? [...palettes][0] : undefined;
-  return only ?? [...new Set([...STICKY_COLORS.slice(0, 4), ...SHAPE_FILLS.slice(0, 5)])];
+  return only ?? [...new Set([...MIXED_STICKY, ...SHAPE_FILLS.slice(0, 5)])];
 }
 
 const currentColor = (objs: readonly BoardObject[]) => objs[0]?.color ?? (objs[0] ? typeDef(objs[0]).defaultColor : undefined) ?? '#0a0a0a';
@@ -108,15 +112,32 @@ defineContextAction({
   ),
   pops: {
     color: {
-      // 12 Notizfarben in zwei Reihen zu sechs
+      // Farben (Notizen: Raster 12 × 3), darunter „zuletzt benutzt“ und der eigene Farbwähler
       className: 'ctx-pop--colors',
       label: 'Farben',
-      Body: (p) => {
+      Body: function ColorBody(p) {
         const objs = colorableOf(p.selected);
         const current = currentColor(objs);
-        return paletteOf(objs).map((c) => (
-          <button key={c} className={`swatch${c === current ? ' is-active' : ''}`} style={{ background: c }} aria-label={`Farbe ${colorName(c)}`} onClick={() => p.choose((o) => (typeDef(o).colorable === false ? null : { color: c }))} />
-        ));
+        const [custom, setCustom] = useState(false);
+        const pick = (c: string) => p.choose((o) => (typeDef(o).colorable === false ? null : { color: c }));
+        if (custom) return <ColorPicker value={current} onPick={pick} onCancel={() => setCustom(false)} />;
+        const palette = paletteOf(objs);
+        // Notizfarben als Raster 12 × 3 (Farbton × hell/kräftig/dunkel; schmal sechs Spalten, seitlich scrollbar)
+        const grid = palette === STICKY_COLORS;
+        return (
+          <>
+            <div className={`cp-grid${grid ? ' cp-grid--sticky' : ''}`}>
+              {palette.map((c) => (
+                <button key={c} className={`swatch${c === current ? ' is-active' : ''}`} style={{ background: c }} aria-label={`Farbe ${colorName(c)}`} title={colorName(c)} onClick={() => pick(c)} />
+              ))}
+            </div>
+            {/* zuletzt benutzte eigene Farben und „+“ für den Farbwähler (Spektrum/Hex) */}
+            <div className="cp-line">
+              <RecentSwatches onPick={pick} current={palette.includes(current) ? undefined : current} />
+              <CustomColorToggle open={false} onClick={() => setCustom(true)} />
+            </div>
+          </>
+        );
       },
     },
   },

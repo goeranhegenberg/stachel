@@ -13,7 +13,6 @@ import { openSearch, SearchBar } from './search';
 import { getSettings, toggleGrid } from './settings';
 import { SettingsDialog } from './SettingsDialog';
 import { ShortcutsDialog } from './ShortcutsDialog';
-import { ThumbnailUploader } from './thumbnail';
 import type { ExportDialogProps } from './export/ExportDialog';
 import { IconBrush } from './icons';
 import { duplicateBoard } from './boardApi';
@@ -21,6 +20,7 @@ import { currentBoardId } from './util';
 import { ApiError, errorText } from '../../api';
 import { boardHref, navigate } from '../../router';
 import { isTouch } from '../../ui/touch';
+import { photoNotesAvailable } from '../../instance';
 
 // ---- Slots & Dialoge -------------------------------------------------------------------------------------------------
 
@@ -29,7 +29,6 @@ defineSlot({ id: 'tools.hidden', slot: 'world', order: 1, Component: HiddenObjec
 defineSlot({ id: 'tools.search', slot: 'overlay', order: 50, Component: SearchBar });
 defineSlot({ id: 'tools.painter', slot: 'overlay', order: 60, Component: PainterLayer });
 defineSlot({ id: 'tools.objectLink', slot: 'overlay', order: 2, Component: ObjectLinkFocus, presenting: true });
-defineSlot({ id: 'tools.thumbnail', slot: 'overlay', order: 3, Component: ThumbnailUploader, presenting: true });
 
 // Export (Renderer, PDF-Schreiber) erst beim Öffnen laden
 const ExportDialog = lazy(() => import('./export/ExportDialog').then((m) => ({ default: m.ExportDialog })));
@@ -42,6 +41,16 @@ defineModal({
   ),
 });
 defineModal({ id: 'tools.settings', Component: SettingsDialog });
+// Zettel abfotografieren (P10): Dialog erst beim Öffnen laden
+const PhotoNotesDialog = lazy(() => import('./PhotoNotesDialog').then((m) => ({ default: m.PhotoNotesDialog })));
+defineModal({
+  id: 'tools.photoNotes',
+  Component: (p) => (
+    <Suspense fallback={null}>
+      <PhotoNotesDialog {...p} />
+    </Suspense>
+  ),
+});
 // Kern-Kürzelübersicht ersetzen (Filter, Tastenkappen)
 defineModal({ id: 'shortcuts', Component: ({ onClose }) => <ShortcutsDialog onClose={onClose} /> });
 
@@ -182,6 +191,13 @@ defineMenuItem({ id: 'tools.canvasRedo', on: 'canvas', order: 71, item: (api) =>
 
 defineMenuItem({ id: 'tools.boardSearch', on: 'board', order: 10, item: () => ({ label: 'Auf dem Board suchen', shortcut: 'Strg F', onSelect: openSearch }) });
 defineMenuItem({ id: 'tools.boardExport', on: 'board', order: 20, item: (api) => ({ label: 'Exportieren …', onSelect: () => openExport(api) }) });
+// Zettel abfotografieren: nur mit Server, der es anbietet (STACHEL_PHOTO_NOTES, /api/instance `photoNotes`)
+defineMenuItem({
+  id: 'tools.photoNotes',
+  on: 'board',
+  order: 22,
+  item: (api) => (photoNotesAvailable() && currentBoardId() && !api.session.isLocal ? { label: 'Zettel abfotografieren …', onSelect: () => api.openModal('tools.photoNotes') } : null),
+});
 defineMenuItem({ id: 'tools.boardLink', on: 'board', order: 30, item: (api) => ({ label: 'Link zum Board kopieren', onSelect: () => void copyObjectLink(api, '') }) });
 defineMenuItem({ id: 'tools.boardDuplicate', on: 'board', order: 32, item: (api) => (currentBoardId() ? { label: 'Board duplizieren', onSelect: () => void copyBoard(api, false) } : null) });
 defineMenuItem({ id: 'tools.boardTemplate', on: 'board', order: 34, item: (api) => (currentBoardId() ? { label: 'Als Vorlage speichern', onSelect: () => void copyBoard(api, true) } : null) });

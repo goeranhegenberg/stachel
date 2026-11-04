@@ -50,6 +50,8 @@ export 'src/editor/ui/multi_select_chip.dart';
 export 'src/editor/rich_text_field.dart';
 export 'src/editor/two_finger_tap.dart';
 export 'src/features/core/core_widgets.dart';
+export 'src/features/core/color_picker.dart';
+export 'src/features/a11y/color_names.dart' show colorName;
 export 'src/features/core/register.dart';
 export 'src/features/richtext/format_bar.dart' show RichFormatBar, RichFormat;
 export 'src/features/follow/collab_api.dart';

@@ -11,7 +11,8 @@ import { Browser, loginAdmin, startEnv, waitFor, type TestEnv } from './helpers.
 
 let env: TestEnv;
 beforeAll(async () => {
-  env = await startEnv();
+  // Vorschaubilder rendert der Server (P8): im Test kurz nach dem Speichern, ohne Mindestabstand
+  env = await startEnv({ thumbnailIdleMs: 30, thumbnailGapMs: 0 });
 });
 afterAll(async () => {
   await env?.stop();
@@ -39,6 +40,12 @@ const GIF_1x1 = Buffer.from('R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAI
 
 const putThumb = (b: Browser, id: string, data: Buffer, type = 'image/png', csrf = true) =>
   b.req('PUT', `/api/boards/${id}/thumbnail`, { body: new Uint8Array(data), headers: { 'Content-Type': type }, csrf });
+
+/** Vorschaubild direkt in die Tabelle (wie nach dem Rendern), für Tests ohne Board-Inhalt. */
+const seedThumb = (id: string) =>
+  env.srv.db
+    .prepare("INSERT OR REPLACE INTO board_thumbnails (board_id, mime, data, width, height, updated_at, renderer) VALUES (?, 'image/png', ?, 8, 8, ?, 2)")
+    .run(id, makePng(8, 8), new Date().toISOString());
 
 async function newBoard(b: Browser, title: string) {
   const r = await b.post('/api/boards', { title });
@@ -103,57 +110,61 @@ describe('Vorschaubilder', () => {
     expect(r.body.error).toBe('csrf');
   });
 
-  it('hochladen, in der Liste als thumbnailAt, abrufen mit Cache-Regel', async () => {
+  it('der Server rendert nach Änderungen; Liste trägt thumbnailAt, Abruf mit Cache-Regel', async () => {
     const b = await loginAdmin(env);
     const board = await newBoard(b, 'Mit Vorschau');
     expect((await b.get(`/api/boards/${board.id}/thumbnail`)).status).toBe(404);
-    const png = makePng(560, 260);
-    const r = await putThumb(b, board.id, png);
-    expect(r.status).toBe(200);
-    expect(r.body.ok).toBe(true);
-    expect(r.body.thumbnailAt).toMatch(/Z$/);
-
-    const list = await b.get('/api/boards');
-    const info = list.body.boards.find((x: any) => x.id === board.id);
-    expect(info.thumbnailAt).toBe(r.body.thumbnailAt);
+    const live = await writeObjects(b, board.id, {
+      s1: { type: 'sticky', x: 0, y: 0, w: 200, h: 200, z: 'a0', color: '#c62828', text: 'Bühne', createdBy: 'a:orga', updatedAt: '' },
+    });
+    let info: any;
+    await waitFor(async () => {
+      const list = await b.get('/api/boards');
+      info = list.body.boards.find((x: any) => x.id === board.id);
+      return !!info?.thumbnailAt;
+    }, 8000);
     expect(info.template).toBeUndefined();
-
-    const g = await fetch(`${env.base}/api/boards/${board.id}/thumbnail?v=${encodeURIComponent(r.body.thumbnailAt)}`, { headers: { cookie: b.cookieHeader() } });
+    const g = await fetch(`${env.base}/api/boards/${board.id}/thumbnail?v=${encodeURIComponent(info.thumbnailAt)}`, { headers: { cookie: b.cookieHeader() } });
     expect(g.status).toBe(200);
-    expect(g.headers.get('content-type')).toBe('image/png');
+    expect(g.headers.get('content-type')).toBe('image/webp');
     expect(g.headers.get('cache-control')).toContain('immutable');
-    expect(Buffer.from(await g.arrayBuffer()).equals(png)).toBe(true);
     const g2 = await fetch(`${env.base}/api/boards/${board.id}/thumbnail`, { headers: { cookie: b.cookieHeader() } });
     expect(g2.headers.get('cache-control')).toBe('private, no-cache');
 
-    // Ersetzen: neuer Stand
-    const r2 = await putThumb(b, board.id, makePng(280, 130));
-    expect(r2.status).toBe(200);
-    expect(r2.body.thumbnailAt >= r.body.thumbnailAt).toBe(true);
+    // weitere Änderung → neuer Stand
+    const first = info.thumbnailAt as string;
+    live.doc.getMap<Y.Map<unknown>>('objects').get('s1')!.set('text', 'Bühne und Zelte');
+    await waitFor(async () => {
+      const list = await b.get('/api/boards');
+      return list.body.boards.find((x: any) => x.id === board.id)?.thumbnailAt > first;
+    }, 8000);
+    live.close();
   });
 
-  it('prüft Typ, Größe und Board', async () => {
+  it('Hochladen (alte Clients) wird quittiert, aber nicht übernommen', async () => {
     const b = await loginAdmin(env);
-    const board = await newBoard(b, 'Prüfungen');
+    const board = await newBoard(b, 'Altes Hochladen');
     expect((await putThumb(b, 'unbekannt123', makePng(4, 4))).status).toBe(404);
-    const gif = await putThumb(b, board.id, GIF_1x1, 'image/gif');
-    expect(gif.status).toBe(415);
-    expect(gif.body.error).toBe('unsupported_type');
-    const text = await putThumb(b, board.id, Buffer.from('kein bild'), 'image/png');
-    expect(text.status).toBe(415);
-    const empty = await b.req('PUT', `/api/boards/${board.id}/thumbnail`, { json: { image: 'x' } });
-    expect(empty.status).toBe(400);
-    const huge = await putThumb(b, board.id, makePng(2400, 10));
-    expect(huge.status).toBe(413);
-    expect(huge.body.error).toBe('too_large');
-    const big = await putThumb(b, board.id, Buffer.concat([makePng(4, 4), Buffer.alloc(600 * 1024)]));
-    expect(big.status).toBe(413);
+    const r = await putThumb(b, board.id, makePng(560, 260));
+    expect(r.status).toBe(200);
+    expect(r.body).toMatchObject({ ok: true, thumbnailAt: null, ignored: true });
+    expect((await b.get(`/api/boards/${board.id}/thumbnail`)).status).toBe(404);
+  });
+
+  it('leeres Board bekommt keine Vorschau, geleertes verliert sie', async () => {
+    const b = await loginAdmin(env);
+    const board = await newBoard(b, 'Leeren');
+    const live = await writeObjects(b, board.id, { s1: { type: 'sticky', x: 0, y: 0, w: 200, h: 200, z: 'a0', text: 'x', createdBy: 'a:orga', updatedAt: '' } });
+    await waitFor(() => !!env.srv.db.prepare('SELECT 1 FROM board_thumbnails WHERE board_id = ?').get(board.id), 8000);
+    live.doc.getMap('objects').delete('s1');
+    await waitFor(() => !env.srv.db.prepare('SELECT 1 FROM board_thumbnails WHERE board_id = ?').get(board.id), 8000);
+    live.close();
   });
 
   it('Löschen des Boards löscht das Vorschaubild', async () => {
     const b = await loginAdmin(env);
     const board = await newBoard(b, 'Weg');
-    await putThumb(b, board.id, makePng(8, 8));
+    seedThumb(board.id);
     expect((await b.req('DELETE', `/api/boards/${board.id}`)).status).toBe(200);
     expect((await b.req('DELETE', `/api/trash/${board.id}`)).status).toBe(200);
     const rows = env.srv.db.prepare('SELECT COUNT(*) AS n FROM board_thumbnails WHERE board_id = ?').get(board.id) as { n: number };
@@ -170,12 +181,12 @@ describe('Duplizieren und Vorlagen', () => {
     const up = await b.req('POST', `/api/boards/${board.id}/images`, { body: fd });
     expect(up.status).toBe(201);
     const imageId = up.body.image.id as string;
-    await putThumb(b, board.id, makePng(40, 20));
     const live = await writeObjects(b, board.id, {
       s1: { id: 's1', type: 'sticky', x: 0, y: 0, w: 100, h: 100, z: 'a0', text: 'Bühne', createdBy: 'a:orga', updatedAt: '' },
       i1: { id: 'i1', type: 'image', x: 200, y: 0, w: 20, h: 10, z: 'a1', imageId, createdBy: 'a:orga', updatedAt: '' },
     });
 
+    await waitFor(() => !!env.srv.db.prepare('SELECT 1 FROM board_thumbnails WHERE board_id = ?').get(board.id), 8000);
     const r = await b.post(`/api/boards/${board.id}/duplicate`, {});
     live.close();
     expect(r.status).toBe(201);

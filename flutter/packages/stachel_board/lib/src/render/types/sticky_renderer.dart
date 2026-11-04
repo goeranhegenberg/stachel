@@ -29,7 +29,7 @@ void paintSticky(Canvas c, BoardObject o, RenderContext ctx) {
   final pad = stickyPadding(o.w, o.h);
   final tags = o.tags;
   final inner = Rect.fromLTRB(pad, pad, o.w - pad, o.h - pad);
-  final ink = textOn(fill);
+  final ink = readableInk(fill);
   final text = o.displayText;
   if (text.trim().isNotEmpty && ctx.editingId != o.id) {
     final key = ('s', o.raw['text'], o.raw['content'], o.w, o.h, o.bold, o.italic, o.fontFamily);

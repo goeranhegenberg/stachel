@@ -75,7 +75,7 @@ test('drei Browser legen gleichzeitig an: alle sehen dieselben Notizen in dersel
 
   // je zwei Notizen pro Person, möglichst gleichzeitig
   for (let round = 0; round < 2; round++) {
-    await Promise.all(pages.map((p, i) => addSticky(p, 260 + i * 260, 260 + round * 260, `${USERS[i]} ${round + 1}`)));
+    await Promise.all(pages.map((p, i) => addSticky(p, 260 + i * 260, 340 + round * 240, `${USERS[i]} ${round + 1}`)));
   }
   for (const p of pages) await expect(stickies(p)).toHaveCount(6);
   const order = await stickyIds(pages[0]);

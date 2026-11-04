@@ -1,6 +1,6 @@
 // Web-Aktionen für die native App (docs/contract.md §8.12) – Paket P1 des Paritäts-Audits
 // (docs/native_paritaet_audit.md §4): Ebene schrittweise (layers.ts) und Format übertragen (style.ts) – derselbe Code
-// wie im Editor, auf dem Store der App-Sitzung.
+// wie im Editor, auf dem Store der App-Sitzung; dazu „Zettel abfotografieren“ (photoNotes.ts, Welle B).
 // Test: server/test/native-act-tools.test.ts, Doku: docs/features/tools.md „Native-Aktionen“.
 // Wird von web/src/native/actions.ts importiert (Sammel-Import, nicht ändern).
 import type { BoardObject } from '../../protocol';
@@ -10,6 +10,10 @@ import { A, parseArgs } from '../../native/args';
 import { defineNativeAction } from '../../native/registry';
 import { layerStepPatches } from './layers';
 import { CORE_STYLE_TRAITS, extractStyle, styleKeys, stylePatches, type Style } from './style';
+import { MAX_PHOTO_NOTES, photoNoteObjects, type PhotoNote } from './photoNotes';
+import { insertAt, occupiedIn } from '../structure/templates/insert';
+import { freeSpot } from '../structure/templates/place';
+import { previewBounds } from '../structure/templates/bounds';
 
 /** Eine Ebene nach vorne (1) bzw. hinten (-1), wie Strg ] / Strg [. */
 defineNativeAction<{ ids: string[]; dir: 1 | -1 }>('tools.layerStep', {
@@ -75,5 +79,30 @@ defineNativeAction<{ ids: string[]; style?: Style; from?: string; painter?: bool
     if (!Object.keys(patches).length) return { toast: painter ? 'Das Format passt nicht zu diesem Objekt.' : 'Das Format passt nicht zu dieser Auswahl.' };
     store.updateMany(patches);
     return {};
+  },
+});
+
+/** ein Zettel aus `POST /api/boards/:id/photo-notes`, ggf. korrigiert (Lage in Bildpunkten des Fotos) */
+const isPhotoNote = (v: unknown): v is PhotoNote => {
+  const n = v as Partial<PhotoNote> | null;
+  return !!n && typeof n === 'object' && A.num(-100_000, 100_000)(n.x) && A.num(-100_000, 100_000)(n.y) && A.num(1, 100_000)(n.w) && A.num(1, 100_000)(n.h) && A.color(n.color) && A.str(2000)(n.text);
+};
+
+/**
+ * „Zettel abfotografieren“ (P10): die ausgewählten Zettel als Haftnotizen in der Anordnung wie auf dem Foto, Mitte bei
+ * (`x`, `y`) bzw. am nächsten freien Platz daneben, ein Rückgängig-Schritt, danach gewählt – wie der Dialog im Web (photoNotes.ts).
+ */
+defineNativeAction<{ notes: PhotoNote[]; x: number; y: number }>('tools.photoNotes', {
+  undo: 'undo',
+  args: (raw) => parseArgs(raw, { notes: (v) => Array.isArray(v) && v.length >= 1 && A.arrayOf(MAX_PHOTO_NOTES, isPhotoNote)(v), x: A.num(), y: A.num() }),
+  cost: ({ notes }) => notes.length,
+  run(store, { notes, x, y }, ctx) {
+    const objs = photoNoteObjects(notes);
+    if (!objs.length) return { skipped: true };
+    // wie Vorlagen: an der Bildmitte bzw. am nächsten freien Platz daneben (nichts überdecken)
+    const b = previewBounds(objs)!;
+    const at = freeSpot(b, { x, y }, occupiedIn(store.getSnapshot()));
+    const ids = insertAt(store, objs, at, (i) => ctx.id(i + 1));
+    return { select: ids, focus: ids, toast: `${ids.length} ${ids.length === 1 ? 'Notiz' : 'Notizen'} angelegt.` };
   },
 });

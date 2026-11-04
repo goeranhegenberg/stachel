@@ -30,10 +30,13 @@ const _keepsSelection = {BoardTool.select};
 /// Tools that draw with one finger instead of panning (two fingers still zoom).
 const drawingTools = {BoardTool.connector, BoardTool.pen, BoardTool.eraser};
 
-/// Sticky note colors of the web (`STICKY_COLORS`, 12: the old seven first at their places, then Koralle, Mint,
-/// Türkis, Mittelblau, Steingrau) – read from the web constants (`colors.sticky`), so the web stays the only source.
+/// Sticky note colors of the web (`STICKY_COLORS`, 36: a grid of twelve hues × light/strong/dark, row by row – text on
+/// them via `readableInk`) – read from the web constants (`colors.sticky`), so the web stays the only source.
 List<String> get stickyColors => _stickyColors ??= List.unmodifiable(WebConstants.instance.strings('colors.sticky'));
 List<String>? _stickyColors;
+
+/// Columns of the sticky color grid (web `STICKY_COLS`, constants `colors.stickyGrid.cols`; twelve hues).
+int get stickyGridCols => (WebConstants.instance.number('colors.stickyGrid.cols') ?? 12).round();
 
 /// Shape fills like the web (`SHAPE_FILLS`).
 const shapeFills = ['#ffffff', '#000000', '#c9e14a', '#1763b5', '#ec4e92', '#fff27a', '#9fd3ff', '#ffb3d1', '#e9e9e4'];

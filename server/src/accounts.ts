@@ -200,7 +200,7 @@ const LINK_TOKEN_RE = /^[A-Za-z0-9_-]{20,100}$/;
 export function registerInstanceInfo(
   app: FastifyInstance,
   instance: InstanceConfig,
-  org: { orgPasswordLogin: boolean; orgAndroidPackage: string | null } = { orgPasswordLogin: false, orgAndroidPackage: null },
+  org: { orgPasswordLogin: boolean; orgAndroidPackage: string | null; photoNotes?: boolean } = { orgPasswordLogin: false, orgAndroidPackage: null },
 ) {
   const isOrg = instance.auth === 'org';
   app.get('/api/instance', async (_req, reply) => {
@@ -220,6 +220,8 @@ export function registerInstanceInfo(
       orgAppName: isOrg ? instance.orgAppName : null,
       orgPasswordLogin: isOrg && org.orgPasswordLogin,
       orgAndroidPackage: isOrg ? org.orgAndroidPackage : null,
+      // „Zettel abfotografieren“ auf diesem Server verfügbar (STACHEL_PHOTO_NOTES, photo-notes.ts)
+      photoNotes: org.photoNotes !== false,
     };
   });
 }

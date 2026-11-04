@@ -3,7 +3,7 @@
 // Reaktionen, Timer, Rahmen-Formate) – direkt aus dem Web-Code gelesen. Erzeugt von tools/native-web-constants.mts nach
 // docs/native_fixtures/web/constants.json; server/test/native-constants.test.ts scheitert, wenn die Datei veraltet ist.
 // Neue Konstante: hier ergänzen (Schlüssel bleiben stabil, die App liest nach Namen) und README der Fixtures nachziehen.
-import { BRAND, STICKY_COLORS, USER_COLORS } from '../shared/protocol';
+import { BRAND, STICKY_COLORS, STICKY_COLS, STICKY_ROWS, USER_COLORS } from '../shared/protocol';
 import { PRESENCE_COLORS } from '../web/src/board/session';
 import { FONT_SIZES as TEXT_FONT_SIZES } from '../web/src/editor/core/contextActions';
 import { ERASER_SIZES } from '../web/src/editor/core/tools';
@@ -55,6 +55,8 @@ export function buildWebConstants() {
     colors: {
       brand: BRAND,
       sticky: STICKY_COLORS,
+      // Raster der Notizfarben (Spalten = Farbtöne, Reihen = hell/kräftig/dunkel; zeilenweise in `sticky`)
+      stickyGrid: { cols: STICKY_COLS, rows: STICKY_ROWS },
       user: USER_COLORS,
       presence: PRESENCE_COLORS,
       shape: SHAPE_PALETTE.map((hex) => ({ hex, name: nameOf(hex) })),

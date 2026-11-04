@@ -105,6 +105,9 @@ for development). All of them are optional. Template: [`.env.example`](.env.exam
 | `STACHEL_LEGAL_DIR` | `DATA_DIR/legal` | Your own legal texts served by Stachel (`impressum.html`, `datenschutz.html`, `nutzungsbedingungen.html` → `/impressum` …); used as the links above when those are empty. Templates: `deploy/legal-templates/`. None are shipped. |
 | `STACHEL_TERMS_VERSION` | – | Version of your terms (e.g. `2026-11-04`), stored with each consent; after a change logged-in people must accept again. |
 | `STACHEL_CAPTCHA_MAX` | `250000` | Difficulty of the proof-of-work captcha (1 000 – 5 000 000). |
+| `STACHEL_PHOTO_NOTES` | `1` | "Photograph sticky notes": the server finds paper notes on a photo (colour segmentation) and reads them with Tesseract (deu+eng, inside the image, offline); `0` turns it off. The photo is only processed in memory and never stored. |
+| `STACHEL_PHOTO_NOTES_MAX_MB` / `STACHEL_PHOTO_NOTES_PER_HOUR` | `15` / `30` | Largest photo and photos per person and hour. |
+| `STACHEL_TESSERACT` / `STACHEL_OCR_LANGS` | `tesseract` / `deu+eng` | OCR program (empty = notes and colours without text) and languages (installed traineddata). |
 | `STACHEL_TEMPLATES_DIR` | `DATA_DIR/templates` | Folder with instance templates (`*.json`, shown in the template gallery; see [docs/selfhosting.md](docs/selfhosting.md#instance-templates)). |
 | `STACHEL_TEMPLATES_CATEGORY` | `STACHEL_BRAND` or `Weitere Vorlagen` | Gallery category of the instance templates. |
 

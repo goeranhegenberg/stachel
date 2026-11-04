@@ -182,8 +182,9 @@ IP-Limits zählen IPv6-Adressen je /64-Präfix.
 | `GET /api/images/:id?w=256` bzw. `?w=1024` | verkleinerte Fassung (WebP, Breite `w`, EXIF-Drehung angewandt), gleiche Header; beim ersten Abruf einmal erzeugt und unter `data/image-variants/` abgelegt. Original (gleicher Typ wie hochgeladen) bei GIF, bei Bildern bis `w` px Breite und wenn das Verkleinern fehlschlägt. Andere `w` → 400 `invalid_input` (nur feste Stufen). Der Editor wählt die Stufe nach Bildschirmgröße (Objektbreite × Zoom × devicePixelRatio) |
 | `POST /api/boards/:id/files` (multipart, Feld `file`, PDF, max 15 MB; geprüft per Magic Bytes `%PDF-` und `%%EOF`) | 201 `{ok, file: {id, url, bytes}}` – Original-PDF eines Dokuments (docs/features/documents.md); liegt in `images` mit `mime` `application/pdf`, gilt also beim Löschen/Duplizieren wie ein Bild. Die Seiten lädt der Browser als Bilder hoch. Kein PDF → 415 `unsupported_type`, zu groß → 413 `too_large` |
 | `GET /api/files/:id[?download=1&name=<Dateiname>]` | die PDF (nur mit Sitzung, nur PDF-Einträge, sonst 404), `application/pdf`, `Content-Disposition: inline` bzw. mit `download=1` `attachment` samt Dateiname (`filename*` UTF-8), Cache- und CSP-Header wie Bilder |
-| `PUT /api/boards/:id/thumbnail` (Body = Bild, `Content-Type` image/png, image/jpeg oder image/webp; max 512 KB, max 2000 px je Seite) | `{ok, thumbnailAt}` – Vorschaubild ersetzen |
-| `GET /api/boards/:id/thumbnail?v=<thumbnailAt>` | Bild; mit passendem `v` `private, max-age=31536000, immutable`, sonst `private, no-cache`; 404 ohne Vorschaubild |
+| `PUT /api/boards/:id/thumbnail` (alte Clients) | `{ok, thumbnailAt, ignored: true}` – wird seit Welle B nur quittiert, der Server rendert selbst (siehe unten) |
+| `GET /api/boards/:id/thumbnail?v=<thumbnailAt>` | Bild (WebP 560 × 260, vom Server gerendert); mit passendem `v` `private, max-age=31536000, immutable`, sonst `private, no-cache`; 404 ohne Vorschaubild; Board-Rechte wie alle `/api/boards/:id…` |
+| `POST /api/boards/:id/photo-notes` (Body = Foto, `Content-Type` image/jpeg, image/png oder image/webp; Recht „bearbeiten“) | `{ok, width, height, ocr, preview, notes:[{x,y,w,h,color,rgb,text,conf}]}` – Zettel abfotografieren (`docs/features/photo-notes.md`); nichts wird gespeichert; 413 zu groß, 415 unlesbar, 429 `rate_limited`, 503 `busy`; Route fehlt bei `STACHEL_PHOTO_NOTES=0` |
 | `POST /api/boards/:id/duplicate` `{title?, template?}` | 201 `{ok, board}` – Kopie samt Inhalt (Live-Stand), Bildern (neue IDs) und Vorschaubild |
 | `GET /api/users` | `{ok, users: {key, name}[]}` – alle, die sich je bei Stachel angemeldet haben (nach Name sortiert; für @Erwähnungen) |
 | `PUT /api/boards/:id/favorite` · `DELETE /api/boards/:id/favorite` | `{ok, favorite}` – Stern der anfragenden Person setzen/entfernen (doppelt ist harmlos); 404 bei unbekanntem Board |
@@ -206,8 +207,12 @@ endgültigen Löschen.
 **Live-Übersicht:** Die Übersicht hört auf `GET /api/boards/events` und übernimmt Umbenennen/Löschen direkt; bei
 `created`/`updated`/`deleted`/`restored`/`purged` (Papierkorb) und nach einem Wiederverbinden lädt sie die Listen neu.
 Vorschaubilder & Vorlagen: `BoardInfo` (Liste, `duplicate`) trägt optional `thumbnailAt` (Stand des Vorschaubilds;
-fehlt = keins) und `template: true` (Board ist eine Vorlage). Das Vorschaubild rendert der Browser aus dem Board
-(`docs/features/tools.md`). `duplicate` ohne `title` heißt „<Titel> (Kopie)“; `template: true` speichert die Kopie als
+fehlt = keins) und `template: true` (Board ist eine Vorlage). Das Vorschaubild rendert der **Server** aus dem
+Board-Dokument (`server/src/thumbnails.ts`, SVG aus `web/src/features/tools/thumbSvg.ts`, sharp/libvips mit Barlow):
+nach dem Speichern gedrosselt (5 s Ruhe, höchstens jede Minute je Board), beim Start für Boards ohne Server-Vorschau
+nachgeholt; Text bleibt lesbar (mindestens 13 Bildpunkte, große Boards zeigen den dichtesten Ausschnitt), private
+Objekte (privater Modus) und ausgeblendete fehlen. Neue Vorschau → Ereignis `updated` (ungedrosselt); Einzelheiten
+`docs/features/tools.md`. `duplicate` ohne `title` heißt „<Titel> (Kopie)“; `template: true` speichert die Kopie als
 Vorlage (gleicher Titel); die Kopie einer Vorlage ist ein normales Board (gleicher Titel). Vorschaubild und
 Vorlagen-Markierung verschwinden mit dem Board. `template` kein Boolean bzw. leeres Vorschaubild → 400 `invalid_input`.
 Bilder gehören einem Board (`images.board_id`), werden aber board-unabhängig per ID ausgeliefert. Kopieren/Einfügen
@@ -502,7 +507,8 @@ access.yjsMode(role): { readOnly: boolean; commentOnly: boolean } // so behandel
 ### Endpunkte (Einzelheiten: `docs/features/accounts.md`)
 
 - Immer, ohne Sitzung: `GET /api/instance` → `{ok, auth: "org"|"local", brand, imprintUrl, privacyUrl, termsUrl, registration,
-  orgName, orgAppName, orgPasswordLogin, orgAndroidPackage}` (`termsUrl` = `STACHEL_TERMS_URL` oder null). Nur Modus
+  orgName, orgAppName, orgPasswordLogin, orgAndroidPackage, photoNotes}` (`termsUrl` = `STACHEL_TERMS_URL` oder null;
+  `photoNotes` = „Zettel abfotografieren“ verfügbar, `STACHEL_PHOTO_NOTES`, beide Modi, fehlt bei älteren Servern). Nur Modus
   org: `orgName` = `STACHEL_ORG_NAME`, `orgAppName` = `STACHEL_ORG_APP_NAME`, `orgPasswordLogin` = `STACHEL_ORG_LOGIN_URL`
   gesetzt (bool), `orgAndroidPackage` = `STACHEL_ANDROID_PACKAGE` oder null; Modus local: `null`/`false`. Oberflächen
   zeigen damit „Mit {orgName} anmelden“, „In der {orgAppName} öffnen“ und die Passwort-Anmeldung nur bei `orgPasswordLogin`.

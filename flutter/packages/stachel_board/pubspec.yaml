@@ -4,7 +4,7 @@ description: >-
   protocol types, geometry (shapes, connectors, text fit), renderer (one CustomPainter, culling, detail levels),
   camera with pan/zoom/inertia and hit-testing. Knows neither ApiService nor app screens.
 publish_to: 'none'
-version: 1.3.0
+version: 1.5.1
 
 environment:
   sdk: ^3.11.0

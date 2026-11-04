@@ -157,7 +157,16 @@ export type BoardStateless =
   | { type: 'board.renamed'; title: string; titleSeq: number }
   | { type: 'board.deleted'; by: string; byKey: string };
 
-export function createSync(cfg: Config, db: Db, sessions: SessionStore, events: BoardEvents, tokens?: ApiTokens, access?: BoardAccess) {
+export function createSync(
+  cfg: Config,
+  db: Db,
+  sessions: SessionStore,
+  events: BoardEvents,
+  tokens?: ApiTokens,
+  access?: BoardAccess,
+  /** nach dem Speichern eines Board-Dokuments (z. B. Vorschaubild neu rendern, thumbnails.ts) */
+  onPersist?: (boardId: string) => void,
+) {
   /** undefined = gibt es nicht (mehr); `deleted_at` gesetzt = im Papierkorb (trash.ts) */
   const boardRow = (id: string) => db.prepare('SELECT deleted_at FROM boards WHERE id = ?').get(id) as { deleted_at: string | null } | undefined;
   const awarenessOwners = new WeakMap<Document, Map<number, string>>();
@@ -297,6 +306,7 @@ export function createSync(cfg: Config, db: Db, sessions: SessionStore, events: 
     if (row.deleted_at) return;
     db.prepare('UPDATE boards SET updated_at = ? WHERE id = ?').run(now, boardId);
     events.emit({ type: 'updated', id: boardId });
+    onPersist?.(boardId);
   }
 
   // Beim Herunterfahren keine neuen Verbindungen: ein schnell wieder verbundener Client lüde das Dokument sonst neu.

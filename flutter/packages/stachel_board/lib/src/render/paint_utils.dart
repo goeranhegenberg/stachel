@@ -39,6 +39,23 @@ Color? _parse(String s) {
 /// Readable text color on [fill]: ink on light fills, white on dark ones (like the web's `textOn`).
 Color textOn(Color fill) => fill.computeLuminance() > 0.36 ? BoardColors.ink : const Color(0xFFFFFFFF);
 
+/// WCAG 2.x contrast ratio of two colors (1 … 21).
+double contrastRatio(Color a, Color b) {
+  final la = a.computeLuminance(), lb = b.computeLuminance();
+  final hi = la > lb ? la : lb, lo = la > lb ? lb : la;
+  return (hi + 0.05) / (lo + 0.05);
+}
+
+/// Text on a sticky note (and any freely chosen note color) like the web's `readableInk` (`board/colors.ts`): black
+/// ([BoardColors.ink]) or white, whichever has the higher WCAG contrast; a tie stays black. All light note colors (the
+/// old twelve) keep black text, the dark ones get white.
+Color readableInk(Color fill) {
+  final opaque = fill.withValues(alpha: 1);
+  return contrastRatio(opaque, const Color(0xFFFFFFFF)) > contrastRatio(opaque, BoardColors.ink)
+      ? const Color(0xFFFFFFFF)
+      : BoardColors.ink;
+}
+
 /// Dashes [source] with alternating on/off [pattern] lengths. An on-length of 0 (dotted) draws a dot when the
 /// paint has a round cap.
 Path dashPath(Path source, List<double> pattern) {

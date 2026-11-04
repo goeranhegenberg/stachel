@@ -497,7 +497,7 @@ test.describe('Board-Übersicht', () => {
   });
 });
 
-test.describe('Vorschaubild hochladen (echter Sync)', () => {
+test.describe('Vorschaubild und Board-Menü (echter Sync)', () => {
   let server: Server;
   let syncPort = 0;
   test.beforeAll(async () => {
@@ -507,30 +507,25 @@ test.describe('Vorschaubild hochladen (echter Sync)', () => {
     await server?.destroy();
   });
 
-  test('nach Änderungen wird ein Bild per PUT gespeichert', async ({ page, context }) => {
+  test('nach Änderungen lädt der Browser kein Vorschaubild hoch (rendert der Server)', async ({ page, context }) => {
     await context.addCookies([{ name: 'stachel_session', value: 'sess', domain: 'localhost', path: '/' }]);
     await installFakeApi(page, { loggedIn: true, boards: sampleBoards(), syncPort });
-    const puts: { type: string; size: number; body: Buffer }[] = [];
+    let puts = 0;
     await page.route('**/api/boards/*/thumbnail', (route) => {
-      const req = route.request();
-      if (req.method() !== 'PUT') return route.fallback();
-      const body = req.postDataBuffer()!;
-      puts.push({ type: req.headers()['content-type'], size: body.length, body });
-      return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true, thumbnailAt: new Date().toISOString() }) });
+      if (route.request().method() === 'PUT') puts++;
+      return route.fallback();
     });
     await page.goto('/?b=b-plan');
     await expect(page.getByTestId('status')).toHaveText('Live');
-    // Notiz anlegen (Werkzeug)
+    // Notiz anlegen (Werkzeug), Ruhepause abwarten, Board verlassen
     await page.keyboard.press('n');
     await page.mouse.click(700, 400);
     await page.keyboard.type('Vorschau');
     await page.keyboard.press('Escape');
-    await expect.poll(() => puts.length, { timeout: 15_000 }).toBeGreaterThan(0);
-    const last = puts.at(-1)!;
-    expect(last.type).toBe('image/webp');
-    expect(last.body.subarray(0, 4).toString('latin1')).toBe('RIFF');
-    expect(last.size).toBeGreaterThan(500);
-    fs.writeFileSync(path.join(OUT, 'tools-vorschaubild.webp'), last.body);
+    await page.waitForTimeout(6000);
+    await page.goto('/');
+    await page.waitForTimeout(500);
+    expect(puts).toBe(0);
   });
 
   test('Board-Menü: Board duplizieren und als Vorlage speichern', async ({ page, context }) => {

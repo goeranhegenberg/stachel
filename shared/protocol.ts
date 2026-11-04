@@ -71,10 +71,23 @@ export const BRAND = {
 export const USER_COLORS = ['#ec4e92', '#1763b5', '#7aa21b', '#e8590c', '#7048e8', '#0c8599', '#c2255c', '#5c940d'];
 
 /**
- * Farben für Haftnotizen (12): die ersten sieben unverändert an ihrer Stelle (alte Boards und Verweise per Index),
- * dahinter Koralle, Mint, Türkis, Mittelblau, Steingrau – alle hell genug für schwarze Schrift.
+ * Farben für Haftnotizen (36): ein Raster aus zwölf Spalten (Farbtöne Gelb, Orange, Rot, Pink, Lila, Indigo, Blau,
+ * Hellblau, Türkis, Grün, Limette und neutral Weiß/Grau/Anthrazit) und drei Reihen – hell (Pastell wie klassische
+ * Klebezettel), kräftig, dunkel. Reihenfolge zeilenweise; die Leisten zeigen zwölf Spalten (schmal sechs, seitlich
+ * scrollbar). Die bisherigen Notizfarben stecken im Raster (gleiche Hex-Werte, alte Notizen bleiben Palettenfarbe); nur
+ * Tannengrün `#2e7d32` ist nicht mehr in der Leiste, bleibt aber gültig. Die Schrift ergibt sich aus dem Kontrast nach
+ * WCAG (web `board/colors.ts` `readableInk`): auf der dunklen Reihe weiß. Freie Farben (`#rrggbb`) sind ebenso erlaubt.
  */
-export const STICKY_COLORS = ['#fff27a', '#c9e14a', '#ffb3d1', '#9fd3ff', '#ffd08a', '#e2d5ff', '#ffffff', '#ff9e8a', '#b9ecd8', '#7fd6e0', '#7fb2f0', '#d4d4cc'];
+export const STICKY_ROWS = 3;
+export const STICKY_COLS = 12;
+export const STICKY_COLORS = [
+  // hell
+  '#fff27a', '#ffd08a', '#ff9e8a', '#ffb3d1', '#e2d5ff', '#cdd3f8', '#7fb2f0', '#9fd3ff', '#7fd6e0', '#b9ecd8', '#c9e14a', '#ffffff',
+  // kräftig
+  '#ffd23f', '#ff8c42', '#c62828', '#f25c78', '#b388eb', '#5c6bc0', '#1565c0', '#29a8e0', '#2ec4b6', '#7bc950', '#a4b81c', '#d4d4cc',
+  // dunkel
+  '#8a6a00', '#6d4c41', '#7f1d1d', '#880e4f', '#6a1b9a', '#283593', '#0d2c6b', '#01579b', '#00695c', '#1b5e20', '#556b2f', '#2b2b2b',
+];
 
 export interface User {
   key: string; // "m:<id>" | "a:<username>"

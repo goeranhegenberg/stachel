@@ -130,8 +130,6 @@ class _Host extends BoardHost implements BoardAdminHost {
   @override
   Future<void> shareFile(Uint8List bytes, String fileName, String mimeType) async {}
   @override
-  Future<String?> uploadThumbnail(Uint8List bytes, String mimeType) async => null;
-  @override
   Future<McpTokens> listTokens() async => const McpTokens([], '');
   @override
   Future<McpNewToken> createToken(String label) => throw UnimplementedError();

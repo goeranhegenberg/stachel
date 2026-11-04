@@ -14,7 +14,8 @@ Erweiterungspunkte des Editors: [`architecture.md`](architecture.md).
   Browser-Zoom und hoher Pixeldichte), Zoom-Menü an der Prozentanzeige (Einpassen, 50/100/200 %), Bildmitte bleibt beim
   Ändern der Fenstergröße bzw. Drehen des Handys, Auto-Schwenken beim Ziehen an den Bildrand, Minimap, Raster (Punkte/Linien/leer) und Hintergrundfarbe, Einrasten
   an Kanten, gleichen Abständen und am Raster.
-- Haftnotizen (12 Farben, Quadrat oder Rechteck, Seitengriffe frei, Schrift passt sich an; Notiz-Stapel: eine Notiz auf eine andere ziehen, blättern, auffächern), Text, über 40 Formen
+- Haftnotizen (36 Farben als Raster: zwölf Farbtöne je hell, kräftig und dunkel; auf dunklen Notizen wird die Schrift automatisch weiß, berechnet nach
+  WCAG-Kontrast; eigene Farbe per Spektrum oder Hex mit „zuletzt benutzt“; Quadrat oder Rechteck, Seitengriffe frei, Schrift passt sich an; Notiz-Stapel: eine Notiz auf eine andere ziehen, blättern, auffächern), Text, über 40 Formen
   (Grundformen, Pfeile, komplettes Flussdiagramm-Set), Verbinder (gerade/gewinkelt/geschwungen, zwischen zwei Objekten
   automatisch geschwungen, 9 Spitzen, Beschriftung, Andockpunkte, Ende umhängen),
   Stift, Textmarker (halbtransparent über Notizen und Text) und Radierer, Rahmen (Formate 16:9, A4, Handy …, Rasterrahmen), Bilder (Hochladen, Einfügen, Ziehen), Sticker, Emojis und Icons.
@@ -98,8 +99,12 @@ Erweiterungspunkte des Editors: [`architecture.md`](architecture.md).
 - Löscht jemand die Notiz, in der man gerade schreibt, endet die Bearbeitung mit dem Hinweis „Von … gelöscht“.
 
 **Werkzeuge**
-- Suche auf dem Board (Strg F, auch Tags und zuständige Personen), Export als PNG/PDF (Board, Auswahl, Rahmen, alle Rahmen als Seiten), Vorschaubilder in der
-  Übersicht, Board duplizieren, Objekt-Links.
+- Suche auf dem Board (Strg F, auch Tags und zuständige Personen), Export als PNG/PDF (Board, Auswahl, Rahmen, alle Rahmen als Seiten), lesbare Vorschaubilder in der
+  Übersicht (rendert der Server aus dem Board, auch für nie geöffnete Boards; private Notizen erscheinen nie), Board duplizieren, Objekt-Links.
+- **Zettel abfotografieren:** Foto einer Wand mit Klebezetteln (am Handy direkt die Kamera) → der eigene Server erkennt die
+  Zettel, ihre Farbe und ihren Text (Tesseract, offline, kein Cloud-Dienst; das Foto wird nicht gespeichert) → Vorschau zum
+  Abwählen und Korrigieren → Haftnotizen in der Anordnung wie auf dem Foto, ein Rückgängig-Schritt. Web, App und Desktop;
+  abschaltbar (`STACHEL_PHOTO_NOTES=0`), [`features/photo-notes.md`](features/photo-notes.md).
 - Handy und Tablet: Werkzeugleiste unten, Bottom-Sheets, langes Drücken öffnet das Menü, Griffe mit großer
   Trefferfläche, Pinch zoomt nur das Board (nie die Seite), Stift mit Palm-Rejection (aufliegender Handballen zählt nicht).
 - Jede Bildschirmgröße (Handy hoch/quer, Tablet, niedrige Fenster, Browser-Zoom bis 200 %, 4K): Leisten bleiben im Bild

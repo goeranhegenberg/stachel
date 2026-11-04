@@ -91,7 +91,7 @@ EditTextBox? editTextBox(BoardObject o, RenderContext ctx) {
       // like the renderer (web StickyView): padded note, `stickyFontSize`
       final pad = stickyPadding(o.w, o.h);
       final inner = Rect.fromLTRB(pad, pad, o.w - pad, o.h - pad);
-      final ink = textOn(fill);
+      final ink = readableInk(fill);
       final fs = stickyFontSizeOf(o, (fs) => objectTextSpan(o, fontSize: fs, color: ink, fonts: ctx.fonts));
       return EditTextBox(
         box: inner,

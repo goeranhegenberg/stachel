@@ -160,6 +160,28 @@ export function ContextBar({ selected, anchor, viewWidth, api }: Props) {
   // Popover nie aus dem Bildschirm ragen lassen (Handy: angedockte Leiste, breite Popover am Rand, niedrige Fenster)
   const popRef = useRef<HTMLDivElement>(null);
   const moreRef = useRef<HTMLDivElement>(null);
+  // Ändert ein Popover seine Größe selbst (z. B. Farbwähler statt Palette), neu einpassen
+  const [, setPopSize] = useState(0);
+  const watch = useRef<{ ro: ResizeObserver; el: Element | null; last: string } | null>(null);
+  useLayoutEffect(() => {
+    if (typeof ResizeObserver === 'undefined') return;
+    const w = (watch.current ??= {
+      ro: new ResizeObserver(([e]) => {
+        const key = `${Math.round(e!.contentRect.width)}x${Math.round(e!.contentRect.height)}`;
+        if (watch.current!.last && key !== watch.current!.last) setPopSize((n) => n + 1);
+        watch.current!.last = key;
+      }),
+      el: null,
+      last: '',
+    });
+    const el = popRef.current;
+    if (el === w.el) return;
+    w.ro.disconnect();
+    w.el = el;
+    w.last = '';
+    if (el) w.ro.observe(el);
+  });
+  useLayoutEffect(() => () => watch.current?.ro.disconnect(), []);
   useLayoutEffect(() => {
     const bar = ref.current?.getBoundingClientRect();
     if (!bar) return;

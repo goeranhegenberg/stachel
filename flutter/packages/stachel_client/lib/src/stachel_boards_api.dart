@@ -433,9 +433,6 @@ abstract interface class StachelBoardAdminApi {
   Future<StachelBoardInfo> copyVersion(String boardId, String versionId, String title);
   Future<Map<String, Object?>> versionSnapshot(String boardId, String versionId);
 
-  /// `PUT /api/boards/:id/thumbnail`; returns `thumbnailAt`.
-  Future<String?> uploadThumbnail(String boardId, Uint8List bytes, String mimeType);
-
   // AI access (`/api/tokens`)
   Future<Map<String, Object?>> tokens();
   Future<Map<String, Object?>> createToken(String label);
@@ -449,6 +446,18 @@ abstract interface class StachelBoardAdminApi {
   /// Templates of the instance (`GET /api/templates/instance`, contract §3 „Vorlagen der Instanz“) – raw JSON
   /// `{ok, category, templates}`, the board package parses it.
   Future<Object?> instanceTemplates();
+}
+
+/// „Zettel abfotografieren“ (P10, contract §3, `server/src/photo-notes.ts`): the server finds the paper notes on a
+/// photo (colors, text) – only in memory, nothing is stored.
+abstract interface class StachelPhotoNotesApi {
+  /// The server offers it (`GET /api/instance` `photoNotes`; missing = older server = no).
+  Future<bool> photoNotesAvailable();
+
+  /// `POST /api/boards/:id/photo-notes` with the photo's bytes; the raw JSON answer
+  /// `{ok, width, height, ocr, preview, notes:[{x,y,w,h,color,rgb,text,conf}]}`. Throws [StachelException] with the
+  /// server's German text (413 too big, 415 unreadable, 429 too many, 503 busy).
+  Future<Map<String, Object?>> photoNotes(String boardId, Uint8List bytes, String mimeType);
 }
 
 /// The app's Stachel session token (`sts_…`, contract §8.1), kept across app starts so opening the board list does not
@@ -564,7 +573,7 @@ class StachelSession {
 /// new session once. A server without `app-session` (404) → `not_available`.
 ///
 /// Contract §8.1/§8.3; keep this class the only place that knows these endpoints. [base] overrides the client's.
-class HttpStachelBoardsApi implements StachelBoardsApi, StachelBoardAdminApi, StachelSharingApi {
+class HttpStachelBoardsApi implements StachelBoardsApi, StachelBoardAdminApi, StachelSharingApi, StachelPhotoNotesApi {
   HttpStachelBoardsApi(this.client, {String? base, bool release = kReleaseMode})
     : _base = stachelTrimBase(base ?? client.base),
       _release = release;
@@ -1041,17 +1050,40 @@ class HttpStachelBoardsApi implements StachelBoardsApi, StachelBoardAdminApi, St
     return s is Map ? s.cast<String, Object?>() : const {'on': false};
   }
 
-  @override
-  Future<String?> uploadThumbnail(String boardId, Uint8List bytes, String mimeType) =>
-      _putThumbnail(boardId, bytes, mimeType, retried: false);
+  // „Zettel abfotografieren“ (P10)
+  static final _photoNotesAvailable = <String, Future<bool>>{};
 
-  Future<String?> _putThumbnail(String boardId, Uint8List bytes, String mimeType, {required bool retried}) async {
+  @override
+  Future<bool> photoNotesAvailable() => _photoNotesAvailable.putIfAbsent(_base, () async {
+    try {
+      final res = await _http
+          .get(Uri.parse('$_base/api/instance'), headers: {'Accept': 'application/json'})
+          .timeout(_timeout);
+      if (res.statusCode != 200) throw StateError('instance');
+      return _body(res)['photoNotes'] == true;
+    } catch (_) {
+      // nächstes Mal neu fragen (offline beim Öffnen)
+      unawaited(Future<void>(() => _photoNotesAvailable.remove(_base)));
+      return false;
+    }
+  });
+
+  @override
+  Future<Map<String, Object?>> photoNotes(String boardId, Uint8List bytes, String mimeType) =>
+      _postPhoto(boardId, bytes, mimeType, retried: false);
+
+  Future<Map<String, Object?>> _postPhoto(
+    String boardId,
+    Uint8List bytes,
+    String mimeType, {
+    required bool retried,
+  }) async {
     final token = await _session();
     final http.Response res;
     try {
       res = await _http
-          .put(
-            Uri.parse('$_base/api/boards/${_id(boardId)}/thumbnail'),
+          .post(
+            Uri.parse('$_base/api/boards/${_id(boardId)}/photo-notes'),
             headers: {
               'Authorization': 'Bearer $token',
               'X-Stachel': '1',
@@ -1060,17 +1092,35 @@ class HttpStachelBoardsApi implements StachelBoardsApi, StachelBoardAdminApi, St
             },
             body: bytes,
           )
-          .timeout(_timeout);
+          // Erkennen und Texterkennung dauern auf dem Server einige Sekunden
+          .timeout(const Duration(seconds: 90));
     } catch (_) {
       throw StachelException.forCode('network');
     }
     if (res.statusCode == 401 && !retried) {
       await _session(fresh: true);
-      return _putThumbnail(boardId, bytes, mimeType, retried: true);
+      return _postPhoto(boardId, bytes, mimeType, retried: true);
     }
-    if (res.statusCode != 200) throw StachelException.forCode(res.statusCode >= 500 ? 'network' : 'error');
-    final at = _body(res)['thumbnailAt'];
-    return at is String ? at : null;
+    if (res.statusCode >= 200 && res.statusCode < 300) return _body(res);
+    String? code, message;
+    try {
+      final b = jsonDecode(utf8.decode(res.bodyBytes));
+      if (b is Map) {
+        code = b['error'] is String ? b['error'] as String : null;
+        message = b['message'] is String ? b['message'] as String : null;
+      }
+    } catch (_) {}
+    if (res.statusCode == 413 && message == null) {
+      throw const StachelException('too_large', 'Das Foto ist zu groß. Bitte ein kleineres Foto wählen.');
+    }
+    if (res.statusCode == 404 && code == null) {
+      throw const StachelException('not_available', 'Zettel abfotografieren gibt es auf diesem Server nicht.');
+    }
+    throw stachelErrorFrom(
+      status: res.statusCode,
+      code: code ?? 'error',
+      message: message ?? 'Das hat nicht geklappt. Bitte versuch es noch einmal.',
+    );
   }
 
   @override

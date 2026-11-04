@@ -44,7 +44,7 @@ Color boardBackgroundColor(BoardUi ui) {
 ///   (then draws the average color like the board does). [Duration.zero] records the picture synchronously with
 ///   what is in memory now (only `toImage` is asynchronous).
 ///
-/// Used by the export (pages of PNG/PDF) and by the preview image (560 × 260, P6 thumbnail).
+/// Used by the export (pages of PNG/PDF). The overview's preview image is rendered by the server (P8, Welle B).
 Future<dui.Image> renderBoardRegion(
   BoardUi ui, {
   required Rect world,

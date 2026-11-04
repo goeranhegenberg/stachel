@@ -6,6 +6,7 @@ import '../../editor/registry/board_ui.dart';
 import '../../geometry/shape_paths.dart';
 import '../../geometry/svg_path.dart';
 import '../../web/web_constants.dart';
+import '../core/color_picker.dart' show pickOwnColor;
 import '../core/core_widgets.dart' show hexColor;
 import 'catalog.dart';
 
@@ -264,124 +265,10 @@ Widget p2SheetTitle(BoardUi ui, String text) => Padding(
   child: Text(text, style: ui.theme.label(size: 14)),
 );
 
-/// The web's „Eigene Farbe“ (system color picker) on the phone: hue, saturation and brightness sliders with a
-/// preview; returns `#rrggbb` (null = cancelled).
+/// The web's „Eigene Farbe“ on the phone: the own color picker (spectrum, hue, hex, preview, „zuletzt benutzt“ –
+/// `features/core/color_picker.dart`); returns `#rrggbb` (null = cancelled).
 Future<String?> pickCustomColor(BuildContext context, BoardUi ui, {required String initial, required String title}) =>
-    ui.openSheet<String>(
-      context,
-      (ctx) => _CustomColorSheet(ui: ui, initial: initial, title: title),
-      closeOnSelectionChange: true,
-      scrollControlled: true,
-    );
-
-class _CustomColorSheet extends StatefulWidget {
-  const _CustomColorSheet({required this.ui, required this.initial, required this.title});
-  final BoardUi ui;
-  final String initial;
-  final String title;
-
-  @override
-  State<_CustomColorSheet> createState() => _CustomColorSheetState();
-}
-
-class _CustomColorSheetState extends State<_CustomColorSheet> {
-  late HSVColor hsv = HSVColor.fromColor(
-    RegExp(r'^#[0-9a-fA-F]{6}$').hasMatch(widget.initial) ? hexColor(widget.initial) : const Color(0xFFFFFFFF),
-  );
-
-  String get hex {
-    final c = hsv.toColor();
-    String two(double v) => (v * 255).round().clamp(0, 255).toRadixString(16).padLeft(2, '0');
-    return '#${two(c.r)}${two(c.g)}${two(c.b)}';
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final ui = widget.ui;
-    Widget slider(String label, String key, double value, double max, ValueChanged<double> on, List<Color> track) =>
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
-          child: Row(
-            children: [
-              SizedBox(width: 90, child: Text(label)),
-              Expanded(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      height: 10,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        gradient: LinearGradient(colors: track),
-                      ),
-                    ),
-                    SliderTheme(
-                      data: SliderTheme.of(context).copyWith(
-                        activeTrackColor: Colors.transparent,
-                        inactiveTrackColor: Colors.transparent,
-                        thumbColor: ui.theme.ink,
-                      ),
-                      child: Slider(key: Key(key), value: value, max: max, onChanged: (v) => setState(() => on(v))),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        );
-
-    return SafeArea(
-      child: Column(
-        key: const Key('stachelCustomColorSheet'),
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          p2SheetTitle(ui, widget.title.toUpperCase()),
-          Container(
-            key: const Key('stachelCustomColorPreview'),
-            height: 44,
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-            decoration: BoxDecoration(
-              color: hsv.toColor(),
-              borderRadius: BorderRadius.circular(6),
-              border: Border.all(color: ui.theme.ink, width: 2),
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              hex,
-              style: TextStyle(color: hsv.value > 0.6 && hsv.saturation < 0.6 ? ui.theme.ink : Colors.white),
-            ),
-          ),
-          slider('Farbton', 'stachelCustomHue', hsv.hue, 360, (v) => hsv = hsv.withHue(v), [
-            for (var h = 0; h <= 360; h += 60) HSVColor.fromAHSV(1, h.toDouble(), 1, 1).toColor(),
-          ]),
-          slider('Sättigung', 'stachelCustomSat', hsv.saturation, 1, (v) => hsv = hsv.withSaturation(v), [
-            hsv.withSaturation(0).toColor(),
-            hsv.withSaturation(1).toColor(),
-          ]),
-          slider('Helligkeit', 'stachelCustomVal', hsv.value, 1, (v) => hsv = hsv.withValue(v), [
-            hsv.withValue(0).toColor(),
-            hsv.withValue(1).toColor(),
-          ]),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('ABBRECHEN')),
-                const SizedBox(width: 8),
-                FilledButton(
-                  key: const Key('stachelCustomColorOk'),
-                  onPressed: () => Navigator.of(context).pop(hex),
-                  child: const Text('ÜBERNEHMEN'),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+    pickOwnColor(context, ui, initial: initial, title: title);
 
 /// Rainbow button that opens [pickCustomColor] (web `CustomColor`).
 class CustomColorButton extends StatelessWidget {

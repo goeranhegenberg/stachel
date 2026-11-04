@@ -1560,7 +1560,177 @@ button.ctx-num--btn:hover {
   gap: 4px;
 }
 .ctx-pop.ctx-pop--colors {
+  grid-template-columns: max-content;
+}
+/* Farbfelder: sechs Spalten; Notizfarben als Raster zwölf Farbtöne × hell/kräftig/dunkel (schmal: sechs sichtbar, seitlich
+   scrollen – die Leiste bleibt drei Reihen hoch und verdeckt wenig) */
+.cp-grid {
+  display: grid;
   grid-template-columns: repeat(6, 26px);
+  gap: 8px;
+}
+.cp-grid--sticky {
+  grid-template-columns: repeat(12, 24px);
+  gap: 5px;
+  max-width: calc(100vw - 48px);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  padding: 2px;
+  margin: -2px;
+}
+.cp-grid--sticky .swatch {
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 520px) {
+  .cp-grid--sticky {
+    max-width: calc(6 * 24px + 5 * 5px + 4px);
+  }
+}
+/* dunkle Notizfarben (Anthrazit …) auf dem dunklen Panel sichtbar halten */
+.ctx-pop--colors .swatch:not(.is-active),
+.cp-recent .swatch:not(.is-active) {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+/* Farbwähler (ui/ColorPicker.tsx): Zeile „zuletzt benutzt“ + „+“, Spektrum, Farbton, Hex */
+.cp-line {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+.cp-recent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+.cp-plus {
+  margin-left: auto;
+  background: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+  position: relative;
+}
+.cp-plus::after {
+  content: '+';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font: 700 16px/18px var(--font-cond);
+  text-align: center;
+}
+.cp {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 216px;
+  max-width: calc(100vw - 40px);
+}
+.cp-area {
+  position: relative;
+  height: 120px;
+  border-radius: 6px;
+  touch-action: none;
+  cursor: crosshair;
+}
+.cp-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: linear-gradient(to top, #000, transparent), linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+}
+.cp-area:focus-visible {
+  outline: 2px solid var(--green, #c9e14a);
+  outline-offset: 2px;
+}
+.cp-knob {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 3px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+.cp-hue {
+  width: 100%;
+  height: 14px;
+  margin: 0;
+  border-radius: 7px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+}
+.cp-hue::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.cp-hue::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 0;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.cp-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cp-preview {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font: 600 14px var(--font);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+.cp-hex {
+  min-width: 0;
+  flex: 1;
+  height: 32px;
+  padding: 0 6px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: 500 14px var(--font-mono, monospace);
+}
+.cp-ok,
+.cp-cancel {
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--green, #c9e14a);
+  color: #0a0a0a;
+  font: 700 13px var(--font-cond);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.cp-cancel {
+  background: transparent;
+  color: inherit;
+  text-transform: none;
+  font: 500 13px var(--font);
+  text-decoration: underline;
+  align-self: flex-start;
+  padding: 0;
+  height: auto;
 }
 .ctx-pop.ctx-pop--arrange {
   grid-template-columns: repeat(4, 36px);

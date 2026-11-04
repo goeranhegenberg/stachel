@@ -246,15 +246,16 @@ class _ExportSheetState extends State<ExportSheet> {
               key: const Key('stachelExportFormat'),
               showSelectedIcon: false,
               segments: const [
+                // 320 dp (smallest phones, web layout4 „p320“): the labels shrink instead of overflowing
                 ButtonSegment(
                   value: ExportFormat.png,
                   icon: Icon(Icons.image_outlined, key: Key('stachelExportPng')),
-                  label: Text('PNG · Bild'),
+                  label: FittedBox(fit: BoxFit.scaleDown, child: Text('PNG · Bild')),
                 ),
                 ButtonSegment(
                   value: ExportFormat.pdf,
                   icon: Icon(Icons.picture_as_pdf_outlined, key: Key('stachelExportPdf')),
-                  label: Text('PDF · Dokument'),
+                  label: FittedBox(fit: BoxFit.scaleDown, child: Text('PDF · Dokument')),
                 ),
               ],
               selected: {_format},
@@ -283,25 +284,30 @@ class _ExportSheetState extends State<ExportSheet> {
                   disabled: _frames.isEmpty,
                   trailing: _frames.isEmpty
                       ? null
-                      : DropdownButton<String>(
-                          key: const Key('stachelExportFrame'),
-                          value: _frames.any((f) => f.id == _frameId) ? _frameId : _frames.first.id,
-                          onChanged: _busy != null
-                              ? null
-                              : (id) => setState(() {
-                                  _frameId = id ?? _frameId;
-                                  _kind = _Kind.frame;
-                                }),
-                          items: [
-                            for (var i = 0; i < _frames.length; i++)
-                              DropdownMenuItem(
-                                value: _frames[i].id,
-                                child: Text(
-                                  '${i + 1}. ${(_frames[i].title ?? '').isEmpty ? 'Rahmen' : _frames[i].title}',
-                                  overflow: TextOverflow.ellipsis,
+                      : ConstrainedBox(
+                          // the frame title must not push the area's text out (320 dp)
+                          constraints: const BoxConstraints(maxWidth: 140),
+                          child: DropdownButton<String>(
+                            key: const Key('stachelExportFrame'),
+                            isExpanded: true,
+                            value: _frames.any((f) => f.id == _frameId) ? _frameId : _frames.first.id,
+                            onChanged: _busy != null
+                                ? null
+                                : (id) => setState(() {
+                                    _frameId = id ?? _frameId;
+                                    _kind = _Kind.frame;
+                                  }),
+                            items: [
+                              for (var i = 0; i < _frames.length; i++)
+                                DropdownMenuItem(
+                                  value: _frames[i].id,
+                                  child: Text(
+                                    '${i + 1}. ${(_frames[i].title ?? '').isEmpty ? 'Rahmen' : _frames[i].title}',
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
-                              ),
-                          ],
+                            ],
+                          ),
                         ),
                 ),
                 if (_format == ExportFormat.pdf)
@@ -314,27 +320,41 @@ class _ExportSheetState extends State<ExportSheet> {
               ],
             ),
             const SizedBox(height: 8),
-            Row(
-              children: [
-                Text('Qualität', style: theme.label(size: 13, color: theme.grey)),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: SegmentedButton<int>(
-                    key: const Key('stachelExportQuality'),
-                    showSelectedIcon: false,
-                    style: const ButtonStyle(visualDensity: VisualDensity.compact),
-                    segments: [
-                      for (final (q, label) in exportQualities)
-                        ButtonSegment(
-                          value: q,
-                          label: Text(label, key: Key('stachelExportQuality-$q')),
+            LayoutBuilder(
+              builder: (context, box) {
+                final label = Text('Qualität', style: theme.label(size: 13, color: theme.grey));
+                final choice = SegmentedButton<int>(
+                  key: const Key('stachelExportQuality'),
+                  showSelectedIcon: false,
+                  style: const ButtonStyle(visualDensity: VisualDensity.compact),
+                  segments: [
+                    for (final (q, text) in exportQualities)
+                      ButtonSegment(
+                        value: q,
+                        label: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(text, key: Key('stachelExportQuality-$q')),
                         ),
-                    ],
-                    selected: {_quality},
-                    onSelectionChanged: _busy != null ? null : (s) => setState(() => _quality = s.first),
-                  ),
-                ),
-              ],
+                      ),
+                  ],
+                  selected: {_quality},
+                  onSelectionChanged: _busy != null ? null : (s) => setState(() => _quality = s.first),
+                );
+                // narrow (< 340 dp): the label above the choice, so both fit
+                if (box.maxWidth < 340) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [label, const SizedBox(height: 4), choice],
+                  );
+                }
+                return Row(
+                  children: [
+                    label,
+                    const SizedBox(width: 12),
+                    Expanded(child: choice),
+                  ],
+                );
+              },
             ),
             if (_format == ExportFormat.png)
               CheckboxListTile(
@@ -362,15 +382,15 @@ class _ExportSheetState extends State<ExportSheet> {
                 ),
               ),
             const SizedBox(height: 12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+            Wrap(
+              alignment: WrapAlignment.end,
+              spacing: 8,
               children: [
                 TextButton(
                   key: const Key('stachelExportCancel'),
                   onPressed: () => Navigator.of(context).maybePop(),
                   child: const Text('Abbrechen'),
                 ),
-                const SizedBox(width: 8),
                 FilledButton(
                   key: const Key('stachelExportStart'),
                   style: FilledButton.styleFrom(backgroundColor: theme.accent),

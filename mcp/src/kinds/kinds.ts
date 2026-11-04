@@ -78,7 +78,7 @@ const StickyCreate = z
   .object({
     type: z.literal('sticky'),
     text: TextMd.optional(),
-    color: ColorStr.optional().describe('Notizfarbe (Standard yellow); passende Namen: yellow, green, pink, blue, orange, violet, white'),
+    color: ColorStr.optional().describe('Notizfarbe (Standard yellow) oder #rrggbb. Hell: yellow, orange, coral, pink, violet, lightindigo, midblue, blue, teal, mint, green, white; kräftig: sunflower, tangerine, red, raspberry, lavender, indigo, royal, sky, lagoon, grass, limegreen, stone; dunkel (Schrift wird automatisch weiß): ochre, brown, wine, blackberry, aubergine, night, navy, ocean, darkteal, forest, olive, charcoal'),
     shape: z.enum(['square', 'rect']).optional().describe('square = 200×200 (Standard), rect = 350×200 (Rechteck)'),
     size: Size(80, 1200).optional().describe('Höhe in Punkten (Standard 200); Breite folgt aus shape'),
     tags: z.array(Tag).max(8).optional(),

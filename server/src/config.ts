@@ -4,6 +4,7 @@ import { loadInstance, type InstanceConfig } from './instance.js';
 import { applyLegalDefaults, LEGAL_RESERVED, legalDirOf } from './legal-pages.js';
 import { loadLimits, type Limits } from './limits.js';
 import { loadTemplatePackConfig, type TemplatePackConfig } from './template-packs.js';
+import { loadPhotoNotesConfig, type PhotoNotesConfig } from './photo-notes.js';
 
 export interface Config {
   port: number;
@@ -41,6 +42,13 @@ export interface Config {
   syncRecheckMs: number;
   /** Versionsverlauf: höchstens so oft eine automatische Version, solange jemand arbeitet (versions.ts). */
   versionIntervalMs?: number;
+  /** Vorschaubilder (thumbnails.ts): Ruhe nach dem Speichern und Mindestabstand je Board; in Tests verkürzbar */
+  thumbnailIdleMs?: number;
+  thumbnailGapMs?: number;
+  /** beim Start fehlende Vorschaubilder nachholen (Standard ja) */
+  thumbnailBackfill?: boolean;
+  /** Zettel abfotografieren (photo-notes.ts): STACHEL_PHOTO_NOTES, Grenzen, Texterkennung */
+  photoNotes: PhotoNotesConfig;
   /**
    * App-Links (siehe well-known.ts): Android-Paket + Zertifikat-Fingerabdrücke, iOS-App-ID. Ohne Env keine; Modus org
    * nennt hier die App der Organisation, Modus local die Stachel-App.
@@ -259,6 +267,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env, overrides: Part
     nativeIdleMs: 10 * 60_000,
     nativeDevActions: env.STACHEL_NATIVE_DEV_ACTIONS?.trim() === '1',
     limits: loadLimits(env),
+    photoNotes: loadPhotoNotesConfig(env),
     templatePacks: loadTemplatePackConfig(env, dataDir, instance.brand),
     nativeBufferMax: 1000,
     nativeBufferMs: 10 * 60_000,

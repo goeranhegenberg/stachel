@@ -10,6 +10,7 @@ import '../../geometry/svg_path.dart';
 import '../../model/board_object.dart';
 import '../../model/board_source.dart';
 import '../../protocol/native_messages.dart';
+import '../core/color_picker.dart' show RecentColorsRow, pickOwnColor;
 import 'catalog.dart';
 import 'library.dart';
 import 'shape_state.dart';
@@ -158,7 +159,7 @@ class _DraftPainter extends CustomPainter {
 
 // ---- tool options ----------------------------------------------------------------------------------------------------
 
-/// Options of the note tool (C04): the 12 note colors and the shape square/rectangle for new notes.
+/// Options of the note tool (C04): the 24 note colors, recent/own colors and the shape square/rectangle for new notes.
 class StickyToolOptions extends StatelessWidget {
   const StickyToolOptions({super.key, required this.ui});
   final BoardUi ui;
@@ -172,16 +173,17 @@ class StickyToolOptions extends StatelessWidget {
         key: const Key('stachelStickyOptions'),
         ui: ui,
         children: [
-          // 12 colors in two rows of six (web: same grid in the tool's flyout), so the shapes stay on screen
+          // 24 colors in two rows of twelve (light ones above, strong and dark ones below; the strip scrolls sideways),
+          // then „zuletzt benutzt“ and „+ Eigene Farbe“ like the web's flyout
           Column(
             key: const Key('stachelStickyColors'),
             mainAxisSize: MainAxisSize.min,
             children: [
-              for (var row = 0; row < stickyColors.length; row += 6)
+              for (var row = 0; row < stickyColors.length; row += 12)
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    for (final c in stickyColors.skip(row).take(6))
+                    for (final c in stickyColors.skip(row).take(12))
                       P2Swatch(
                         key: Key('stachelStickyColor-$c'),
                         color: c,
@@ -193,6 +195,16 @@ class StickyToolOptions extends StatelessWidget {
                   ],
                 ),
             ],
+          ),
+          const SizedBox(width: 4),
+          RecentColorsRow(
+            size: 26,
+            current: stickyColors.contains(ui.editor.stickyColor) ? null : ui.editor.stickyColor,
+            onPick: (c) => t.stickyColor = c,
+            onCustom: () async {
+              final c = await pickOwnColor(context, ui, initial: ui.editor.stickyColor, title: 'Eigene Notizfarbe');
+              if (c != null) t.stickyColor = c;
+            },
           ),
           const SizedBox(width: 8),
           for (final (shape, label) in const [('square', 'Quadrat'), ('rect', 'Rechteck')])

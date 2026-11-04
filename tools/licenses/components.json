@@ -2,11 +2,11 @@
   "$comment": "Bestandteile ohne npm/Pub-Paket für tools/licenses/third-party-notices.mjs. files = Lizenzdateien im Repo (wörtlich übernommen); {node}, {debian}, {chromium}, {chromiumRevision}, {chromiumLicense} kommen aus tools/licenses/.collected/facts.json. libvips: je Eintrag in versions.json von @img/sharp-libvips-linux-* ein Name, Text in tools/licenses/texts/libvips/<schlüssel>.txt (tools/licenses/fetch-texts.sh).",
   "components": [
     {
-      "name": "Font Barlow / Barlow Condensed (TTF in flutter/app/assets/fonts)",
+      "name": "Font Barlow / Barlow Condensed (TTF in flutter/app/assets/fonts and server/assets/fonts)",
       "version": "1.408",
       "license": "OFL-1.1",
       "source": "https://github.com/jpt/barlow",
-      "parts": ["flutter_app", "repo"],
+      "parts": ["flutter_app", "server", "repo"],
       "files": ["flutter/app/assets/fonts/OFL-Barlow.txt"]
     },
     {
@@ -117,6 +117,14 @@
       "source": "https://github.com/nodejs/node/tree/{node}",
       "parts": ["image"],
       "note": "Full license text with all bundled components inside the images: /usr/local/LICENSE (section 2)."
+    },
+    {
+      "name": "Tesseract OCR with Leptonica and the trained data deu/eng (Debian packages tesseract-ocr, tesseract-ocr-deu, tesseract-ocr-eng, liblept5)",
+      "version": "5.3.0 (Debian bookworm)",
+      "license": "Apache-2.0 (Tesseract, tessdata) / BSD-2-Clause (Leptonica)",
+      "source": "https://github.com/tesseract-ocr/tesseract, https://github.com/tesseract-ocr/tessdata, https://github.com/DanBloomberg/leptonica",
+      "parts": ["server"],
+      "note": "Text recognition for photographed sticky notes (server/src/photo-notes.ts), started as a separate program. Unmodified Debian packages; license texts in the image under /usr/share/doc/tesseract-ocr/copyright, /usr/share/doc/tesseract-ocr-deu/copyright and /usr/share/doc/liblept5/copyright (section 2)."
     },
     {
       "name": "Debian base system (bookworm)",

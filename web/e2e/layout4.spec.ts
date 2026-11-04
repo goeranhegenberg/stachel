@@ -194,9 +194,27 @@ for (const vp of VIEWPORTS) {
           });
           expect(hit, `${d.id} Knopf frei`).toBe(true);
         }
-        // nichts ragt waagerecht aus dem Dialog
-        const wide = await modal.evaluate((m) => [m, ...m.querySelectorAll(".modal__body")].some((e) => e.scrollWidth > e.clientWidth + 1));
+        // nichts ragt waagerecht aus dem Dialog: weder Scrollbreite noch ein abgeschnittenes Element (z. B. die
+        // Format-Karten des Exports bei 320 px, die nur weggeschnitten statt gescrollt wurden)
+        const wide = await modal.evaluate((m) => [m, ...m.querySelectorAll('.modal__body')].some((e) => e.scrollWidth > e.clientWidth + 1));
         expect(wide, `${d.id} waagerecht zu breit`).toBe(false);
+        const clipped = await modal.evaluate((m) => {
+          const r0 = m.getBoundingClientRect();
+          const cs = getComputedStyle(m);
+          // Inhaltsfläche (ohne Innenabstand): dorthin gehört alles
+          const box = { left: r0.left + parseFloat(cs.paddingLeft), right: r0.right - parseFloat(cs.paddingRight) };
+          return [...m.querySelectorAll<HTMLElement>('button, label, select, input, .seg, [role="radiogroup"]')]
+            .filter((e) => {
+              const r = e.getBoundingClientRect();
+              return r.width > 0 && r.height > 0 && getComputedStyle(e).visibility !== 'hidden';
+            })
+            .filter((e) => {
+              const r = e.getBoundingClientRect();
+              return r.left < box.left - 1 || r.right > box.right + 1;
+            })
+            .map((e) => `${e.tagName.toLowerCase()}.${e.className}`.slice(0, 60));
+        });
+        expect(clipped, `${d.id} Elemente ragen seitlich heraus`).toEqual([]);
         await shot(page, `${vp.name}-dlg-${d.id}`);
         await page.keyboard.press('Escape');
         await expect(modal).toHaveCount(0);

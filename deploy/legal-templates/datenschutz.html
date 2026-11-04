@@ -70,11 +70,20 @@ Urheber. Personen, mit denen das Board geteilt ist, sehen diese Inhalte und bei 
 Namen. Schaltet jemand mit Bearbeitungsrecht die Board-Einstellung „<strong>Autor:in an Haftnotizen zeigen</strong>“ ein,
 steht an jeder Haftnotiz für alle Board-Mitglieder der Name der Person, die sie angelegt hat.</p>
 <p>Wir legen automatisch <strong>Versionen</strong> eines Boards an (Versionsverlauf, mit den Namen der beteiligten
-Personen), merken uns, welche Boards Sie zuletzt geöffnet oder als Favorit markiert haben, und erzeugen ein Vorschaubild
-für die Board-Liste. Aus hochgeladenen Fotos entfernen wir eingebettete Metadaten (z. B. Aufnahmeort und Kameramodell).</p>
+Personen), merken uns, welche Boards Sie zuletzt geöffnet oder als Favorit markiert haben, und erzeugen auf unserem Server ein
+Vorschaubild für die Board-Liste (nur aus dem gemeinsamen Board-Inhalt, nie aus Ihrem privaten Bereich; zu sehen nur für
+Personen mit Zugriff auf das Board). Aus hochgeladenen Fotos entfernen wir eingebettete Metadaten (z. B. Aufnahmeort und Kameramodell).</p>
 <p><strong>Privater Modus:</strong> Ist er auf einem Board an, speichern wir, was Sie verdeckt anlegen, in einem nur für
 Sie lesbaren Bereich. Die anderen sehen bis zum Aufdecken nur Platzhalter (Lage, Größe, Art – nie den Inhalt). Beim
 Aufdecken wird der Inhalt Teil des Boards.</p>
+<p><strong>Zettel abfotografieren:</strong> Wenn Sie ein Foto von Papier-Klebezetteln an Stachel schicken, damit
+daraus Haftnotizen werden, werten wir es ausschließlich auf unserem eigenen Server aus: Wir suchen die Zettel nach ihrer
+Farbe und lesen ihren Text mit einer Texterkennung (Tesseract), die auf demselben Server läuft. Das Foto wird dafür nur
+im Arbeitsspeicher verarbeitet und unmittelbar danach verworfen – wir speichern es nicht, es landet nicht in Sicherungen
+oder Protokollen und geht an niemanden weiter (keine Cloud- oder KI-Dienste). Zurück an Ihr Gerät gehen nur die erkannten
+Zettel (Lage, Farbe, Text) und eine verkleinerte Vorschau des Fotos zum Auswählen. Erst wenn Sie „Notizen anlegen“
+wählen, werden die ausgewählten Texte wie andere Notizen Teil des Boards. Achten Sie bitte darauf, keine Personen oder
+vertraulichen Unterlagen mitzufotografieren. Zweck und Rechtsgrundlage wie oben (Art. 6 Abs. 1 lit. b DSGVO).</p>
 <p><strong>Eigene Vorlagen:</strong> Speichern Sie eine Auswahl als Vorlage, liegt sie in Ihrem Konto und ist nur für
 Sie sichtbar, bis Sie sie verwenden oder löschen. Die Vorlagen der Instanz stellen wir bereit; sie enthalten keine Daten
 anderer Nutzerinnen und Nutzer.</p>
@@ -219,6 +228,7 @@ in den USA (Angemessenheitsbeschluss zum EU-U.S. Data Privacy Framework, Art. 45
   <tr><td>Gelöschte Boards</td><td>30 Tage im Papierkorb, danach endgültig samt Bildern, Dokumenten und Versionen</td></tr>
   <tr><td>Versionen eines Boards</td><td>bis 24 Stunden alle, bis 30 Tage stündlich, bis 1 Jahr täglich, danach gelöscht; benannte Versionen, solange das Board besteht</td></tr>
   <tr><td>Privater Modus, eigene Vorlagen</td><td>bis zum Aufdecken bzw. Löschen, spätestens mit Ihrem Konto</td></tr>
+  <tr><td>Fotos für „Zettel abfotografieren“</td><td>nicht gespeichert – nur während der Auswertung im Arbeitsspeicher (wenige Sekunden)</td></tr>
   <tr><td>Erwähnungen und Zuweisungen (Posteingang)</td><td>60 Tage</td></tr>
   <tr><td>Offene Einladungen an E-Mail-Adressen</td><td>bis Annahme, Rücknahme oder Löschung des Boards, höchstens 90 Tage</td></tr>
   <tr><td>Persönliche API-Zugänge</td><td>bis zum Widerruf, verfallen nach 12 Monaten ohne Nutzung</td></tr>

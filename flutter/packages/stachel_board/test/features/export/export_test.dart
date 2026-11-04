@@ -60,8 +60,6 @@ class _Host extends BoardHost implements BoardAdminHost {
   Future<void> shareFile(Uint8List bytes, String fileName, String mimeType) async =>
       shared.add((fileName, mimeType, bytes.length));
   @override
-  Future<String?> uploadThumbnail(Uint8List bytes, String mimeType) async => null;
-  @override
   Future<McpTokens> listTokens() async => const McpTokens([], '');
   @override
   Future<McpNewToken> createToken(String label) => throw UnimplementedError();
@@ -338,6 +336,44 @@ void main() {
       );
       return (ui, c, host);
     }
+
+    testWidgets('320 × 568 (kleinstes Handy, web layout4 „p320“): nichts läuft über, Knöpfe erreichbar', (tester) async {
+      tester.view.physicalSize = const Size(320, 568);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.reset);
+      final host = _Host();
+      final (ui, c) = await _ui(host: host);
+      addTearDown(() => _dispose(ui, c));
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: Builder(
+              builder: (context) => Center(
+                child: TextButton(
+                  key: const Key('open'),
+                  onPressed: () => openExportSheet(context, ui),
+                  child: const Text('open'),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.byKey(const Key('open')));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull, reason: 'PNG überläuft nicht');
+      for (final k in ['stachelExportFormat', 'stachelExportQuality', 'stachelExportFrame']) {
+        final r = tester.getRect(find.byKey(Key(k)));
+        expect(r.left >= 0 && r.right <= 320, isTrue, reason: '$k waagerecht im Bild: $r');
+      }
+      await tester.tap(find.byKey(const Key('stachelExportPdf')));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull, reason: 'PDF überläuft nicht');
+      await tester.ensureVisible(find.byKey(const Key('stachelExportStart')));
+      await tester.pumpAndSettle();
+      final start = tester.getRect(find.byKey(const Key('stachelExportStart')));
+      expect(start.right <= 320 && start.bottom <= 568, isTrue, reason: 'Exportieren im Bild: $start');
+    });
 
     testWidgets('PNG: Info in Pixeln, Exportieren teilt die Datei und zeigt „Gespeichert: …“', (tester) async {
       final (ui, _, host) = await pump(tester);

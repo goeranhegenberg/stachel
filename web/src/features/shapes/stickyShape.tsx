@@ -2,7 +2,10 @@
 // Die Form ergibt sich aus dem Seitenverhältnis (kein eigenes Feld, alte Boards bleiben gültig). Seitengriffe ziehen die
 // Notiz frei in Breite bzw. Höhe („frei“), Eckgriffe skalieren proportional. Das Notiz-Werkzeug merkt sich die zuletzt
 // gewählte Form; Tab, Strg+Pfeil und Plus-Griff kopieren Breite und Höhe und damit die Form.
+import { useState } from 'react';
 import { STICKY_COLORS, type BoardObject } from '../../protocol';
+import { ColorPicker, CustomColorToggle, RecentSwatches } from '../../ui/ColorPicker';
+import { useRecentColors } from '../../ui/recentColors';
 import { colorName } from '../../ui/a11y';
 import { PopBtn } from '../../editor/ContextBar';
 import { defineContextAction, defineObjectType, defineTool, objectTypes, tools } from '../../editor/ext/registry';
@@ -102,13 +105,36 @@ defineContextAction({
 function StickyToolOptions() {
   const [color, setColor] = useToolOption('sticky', 'color', STICKY_COLORS[0]);
   const [shape, setShape] = useToolOption<StickyShape>('sticky', 'shape', 'square');
+  const [custom, setCustom] = useState(false);
+  const recent = useRecentColors();
+  if (custom)
+    return (
+      <span className="shapes-sticky-swatches">
+        <ColorPicker
+          value={color}
+          label="Eigene Notizfarbe"
+          onPick={(c) => {
+            setColor(c);
+            setCustom(false);
+          }}
+          onCancel={() => setCustom(false)}
+        />
+      </span>
+    );
   return (
     <>
       <span className="shapes-sticky-swatches">
         {STICKY_COLORS.map((c) => (
           <button key={c} className={`swatch${color === c ? ' is-active' : ''}`} style={{ background: c }} aria-label={`Notizfarbe ${colorName(c)}`} onClick={() => setColor(c)} />
         ))}
+        {/* zuletzt benutzte eigene Farben als eigene Zeile – nur, wenn es welche gibt (die Leiste bleibt sonst zweizeilig) */}
+        {recent.length > 0 && (
+          <span className="cp-line">
+            <RecentSwatches onPick={setColor} current={(STICKY_COLORS as readonly string[]).includes(color) ? undefined : color} />
+          </span>
+        )}
       </span>
+      <CustomColorToggle open={false} onClick={() => setCustom(true)} />
       <span className="fly-sep" />
       {STICKY_SHAPES.map((s) => (
         <button key={s.shape} className={`fly-btn${shape === s.shape ? ' is-active' : ''}`} aria-label={`Notizform ${s.label}`} title={s.label} aria-pressed={shape === s.shape} onClick={() => setShape(s.shape)}>

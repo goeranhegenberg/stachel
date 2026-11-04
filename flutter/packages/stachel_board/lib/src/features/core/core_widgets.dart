@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart' show listEquals;
 import 'package:flutter/material.dart';
 
 import '../../editor/board_editor.dart';
@@ -9,6 +10,7 @@ import '../../geometry/shape_paths.dart';
 import '../../geometry/svg_path.dart';
 import '../../model/collab.dart';
 import '../a11y/color_names.dart';
+import 'color_picker.dart';
 
 // Widgets of the core entries (moved from the app's `stachel_board_tools.dart` in F2, keys unchanged): pen and
 // connector options, the pickers of the context bar (color, font size, line style, caps, width), shape picker,
@@ -309,39 +311,116 @@ class ShapeIconPainter extends CustomPainter {
   bool shouldRepaint(covariant ShapeIconPainter old) => old.kind != kind;
 }
 
-/// Color picker sheet over [palette] (context bar „Farbe“).
+/// Color picker sheet over [palette] (context bar „Farbe“). With [custom] (web core.color: every colorable type) the
+/// row „zuletzt benutzt“ and „+ Eigene Farbe“ follow ([pickOwnColor]: spectrum, hue, hex).
 Future<String?> pickColor(
   BuildContext context,
   BoardUi ui,
   List<String> palette, {
   String keyPrefix = 'stachelColor',
-}) => ui.openSheet<String>(
-  context,
-  (ctx) => SafeArea(
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-      child: Wrap(
-        spacing: 12,
-        runSpacing: 12,
-        children: [
-          for (final p in palette)
-            // P8 (audit P03): German color name for screen readers like the web („Farbe Gelb“)
-            Semantics(
-              button: true,
-              label: 'Farbe ${colorName(p)}',
-              excludeSemantics: true,
-              child: InkWell(
-                key: Key('$keyPrefix-$p'),
-                customBorder: const CircleBorder(),
-                onTap: () => Navigator.of(ctx).pop(p),
-                child: ColorSwatchDot(p, size: 44, ink: ui.theme.ink),
-              ),
+  bool custom = false,
+  String? current,
+}) async {
+  const own = ' custom';
+  final v = await ui.openSheet<String>(
+    context,
+    (ctx) => SafeArea(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _PaletteGrid(
+              palette: palette,
+              // notes: the web's grid of twelve hues × light/strong/dark (narrow: six columns, scrolls sideways)
+              cols: identical(palette, stickyColors) || listEquals(palette, stickyColors) ? stickyGridCols : null,
+              dot: (p, size) =>
+                  // P8 (audit P03): German color name for screen readers like the web („Farbe Gelb“)
+                  Semantics(
+                    button: true,
+                    label: 'Farbe ${colorName(p)}',
+                    excludeSemantics: true,
+                    child: Tooltip(
+                      message: colorName(p),
+                      child: InkWell(
+                        key: Key('$keyPrefix-$p'),
+                        customBorder: const CircleBorder(),
+                        onTap: () => Navigator.of(ctx).pop(p),
+                        child: ColorSwatchDot(p, size: size, ink: ui.theme.ink),
+                      ),
+                    ),
+                  ),
             ),
-        ],
+            if (custom) ...[
+              const SizedBox(height: 12),
+              Divider(height: 1, color: ui.theme.ink.withValues(alpha: 0.15)),
+              const SizedBox(height: 8),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: RecentColorsRow(
+                  size: 38,
+                  current: current,
+                  onPick: (c) => Navigator.of(ctx).pop(c),
+                  onCustom: () => Navigator.of(ctx).pop(own),
+                ),
+              ),
+            ],
+          ],
+        ),
       ),
     ),
-  ),
-);
+    scrollControlled: true,
+  );
+  if (v != own) return v;
+  if (!context.mounted) return null;
+  return pickOwnColor(context, ui, initial: current ?? palette.first);
+}
+
+/// Color dots of [pickColor]: a wrap of 44 dp dots, or with [cols] a fixed grid row by row (notes: twelve hues ×
+/// light/strong/dark) – as large as fits (32–44 dp); narrower than that shows six columns and scrolls sideways, so the
+/// sheet stays three rows high.
+class _PaletteGrid extends StatelessWidget {
+  const _PaletteGrid({required this.palette, required this.cols, required this.dot});
+  final List<String> palette;
+  final int? cols;
+  final Widget Function(String color, double size) dot;
+
+  @override
+  Widget build(BuildContext context) {
+    final n = cols;
+    if (n == null) {
+      return Wrap(spacing: 12, runSpacing: 12, children: [for (final p in palette) dot(p, 44)]);
+    }
+    return LayoutBuilder(
+      builder: (context, c) {
+        const gap = 8.0;
+        final fit = (c.maxWidth - gap * (n - 1)) / n;
+        final scrolls = fit < 32;
+        final size = scrolls ? math.min(44.0, (c.maxWidth - gap * 5.5) / 6.5) : math.min(44.0, fit);
+        final grid = Column(
+          key: const Key('stachelColorGrid'),
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (var r = 0; r < palette.length; r += n)
+              Padding(
+                padding: EdgeInsets.only(bottom: r + n < palette.length ? gap : 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    for (final (i, p) in palette.skip(r).take(n).indexed)
+                      Padding(padding: EdgeInsets.only(right: i < n - 1 ? gap : 0), child: dot(p, size)),
+                  ],
+                ),
+              ),
+          ],
+        );
+        return scrolls ? SingleChildScrollView(scrollDirection: Axis.horizontal, child: grid) : grid;
+      },
+    );
+  }
+}
 
 /// Font size sheet (notes also „Automatisch“, returned as -1).
 Future<double?> pickFontSize(BuildContext context, BoardUi ui, Set<String> types) {
