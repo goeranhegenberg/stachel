@@ -94,6 +94,8 @@ void main() {
     await b.tapWorld(const Offset(100, 100));
     await b.ctx('stachelCtxColor');
     expect(find.bySemanticsLabel('Farbe Gelb'), findsOneWidget);
+    // wie web core.color: unter der Palette „zuletzt benutzt“ mit „+ Eigene Farbe“ (Welle B)
+    expect(find.byKey(const Key('stachelRecentColors')), findsOneWidget);
     // touch targets (an IconButton's tap area includes its padding) of the context bar, the sheet and the tool bar
     for (final f in [find.byType(IconButton), find.byKey(const Key('stachelColor-#fff27a'))]) {
       for (final e in f.evaluate()) {

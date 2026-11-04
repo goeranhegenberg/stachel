@@ -2,7 +2,7 @@ name: stachel
 description: "Stachel – das gemeinsame Whiteboard."
 publish_to: 'none'
 
-version: 1.5.1+9
+version: 1.5.2+10
 
 environment:
   sdk: ^3.11.0

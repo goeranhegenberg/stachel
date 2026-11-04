@@ -99,7 +99,8 @@ void _color(BoardRegistry r) {
             label: 'Farbe',
             leading: (_) => ColorSwatchDot(c.first.color ?? palette.first, ink: ui.theme.ink),
             onTap: (context, ui) async {
-              final v = await pickColor(context, ui, palette);
+              // wie web core.color: Palette, „zuletzt benutzt“ und der eigene Farbwähler (Spektrum/Hex)
+              final v = await pickColor(context, ui, palette, custom: true, current: c.first.color ?? palette.first);
               if (v != null) ui.editor.setField('color', v);
             },
           ),

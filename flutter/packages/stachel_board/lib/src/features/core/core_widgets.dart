@@ -397,7 +397,8 @@ class _PaletteGrid extends StatelessWidget {
         const gap = 8.0;
         final fit = (c.maxWidth - gap * (n - 1)) / n;
         final scrolls = fit < 32;
-        final size = scrolls ? math.min(44.0, (c.maxWidth - gap * 5.5) / 6.5) : math.min(44.0, fit);
+        // schmal: sechs bis sieben Punkte sichtbar, Ziele mindestens 40 dp (P04)
+        final size = scrolls ? math.max(40.0, math.min(44.0, (c.maxWidth - gap * 5.5) / 6.5)) : math.min(44.0, fit);
         final grid = Column(
           key: const Key('stachelColorGrid'),
           mainAxisSize: MainAxisSize.min,
