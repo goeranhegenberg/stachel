@@ -71,7 +71,9 @@ core22, strict, GNOME-Erweiterung) packt **denselben** Build; GTK, libsecret und
   `v1.3.0-rc.1`) → Kanal `edge`, sonst `candidate`. Nach `stable` schiebt Göran von Hand (`snapcraft release` oder
   Snapcraft-Dashboard), nachdem er die Version geprüft hat.
 - Push auf `main`, der `flutter/app/windows|linux|snap` oder `pubspec.*` ändert, und „Run workflow“: nur bauen
-  (Artefakte des Laufs), kein Release. „Run workflow“ mit `tag` hängt an ein bestehendes Release an.
+  (Artefakte des Laufs), kein Release. „Run workflow“ mit `tag` hängt an ein bestehendes Release an; mit zusätzlich `ref` (z. B. `main`) wird dieser Stand gebaut statt
+  des Tags – für Packaging-/CI-Korrekturen nach dem Tag (so geschehen bei v1.1.0: `.desktop`-`Version=1.5` kannte
+  `desktop-file-validate` unter Ubuntu 22.04 nicht, jetzt `1.4`; `libunwind-14-dev` des Runner-Images blockierte GStreamer).
 - Vor dem Release-Tag `THIRD_PARTY_NOTICES` nach `docs/open_source/publish.md` §1 neu erzeugen, wenn sich
   Abhängigkeiten geändert haben – die Installer liefern die Datei mit aus. Die Desktop-Bestandteile (VC-Laufzeit, Inno
   Setup, AppImage-Laufzeit, System-Bibliotheken unter Linux) stehen in `tools/licenses/components.json`.
