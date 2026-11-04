@@ -10,7 +10,7 @@
 # auf der Build-Plattform gebaut (schnell, ohne Emulation); nur die Laufzeit-Abhängigkeiten (sharp) kommen je Zielplattform.
 
 # ---- Web-App (Vite) ----
-FROM --platform=$BUILDPLATFORM node:22-bookworm-slim AS web
+FROM --platform=$BUILDPLATFORM node:26-bookworm-slim AS web
 WORKDIR /app
 COPY shared ./shared
 COPY web/package.json web/package-lock.json ./web/
@@ -19,7 +19,7 @@ COPY web ./web
 RUN cd web && npm run build
 
 # ---- Server (TypeScript, gebündelt mit esbuild samt mitbenutztem Web-Code für die Native-API) ----
-FROM --platform=$BUILDPLATFORM node:22-bookworm-slim AS server
+FROM --platform=$BUILDPLATFORM node:26-bookworm-slim AS server
 WORKDIR /app
 COPY shared ./shared
 COPY web/src ./web/src
@@ -30,7 +30,7 @@ COPY server/src ./server/src
 RUN cd server && npm run build
 
 # ---- Laufzeit-Abhängigkeiten für die Zielplattform (sharp bringt native Binärdateien je Architektur mit) ----
-FROM node:22-bookworm-slim AS server-deps
+FROM node:26-bookworm-slim AS server-deps
 WORKDIR /app/server
 COPY server/package.json server/package-lock.json ./
 # sharp-wasm32 ist nur der Ersatz für Plattformen ohne eigene Binärdatei (libvips statisch als WebAssembly, LGPL);
@@ -39,7 +39,7 @@ RUN npm ci --omit=dev --no-audit --no-fund && npm cache clean --force \
     && rm -rf node_modules/@img/sharp-wasm32 node_modules/@emnapi
 
 # ---- Laufzeit ----
-FROM node:22-bookworm-slim
+FROM node:26-bookworm-slim
 ARG VERSION=dev
 ARG REVISION=unknown
 LABEL org.opencontainers.image.title="Stachel" \
