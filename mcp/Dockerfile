@@ -5,7 +5,7 @@
 
 # ---- Bauen (esbuild bündelt mcp/src samt mitbenutzter Dateien aus web/src und shared/) ----
 # Reines JavaScript (keine nativen Module) → auf der Build-Plattform, auch für arm64-Images (Chromium kommt je Zielplattform)
-FROM --platform=$BUILDPLATFORM node:22-bookworm-slim AS build
+FROM --platform=$BUILDPLATFORM node:26-bookworm-slim AS build
 WORKDIR /app
 COPY shared ./shared
 COPY web/src ./web/src
@@ -18,7 +18,7 @@ COPY mcp/src ./mcp/src
 RUN cd mcp && node build.mjs && mkdir -p /app/pkg && npm pack --pack-destination /app/pkg && npm prune --omit=dev --no-audit --no-fund
 
 # ---- Laufzeit: Node + nur Chromium (Headless Shell) passend zu playwright-core ----
-FROM node:22-bookworm-slim
+FROM node:26-bookworm-slim
 ARG VERSION=dev
 ARG REVISION=unknown
 LABEL org.opencontainers.image.title="Stachel MCP" \
